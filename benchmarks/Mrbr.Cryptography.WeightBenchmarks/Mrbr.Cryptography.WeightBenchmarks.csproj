@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net11.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.16.0-preview.2" />
+    <ProjectReference Include="../../src/Mrbr.Cryptography/Mrbr.Cryptography.csproj" />
+    <Compile Include="../../eng/WeightScenarios.cs" Link="WeightScenarios.cs" />
+  </ItemGroup>
+</Project>

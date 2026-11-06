@@ -1,0 +1,500 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+C:\Program Files\dotnet\sdk\11.0.100-rc.3.26522.148\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(385,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\Mrbr.Cryptography.ComparisonBenchmarks.csproj]
+C:\Users\mrbr\AppData\Local\Temp\Mrbr.Cryptography-dotnet\.nuget\packages\microsoft.build.tasks.git\10.0.401\build\Microsoft.Build.Tasks.Git.targets(25,5): warning : Unable to locate repository with working directory that contains directory 'E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src'. [E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src\SecretSharingDotNet.csproj::TargetFramework=net10.0]
+C:\Users\mrbr\AppData\Local\Temp\Mrbr.Cryptography-dotnet\.nuget\packages\microsoft.sourcelink.common\10.0.401\build\Microsoft.SourceLink.Common.targets(56,5): warning : Source control information is not available - the generated source link is empty. [E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src\SecretSharingDotNet.csproj::TargetFramework=net10.0]
+  SecretSharingDotNet -> E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src\bin\Release\net10.0\SecretSharingDotNet.dll
+  Mrbr.Cryptography -> E:\Dev\source\Mrbr.Cryptography\src\Mrbr.Cryptography\bin\Release\net11.0\Mrbr.Cryptography.dll
+  Mrbr.Cryptography.ComparisonBenchmarks -> E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\bin\Release\net11.0\Mrbr.Cryptography.ComparisonBenchmarks.dll
+
+Build succeeded.
+
+C:\Users\mrbr\AppData\Local\Temp\Mrbr.Cryptography-dotnet\.nuget\packages\microsoft.build.tasks.git\10.0.401\build\Microsoft.Build.Tasks.Git.targets(25,5): warning : Unable to locate repository with working directory that contains directory 'E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src'. [E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src\SecretSharingDotNet.csproj::TargetFramework=net10.0]
+C:\Users\mrbr\AppData\Local\Temp\Mrbr.Cryptography-dotnet\.nuget\packages\microsoft.sourcelink.common\10.0.401\build\Microsoft.SourceLink.Common.targets(56,5): warning : Source control information is not available - the generated source link is empty. [E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src\SecretSharingDotNet.csproj::TargetFramework=net10.0]
+    2 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.94
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 12 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore gen.csproj /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\a /p:ComparisonTargetFramework=net10.0 /p:BenchmarkDotNetGatherReferences=true --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1
+// command took 2.79 sec and exited with 0
+// start dotnet build gen.csproj -f net11.0 -c Release /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\a /p:ComparisonTargetFramework=net10.0 /p:BenchmarkDotNetGatherReferences=true --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1
+// command took 18.8 sec and exited with 0
+// start dotnet build gen.csproj -f net11.0 -c Release /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\a /p:ComparisonTargetFramework=net10.0 --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1
+// command took 6.53 sec and exited with 0
+// ***** Done, took 00:00:28 (28.35 sec)   *****
+// Found 12 benchmarks:
+//   ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+//   ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+//   ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+//   ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56962 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigCreate(Scenario: 128B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 0 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_0.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 255
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_0.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 222
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 14880 has exited with code -1.
+
+// ** Remained 11 (91.7%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56964 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureCreate(Scenario: 128B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 1 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_1.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 501
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_1.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 468
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 4532 has exited with code -1.
+
+// ** Remained 10 (83.3%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56966 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigReconstruct(Scenario: 128B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 2 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_2.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 747
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_2.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 714
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 11368 has exited with code -1.
+
+// ** Remained 9 (75.0%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56968 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureReconstruct(Scenario: 128B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 3 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_3.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 993
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_3.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 960
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 19764 has exited with code -1.
+
+// ** Remained 8 (66.7%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56970 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigCreate(Scenario: 32B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 4 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_4.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 1239
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_4.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 1206
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 21724 has exited with code -1.
+
+// ** Remained 7 (58.3%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56972 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureCreate(Scenario: 32B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 5 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_5.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 1485
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_5.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 1452
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 15320 has exited with code -1.
+
+// ** Remained 6 (50.0%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56974 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigReconstruct(Scenario: 32B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 6 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_6.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 1731
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_6.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 1698
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 304 has exited with code -1.
+
+// ** Remained 5 (41.7%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56976 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureReconstruct(Scenario: 32B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 7 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_7.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 1977
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_7.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 1944
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 18628 has exited with code -1.
+
+// ** Remained 4 (33.3%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56978 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigCreate(Scenario: 32B_9of9)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 8 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_8.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 2223
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_8.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 2190
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 23744 has exited with code -1.
+
+// ** Remained 3 (25.0%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56980 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureCreate(Scenario: 32B_9of9)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 9 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_9.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 2469
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_9.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 2436
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 19788 has exited with code -1.
+
+// ** Remained 2 (16.7%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56982 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigReconstruct(Scenario: 32B_9of9)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 10 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_10.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 2715
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_10.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 2682
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 3032 has exited with code -1.
+
+// ** Remained 1 (8.3%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 56984 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureReconstruct(Scenario: 32B_9of9)" --job "Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 11 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+
+System.InvalidOperationException: Expected .NETCoreApp,Version=v10.0, loaded .NETCoreApp,Version=v11.0.
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.ValidateExpectedTarget() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 74
+   at Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.Setup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\ComparisonBenchmarks.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_11.GlobalSetup() in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 2961
+   at BenchmarkDotNet.Engines.Engine.RunAsync()
+   at BenchmarkDotNet.Helpers.AwaitHelper.ConfiguredValueTaskAwaiter`1.GetResult()
+   at BenchmarkDotNet.Autogenerated.Runner_11.Run(IHost host, String benchmarkName, RunMode diagnoserRunMode) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 2928
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.MainCore(String[] args) in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\gen.cs:line 75
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 21044 has exited with code -1.
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2026-11-04 4:19 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  benchmarks\results\2026-11-04-secretsharingdotnet\net10-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report.csv
+  benchmarks\results\2026-11-04-secretsharingdotnet\net10-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report-github.md
+  benchmarks\results\2026-11-04-secretsharingdotnet\net10-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report.html
+  benchmarks\results\2026-11-04-secretsharingdotnet\net10-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report-full.json
+
+// * Detailed results *
+ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+There are not any results runs
+
+// * Summary *
+
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 43.95 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-NMRZNR : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+
+PowerPlanMode=  Arguments=/p:ComparisonTargetFramework=net10.0  IterationCount=12  
+IterationTime=150ms  LaunchCount=1  UnrollFactor=1  
+WarmupCount=15  
+
+| Method                    | Scenario  | Mean | Error | Op/s |
+|-------------------------- |---------- |-----:|------:|-----:|
+| UpstreamBigCreate         | 128B_3of5 |   NA |    NA |   NA |
+| UpstreamSecureCreate      | 128B_3of5 |   NA |    NA |   NA |
+| UpstreamBigReconstruct    | 128B_3of5 |   NA |    NA |   NA |
+| UpstreamSecureReconstruct | 128B_3of5 |   NA |    NA |   NA |
+| UpstreamBigCreate         | 32B_3of5  |   NA |    NA |   NA |
+| UpstreamSecureCreate      | 32B_3of5  |   NA |    NA |   NA |
+| UpstreamBigReconstruct    | 32B_3of5  |   NA |    NA |   NA |
+| UpstreamSecureReconstruct | 32B_3of5  |   NA |    NA |   NA |
+| UpstreamBigCreate         | 32B_9of9  |   NA |    NA |   NA |
+| UpstreamSecureCreate      | 32B_9of9  |   NA |    NA |   NA |
+| UpstreamBigReconstruct    | 32B_9of9  |   NA |    NA |   NA |
+| UpstreamSecureReconstruct | 32B_9of9  |   NA |    NA |   NA |
+
+Benchmarks with issues:
+  ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+  ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+  ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+  ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+  ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+  ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+  ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+  ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+  ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+  ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+  ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+  ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+
+// * Warnings *
+Environment
+  Summary -> Detected error exit code from one of the benchmarks. It might be caused by following antivirus software:
+        - Windows Defender (windowsdefender://)
+Use InProcessEmitToolchain or InProcessNoEmitToolchain to avoid new process creation.
+
+
+// * Legends *
+  Scenario : Value of the 'Scenario' parameter
+  Mean     : Arithmetic mean of all measurements
+  Error    : Half of 99.9% confidence interval
+  Op/s     : Operation per second
+  1 ns     : 1 Nanosecond (0.000000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:00:02 (2.9 sec), executed benchmarks: 12
+
+Global total time: 00:00:32 (32.04 sec), executed benchmarks: 12
+// * Artifacts cleanup *
+Artifacts cleanup is finished

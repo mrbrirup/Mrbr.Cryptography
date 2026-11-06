@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.WeightBenchmarks.WeightsOnlyBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 41.66 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-RCBXQR : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  IterationCount=12  IterationTime=120ms  
+LaunchCount=1  UnrollFactor=1  WarmupCount=15  
+</code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>Count</th><th>Sparse</th><th>Mean  </th><th>Error</th><th>StdDev</th><th>Op/s   </th><th>Ratio</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>Original</td><td>2</td><td>False</td><td>262.086 ns</td><td>17.6469 ns</td><td>12.7598 ns</td><td>3,815,543.3</td><td>1.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>2</td><td>False</td><td>5.895 ns</td><td>0.2753 ns</td><td>0.1991 ns</td><td>169,635,781.2</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>Original</td><td>2</td><td>True</td><td>254.182 ns</td><td>10.7424 ns</td><td>8.3870 ns</td><td>3,934,181.3</td><td>1.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>2</td><td>True</td><td>7.240 ns</td><td>0.5253 ns</td><td>0.4101 ns</td><td>138,115,080.3</td><td>0.03</td><td>-</td><td>NA</td>
+</tr><tr><td>Original</td><td>3</td><td>False</td><td>425.177 ns</td><td>13.0147 ns</td><td>9.4105 ns</td><td>2,351,964.4</td><td>1.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>3</td><td>False</td><td>9.266 ns</td><td>0.6502 ns</td><td>0.5076 ns</td><td>107,919,901.6</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>Original</td><td>3</td><td>True</td><td>438.994 ns</td><td>27.0678 ns</td><td>21.1328 ns</td><td>2,277,933.7</td><td>1.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>3</td><td>True</td><td>9.288 ns</td><td>0.6650 ns</td><td>0.5192 ns</td><td>107,669,477.6</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>Original</td><td>5</td><td>False</td><td>871.181 ns</td><td>17.4322 ns</td><td>13.6099 ns</td><td>1,147,866.9</td><td>1.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>5</td><td>False</td><td>31.961 ns</td><td>4.5531 ns</td><td>3.5548 ns</td><td>31,288,192.9</td><td>0.04</td><td>-</td><td>NA</td>
+</tr><tr><td>Original</td><td>5</td><td>True</td><td>869.365 ns</td><td>18.1442 ns</td><td>12.0013 ns</td><td>1,150,264.3</td><td>1.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>5</td><td>True</td><td>29.156 ns</td><td>0.4477 ns</td><td>0.2961 ns</td><td>34,298,675.0</td><td>0.03</td><td>-</td><td>NA</td>
+</tr><tr><td>Original</td><td>9</td><td>False</td><td>2,248.520 ns</td><td>87.5130 ns</td><td>68.3244 ns</td><td>444,736.9</td><td>1.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>9</td><td>False</td><td>73.302 ns</td><td>6.0049 ns</td><td>4.6882 ns</td><td>13,642,144.7</td><td>0.03</td><td>-</td><td>NA</td>
+</tr><tr><td>Original</td><td>9</td><td>True</td><td>2,214.215 ns</td><td>20.2655 ns</td><td>13.4043 ns</td><td>451,627.3</td><td>1.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>9</td><td>True</td><td>68.824 ns</td><td>1.8489 ns</td><td>1.2229 ns</td><td>14,529,720.6</td><td>0.03</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

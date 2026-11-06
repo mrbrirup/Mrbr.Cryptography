@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 43.94 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-BSNVEC : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false  IterationCount=12  
+IterationTime=150ms  LaunchCount=1  UnrollFactor=1  
+WarmupCount=15  
+</code></pre>
+
+<table>
+<thead><tr><th>Method                 </th><th>Scenario    </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Op/s </th><th>Gen0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>InitializeRecoveredKeyContext</td><td>Block_AES128_3of5</td><td>566.2 ns</td><td>7.08 ns</td><td>5.12 ns</td><td>1,766,194.8</td><td>0.0153</td><td>112 B</td>
+</tr><tr><td>InitializeRecoveredKeyContext</td><td>Block_AES192_3of5</td><td>559.7 ns</td><td>25.44 ns</td><td>19.87 ns</td><td>1,786,817.5</td><td>0.0146</td><td>112 B</td>
+</tr><tr><td>InitializeRecoveredKeyContext</td><td>Block_AES256_2of3</td><td>572.4 ns</td><td>27.62 ns</td><td>21.56 ns</td><td>1,746,919.6</td><td>0.0154</td><td>112 B</td>
+</tr><tr><td>InitializeRecoveredKeyContext</td><td>Block_AES256_3of5</td><td>554.8 ns</td><td>9.05 ns</td><td>5.99 ns</td><td>1,802,354.3</td><td>0.0148</td><td>112 B</td>
+</tr><tr><td>InitializeRecoveredKeyContext</td><td>Block_AES256_9of9</td><td>564.8 ns</td><td>12.84 ns</td><td>9.28 ns</td><td>1,770,482.3</td><td>0.0148</td><td>112 B</td>
+</tr><tr><td>InitializeRecoveredKeyContext</td><td>Matrix_AES128_3of5</td><td>561.2 ns</td><td>11.63 ns</td><td>7.69 ns</td><td>1,781,893.0</td><td>0.0151</td><td>112 B</td>
+</tr><tr><td>InitializeRecoveredKeyContext</td><td>Matrix_AES192_3of5</td><td>567.0 ns</td><td>13.15 ns</td><td>10.27 ns</td><td>1,763,684.1</td><td>0.0149</td><td>112 B</td>
+</tr><tr><td>InitializeRecoveredKeyContext</td><td>Matrix_AES256_3of5</td><td>558.8 ns</td><td>7.59 ns</td><td>5.49 ns</td><td>1,789,578.2</td><td>0.0148</td><td>112 B</td>
+</tr></tbody></table>
+</body>
+</html>

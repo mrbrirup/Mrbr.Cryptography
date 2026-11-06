@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 44.49 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-KBIGZM : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true  IterationCount=12  
+IterationTime=150ms  LaunchCount=1  UnrollFactor=1  
+WarmupCount=15  
+</code></pre>
+
+<table>
+<thead><tr><th>Method             </th><th>Scenario</th><th>Mean   </th><th>Error  </th><th>StdDev </th><th>Op/s</th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>UpstreamBigCreate</td><td>128B_3of5</td><td>25.75 μs</td><td>0.665 μs</td><td>0.520 μs</td><td>38,838.177</td><td>4.7393</td><td>1.5234</td><td>29.68 KB</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>128B_3of5</td><td>2,353.39 μs</td><td>27.231 μs</td><td>19.690 μs</td><td>424.918</td><td>-</td><td>-</td><td>20.85 KB</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>128B_3of5</td><td>73.22 μs</td><td>1.728 μs</td><td>1.349 μs</td><td>13,656.939</td><td>10.2790</td><td>4.8948</td><td>63.84 KB</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>128B_3of5</td><td>735,439.65 μs</td><td>6,938.513 μs</td><td>5,017.000 μs</td><td>1.360</td><td>3000.0000</td><td>-</td><td>19232.84 KB</td>
+</tr><tr><td>UpstreamBigCreate</td><td>32B_3of5</td><td>19.48 μs</td><td>0.803 μs</td><td>0.627 μs</td><td>51,330.981</td><td>3.6933</td><td>3.5660</td><td>22.72 KB</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>32B_3of5</td><td>701.86 μs</td><td>6.914 μs</td><td>4.999 μs</td><td>1,424.789</td><td>-</td><td>-</td><td>20.73 KB</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>32B_3of5</td><td>50.51 μs</td><td>1.208 μs</td><td>0.799 μs</td><td>19,797.728</td><td>8.4329</td><td>8.0815</td><td>53.7 KB</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>32B_3of5</td><td>180,101.15 μs</td><td>1,103.909 μs</td><td>730.167 μs</td><td>5.552</td><td>1250.0000</td><td>-</td><td>7886.81 KB</td>
+</tr><tr><td>UpstreamBigCreate</td><td>32B_9of9</td><td>65.14 μs</td><td>2.730 μs</td><td>1.974 μs</td><td>15,351.797</td><td>15.2207</td><td>0.5074</td><td>94.92 KB</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>32B_9of9</td><td>2,506.89 μs</td><td>168.001 μs</td><td>131.164 μs</td><td>398.900</td><td>-</td><td>-</td><td>80.88 KB</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>32B_9of9</td><td>274.36 μs</td><td>9.079 μs</td><td>7.088 μs</td><td>3,644.798</td><td>55.5556</td><td>26.8817</td><td>343.67 KB</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>32B_9of9</td><td>439,528.08 μs</td><td>26,778.279 μs</td><td>20,906.719 μs</td><td>2.275</td><td>3000.0000</td><td>-</td><td>19837.25 KB</td>
+</tr></tbody></table>
+</body>
+</html>

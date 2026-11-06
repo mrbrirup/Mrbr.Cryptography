@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../ServiceProjects.props" />
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <OutputType>Exe</OutputType>
+    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit.v3.mtp-v2" Version="3.2.2" />
+    <Using Include="Xunit" />
+    <ProjectReference Include="../../src/Mrbr.Cryptography.Vss.KeyManager/Mrbr.Cryptography.Vss.KeyManager.csproj" />
+    <ProjectReference Include="$(EncryptionManagerProject)" />
+    <Compile Include="../../eng/IntegrationKeyEnvironment.cs" Link="IntegrationKeyEnvironment.cs" />
+  </ItemGroup>
+</Project>

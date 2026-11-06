@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.WeightBenchmarks.ReconstructionBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 41.66 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-RCBXQR : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  IterationCount=12  IterationTime=120ms  
+LaunchCount=1  UnrollFactor=1  WarmupCount=15  
+</code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>Scenario </th><th>Mean     </th><th>Error  </th><th>StdDev </th><th>Op/s  </th><th>Ratio</th><th>RatioSD</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>OriginalSimd</td><td>16B_3_Dense</td><td>457.57 ns</td><td>6.773 ns</td><td>5.288 ns</td><td>2,185,456.8</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>16B_3_Dense</td><td>59.02 ns</td><td>2.848 ns</td><td>2.223 ns</td><td>16,942,679.0</td><td>0.13</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>16B_3_Sparse</td><td>456.76 ns</td><td>4.678 ns</td><td>2.784 ns</td><td>2,189,350.3</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>16B_3_Sparse</td><td>65.60 ns</td><td>3.444 ns</td><td>2.689 ns</td><td>15,244,784.4</td><td>0.14</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>24B_3_Dense</td><td>695.06 ns</td><td>15.693 ns</td><td>11.347 ns</td><td>1,438,715.3</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>24B_3_Dense</td><td>279.59 ns</td><td>8.911 ns</td><td>6.957 ns</td><td>3,576,627.7</td><td>0.40</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>24B_3_Sparse</td><td>731.29 ns</td><td>40.165 ns</td><td>31.358 ns</td><td>1,367,448.3</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>24B_3_Sparse</td><td>287.97 ns</td><td>5.642 ns</td><td>4.080 ns</td><td>3,472,530.6</td><td>0.39</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_255_Dense</td><td>1,108,914.58 ns</td><td>49,474.418 ns</td><td>38,626.372 ns</td><td>901.8</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_255_Dense</td><td>43,528.72 ns</td><td>767.910 ns</td><td>507.925 ns</td><td>22,973.3</td><td>0.04</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_255_Sparse</td><td>1,100,657.60 ns</td><td>35,739.357 ns</td><td>27,902.939 ns</td><td>908.5</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_255_Sparse</td><td>43,808.44 ns</td><td>1,057.440 ns</td><td>764.598 ns</td><td>22,826.7</td><td>0.04</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_2_Dense</td><td>269.33 ns</td><td>3.989 ns</td><td>2.638 ns</td><td>3,712,970.4</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_2_Dense</td><td>40.91 ns</td><td>1.535 ns</td><td>1.198 ns</td><td>24,441,660.1</td><td>0.15</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_2_Sparse</td><td>276.86 ns</td><td>14.145 ns</td><td>11.043 ns</td><td>3,611,995.9</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_2_Sparse</td><td>43.92 ns</td><td>3.980 ns</td><td>3.107 ns</td><td>22,769,355.0</td><td>0.16</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_32_Sparse</td><td>20,946.87 ns</td><td>507.491 ns</td><td>335.674 ns</td><td>47,739.8</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_32_Sparse</td><td>1,088.05 ns</td><td>47.218 ns</td><td>36.865 ns</td><td>919,072.3</td><td>0.05</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_3_Dense</td><td>459.70 ns</td><td>6.779 ns</td><td>4.902 ns</td><td>2,175,348.3</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_3_Dense</td><td>60.85 ns</td><td>2.599 ns</td><td>1.879 ns</td><td>16,435,007.9</td><td>0.13</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_3_Sparse</td><td>462.73 ns</td><td>14.043 ns</td><td>10.964 ns</td><td>2,161,105.3</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_3_Sparse</td><td>57.62 ns</td><td>3.875 ns</td><td>3.025 ns</td><td>17,354,535.9</td><td>0.12</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_4_Dense</td><td>689.61 ns</td><td>26.651 ns</td><td>20.807 ns</td><td>1,450,093.0</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_4_Dense</td><td>79.37 ns</td><td>4.430 ns</td><td>3.203 ns</td><td>12,599,926.0</td><td>0.12</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_4_Sparse</td><td>677.56 ns</td><td>8.905 ns</td><td>5.890 ns</td><td>1,475,879.9</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_4_Sparse</td><td>77.80 ns</td><td>4.280 ns</td><td>3.342 ns</td><td>12,853,505.8</td><td>0.11</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_5_Dense</td><td>1,046.36 ns</td><td>125.130 ns</td><td>97.693 ns</td><td>955,692.0</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_5_Dense</td><td>102.64 ns</td><td>8.245 ns</td><td>6.437 ns</td><td>9,742,935.7</td><td>0.10</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_5_Sparse</td><td>934.66 ns</td><td>20.780 ns</td><td>16.223 ns</td><td>1,069,913.4</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_5_Sparse</td><td>101.65 ns</td><td>9.092 ns</td><td>7.098 ns</td><td>9,838,085.7</td><td>0.11</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_6_Dense</td><td>1,240.67 ns</td><td>37.546 ns</td><td>29.314 ns</td><td>806,017.5</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_6_Dense</td><td>118.40 ns</td><td>7.415 ns</td><td>5.789 ns</td><td>8,446,154.8</td><td>0.10</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_6_Sparse</td><td>1,271.62 ns</td><td>56.327 ns</td><td>43.976 ns</td><td>786,398.2</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_6_Sparse</td><td>114.67 ns</td><td>1.255 ns</td><td>0.747 ns</td><td>8,720,462.0</td><td>0.09</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_7_Dense</td><td>1,594.68 ns</td><td>51.097 ns</td><td>39.893 ns</td><td>627,083.6</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_7_Dense</td><td>142.47 ns</td><td>12.314 ns</td><td>9.614 ns</td><td>7,019,075.3</td><td>0.09</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_7_Sparse</td><td>1,612.23 ns</td><td>50.809 ns</td><td>39.669 ns</td><td>620,258.5</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_7_Sparse</td><td>140.57 ns</td><td>11.289 ns</td><td>8.813 ns</td><td>7,113,953.7</td><td>0.09</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_8_Dense</td><td>2,013.97 ns</td><td>83.505 ns</td><td>60.380 ns</td><td>496,532.6</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_8_Dense</td><td>160.12 ns</td><td>11.652 ns</td><td>8.425 ns</td><td>6,245,209.3</td><td>0.08</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_8_Sparse</td><td>2,103.50 ns</td><td>128.186 ns</td><td>100.079 ns</td><td>475,397.2</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_8_Sparse</td><td>154.25 ns</td><td>2.290 ns</td><td>1.515 ns</td><td>6,482,926.6</td><td>0.07</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_9_Dense</td><td>2,600.94 ns</td><td>117.310 ns</td><td>91.588 ns</td><td>384,476.4</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_9_Dense</td><td>187.80 ns</td><td>7.700 ns</td><td>5.568 ns</td><td>5,324,885.4</td><td>0.07</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>32B_9_Sparse</td><td>2,453.66 ns</td><td>87.883 ns</td><td>68.614 ns</td><td>407,554.5</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>32B_9_Sparse</td><td>178.94 ns</td><td>1.764 ns</td><td>1.050 ns</td><td>5,588,536.3</td><td>0.07</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>65536B_3_Sparse</td><td>12,089.40 ns</td><td>120.622 ns</td><td>79.784 ns</td><td>82,717.1</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>65536B_3_Sparse</td><td>12,184.65 ns</td><td>981.069 ns</td><td>765.954 ns</td><td>82,070.5</td><td>1.01</td><td>0.06</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_2_Dense</td><td>403.39 ns</td><td>11.599 ns</td><td>7.672 ns</td><td>2,479,008.7</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_2_Dense</td><td>164.42 ns</td><td>4.670 ns</td><td>3.089 ns</td><td>6,081,964.5</td><td>0.41</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_2_Sparse</td><td>419.14 ns</td><td>21.176 ns</td><td>16.533 ns</td><td>2,385,828.5</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_2_Sparse</td><td>171.51 ns</td><td>10.312 ns</td><td>8.051 ns</td><td>5,830,672.4</td><td>0.41</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_3_Dense</td><td>700.45 ns</td><td>19.705 ns</td><td>13.033 ns</td><td>1,427,652.6</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_3_Dense</td><td>272.70 ns</td><td>17.349 ns</td><td>13.545 ns</td><td>3,667,016.6</td><td>0.39</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_3_Sparse</td><td>692.31 ns</td><td>15.788 ns</td><td>11.416 ns</td><td>1,444,437.8</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_3_Sparse</td><td>258.11 ns</td><td>20.339 ns</td><td>15.880 ns</td><td>3,874,251.6</td><td>0.37</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_4_Dense</td><td>966.03 ns</td><td>16.704 ns</td><td>13.041 ns</td><td>1,035,169.5</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_4_Dense</td><td>349.39 ns</td><td>20.921 ns</td><td>16.334 ns</td><td>2,862,129.1</td><td>0.36</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_4_Sparse</td><td>975.11 ns</td><td>25.543 ns</td><td>18.469 ns</td><td>1,025,528.1</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_4_Sparse</td><td>348.87 ns</td><td>19.118 ns</td><td>14.926 ns</td><td>2,866,367.2</td><td>0.36</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_5_Dense</td><td>1,321.55 ns</td><td>76.018 ns</td><td>59.350 ns</td><td>756,684.4</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_5_Dense</td><td>447.19 ns</td><td>22.988 ns</td><td>17.947 ns</td><td>2,236,194.0</td><td>0.34</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_5_Sparse</td><td>1,303.26 ns</td><td>37.594 ns</td><td>27.183 ns</td><td>767,303.9</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_5_Sparse</td><td>452.59 ns</td><td>37.651 ns</td><td>29.395 ns</td><td>2,209,494.0</td><td>0.35</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_6_Dense</td><td>1,632.70 ns</td><td>29.730 ns</td><td>21.497 ns</td><td>612,481.8</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_6_Dense</td><td>550.49 ns</td><td>22.262 ns</td><td>17.381 ns</td><td>1,816,566.3</td><td>0.34</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_6_Sparse</td><td>1,737.39 ns</td><td>72.183 ns</td><td>47.744 ns</td><td>575,577.4</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_6_Sparse</td><td>527.08 ns</td><td>29.288 ns</td><td>21.177 ns</td><td>1,897,241.3</td><td>0.30</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_7_Dense</td><td>2,276.91 ns</td><td>169.647 ns</td><td>132.450 ns</td><td>439,192.0</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_7_Dense</td><td>676.81 ns</td><td>47.113 ns</td><td>36.783 ns</td><td>1,477,510.1</td><td>0.30</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_7_Sparse</td><td>2,079.40 ns</td><td>66.241 ns</td><td>47.897 ns</td><td>480,907.5</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_7_Sparse</td><td>621.04 ns</td><td>48.966 ns</td><td>38.229 ns</td><td>1,610,201.3</td><td>0.30</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_8_Dense</td><td>2,549.88 ns</td><td>124.383 ns</td><td>97.110 ns</td><td>392,175.4</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_8_Dense</td><td>714.29 ns</td><td>52.024 ns</td><td>40.617 ns</td><td>1,399,998.0</td><td>0.28</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_8_Sparse</td><td>2,608.12 ns</td><td>131.922 ns</td><td>102.996 ns</td><td>383,417.9</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_8_Sparse</td><td>684.34 ns</td><td>28.375 ns</td><td>22.153 ns</td><td>1,461,253.5</td><td>0.26</td><td>0.01</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_9_Dense</td><td>3,110.45 ns</td><td>168.928 ns</td><td>131.888 ns</td><td>321,496.6</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_9_Dense</td><td>798.67 ns</td><td>52.249 ns</td><td>40.793 ns</td><td>1,252,086.3</td><td>0.26</td><td>0.02</td><td>-</td><td>NA</td>
+</tr><tr><td>OriginalSimd</td><td>8B_9_Sparse</td><td>3,223.78 ns</td><td>157.542 ns</td><td>113.913 ns</td><td>310,194.8</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>Optimized</td><td>8B_9_Sparse</td><td>798.03 ns</td><td>32.041 ns</td><td>25.015 ns</td><td>1,253,090.1</td><td>0.25</td><td>0.01</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

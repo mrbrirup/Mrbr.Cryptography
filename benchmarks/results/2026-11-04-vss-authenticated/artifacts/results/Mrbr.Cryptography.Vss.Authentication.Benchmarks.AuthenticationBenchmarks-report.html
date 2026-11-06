@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 42.75 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-RCBXQR : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  IterationCount=12  IterationTime=120ms  
+LaunchCount=1  UnrollFactor=1  WarmupCount=15  
+</code></pre>
+
+<table>
+<thead><tr><th>Method            </th><th>Scenario   </th><th>Mean  </th><th>Error</th><th>StdDev</th><th>Op/s</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>CreateEnvelope</td><td>1024B_k3_m3_Dense</td><td>87.09 μs</td><td>2.157 μs</td><td>1.559 μs</td><td>11,481.92</td><td>-</td>
+</tr><tr><td>AuthenticatePacket</td><td>1024B_k3_m3_Dense</td><td>104.24 μs</td><td>4.040 μs</td><td>3.154 μs</td><td>9,593.47</td><td>-</td>
+</tr><tr><td>PlainVerifyShare</td><td>1024B_k3_m3_Dense</td><td>10,340.64 μs</td><td>194.042 μs</td><td>140.305 μs</td><td>96.71</td><td>-</td>
+</tr><tr><td>AuthenticatedVerifyShare</td><td>1024B_k3_m3_Dense</td><td>10,443.00 μs</td><td>111.986 μs</td><td>87.432 μs</td><td>95.76</td><td>-</td>
+</tr><tr><td>PlainReconstruct</td><td>1024B_k3_m3_Dense</td><td>25,489.45 μs</td><td>861.024 μs</td><td>622.577 μs</td><td>39.23</td><td>-</td>
+</tr><tr><td>AuthenticatedReconstruct</td><td>1024B_k3_m3_Dense</td><td>25,499.15 μs</td><td>585.916 μs</td><td>387.547 μs</td><td>39.22</td><td>-</td>
+</tr><tr><td>CreateEnvelope</td><td>32B_k2_m2_Dense</td><td>73.27 μs</td><td>3.219 μs</td><td>2.513 μs</td><td>13,648.21</td><td>-</td>
+</tr><tr><td>AuthenticatePacket</td><td>32B_k2_m2_Dense</td><td>96.21 μs</td><td>2.386 μs</td><td>1.863 μs</td><td>10,394.22</td><td>-</td>
+</tr><tr><td>PlainVerifyShare</td><td>32B_k2_m2_Dense</td><td>422.90 μs</td><td>8.337 μs</td><td>6.509 μs</td><td>2,364.65</td><td>-</td>
+</tr><tr><td>AuthenticatedVerifyShare</td><td>32B_k2_m2_Dense</td><td>517.14 μs</td><td>7.653 μs</td><td>5.062 μs</td><td>1,933.72</td><td>-</td>
+</tr><tr><td>PlainReconstruct</td><td>32B_k2_m2_Dense</td><td>681.90 μs</td><td>16.302 μs</td><td>12.727 μs</td><td>1,466.49</td><td>-</td>
+</tr><tr><td>AuthenticatedReconstruct</td><td>32B_k2_m2_Dense</td><td>788.27 μs</td><td>49.412 μs</td><td>38.578 μs</td><td>1,268.60</td><td>-</td>
+</tr><tr><td>CreateEnvelope</td><td>32B_k3_m3_Dense</td><td>72.33 μs</td><td>1.543 μs</td><td>1.204 μs</td><td>13,826.03</td><td>-</td>
+</tr><tr><td>AuthenticatePacket</td><td>32B_k3_m3_Dense</td><td>96.89 μs</td><td>3.235 μs</td><td>2.525 μs</td><td>10,321.20</td><td>-</td>
+</tr><tr><td>PlainVerifyShare</td><td>32B_k3_m3_Dense</td><td>621.24 μs</td><td>23.099 μs</td><td>18.034 μs</td><td>1,609.68</td><td>-</td>
+</tr><tr><td>AuthenticatedVerifyShare</td><td>32B_k3_m3_Dense</td><td>707.67 μs</td><td>15.269 μs</td><td>11.041 μs</td><td>1,413.09</td><td>-</td>
+</tr><tr><td>PlainReconstruct</td><td>32B_k3_m3_Dense</td><td>1,023.55 μs</td><td>48.665 μs</td><td>37.995 μs</td><td>976.99</td><td>-</td>
+</tr><tr><td>AuthenticatedReconstruct</td><td>32B_k3_m3_Dense</td><td>1,091.12 μs</td><td>21.289 μs</td><td>14.082 μs</td><td>916.49</td><td>-</td>
+</tr><tr><td>CreateEnvelope</td><td>32B_k3_m3_Sparse</td><td>72.45 μs</td><td>1.173 μs</td><td>0.848 μs</td><td>13,802.15</td><td>-</td>
+</tr><tr><td>AuthenticatePacket</td><td>32B_k3_m3_Sparse</td><td>99.06 μs</td><td>5.875 μs</td><td>4.587 μs</td><td>10,094.60</td><td>-</td>
+</tr><tr><td>PlainVerifyShare</td><td>32B_k3_m3_Sparse</td><td>819.69 μs</td><td>29.310 μs</td><td>19.387 μs</td><td>1,219.97</td><td>-</td>
+</tr><tr><td>AuthenticatedVerifyShare</td><td>32B_k3_m3_Sparse</td><td>917.39 μs</td><td>18.366 μs</td><td>13.280 μs</td><td>1,090.05</td><td>-</td>
+</tr><tr><td>PlainReconstruct</td><td>32B_k3_m3_Sparse</td><td>1,009.69 μs</td><td>18.984 μs</td><td>12.557 μs</td><td>990.40</td><td>-</td>
+</tr><tr><td>AuthenticatedReconstruct</td><td>32B_k3_m3_Sparse</td><td>1,121.79 μs</td><td>60.974 μs</td><td>47.604 μs</td><td>891.43</td><td>-</td>
+</tr><tr><td>CreateEnvelope</td><td>32B_k5_m5_Dense</td><td>74.18 μs</td><td>2.194 μs</td><td>1.713 μs</td><td>13,480.02</td><td>-</td>
+</tr><tr><td>AuthenticatePacket</td><td>32B_k5_m5_Dense</td><td>94.70 μs</td><td>0.833 μs</td><td>0.602 μs</td><td>10,559.30</td><td>-</td>
+</tr><tr><td>PlainVerifyShare</td><td>32B_k5_m5_Dense</td><td>1,120.95 μs</td><td>52.169 μs</td><td>40.730 μs</td><td>892.10</td><td>-</td>
+</tr><tr><td>AuthenticatedVerifyShare</td><td>32B_k5_m5_Dense</td><td>1,188.75 μs</td><td>15.435 μs</td><td>11.160 μs</td><td>841.22</td><td>-</td>
+</tr><tr><td>PlainReconstruct</td><td>32B_k5_m5_Dense</td><td>1,695.16 μs</td><td>85.326 μs</td><td>66.617 μs</td><td>589.92</td><td>-</td>
+</tr><tr><td>AuthenticatedReconstruct</td><td>32B_k5_m5_Dense</td><td>1,792.53 μs</td><td>88.902 μs</td><td>69.409 μs</td><td>557.87</td><td>-</td>
+</tr><tr><td>CreateEnvelope</td><td>32B_k9_m9_Dense</td><td>75.11 μs</td><td>3.871 μs</td><td>3.022 μs</td><td>13,313.67</td><td>-</td>
+</tr><tr><td>AuthenticatePacket</td><td>32B_k9_m9_Dense</td><td>99.80 μs</td><td>5.924 μs</td><td>4.625 μs</td><td>10,020.45</td><td>-</td>
+</tr><tr><td>PlainVerifyShare</td><td>32B_k9_m9_Dense</td><td>2,256.76 μs</td><td>23.451 μs</td><td>15.511 μs</td><td>443.11</td><td>-</td>
+</tr><tr><td>AuthenticatedVerifyShare</td><td>32B_k9_m9_Dense</td><td>2,383.87 μs</td><td>39.081 μs</td><td>25.850 μs</td><td>419.49</td><td>-</td>
+</tr><tr><td>PlainReconstruct</td><td>32B_k9_m9_Dense</td><td>3,252.47 μs</td><td>182.356 μs</td><td>142.372 μs</td><td>307.46</td><td>-</td>
+</tr><tr><td>AuthenticatedReconstruct</td><td>32B_k9_m9_Dense</td><td>3,121.25 μs</td><td>127.132 μs</td><td>99.256 μs</td><td>320.38</td><td>-</td>
+</tr><tr><td>CreateEnvelope</td><td>62B_k3_m3_Dense</td><td>75.23 μs</td><td>5.229 μs</td><td>4.082 μs</td><td>13,291.92</td><td>-</td>
+</tr><tr><td>AuthenticatePacket</td><td>62B_k3_m3_Dense</td><td>97.89 μs</td><td>5.227 μs</td><td>4.081 μs</td><td>10,215.46</td><td>-</td>
+</tr><tr><td>PlainVerifyShare</td><td>62B_k3_m3_Dense</td><td>639.71 μs</td><td>29.195 μs</td><td>22.793 μs</td><td>1,563.22</td><td>-</td>
+</tr><tr><td>AuthenticatedVerifyShare</td><td>62B_k3_m3_Dense</td><td>767.73 μs</td><td>37.903 μs</td><td>27.406 μs</td><td>1,302.53</td><td>-</td>
+</tr><tr><td>PlainReconstruct</td><td>62B_k3_m3_Dense</td><td>1,004.78 μs</td><td>27.948 μs</td><td>21.820 μs</td><td>995.24</td><td>-</td>
+</tr><tr><td>AuthenticatedReconstruct</td><td>62B_k3_m3_Dense</td><td>1,141.38 μs</td><td>90.929 μs</td><td>70.991 μs</td><td>876.13</td><td>-</td>
+</tr><tr><td>CreateEnvelope</td><td>8B_k3_m3_Dense</td><td>74.03 μs</td><td>4.612 μs</td><td>3.601 μs</td><td>13,508.82</td><td>-</td>
+</tr><tr><td>AuthenticatePacket</td><td>8B_k3_m3_Dense</td><td>101.50 μs</td><td>3.967 μs</td><td>2.624 μs</td><td>9,851.99</td><td>-</td>
+</tr><tr><td>PlainVerifyShare</td><td>8B_k3_m3_Dense</td><td>317.22 μs</td><td>12.815 μs</td><td>10.005 μs</td><td>3,152.40</td><td>-</td>
+</tr><tr><td>AuthenticatedVerifyShare</td><td>8B_k3_m3_Dense</td><td>407.24 μs</td><td>12.244 μs</td><td>9.559 μs</td><td>2,455.54</td><td>-</td>
+</tr><tr><td>PlainReconstruct</td><td>8B_k3_m3_Dense</td><td>516.57 μs</td><td>12.799 μs</td><td>9.255 μs</td><td>1,935.86</td><td>-</td>
+</tr><tr><td>AuthenticatedReconstruct</td><td>8B_k3_m3_Dense</td><td>633.22 μs</td><td>41.027 μs</td><td>29.665 μs</td><td>1,579.22</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>

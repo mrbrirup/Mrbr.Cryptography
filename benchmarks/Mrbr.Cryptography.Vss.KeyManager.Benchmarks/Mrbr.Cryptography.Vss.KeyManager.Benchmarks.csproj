@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../ServiceProjects.props" />
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.16.0-preview.2" />
+    <ProjectReference Include="../../src/Mrbr.Cryptography.Vss.KeyManager/Mrbr.Cryptography.Vss.KeyManager.csproj" />
+    <ProjectReference Include="$(EncryptionManagerProject)" />
+    <Compile Include="../../eng/IntegrationKeyEnvironment.cs" Link="IntegrationKeyEnvironment.cs" />
+    <Compile Include="../Mrbr.Cryptography.IntegrationBenchmarks/IntegrationConfig.cs" Link="IntegrationConfig.cs" />
+  </ItemGroup>
+</Project>

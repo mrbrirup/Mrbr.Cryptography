@@ -1,0 +1,124 @@
+using System.Security.Cryptography;
+using BenchmarkDotNet.Attributes;
+using Mrbr.Cryptography.Integration;
+using Mrbr.Cryptography.IntegrationBenchmarks;
+using Mrbr.Cryptography.Vss.Authentication;
+using Mrbr.Service.EncryptionManager.Enums.Algorithms;
+using Mrbr.Service.EncryptionManager.Services;
+using Sharing = Mrbr.Cryptography.Vss.KeyManager.AuthenticatedKeySharing;
+
+namespace Mrbr.Cryptography.Vss.KeyManager.Benchmarks;
+
+public sealed record RecoveryScenario(byte Source, int KeyLength, int Threshold = 3, int Count = 5)
+{
+    public override string ToString() => $"{(Source == 0 ? "Block" : "Matrix")}_AES{KeyLength * 8}_{Threshold}of{Count}";
+}
+
+// Fresh context initialization is explicitly included only in the methods naming it.
+[MemoryDiagnoser, Config(typeof(IntegrationConfig))]
+public class RecoveryBenchmarks
+{
+    [ParamsSource(nameof(Scenarios))] public RecoveryScenario Scenario { get; set; } = null!;
+    public IEnumerable<RecoveryScenario> Scenarios =>
+    [new(0, 16), new(0, 24), new(0, 32), new(1, 16), new(1, 24), new(1, 32), new(0, 32, 2, 3), new(0, 32, 9, 9)];
+
+    private IntegrationKeyEnvironment environment = null!;
+    private AesGcmKeyDecryptor decryptor = null!;
+    private byte[] seed = null!, publicKey = null!, application = null!, shares = null!, packet = null!, selected = null!;
+    private byte[] creationWorkspace = null!, recoveryWorkspace = null!, directShares = null!, directPacket = null!, directContext = null!, directCommitments = null!;
+    private byte[] key = null!, expectedKey = null!, cipher = null!, plaintext = null!, output = null!, aad = null!, aadWorkspace = null!;
+    private ulong handle;
+
+    [GlobalSetup]
+    public void Setup()
+    {
+        environment = new();
+        seed = new byte[32]; publicKey = new byte[32]; application = "Mrbr.AuthenticatedRecovery/benchmark-key"u8.ToArray();
+        AuthenticatedCommitmentPacket.GenerateSigningSeed(seed); AuthenticatedCommitmentPacket.DerivePublicKey(seed, publicKey);
+        plaintext = new byte[1024];
+        for (int i = 0; i < plaintext.Length; i++) plaintext[i] = (byte)((i * 37 + 11) & 255);
+        cipher = new byte[plaintext.Length + 28]; output = new byte[plaintext.Length]; aad = "cipher-purpose/v1"u8.ToArray();
+        aadWorkspace = new byte[aad.Length + 8];
+        new CryptographicService(environment.Service).Encrypt(Scenario.Source, plaintext, cipher, out handle,
+            new EncryptionOptions { Algorithm = Scenario.KeyLength switch { 16 => SymmetricEncryptionAlgorithms.AES128, 24 => SymmetricEncryptionAlgorithms.AES192, _ => SymmetricEncryptionAlgorithms.AES256 }, AssociatedData = aad });
+        expectedKey = new byte[Scenario.KeyLength]; key = new byte[Scenario.KeyLength]; environment.Service.GetKey(handle, expectedKey);
+        shares = new byte[PedersenVss.GetSharesLength(Scenario.KeyLength, Scenario.Count)];
+        packet = new byte[Sharing.GetPacketLength(Scenario.KeyLength, Scenario.Threshold, application.Length)];
+        creationWorkspace = new byte[Sharing.GetCreationWorkspaceLength(Scenario.KeyLength, Scenario.Threshold, application.Length)];
+        recoveryWorkspace = new byte[Sharing.GetContextLength(application.Length)];
+        directShares = new byte[shares.Length]; directPacket = new byte[packet.Length];
+        directContext = new byte[recoveryWorkspace.Length];
+        directCommitments = new byte[PedersenVss.GetCommitmentsLength(Scenario.KeyLength, Scenario.Threshold)];
+        ReplayShareAndSign(); DirectReplayShareAndSign();
+        int shareLength = PedersenVss.GetShareLength(Scenario.KeyLength);
+        selected = new byte[shareLength * Scenario.Threshold];
+        for (int i = 0; i < Scenario.Threshold; i++)
+            shares.AsSpan((Scenario.Count - i - 1) * shareLength, shareLength).CopyTo(selected.AsSpan(i * shareLength));
+        RecoverKey();
+        if (!expectedKey.AsSpan().SequenceEqual(key)) throw new InvalidOperationException("Key recovery mismatch.");
+        decryptor = new(key); // The reused context imports an actually authenticated recovered key once.
+        CryptographicOperations.ZeroMemory(key);
+        ReusedRecoveredKeyDecrypt();
+        if (!plaintext.AsSpan().SequenceEqual(output)) throw new InvalidOperationException("Reused decryption mismatch.");
+        RecoverInitializeAndDecrypt();
+        if (!plaintext.AsSpan().SequenceEqual(output)) throw new InvalidOperationException("Fresh recovery/decryption mismatch.");
+        Sharing.WriteContext(handle, Scenario.KeyLength, application, directContext);
+        if (!AuthenticatedCommitmentPacket.TryVerify(directPacket, directContext, 42, publicKey, out var commitments)) throw new InvalidOperationException("Direct signature failed.");
+        PedersenVss.Reconstruct(directShares.AsSpan(0, shareLength * Scenario.Threshold), commitments, key);
+        if (!expectedKey.AsSpan().SequenceEqual(key)) throw new InvalidOperationException("Direct key recovery mismatch.");
+        CryptographicOperations.ZeroMemory(key); CryptographicOperations.ZeroMemory(directContext);
+    }
+
+    [Benchmark]
+    public int DirectReplayShareAndSign()
+    {
+        try
+        {
+            environment.Service.GetKey(handle, key);
+            Sharing.WriteContext(handle, Scenario.KeyLength, application, directContext);
+            int written = PedersenVss.CreateShares(key, Scenario.Threshold, Scenario.Count, directShares, directCommitments);
+            AuthenticatedCommitmentPacket.Create(directCommitments, directContext, 42, seed, directPacket);
+            return written;
+        }
+        finally { CryptographicOperations.ZeroMemory(key); CryptographicOperations.ZeroMemory(directCommitments); CryptographicOperations.ZeroMemory(directContext); }
+    }
+
+    [Benchmark]
+    public int ReplayShareAndSign() => Sharing.CreateKeyShares(environment.Service, handle, Scenario.KeyLength, Scenario.Threshold,
+        Scenario.Count, application, 42, seed, shares, packet, creationWorkspace);
+
+    [Benchmark]
+    public int RecoverKey() => Sharing.ReconstructKey(selected, packet, handle, Scenario.KeyLength, application, 42, publicKey, key, recoveryWorkspace);
+
+    [Benchmark]
+    public int ReusedRecoveredKeyDecrypt() => decryptor.Decrypt(handle, cipher, output, aad, aadWorkspace);
+
+    [Benchmark]
+    public void InitializeRecoveredKeyContext()
+    {
+        using var context = new AesGcmKeyDecryptor(expectedKey);
+    }
+
+    [Benchmark]
+    public int RecoverInitializeAndDecrypt()
+    {
+        Span<byte> recoveredKey = stackalloc byte[Scenario.KeyLength];
+        try
+        {
+            Sharing.ReconstructKey(selected, packet, handle, Scenario.KeyLength, application, 42, publicKey, recoveredKey, recoveryWorkspace);
+            using var context = new AesGcmKeyDecryptor(recoveredKey);
+            CryptographicOperations.ZeroMemory(recoveredKey);
+            return context.Decrypt(handle, cipher, output, aad, aadWorkspace);
+        }
+        finally { CryptographicOperations.ZeroMemory(recoveredKey); }
+    }
+
+    [GlobalCleanup]
+    public void Cleanup()
+    {
+        decryptor.Dispose();
+        foreach (byte[] buffer in new[] { seed, publicKey, application, shares, packet, selected, creationWorkspace, recoveryWorkspace,
+            directShares, directPacket, directContext, directCommitments, key, expectedKey, cipher, plaintext, output, aad, aadWorkspace }) CryptographicOperations.ZeroMemory(buffer);
+        environment.Dispose();
+    }
+}

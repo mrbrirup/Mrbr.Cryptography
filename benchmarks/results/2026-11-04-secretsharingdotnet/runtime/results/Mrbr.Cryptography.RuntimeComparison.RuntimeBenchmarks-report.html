@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.RuntimeComparison.RuntimeBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 43.99 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]    : .NET 10.0.14 (10.0.14, 10.0.1426.52326), X64 RyuJIT x86-64-v3
+  Runtime10 : .NET 10.0.14 (10.0.14, 10.0.1426.52326), X64 RyuJIT x86-64-v3
+  Runtime11 : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  IterationCount=12  IterationTime=150ms  
+LaunchCount=1  UnrollFactor=1  WarmupCount=15  
+</code></pre>
+
+<table>
+<thead><tr><th>Method     </th><th>Job</th><th>Runtime</th><th>Length</th><th>Mean   </th><th>Error  </th><th>StdDev </th><th>Op/s</th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>BigCreate</td><td>Runtime10</td><td>.NET 10.0</td><td>32</td><td>16.74 μs</td><td>0.566 μs</td><td>0.374 μs</td><td>59,724.195</td><td>3.6752</td><td>3.5639</td><td>23.09 KB</td>
+</tr><tr><td>SecureCreate</td><td>Runtime10</td><td>.NET 10.0</td><td>32</td><td>773.69 μs</td><td>74.469 μs</td><td>58.140 μs</td><td>1,292.511</td><td>-</td><td>-</td><td>20.7 KB</td>
+</tr><tr><td>BigReconstruct</td><td>Runtime10</td><td>.NET 10.0</td><td>32</td><td>42.91 μs</td><td>3.357 μs</td><td>2.621 μs</td><td>23,306.579</td><td>8.9781</td><td>8.7140</td><td>55.55 KB</td>
+</tr><tr><td>SecureReconstruct</td><td>Runtime10</td><td>.NET 10.0</td><td>32</td><td>187,722.42 μs</td><td>1,640.281 μs</td><td>1,084.945 μs</td><td>5.327</td><td>1250.0000</td><td>-</td><td>7886.78 KB</td>
+</tr><tr><td>BigCreate</td><td>Runtime11</td><td>.NET 11.0</td><td>32</td><td>18.49 μs</td><td>0.443 μs</td><td>0.320 μs</td><td>54,078.980</td><td>3.5651</td><td>3.4462</td><td>22.44 KB</td>
+</tr><tr><td>SecureCreate</td><td>Runtime11</td><td>.NET 11.0</td><td>32</td><td>737.11 μs</td><td>44.346 μs</td><td>34.622 μs</td><td>1,356.658</td><td>-</td><td>-</td><td>20.7 KB</td>
+</tr><tr><td>BigReconstruct</td><td>Runtime11</td><td>.NET 11.0</td><td>32</td><td>50.41 μs</td><td>2.628 μs</td><td>2.052 μs</td><td>19,836.661</td><td>8.4879</td><td>8.1735</td><td>53.67 KB</td>
+</tr><tr><td>SecureReconstruct</td><td>Runtime11</td><td>.NET 11.0</td><td>32</td><td>182,043.53 μs</td><td>696.740 μs</td><td>543.969 μs</td><td>5.493</td><td>1250.0000</td><td>-</td><td>7886.78 KB</td>
+</tr><tr><td>BigCreate</td><td>Runtime10</td><td>.NET 10.0</td><td>128</td><td>21.39 μs</td><td>0.358 μs</td><td>0.259 μs</td><td>46,746.322</td><td>4.8126</td><td>2.3334</td><td>29.78 KB</td>
+</tr><tr><td>SecureCreate</td><td>Runtime10</td><td>.NET 10.0</td><td>128</td><td>2,477.65 μs</td><td>33.795 μs</td><td>20.111 μs</td><td>403.608</td><td>-</td><td>-</td><td>20.82 KB</td>
+</tr><tr><td>BigReconstruct</td><td>Runtime10</td><td>.NET 10.0</td><td>128</td><td>70.00 μs</td><td>4.147 μs</td><td>3.237 μs</td><td>14,284.847</td><td>10.4302</td><td>5.2151</td><td>65.69 KB</td>
+</tr><tr><td>SecureReconstruct</td><td>Runtime10</td><td>.NET 10.0</td><td>128</td><td>763,818.08 μs</td><td>53,605.839 μs</td><td>41,851.913 μs</td><td>1.309</td><td>3000.0000</td><td>-</td><td>19232.81 KB</td>
+</tr><tr><td>BigCreate</td><td>Runtime11</td><td>.NET 11.0</td><td>128</td><td>24.44 μs</td><td>1.185 μs</td><td>0.925 μs</td><td>40,914.635</td><td>4.6609</td><td>1.6072</td><td>29.12 KB</td>
+</tr><tr><td>SecureCreate</td><td>Runtime11</td><td>.NET 11.0</td><td>128</td><td>2,327.79 μs</td><td>23.492 μs</td><td>18.341 μs</td><td>429.592</td><td>-</td><td>-</td><td>20.82 KB</td>
+</tr><tr><td>BigReconstruct</td><td>Runtime11</td><td>.NET 11.0</td><td>128</td><td>70.32 μs</td><td>4.021 μs</td><td>3.139 μs</td><td>14,220.592</td><td>10.3697</td><td>4.9594</td><td>63.8 KB</td>
+</tr><tr><td>SecureReconstruct</td><td>Runtime11</td><td>.NET 11.0</td><td>128</td><td>817,212.92 μs</td><td>43,860.673 μs</td><td>34,243.529 μs</td><td>1.224</td><td>3000.0000</td><td>-</td><td>19232.81 KB</td>
+</tr></tbody></table>
+</body>
+</html>

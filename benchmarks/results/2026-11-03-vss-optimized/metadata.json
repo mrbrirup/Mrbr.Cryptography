@@ -1,0 +1,213 @@
+{
+  "CapturedAtUtc": "2026-11-03T23:50:13.8063313+00:00",
+  "TimeZone": "Europe/London",
+  "TargetFramework": "net11.0",
+  "Sdk": "11.0.100-rc.3.26522.148",
+  "NativePackage": "libsodium 1.0.22",
+  "NativeWindowsX64DllSHA256": "64A1F143868309069F0A0A3C8141C0853C4F17243DDF734E92B11C5411739771",
+  "NativePackageSHA512": "/dhmQ5+bHFAUyK8Jg0aC6mdmYHu+ou1PCIL+YCKaHOSaJXyU5bG3KH/quFwznU+SsPYo2MkRLuMAaGDJOpHYMQ==",
+  "PowerPlan": "Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)",
+  "Job": {
+    "WarmupCount": 15,
+    "LaunchCount": 1,
+    "UnrollFactor": 1,
+    "IterationCount": 12,
+    "IterationTimeMs": 120
+  },
+  "Command": "dotnet run --project benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks -c Release --no-build -- --filter '*' --launchCount 1 --warmupCount 15 --iterationCount 12 --iterationTime 120 --unrollFactor 1 --artifacts benchmarks/results/2026-11-03-vss-optimized/artifacts",
+  "Verification": {
+    "Release": "410 passed (228 core + 129 VSS + 53 integration)",
+    "ByteIdenticalDeterministicCreationChecked": true,
+    "Debug": "410 passed (228 core + 129 VSS + 53 integration)",
+    "AllByteCoordinatesChecked": true,
+    "BuildErrors": 0,
+    "IdentityOpeningLemmaChecked": true,
+    "IndependentBigIntegerBasisOracle": true,
+    "BuildWarnings": 0
+  },
+  "DiagnosticProfile": {
+    "DeriveHUs": 25.0,
+    "FullMultiplyRangeUs": "92.35..101.30",
+    "EncodedPointAdditionUs": 23.64,
+    "AdditionChainMaximumOperations": 3,
+    "DiagnosticOnly": true,
+    "Repetitions": 300
+  },
+  "BaselineSnapshots": [
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Baselines/PedersenVss.cs.original.txt",
+      "SHA256": "E193DB682A89F41BA0C1704F8E8A956C8D0D5AA368E52FC39D7D0521C8498629",
+      "MatchesRecordedVss": true
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Baselines/Ristretto.cs.original.txt",
+      "SHA256": "C698BAEB21A1125CDEEB6D9E51FF5D312C0634E75C67F9747EA7A81E645970C1",
+      "MatchesRecordedVss": true
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Baselines/Sodium.cs.original.txt",
+      "SHA256": "6F4DC996D4848C57EBB6B0B0A0D3D33D474D0D78422E329D1163B79091761FBB",
+      "MatchesRecordedVss": true
+    }
+  ],
+  "NonVerifyingCore": [
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+      "SHA256": "77EC35CF7CA7047256CEDDC536E35CCEBA21A86CEB28A170C4C323A80747AE8B",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256Simd.cs",
+      "SHA256": "15956F459DE818DF4775BFC3732181D4B6B983B9714EC882CF1C039F9BF062D5",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+      "SHA256": "48EAAE746B504D6B979C5B5EAB4608618CD7E6EAC0976114013417BB6BE38737",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.cs",
+      "SHA256": "96C47B6753DBB3BFE6DDFDF4D745698131519CCA0216970CA144AB62E31C5F10",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.Tables.cs",
+      "SHA256": "8874DD39CC4A199F4CCB4F1ADB6A376499206CD332076557A0FB2A457044BD2C",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Mrbr.Cryptography.csproj",
+      "SHA256": "7F457A493233BC3C15CCB45575CDAE83045C0F87997C5E5A4D1614FE85D701BF",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/ShamirSharedSecret.cs",
+      "SHA256": "21318599ECE6D4070A8B0CA79DEBAD828498872DE2790A9C175C3E3CB0F637EF",
+      "Unchanged": true
+    }
+  ],
+  "SourceFingerprints": [
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Baselines/PedersenVss.cs",
+      "SHA256": "5779CCB2F30783304B57072B7BF08B32AA4403064A06BE918E4FE615B580D105"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Baselines/PedersenVss.cs.original.txt",
+      "SHA256": "E193DB682A89F41BA0C1704F8E8A956C8D0D5AA368E52FC39D7D0521C8498629"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Baselines/Ristretto.cs",
+      "SHA256": "4885E68ECB6DBF56995B8A8280711688FAC1E3065A306F4C02869305D893A06E"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Baselines/Ristretto.cs.original.txt",
+      "SHA256": "C698BAEB21A1125CDEEB6D9E51FF5D312C0634E75C67F9747EA7A81E645970C1"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Baselines/Sodium.cs",
+      "SHA256": "3AFC79D3518006F05A656DD0E018115B06B929F324A7E67FBF235D52D38534F7"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Baselines/Sodium.cs.original.txt",
+      "SHA256": "6F4DC996D4848C57EBB6B0B0A0D3D33D474D0D78422E329D1163B79091761FBB"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks.csproj",
+      "SHA256": "708536B68724B39651BE72711CD133E6213B66A4AF83CC96201CB645005909EA"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/NativeProfile.cs",
+      "SHA256": "A9A85ECFF53147FA00E5AD1BFFDC7F42A019F82CF295A979A9E0E1221E7BED83"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Program.cs",
+      "SHA256": "17DB7A6745E86C743CE393D12AA8FF77765AEEA57045354EA696694797D957B3"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/VerificationBenchmarks.cs",
+      "SHA256": "2E308846DD23BDAC281D24D0B429073F8F3D172127B5B2A719FB20CAE8E3C5BE"
+    },
+    {
+      "Path": "Directory.Build.props",
+      "SHA256": "79650925A72BB236C82439CBF5200FFB2E1EB7B3CD6EE347744E84DC66858A9C"
+    },
+    {
+      "Path": "global.json",
+      "SHA256": "19A39681EA81608656C557DC24D7112CB1B9B71D27D71197D261538B8A2DD675"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Ristretto.cs",
+      "SHA256": "4DDF2652965DF6E15E58ADEEB14961EC1A44A5BDE9EFA1CB3BD04A2594D9C0AA"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/SmallQuorumInterpolation.cs",
+      "SHA256": "E083376846BB55F59A5C8D1A488B27AFAEF90AE5DD021715D90691713179E8D0"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Sodium.cs",
+      "SHA256": "6F4DC996D4848C57EBB6B0B0A0D3D33D474D0D78422E329D1163B79091761FBB"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Mrbr.Cryptography.Vss.csproj",
+      "SHA256": "91E89C50101A2595740145BE60BD91ED9EBC47F4E99CBAA71D1E034D01A2B6C1"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/PedersenVss.cs",
+      "SHA256": "99FFC90C76DB3DB516EDC39B9CB223EDF5294F0D22B94583325AE829A3F9FB38"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Tests/AllocationTests.cs",
+      "SHA256": "38CF8ACB767814D6AA114A00FE591E6032C33C2443BDBA4A8E1D0A8869765BE1"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Tests/Mrbr.Cryptography.Vss.Tests.csproj",
+      "SHA256": "54926C19A17521AF26D2698A42A82C28C01B32D32DA082745A9E8E1A01A1A3CC"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Tests/OptimizationTests.cs",
+      "SHA256": "5D69607F7B5584B6EB79BECAC7A030A27235F976A82EF03705E46E5BDA2F0550"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Tests/PedersenVssTests.cs",
+      "SHA256": "8CB044D121675679BE087377574BD98ED1DA0FB48F54520B4756A6E508147D66"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Tests/PrimitiveTests.cs",
+      "SHA256": "62E0D4EBE1BE8F84F90D7FFC5B6123923ED4E69C804FD645D4CAF123E9BE6A74"
+    }
+  ],
+  "CompletedAtUtc": "2026-11-04T00:00:34.8718489+00:00",
+  "Host": {
+    "BenchmarkDotNetCaption": "BenchmarkDotNet",
+    "BenchmarkDotNetVersion": "0.16.0-preview.2",
+    "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+    "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+    "PhysicalProcessorCount": 1,
+    "PhysicalCoreCount": 6,
+    "LogicalCoreCount": 12,
+    "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+    "Architecture": "X64",
+    "HasAttachedDebugger": false,
+    "HasRyuJit": true,
+    "Configuration": "RELEASE",
+    "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+    "ChronometerFrequency": {
+      "Hertz": 10000000
+    },
+    "HardwareTimerKind": "Unknown"
+  },
+  "CompletedCases": 96,
+  "MatchedPairs": 48,
+  "MaximumManagedBytesPerOperation": 0,
+  "MeasuredGcCollections": 0,
+  "SourceUnchangedDuringMeasurement": true,
+  "SourceFilesWrittenSinceBenchmarkStart": 0,
+  "TotalBenchmarkSeconds": 477.37,
+  "BenchmarkExitCode": 0,
+  "MultimodalDistributionWarnings": [],
+  "ReportFingerprint": {
+    "Path": "E:\\Dev\\source\\Mrbr.Cryptography\\benchmarks\\results\\2026-11-03-vss-optimized\\artifacts\\results\\Mrbr.Cryptography.Vss.OptimizationBenchmarks.VerificationBenchmarks-report-full.json",
+    "SHA256": "39CE44ABDE109400533504166C2BFC92C9DEF310EB551B6FD3D356898B2A4C4C"
+  }
+}

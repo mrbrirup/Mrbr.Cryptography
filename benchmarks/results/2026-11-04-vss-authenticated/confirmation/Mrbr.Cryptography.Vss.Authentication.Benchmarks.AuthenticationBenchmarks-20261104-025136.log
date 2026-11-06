@@ -1,0 +1,768 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 4 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore gen.csproj /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1\a /p:BenchmarkDotNetGatherReferences=true --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1
+// command took 1.8 sec and exited with 0
+// start dotnet build gen.csproj -f net11.0 -c Release /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1\a /p:BenchmarkDotNetGatherReferences=true --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1
+// command took 17.23 sec and exited with 0
+// start dotnet build gen.csproj -f net11.0 -c Release /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1\a --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1
+// command took 4.51 sec and exited with 0
+// ***** Done, took 00:00:23 (23.78 sec)   *****
+// Found 4 benchmarks:
+//   AuthenticationBenchmarks.PlainReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=1024B_k3_m3_Dense]
+//   AuthenticationBenchmarks.AuthenticatedReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=1024B_k3_m3_Dense]
+//   AuthenticationBenchmarks.PlainReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=32B_k9_m9_Dense]
+//   AuthenticationBenchmarks.AuthenticatedReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=32B_k9_m9_Dense]
+
+// **************************
+// Benchmark: AuthenticationBenchmarks.PlainReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=1024B_k3_m3_Dense]
+// *** Execute ***
+// Launch: 1 / 2
+// Execute: dotnet Mrbr.Cryptography.Vss.Authentication.Benchmarks-gen.dll --ipcPort 56144 --benchmarkName "Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks.PlainReconstruct(Scenario: 1024B_k3_m3_Dense)" --job "IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 0 --benchmarkId 0 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 25349500.00 ns, 25.3495 ms/op
+WorkloadJitting  2: 30 op, 758168400.00 ns, 25.2723 ms/op
+WorkloadJitting  3: 30 op, 757917800.00 ns, 25.2639 ms/op
+WorkloadJitting  4: 1 op, 24894100.00 ns, 24.8941 ms/op
+
+WorkloadPilot    1: 4 op, 102336500.00 ns, 25.5841 ms/op
+WorkloadPilot    2: 12 op, 307141600.00 ns, 25.5951 ms/op
+
+WorkloadWarmup   1: 12 op, 308667100.00 ns, 25.7223 ms/op
+WorkloadWarmup   2: 12 op, 302644500.00 ns, 25.2204 ms/op
+WorkloadWarmup   3: 12 op, 301207300.00 ns, 25.1006 ms/op
+WorkloadWarmup   4: 12 op, 300883400.00 ns, 25.0736 ms/op
+WorkloadWarmup   5: 12 op, 301934500.00 ns, 25.1612 ms/op
+WorkloadWarmup   6: 12 op, 303983100.00 ns, 25.3319 ms/op
+WorkloadWarmup   7: 12 op, 303176100.00 ns, 25.2647 ms/op
+WorkloadWarmup   8: 12 op, 307355500.00 ns, 25.6130 ms/op
+WorkloadWarmup   9: 12 op, 302498500.00 ns, 25.2082 ms/op
+WorkloadWarmup  10: 12 op, 306244500.00 ns, 25.5204 ms/op
+WorkloadWarmup  11: 12 op, 306463600.00 ns, 25.5386 ms/op
+WorkloadWarmup  12: 12 op, 303156200.00 ns, 25.2630 ms/op
+WorkloadWarmup  13: 12 op, 301613500.00 ns, 25.1345 ms/op
+WorkloadWarmup  14: 12 op, 300864800.00 ns, 25.0721 ms/op
+WorkloadWarmup  15: 12 op, 303050000.00 ns, 25.2542 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 12 op, 302054500.00 ns, 25.1712 ms/op
+WorkloadActual   2: 12 op, 302113300.00 ns, 25.1761 ms/op
+WorkloadActual   3: 12 op, 302611100.00 ns, 25.2176 ms/op
+WorkloadActual   4: 12 op, 310801500.00 ns, 25.9001 ms/op
+WorkloadActual   5: 12 op, 301368300.00 ns, 25.1140 ms/op
+WorkloadActual   6: 12 op, 305656800.00 ns, 25.4714 ms/op
+WorkloadActual   7: 12 op, 304105600.00 ns, 25.3421 ms/op
+WorkloadActual   8: 12 op, 311194000.00 ns, 25.9328 ms/op
+WorkloadActual   9: 12 op, 311478500.00 ns, 25.9565 ms/op
+WorkloadActual  10: 12 op, 312668100.00 ns, 26.0557 ms/op
+WorkloadActual  11: 12 op, 311277300.00 ns, 25.9398 ms/op
+WorkloadActual  12: 12 op, 302142900.00 ns, 25.1786 ms/op
+WorkloadActual  13: 12 op, 300944100.00 ns, 25.0787 ms/op
+WorkloadActual  14: 12 op, 307851600.00 ns, 25.6543 ms/op
+WorkloadActual  15: 12 op, 301682400.00 ns, 25.1402 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 12 op, 316827800.00 ns, 26.4023 ms/op
+WorkloadResult   1: 12 op, 302054500.00 ns, 25.1712 ms/op
+WorkloadResult   2: 12 op, 302113300.00 ns, 25.1761 ms/op
+WorkloadResult   3: 12 op, 302611100.00 ns, 25.2176 ms/op
+WorkloadResult   4: 12 op, 310801500.00 ns, 25.9001 ms/op
+WorkloadResult   5: 12 op, 301368300.00 ns, 25.1140 ms/op
+WorkloadResult   6: 12 op, 305656800.00 ns, 25.4714 ms/op
+WorkloadResult   7: 12 op, 304105600.00 ns, 25.3421 ms/op
+WorkloadResult   8: 12 op, 311194000.00 ns, 25.9328 ms/op
+WorkloadResult   9: 12 op, 311478500.00 ns, 25.9565 ms/op
+WorkloadResult  10: 12 op, 312668100.00 ns, 26.0557 ms/op
+WorkloadResult  11: 12 op, 311277300.00 ns, 25.9398 ms/op
+WorkloadResult  12: 12 op, 302142900.00 ns, 25.1786 ms/op
+WorkloadResult  13: 12 op, 300944100.00 ns, 25.0787 ms/op
+WorkloadResult  14: 12 op, 307851600.00 ns, 25.6543 ms/op
+WorkloadResult  15: 12 op, 301682400.00 ns, 25.1402 ms/op
+// GC:  0 0 0 0 12
+
+// AfterAll
+// Benchmark Process 24292 has exited with code 0.
+// Launch: 2 / 2
+// Execute: dotnet Mrbr.Cryptography.Vss.Authentication.Benchmarks-gen.dll --ipcPort 56146 --benchmarkName "Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks.PlainReconstruct(Scenario: 1024B_k3_m3_Dense)" --job "IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 0 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 26158400.00 ns, 26.1584 ms/op
+WorkloadJitting  2: 30 op, 812878900.00 ns, 27.0960 ms/op
+WorkloadJitting  3: 30 op, 842015200.00 ns, 28.0672 ms/op
+WorkloadJitting  4: 1 op, 24922700.00 ns, 24.9227 ms/op
+
+WorkloadPilot    1: 4 op, 100892700.00 ns, 25.2232 ms/op
+WorkloadPilot    2: 12 op, 299218300.00 ns, 24.9349 ms/op
+
+WorkloadWarmup   1: 12 op, 300443900.00 ns, 25.0370 ms/op
+WorkloadWarmup   2: 12 op, 316777000.00 ns, 26.3981 ms/op
+WorkloadWarmup   3: 12 op, 316611600.00 ns, 26.3843 ms/op
+WorkloadWarmup   4: 12 op, 314648000.00 ns, 26.2207 ms/op
+WorkloadWarmup   5: 12 op, 342747500.00 ns, 28.5623 ms/op
+WorkloadWarmup   6: 12 op, 314795800.00 ns, 26.2330 ms/op
+WorkloadWarmup   7: 12 op, 334807500.00 ns, 27.9006 ms/op
+WorkloadWarmup   8: 12 op, 334900800.00 ns, 27.9084 ms/op
+WorkloadWarmup   9: 12 op, 337495700.00 ns, 28.1246 ms/op
+WorkloadWarmup  10: 12 op, 320255900.00 ns, 26.6880 ms/op
+WorkloadWarmup  11: 12 op, 302449500.00 ns, 25.2041 ms/op
+WorkloadWarmup  12: 12 op, 300126000.00 ns, 25.0105 ms/op
+WorkloadWarmup  13: 12 op, 300234300.00 ns, 25.0195 ms/op
+WorkloadWarmup  14: 12 op, 300058300.00 ns, 25.0049 ms/op
+WorkloadWarmup  15: 12 op, 304981800.00 ns, 25.4152 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 12 op, 321081500.00 ns, 26.7568 ms/op
+WorkloadActual   2: 12 op, 311466000.00 ns, 25.9555 ms/op
+WorkloadActual   3: 12 op, 311552300.00 ns, 25.9627 ms/op
+WorkloadActual   4: 12 op, 313290800.00 ns, 26.1076 ms/op
+WorkloadActual   5: 12 op, 302938400.00 ns, 25.2449 ms/op
+WorkloadActual   6: 12 op, 332101400.00 ns, 27.6751 ms/op
+WorkloadActual   7: 12 op, 337355500.00 ns, 28.1130 ms/op
+WorkloadActual   8: 12 op, 307971600.00 ns, 25.6643 ms/op
+WorkloadActual   9: 12 op, 305621600.00 ns, 25.4685 ms/op
+WorkloadActual  10: 12 op, 299923300.00 ns, 24.9936 ms/op
+WorkloadActual  11: 12 op, 301164900.00 ns, 25.0971 ms/op
+WorkloadActual  12: 12 op, 331403700.00 ns, 27.6170 ms/op
+WorkloadActual  13: 12 op, 337468500.00 ns, 28.1224 ms/op
+WorkloadActual  14: 12 op, 336209400.00 ns, 28.0175 ms/op
+WorkloadActual  15: 12 op, 311014400.00 ns, 25.9179 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 12 op, 306398700.00 ns, 25.5332 ms/op
+WorkloadResult   1: 12 op, 321081500.00 ns, 26.7568 ms/op
+WorkloadResult   2: 12 op, 311466000.00 ns, 25.9555 ms/op
+WorkloadResult   3: 12 op, 311552300.00 ns, 25.9627 ms/op
+WorkloadResult   4: 12 op, 313290800.00 ns, 26.1076 ms/op
+WorkloadResult   5: 12 op, 302938400.00 ns, 25.2449 ms/op
+WorkloadResult   6: 12 op, 332101400.00 ns, 27.6751 ms/op
+WorkloadResult   7: 12 op, 337355500.00 ns, 28.1130 ms/op
+WorkloadResult   8: 12 op, 307971600.00 ns, 25.6643 ms/op
+WorkloadResult   9: 12 op, 305621600.00 ns, 25.4685 ms/op
+WorkloadResult  10: 12 op, 299923300.00 ns, 24.9936 ms/op
+WorkloadResult  11: 12 op, 301164900.00 ns, 25.0971 ms/op
+WorkloadResult  12: 12 op, 331403700.00 ns, 27.6170 ms/op
+WorkloadResult  13: 12 op, 337468500.00 ns, 28.1224 ms/op
+WorkloadResult  14: 12 op, 336209400.00 ns, 28.0175 ms/op
+WorkloadResult  15: 12 op, 311014400.00 ns, 25.9179 ms/op
+// GC:  0 0 0 0 12
+
+// AfterAll
+// Benchmark Process 25172 has exited with code 0.
+
+Mean = 25.968 ms, StdErr = 0.178 ms (0.69%), N = 30, StdDev = 0.977 ms
+Min = 24.994 ms, Q1 = 25.188 ms, Median = 25.782 ms, Q3 = 26.032 ms, Max = 28.122 ms
+IQR = 0.844 ms, LowerFence = 23.922 ms, UpperFence = 27.299 ms
+ConfidenceInterval = [25.315 ms; 26.621 ms] (CI 99.9%), Margin = 0.653 ms (2.51% of Mean)
+Skewness = 1.15, Kurtosis = 2.99, MValue = 2
+
+// ** Remained 3 (75.0%) benchmark(s) to run. Estimated finish 2026-11-04 2:53 (0h 1m from now) **
+// **************************
+// Benchmark: AuthenticationBenchmarks.AuthenticatedReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=1024B_k3_m3_Dense]
+// *** Execute ***
+// Launch: 1 / 2
+// Execute: dotnet Mrbr.Cryptography.Vss.Authentication.Benchmarks-gen.dll --ipcPort 56151 --benchmarkName "Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks.AuthenticatedReconstruct(Scenario: 1024B_k3_m3_Dense)" --job "IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 0 --benchmarkId 1 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 25266900.00 ns, 25.2669 ms/op
+WorkloadJitting  2: 30 op, 755799700.00 ns, 25.1933 ms/op
+WorkloadJitting  3: 30 op, 758090400.00 ns, 25.2697 ms/op
+WorkloadJitting  4: 1 op, 24099700.00 ns, 24.0997 ms/op
+
+WorkloadPilot    1: 4 op, 101670000.00 ns, 25.4175 ms/op
+WorkloadPilot    2: 12 op, 300888300.00 ns, 25.0740 ms/op
+
+WorkloadWarmup   1: 12 op, 319673000.00 ns, 26.6394 ms/op
+WorkloadWarmup   2: 12 op, 301905500.00 ns, 25.1588 ms/op
+WorkloadWarmup   3: 12 op, 304384500.00 ns, 25.3654 ms/op
+WorkloadWarmup   4: 12 op, 302118400.00 ns, 25.1765 ms/op
+WorkloadWarmup   5: 12 op, 304106700.00 ns, 25.3422 ms/op
+WorkloadWarmup   6: 12 op, 319696100.00 ns, 26.6413 ms/op
+WorkloadWarmup   7: 12 op, 322963700.00 ns, 26.9136 ms/op
+WorkloadWarmup   8: 12 op, 303202100.00 ns, 25.2668 ms/op
+WorkloadWarmup   9: 12 op, 334143100.00 ns, 27.8453 ms/op
+WorkloadWarmup  10: 12 op, 306161300.00 ns, 25.5134 ms/op
+WorkloadWarmup  11: 12 op, 305635100.00 ns, 25.4696 ms/op
+WorkloadWarmup  12: 12 op, 305280400.00 ns, 25.4400 ms/op
+WorkloadWarmup  13: 12 op, 307667100.00 ns, 25.6389 ms/op
+WorkloadWarmup  14: 12 op, 302437700.00 ns, 25.2031 ms/op
+WorkloadWarmup  15: 12 op, 306869400.00 ns, 25.5725 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 12 op, 306566800.00 ns, 25.5472 ms/op
+WorkloadActual   2: 12 op, 301508000.00 ns, 25.1257 ms/op
+WorkloadActual   3: 12 op, 306402400.00 ns, 25.5335 ms/op
+WorkloadActual   4: 12 op, 303899400.00 ns, 25.3250 ms/op
+WorkloadActual   5: 12 op, 319917000.00 ns, 26.6598 ms/op
+WorkloadActual   6: 12 op, 316265500.00 ns, 26.3555 ms/op
+WorkloadActual   7: 12 op, 310627600.00 ns, 25.8856 ms/op
+WorkloadActual   8: 12 op, 325078600.00 ns, 27.0899 ms/op
+WorkloadActual   9: 12 op, 310211800.00 ns, 25.8510 ms/op
+WorkloadActual  10: 12 op, 330835200.00 ns, 27.5696 ms/op
+WorkloadActual  11: 12 op, 302948000.00 ns, 25.2457 ms/op
+WorkloadActual  12: 12 op, 302468800.00 ns, 25.2057 ms/op
+WorkloadActual  13: 12 op, 303148000.00 ns, 25.2623 ms/op
+WorkloadActual  14: 12 op, 332814900.00 ns, 27.7346 ms/op
+WorkloadActual  15: 12 op, 328497800.00 ns, 27.3748 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 12 op, 324241500.00 ns, 27.0201 ms/op
+WorkloadResult   1: 12 op, 306566800.00 ns, 25.5472 ms/op
+WorkloadResult   2: 12 op, 301508000.00 ns, 25.1257 ms/op
+WorkloadResult   3: 12 op, 306402400.00 ns, 25.5335 ms/op
+WorkloadResult   4: 12 op, 303899400.00 ns, 25.3250 ms/op
+WorkloadResult   5: 12 op, 319917000.00 ns, 26.6598 ms/op
+WorkloadResult   6: 12 op, 316265500.00 ns, 26.3555 ms/op
+WorkloadResult   7: 12 op, 310627600.00 ns, 25.8856 ms/op
+WorkloadResult   8: 12 op, 325078600.00 ns, 27.0899 ms/op
+WorkloadResult   9: 12 op, 310211800.00 ns, 25.8510 ms/op
+WorkloadResult  10: 12 op, 330835200.00 ns, 27.5696 ms/op
+WorkloadResult  11: 12 op, 302948000.00 ns, 25.2457 ms/op
+WorkloadResult  12: 12 op, 302468800.00 ns, 25.2057 ms/op
+WorkloadResult  13: 12 op, 303148000.00 ns, 25.2623 ms/op
+WorkloadResult  14: 12 op, 332814900.00 ns, 27.7346 ms/op
+WorkloadResult  15: 12 op, 328497800.00 ns, 27.3748 ms/op
+// GC:  0 0 0 0 12
+
+// AfterAll
+// Benchmark Process 24636 has exited with code 0.
+// Launch: 2 / 2
+// Execute: dotnet Mrbr.Cryptography.Vss.Authentication.Benchmarks-gen.dll --ipcPort 56154 --benchmarkName "Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks.AuthenticatedReconstruct(Scenario: 1024B_k3_m3_Dense)" --job "IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 1 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 29630100.00 ns, 29.6301 ms/op
+WorkloadJitting  2: 30 op, 798096400.00 ns, 26.6032 ms/op
+WorkloadJitting  3: 30 op, 759616100.00 ns, 25.3205 ms/op
+WorkloadJitting  4: 1 op, 24989400.00 ns, 24.9894 ms/op
+
+WorkloadPilot    1: 4 op, 107507600.00 ns, 26.8769 ms/op
+WorkloadPilot    2: 11 op, 293266500.00 ns, 26.6606 ms/op
+
+WorkloadWarmup   1: 11 op, 290789400.00 ns, 26.4354 ms/op
+WorkloadWarmup   2: 11 op, 280202400.00 ns, 25.4729 ms/op
+WorkloadWarmup   3: 11 op, 279182100.00 ns, 25.3802 ms/op
+WorkloadWarmup   4: 11 op, 280252000.00 ns, 25.4775 ms/op
+WorkloadWarmup   5: 11 op, 278964700.00 ns, 25.3604 ms/op
+WorkloadWarmup   6: 11 op, 281067700.00 ns, 25.5516 ms/op
+WorkloadWarmup   7: 11 op, 276716200.00 ns, 25.1560 ms/op
+WorkloadWarmup   8: 11 op, 275442800.00 ns, 25.0403 ms/op
+WorkloadWarmup   9: 11 op, 281113100.00 ns, 25.5557 ms/op
+WorkloadWarmup  10: 11 op, 275805500.00 ns, 25.0732 ms/op
+WorkloadWarmup  11: 11 op, 278022600.00 ns, 25.2748 ms/op
+WorkloadWarmup  12: 11 op, 275632600.00 ns, 25.0575 ms/op
+WorkloadWarmup  13: 11 op, 280089500.00 ns, 25.4627 ms/op
+WorkloadWarmup  14: 11 op, 276670100.00 ns, 25.1518 ms/op
+WorkloadWarmup  15: 11 op, 286224600.00 ns, 26.0204 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 11 op, 277585600.00 ns, 25.2351 ms/op
+WorkloadActual   2: 11 op, 278662600.00 ns, 25.3330 ms/op
+WorkloadActual   3: 11 op, 282159700.00 ns, 25.6509 ms/op
+WorkloadActual   4: 11 op, 275314900.00 ns, 25.0286 ms/op
+WorkloadActual   5: 11 op, 284510100.00 ns, 25.8646 ms/op
+WorkloadActual   6: 11 op, 279972200.00 ns, 25.4520 ms/op
+WorkloadActual   7: 11 op, 279464100.00 ns, 25.4058 ms/op
+WorkloadActual   8: 11 op, 280159100.00 ns, 25.4690 ms/op
+WorkloadActual   9: 11 op, 279834400.00 ns, 25.4395 ms/op
+WorkloadActual  10: 11 op, 311280400.00 ns, 28.2982 ms/op
+WorkloadActual  11: 11 op, 279456800.00 ns, 25.4052 ms/op
+WorkloadActual  12: 11 op, 295566500.00 ns, 26.8697 ms/op
+WorkloadActual  13: 11 op, 275622300.00 ns, 25.0566 ms/op
+WorkloadActual  14: 11 op, 274227000.00 ns, 24.9297 ms/op
+WorkloadActual  15: 11 op, 275504500.00 ns, 25.0459 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 11 op, 306988700.00 ns, 27.9081 ms/op
+WorkloadResult   1: 11 op, 277585600.00 ns, 25.2351 ms/op
+WorkloadResult   2: 11 op, 278662600.00 ns, 25.3330 ms/op
+WorkloadResult   3: 11 op, 282159700.00 ns, 25.6509 ms/op
+WorkloadResult   4: 11 op, 275314900.00 ns, 25.0286 ms/op
+WorkloadResult   5: 11 op, 284510100.00 ns, 25.8646 ms/op
+WorkloadResult   6: 11 op, 279972200.00 ns, 25.4520 ms/op
+WorkloadResult   7: 11 op, 279464100.00 ns, 25.4058 ms/op
+WorkloadResult   8: 11 op, 280159100.00 ns, 25.4690 ms/op
+WorkloadResult   9: 11 op, 279834400.00 ns, 25.4395 ms/op
+WorkloadResult  10: 11 op, 279456800.00 ns, 25.4052 ms/op
+WorkloadResult  11: 11 op, 275622300.00 ns, 25.0566 ms/op
+WorkloadResult  12: 11 op, 274227000.00 ns, 24.9297 ms/op
+WorkloadResult  13: 11 op, 275504500.00 ns, 25.0459 ms/op
+// GC:  0 0 0 0 11
+
+// AfterAll
+// Benchmark Process 23652 has exited with code 0.
+
+Mean = 25.753 ms, StdErr = 0.152 ms (0.59%), N = 28, StdDev = 0.805 ms
+Min = 24.930 ms, Q1 = 25.243 ms, Median = 25.446 ms, Q3 = 25.870 ms, Max = 27.735 ms
+IQR = 0.627 ms, LowerFence = 24.303 ms, UpperFence = 26.810 ms
+ConfidenceInterval = [25.192 ms; 26.314 ms] (CI 99.9%), Margin = 0.561 ms (2.18% of Mean)
+Skewness = 1.28, Kurtosis = 3.32, MValue = 2
+
+// ** Remained 2 (50.0%) benchmark(s) to run. Estimated finish 2026-11-04 2:53 (0h 0m from now) **
+// **************************
+// Benchmark: AuthenticationBenchmarks.PlainReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=32B_k9_m9_Dense]
+// *** Execute ***
+// Launch: 1 / 2
+// Execute: dotnet Mrbr.Cryptography.Vss.Authentication.Benchmarks-gen.dll --ipcPort 56157 --benchmarkName "Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks.PlainReconstruct(Scenario: 32B_k9_m9_Dense)" --job "IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 0 --benchmarkId 2 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 3060600.00 ns, 3.0606 ms/op
+WorkloadJitting  2: 30 op, 94911600.00 ns, 3.1637 ms/op
+WorkloadJitting  3: 30 op, 96021000.00 ns, 3.2007 ms/op
+WorkloadJitting  4: 1 op, 2787200.00 ns, 2.7872 ms/op
+
+WorkloadPilot    1: 4 op, 12297700.00 ns, 3.0744 ms/op
+WorkloadPilot    2: 98 op, 290894400.00 ns, 2.9683 ms/op
+WorkloadPilot    3: 101 op, 294179400.00 ns, 2.9127 ms/op
+WorkloadPilot    4: 103 op, 302784100.00 ns, 2.9397 ms/op
+
+WorkloadWarmup   1: 103 op, 314953500.00 ns, 3.0578 ms/op
+WorkloadWarmup   2: 103 op, 301931200.00 ns, 2.9314 ms/op
+WorkloadWarmup   3: 103 op, 300069800.00 ns, 2.9133 ms/op
+WorkloadWarmup   4: 103 op, 306357000.00 ns, 2.9743 ms/op
+WorkloadWarmup   5: 103 op, 302220600.00 ns, 2.9342 ms/op
+WorkloadWarmup   6: 103 op, 301925200.00 ns, 2.9313 ms/op
+WorkloadWarmup   7: 103 op, 305050700.00 ns, 2.9617 ms/op
+WorkloadWarmup   8: 103 op, 308459600.00 ns, 2.9948 ms/op
+WorkloadWarmup   9: 103 op, 302218700.00 ns, 2.9342 ms/op
+WorkloadWarmup  10: 103 op, 323760400.00 ns, 3.1433 ms/op
+WorkloadWarmup  11: 103 op, 300349200.00 ns, 2.9160 ms/op
+WorkloadWarmup  12: 103 op, 299919800.00 ns, 2.9118 ms/op
+WorkloadWarmup  13: 103 op, 301838800.00 ns, 2.9305 ms/op
+WorkloadWarmup  14: 103 op, 304811100.00 ns, 2.9593 ms/op
+WorkloadWarmup  15: 103 op, 325496700.00 ns, 3.1602 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 103 op, 303561300.00 ns, 2.9472 ms/op
+WorkloadActual   2: 103 op, 323995300.00 ns, 3.1456 ms/op
+WorkloadActual   3: 103 op, 328195000.00 ns, 3.1864 ms/op
+WorkloadActual   4: 103 op, 339149600.00 ns, 3.2927 ms/op
+WorkloadActual   5: 103 op, 344325000.00 ns, 3.3430 ms/op
+WorkloadActual   6: 103 op, 309391000.00 ns, 3.0038 ms/op
+WorkloadActual   7: 103 op, 300386600.00 ns, 2.9164 ms/op
+WorkloadActual   8: 103 op, 305694400.00 ns, 2.9679 ms/op
+WorkloadActual   9: 103 op, 337805100.00 ns, 3.2797 ms/op
+WorkloadActual  10: 103 op, 299613100.00 ns, 2.9089 ms/op
+WorkloadActual  11: 103 op, 303288700.00 ns, 2.9446 ms/op
+WorkloadActual  12: 103 op, 303675500.00 ns, 2.9483 ms/op
+WorkloadActual  13: 103 op, 300911700.00 ns, 2.9215 ms/op
+WorkloadActual  14: 103 op, 325238300.00 ns, 3.1577 ms/op
+WorkloadActual  15: 103 op, 300550300.00 ns, 2.9180 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 103 op, 306578000.00 ns, 2.9765 ms/op
+WorkloadResult   1: 103 op, 303561300.00 ns, 2.9472 ms/op
+WorkloadResult   2: 103 op, 323995300.00 ns, 3.1456 ms/op
+WorkloadResult   3: 103 op, 328195000.00 ns, 3.1864 ms/op
+WorkloadResult   4: 103 op, 339149600.00 ns, 3.2927 ms/op
+WorkloadResult   5: 103 op, 344325000.00 ns, 3.3430 ms/op
+WorkloadResult   6: 103 op, 309391000.00 ns, 3.0038 ms/op
+WorkloadResult   7: 103 op, 300386600.00 ns, 2.9164 ms/op
+WorkloadResult   8: 103 op, 305694400.00 ns, 2.9679 ms/op
+WorkloadResult   9: 103 op, 337805100.00 ns, 3.2797 ms/op
+WorkloadResult  10: 103 op, 299613100.00 ns, 2.9089 ms/op
+WorkloadResult  11: 103 op, 303288700.00 ns, 2.9446 ms/op
+WorkloadResult  12: 103 op, 303675500.00 ns, 2.9483 ms/op
+WorkloadResult  13: 103 op, 300911700.00 ns, 2.9215 ms/op
+WorkloadResult  14: 103 op, 325238300.00 ns, 3.1577 ms/op
+WorkloadResult  15: 103 op, 300550300.00 ns, 2.9180 ms/op
+// GC:  0 0 0 0 103
+
+// AfterAll
+// Benchmark Process 19028 has exited with code 0.
+// Launch: 2 / 2
+// Execute: dotnet Mrbr.Cryptography.Vss.Authentication.Benchmarks-gen.dll --ipcPort 56159 --benchmarkName "Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks.PlainReconstruct(Scenario: 32B_k9_m9_Dense)" --job "IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 2 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 3019600.00 ns, 3.0196 ms/op
+WorkloadJitting  2: 30 op, 93768800.00 ns, 3.1256 ms/op
+WorkloadJitting  3: 30 op, 91182400.00 ns, 3.0394 ms/op
+WorkloadJitting  4: 1 op, 2902000.00 ns, 2.9020 ms/op
+
+WorkloadPilot    1: 4 op, 12537300.00 ns, 3.1343 ms/op
+WorkloadPilot    2: 96 op, 280680400.00 ns, 2.9238 ms/op
+WorkloadPilot    3: 103 op, 302537100.00 ns, 2.9373 ms/op
+
+WorkloadWarmup   1: 103 op, 301978600.00 ns, 2.9318 ms/op
+WorkloadWarmup   2: 103 op, 316888900.00 ns, 3.0766 ms/op
+WorkloadWarmup   3: 103 op, 318100700.00 ns, 3.0884 ms/op
+WorkloadWarmup   4: 103 op, 317923700.00 ns, 3.0866 ms/op
+WorkloadWarmup   5: 103 op, 321358900.00 ns, 3.1200 ms/op
+WorkloadWarmup   6: 103 op, 299254800.00 ns, 2.9054 ms/op
+WorkloadWarmup   7: 103 op, 299393200.00 ns, 2.9067 ms/op
+WorkloadWarmup   8: 103 op, 328241000.00 ns, 3.1868 ms/op
+WorkloadWarmup   9: 103 op, 307117700.00 ns, 2.9817 ms/op
+WorkloadWarmup  10: 103 op, 326071700.00 ns, 3.1657 ms/op
+WorkloadWarmup  11: 103 op, 329446300.00 ns, 3.1985 ms/op
+WorkloadWarmup  12: 103 op, 329590500.00 ns, 3.1999 ms/op
+WorkloadWarmup  13: 103 op, 329717400.00 ns, 3.2011 ms/op
+WorkloadWarmup  14: 103 op, 328514500.00 ns, 3.1895 ms/op
+WorkloadWarmup  15: 103 op, 328265600.00 ns, 3.1870 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 103 op, 303170600.00 ns, 2.9434 ms/op
+WorkloadActual   2: 103 op, 299870000.00 ns, 2.9114 ms/op
+WorkloadActual   3: 103 op, 301846700.00 ns, 2.9306 ms/op
+WorkloadActual   4: 103 op, 301689600.00 ns, 2.9290 ms/op
+WorkloadActual   5: 103 op, 300292700.00 ns, 2.9155 ms/op
+WorkloadActual   6: 103 op, 313188600.00 ns, 3.0407 ms/op
+WorkloadActual   7: 103 op, 313449900.00 ns, 3.0432 ms/op
+WorkloadActual   8: 103 op, 316501700.00 ns, 3.0728 ms/op
+WorkloadActual   9: 103 op, 313555300.00 ns, 3.0442 ms/op
+WorkloadActual  10: 103 op, 320575000.00 ns, 3.1124 ms/op
+WorkloadActual  11: 103 op, 318315100.00 ns, 3.0904 ms/op
+WorkloadActual  12: 103 op, 340658100.00 ns, 3.3074 ms/op
+WorkloadActual  13: 103 op, 316830100.00 ns, 3.0760 ms/op
+WorkloadActual  14: 103 op, 325743200.00 ns, 3.1626 ms/op
+WorkloadActual  15: 103 op, 321752600.00 ns, 3.1238 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 103 op, 341250500.00 ns, 3.3131 ms/op
+WorkloadResult   1: 103 op, 303170600.00 ns, 2.9434 ms/op
+WorkloadResult   2: 103 op, 299870000.00 ns, 2.9114 ms/op
+WorkloadResult   3: 103 op, 301846700.00 ns, 2.9306 ms/op
+WorkloadResult   4: 103 op, 301689600.00 ns, 2.9290 ms/op
+WorkloadResult   5: 103 op, 300292700.00 ns, 2.9155 ms/op
+WorkloadResult   6: 103 op, 313188600.00 ns, 3.0407 ms/op
+WorkloadResult   7: 103 op, 313449900.00 ns, 3.0432 ms/op
+WorkloadResult   8: 103 op, 316501700.00 ns, 3.0728 ms/op
+WorkloadResult   9: 103 op, 313555300.00 ns, 3.0442 ms/op
+WorkloadResult  10: 103 op, 320575000.00 ns, 3.1124 ms/op
+WorkloadResult  11: 103 op, 318315100.00 ns, 3.0904 ms/op
+WorkloadResult  12: 103 op, 340658100.00 ns, 3.3074 ms/op
+WorkloadResult  13: 103 op, 316830100.00 ns, 3.0760 ms/op
+WorkloadResult  14: 103 op, 325743200.00 ns, 3.1626 ms/op
+WorkloadResult  15: 103 op, 321752600.00 ns, 3.1238 ms/op
+// GC:  0 0 0 0 103
+
+// AfterAll
+// Benchmark Process 22108 has exited with code 0.
+
+Mean = 3.053 ms, StdErr = 0.024 ms (0.80%), N = 30, StdDev = 0.134 ms
+Min = 2.909 ms, Q1 = 2.934 ms, Median = 3.042 ms, Q3 = 3.140 ms, Max = 3.343 ms
+IQR = 0.206 ms, LowerFence = 2.624 ms, UpperFence = 3.450 ms
+ConfidenceInterval = [2.964 ms; 3.142 ms] (CI 99.9%), Margin = 0.089 ms (2.92% of Mean)
+Skewness = 0.67, Kurtosis = 2.21, MValue = 2.14
+
+// ** Remained 1 (25.0%) benchmark(s) to run. Estimated finish 2026-11-04 2:53 (0h 0m from now) **
+// **************************
+// Benchmark: AuthenticationBenchmarks.AuthenticatedReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=32B_k9_m9_Dense]
+// *** Execute ***
+// Launch: 1 / 2
+// Execute: dotnet Mrbr.Cryptography.Vss.Authentication.Benchmarks-gen.dll --ipcPort 56163 --benchmarkName "Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks.AuthenticatedReconstruct(Scenario: 32B_k9_m9_Dense)" --job "IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 0 --benchmarkId 3 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 3134800.00 ns, 3.1348 ms/op
+WorkloadJitting  2: 30 op, 95460800.00 ns, 3.1820 ms/op
+WorkloadJitting  3: 30 op, 90796100.00 ns, 3.0265 ms/op
+WorkloadJitting  4: 1 op, 2895300.00 ns, 2.8953 ms/op
+
+WorkloadPilot    1: 4 op, 12325100.00 ns, 3.0813 ms/op
+WorkloadPilot    2: 97 op, 295365400.00 ns, 3.0450 ms/op
+WorkloadPilot    3: 99 op, 324213500.00 ns, 3.2749 ms/op
+WorkloadPilot    4: 92 op, 279936100.00 ns, 3.0428 ms/op
+WorkloadPilot    5: 99 op, 312861400.00 ns, 3.1602 ms/op
+WorkloadPilot    6: 95 op, 288070700.00 ns, 3.0323 ms/op
+WorkloadPilot    7: 99 op, 319711300.00 ns, 3.2294 ms/op
+
+WorkloadWarmup   1: 99 op, 303831600.00 ns, 3.0690 ms/op
+WorkloadWarmup   2: 99 op, 322075000.00 ns, 3.2533 ms/op
+WorkloadWarmup   3: 99 op, 298735600.00 ns, 3.0175 ms/op
+WorkloadWarmup   4: 99 op, 335651900.00 ns, 3.3904 ms/op
+WorkloadWarmup   5: 99 op, 300523700.00 ns, 3.0356 ms/op
+WorkloadWarmup   6: 99 op, 311488200.00 ns, 3.1463 ms/op
+WorkloadWarmup   7: 99 op, 320259800.00 ns, 3.2349 ms/op
+WorkloadWarmup   8: 99 op, 314866000.00 ns, 3.1805 ms/op
+WorkloadWarmup   9: 99 op, 318830300.00 ns, 3.2205 ms/op
+WorkloadWarmup  10: 99 op, 316718800.00 ns, 3.1992 ms/op
+WorkloadWarmup  11: 99 op, 307490400.00 ns, 3.1060 ms/op
+WorkloadWarmup  12: 99 op, 329088900.00 ns, 3.3241 ms/op
+WorkloadWarmup  13: 99 op, 329648900.00 ns, 3.3298 ms/op
+WorkloadWarmup  14: 99 op, 326516900.00 ns, 3.2982 ms/op
+WorkloadWarmup  15: 99 op, 325704700.00 ns, 3.2899 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 99 op, 301044200.00 ns, 3.0409 ms/op
+WorkloadActual   2: 99 op, 302177200.00 ns, 3.0523 ms/op
+WorkloadActual   3: 99 op, 300131400.00 ns, 3.0316 ms/op
+WorkloadActual   4: 99 op, 299716600.00 ns, 3.0274 ms/op
+WorkloadActual   5: 99 op, 302048600.00 ns, 3.0510 ms/op
+WorkloadActual   6: 99 op, 299084600.00 ns, 3.0211 ms/op
+WorkloadActual   7: 99 op, 301264900.00 ns, 3.0431 ms/op
+WorkloadActual   8: 99 op, 299406500.00 ns, 3.0243 ms/op
+WorkloadActual   9: 99 op, 298821600.00 ns, 3.0184 ms/op
+WorkloadActual  10: 99 op, 299239900.00 ns, 3.0226 ms/op
+WorkloadActual  11: 99 op, 300390600.00 ns, 3.0342 ms/op
+WorkloadActual  12: 99 op, 297358500.00 ns, 3.0036 ms/op
+WorkloadActual  13: 99 op, 321805100.00 ns, 3.2506 ms/op
+WorkloadActual  14: 99 op, 326479600.00 ns, 3.2978 ms/op
+WorkloadActual  15: 99 op, 325595700.00 ns, 3.2888 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 99 op, 301944700.00 ns, 3.0499 ms/op
+WorkloadResult   1: 99 op, 301044200.00 ns, 3.0409 ms/op
+WorkloadResult   2: 99 op, 302177200.00 ns, 3.0523 ms/op
+WorkloadResult   3: 99 op, 300131400.00 ns, 3.0316 ms/op
+WorkloadResult   4: 99 op, 299716600.00 ns, 3.0274 ms/op
+WorkloadResult   5: 99 op, 302048600.00 ns, 3.0510 ms/op
+WorkloadResult   6: 99 op, 299084600.00 ns, 3.0211 ms/op
+WorkloadResult   7: 99 op, 301264900.00 ns, 3.0431 ms/op
+WorkloadResult   8: 99 op, 299406500.00 ns, 3.0243 ms/op
+WorkloadResult   9: 99 op, 298821600.00 ns, 3.0184 ms/op
+WorkloadResult  10: 99 op, 299239900.00 ns, 3.0226 ms/op
+WorkloadResult  11: 99 op, 300390600.00 ns, 3.0342 ms/op
+WorkloadResult  12: 99 op, 297358500.00 ns, 3.0036 ms/op
+// GC:  0 0 0 0 99
+
+// AfterAll
+// Benchmark Process 7312 has exited with code 0.
+// Launch: 2 / 2
+// Execute: dotnet Mrbr.Cryptography.Vss.Authentication.Benchmarks-gen.dll --ipcPort 56166 --benchmarkName "Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks.AuthenticatedReconstruct(Scenario: 32B_k9_m9_Dense)" --job "IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 3 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.Authentication.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 3261500.00 ns, 3.2615 ms/op
+WorkloadJitting  2: 30 op, 97007700.00 ns, 3.2336 ms/op
+WorkloadJitting  3: 30 op, 92300800.00 ns, 3.0767 ms/op
+WorkloadJitting  4: 1 op, 2863500.00 ns, 2.8635 ms/op
+
+WorkloadPilot    1: 4 op, 12491500.00 ns, 3.1229 ms/op
+WorkloadPilot    2: 96 op, 299374300.00 ns, 3.1185 ms/op
+
+WorkloadWarmup   1: 96 op, 289568600.00 ns, 3.0163 ms/op
+WorkloadWarmup   2: 96 op, 312665300.00 ns, 3.2569 ms/op
+WorkloadWarmup   3: 96 op, 294523300.00 ns, 3.0680 ms/op
+WorkloadWarmup   4: 96 op, 288324000.00 ns, 3.0034 ms/op
+WorkloadWarmup   5: 96 op, 292678500.00 ns, 3.0487 ms/op
+WorkloadWarmup   6: 96 op, 288942900.00 ns, 3.0098 ms/op
+WorkloadWarmup   7: 96 op, 287983200.00 ns, 2.9998 ms/op
+WorkloadWarmup   8: 96 op, 288297900.00 ns, 3.0031 ms/op
+WorkloadWarmup   9: 96 op, 291623500.00 ns, 3.0377 ms/op
+WorkloadWarmup  10: 96 op, 292889600.00 ns, 3.0509 ms/op
+WorkloadWarmup  11: 96 op, 290253700.00 ns, 3.0235 ms/op
+WorkloadWarmup  12: 96 op, 292518900.00 ns, 3.0471 ms/op
+WorkloadWarmup  13: 96 op, 312650300.00 ns, 3.2568 ms/op
+WorkloadWarmup  14: 96 op, 291346300.00 ns, 3.0349 ms/op
+WorkloadWarmup  15: 96 op, 290754600.00 ns, 3.0287 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 96 op, 291414500.00 ns, 3.0356 ms/op
+WorkloadActual   2: 96 op, 291617400.00 ns, 3.0377 ms/op
+WorkloadActual   3: 96 op, 292408500.00 ns, 3.0459 ms/op
+WorkloadActual   4: 96 op, 298791900.00 ns, 3.1124 ms/op
+WorkloadActual   5: 96 op, 290376100.00 ns, 3.0248 ms/op
+WorkloadActual   6: 96 op, 290878100.00 ns, 3.0300 ms/op
+WorkloadActual   7: 96 op, 293174000.00 ns, 3.0539 ms/op
+WorkloadActual   8: 96 op, 288991600.00 ns, 3.0103 ms/op
+WorkloadActual   9: 96 op, 290988800.00 ns, 3.0311 ms/op
+WorkloadActual  10: 96 op, 290287100.00 ns, 3.0238 ms/op
+WorkloadActual  11: 96 op, 288065400.00 ns, 3.0007 ms/op
+WorkloadActual  12: 96 op, 295378800.00 ns, 3.0769 ms/op
+WorkloadActual  13: 96 op, 291542100.00 ns, 3.0369 ms/op
+WorkloadActual  14: 96 op, 313972500.00 ns, 3.2705 ms/op
+WorkloadActual  15: 96 op, 290455500.00 ns, 3.0256 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 96 op, 293992200.00 ns, 3.0624 ms/op
+WorkloadResult   1: 96 op, 291414500.00 ns, 3.0356 ms/op
+WorkloadResult   2: 96 op, 291617400.00 ns, 3.0377 ms/op
+WorkloadResult   3: 96 op, 292408500.00 ns, 3.0459 ms/op
+WorkloadResult   4: 96 op, 290376100.00 ns, 3.0248 ms/op
+WorkloadResult   5: 96 op, 290878100.00 ns, 3.0300 ms/op
+WorkloadResult   6: 96 op, 293174000.00 ns, 3.0539 ms/op
+WorkloadResult   7: 96 op, 288991600.00 ns, 3.0103 ms/op
+WorkloadResult   8: 96 op, 290988800.00 ns, 3.0311 ms/op
+WorkloadResult   9: 96 op, 290287100.00 ns, 3.0238 ms/op
+WorkloadResult  10: 96 op, 288065400.00 ns, 3.0007 ms/op
+WorkloadResult  11: 96 op, 295378800.00 ns, 3.0769 ms/op
+WorkloadResult  12: 96 op, 291542100.00 ns, 3.0369 ms/op
+WorkloadResult  13: 96 op, 290455500.00 ns, 3.0256 ms/op
+// GC:  0 0 0 0 96
+
+// AfterAll
+// Benchmark Process 1412 has exited with code 0.
+
+Mean = 3.032 ms, StdErr = 0.003 ms (0.11%), N = 25, StdDev = 0.017 ms
+Min = 3.001 ms, Q1 = 3.024 ms, Median = 3.031 ms, Q3 = 3.041 ms, Max = 3.077 ms
+IQR = 0.017 ms, LowerFence = 2.998 ms, UpperFence = 3.066 ms
+ConfidenceInterval = [3.020 ms; 3.045 ms] (CI 99.9%), Margin = 0.012 ms (0.41% of Mean)
+Skewness = 0.42, Kurtosis = 3.42, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2026-11-04 2:53 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  benchmarks\results\2026-11-04-vss-authenticated\confirmation\results\Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report.csv
+  benchmarks\results\2026-11-04-vss-authenticated\confirmation\results\Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report-github.md
+  benchmarks\results\2026-11-04-vss-authenticated\confirmation\results\Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report.html
+  benchmarks\results\2026-11-04-vss-authenticated\confirmation\results\Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report-full.json
+
+// * Detailed results *
+AuthenticationBenchmarks.PlainReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=1024B_k3_m3_Dense]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 25.968 ms, StdErr = 0.178 ms (0.69%), N = 30, StdDev = 0.977 ms
+Min = 24.994 ms, Q1 = 25.188 ms, Median = 25.782 ms, Q3 = 26.032 ms, Max = 28.122 ms
+IQR = 0.844 ms, LowerFence = 23.922 ms, UpperFence = 27.299 ms
+ConfidenceInterval = [25.315 ms; 26.621 ms] (CI 99.9%), Margin = 0.653 ms (2.51% of Mean)
+Skewness = 1.15, Kurtosis = 2.99, MValue = 2
+-------------------- Histogram --------------------
+[24.581 ms ; 25.139 ms) | @@@@
+[25.139 ms ; 25.964 ms) | @@@@@@@@@@@@@@@@@@
+[25.964 ms ; 26.819 ms) | @@@
+[26.819 ms ; 27.457 ms) | 
+[27.457 ms ; 28.282 ms) | @@@@@
+---------------------------------------------------
+
+AuthenticationBenchmarks.AuthenticatedReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=1024B_k3_m3_Dense]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 25.753 ms, StdErr = 0.152 ms (0.59%), N = 28, StdDev = 0.805 ms
+Min = 24.930 ms, Q1 = 25.243 ms, Median = 25.446 ms, Q3 = 25.870 ms, Max = 27.735 ms
+IQR = 0.627 ms, LowerFence = 24.303 ms, UpperFence = 26.810 ms
+ConfidenceInterval = [25.192 ms; 26.314 ms] (CI 99.9%), Margin = 0.561 ms (2.18% of Mean)
+Skewness = 1.28, Kurtosis = 3.32, MValue = 2
+-------------------- Histogram --------------------
+[24.891 ms ; 25.586 ms) | @@@@@@@@@@@@@@@@@@
+[25.586 ms ; 26.116 ms) | @@@@
+[26.116 ms ; 26.855 ms) | @@
+[26.855 ms ; 27.760 ms) | @@@@
+---------------------------------------------------
+
+AuthenticationBenchmarks.PlainReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=32B_k9_m9_Dense]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 3.053 ms, StdErr = 0.024 ms (0.80%), N = 30, StdDev = 0.134 ms
+Min = 2.909 ms, Q1 = 2.934 ms, Median = 3.042 ms, Q3 = 3.140 ms, Max = 3.343 ms
+IQR = 0.206 ms, LowerFence = 2.624 ms, UpperFence = 3.450 ms
+ConfidenceInterval = [2.964 ms; 3.142 ms] (CI 99.9%), Margin = 0.089 ms (2.92% of Mean)
+Skewness = 0.67, Kurtosis = 2.21, MValue = 2.14
+-------------------- Histogram --------------------
+[2.900 ms ; 3.013 ms) | @@@@@@@@@@@@@@
+[3.013 ms ; 3.150 ms) | @@@@@@@@@
+[3.150 ms ; 3.255 ms) | @@@
+[3.255 ms ; 3.368 ms) | @@@@
+---------------------------------------------------
+
+AuthenticationBenchmarks.AuthenticatedReconstruct: Job-SGCRMK(IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15) [Scenario=32B_k9_m9_Dense]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 3.032 ms, StdErr = 0.003 ms (0.11%), N = 25, StdDev = 0.017 ms
+Min = 3.001 ms, Q1 = 3.024 ms, Median = 3.031 ms, Q3 = 3.041 ms, Max = 3.077 ms
+IQR = 0.017 ms, LowerFence = 2.998 ms, UpperFence = 3.066 ms
+ConfidenceInterval = [3.020 ms; 3.045 ms] (CI 99.9%), Margin = 0.012 ms (0.41% of Mean)
+Skewness = 0.42, Kurtosis = 3.42, MValue = 2
+-------------------- Histogram --------------------
+[3.000 ms ; 3.084 ms) | @@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 43.38 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-SGCRMK : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+
+PowerPlanMode=  IterationCount=15  IterationTime=300ms  
+LaunchCount=2  UnrollFactor=1  WarmupCount=15  
+
+| Method                   | Scenario          | Mean      | Error     | StdDev    | Op/s   | Allocated |
+|------------------------- |------------------ |----------:|----------:|----------:|-------:|----------:|
+| PlainReconstruct         | 1024B_k3_m3_Dense | 25.968 ms | 0.6529 ms | 0.9773 ms |  38.51 |         - |
+| AuthenticatedReconstruct | 1024B_k3_m3_Dense | 25.753 ms | 0.5612 ms | 0.8048 ms |  38.83 |         - |
+| PlainReconstruct         | 32B_k9_m9_Dense   |  3.053 ms | 0.0893 ms | 0.1337 ms | 327.57 |         - |
+| AuthenticatedReconstruct | 32B_k9_m9_Dense   |  3.032 ms | 0.0124 ms | 0.0166 ms | 329.80 |         - |
+
+// * Hints *
+Outliers
+  AuthenticationBenchmarks.PlainReconstruct: IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15         -> 5 outliers were removed (27.62 ms..28.12 ms)
+  AuthenticationBenchmarks.AuthenticatedReconstruct: IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15 -> 2 outliers were removed (27.73 ms, 28.30 ms)
+  AuthenticationBenchmarks.AuthenticatedReconstruct: IterationCount=15, IterationTime=300ms, LaunchCount=2, UnrollFactor=1, WarmupCount=15 -> 5 outliers were removed (3.11 ms..3.30 ms)
+
+// * Legends *
+  Scenario  : Value of the 'Scenario' parameter
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Op/s      : Operation per second
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ms      : 1 Millisecond (0.001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:01:34 (94.82 sec), executed benchmarks: 4
+
+Global total time: 00:01:58 (118.84 sec), executed benchmarks: 4
+// * Artifacts cleanup *
+Artifacts cleanup is finished

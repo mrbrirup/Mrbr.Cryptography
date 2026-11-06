@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../ServiceProjects.props" />
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Mrbr.Cryptography/Mrbr.Cryptography.csproj" />
+    <ProjectReference Include="$(KeyManagerProject)" />
+  </ItemGroup>
+</Project>

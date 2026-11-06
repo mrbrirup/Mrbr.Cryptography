@@ -1,0 +1,300 @@
+{
+  "CapturedAtUtc": "2026-11-04T02:46:13.8570635+00:00",
+  "TimeZone": "Europe/London",
+  "TargetFramework": "net11.0",
+  "Sdk": "11.0.100-rc.3.26522.148",
+  "NativePackage": "libsodium 1.0.22",
+  "NativeWindowsX64DllSHA256": "64A1F143868309069F0A0A3C8141C0853C4F17243DDF734E92B11C5411739771",
+  "NativePackageSHA512": "/dhmQ5+bHFAUyK8Jg0aC6mdmYHu+ou1PCIL+YCKaHOSaJXyU5bG3KH/quFwznU+SsPYo2MkRLuMAaGDJOpHYMQ==",
+  "PowerPlan": "Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)",
+  "Job": {
+    "LaunchCount": 1,
+    "WarmupCount": 15,
+    "IterationCount": 12,
+    "IterationTimeMs": 120,
+    "UnrollFactor": 1
+  },
+  "Command": "dotnet run --project benchmarks/Mrbr.Cryptography.Vss.Authentication.Benchmarks -c Release --no-build -- --filter '*' --launchCount 1 --warmupCount 15 --iterationCount 12 --iterationTime 120 --unrollFactor 1 --artifacts benchmarks/results/2026-11-04-vss-authenticated/artifacts",
+  "Verification": {
+    "Release": "460 passed (228 core + 129 VSS + 50 authentication + 53 integration)",
+    "Debug": "460 passed (228 core + 129 VSS + 50 authentication + 53 integration)",
+    "BuildWarnings": 0,
+    "BuildErrors": 0,
+    "RFC8032Vectors": 3,
+    "IndependentBigIntegerSignatureOracle": true,
+    "DocumentationExampleCompiledAndExecuted": true,
+    "StandaloneTests": "407 passed (228 core + 129 VSS + 50 authentication)",
+    "NewAuthenticationTests": 50
+  },
+  "ExistingCoreAndVss": [
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+      "SHA256": "77EC35CF7CA7047256CEDDC536E35CCEBA21A86CEB28A170C4C323A80747AE8B",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256Simd.cs",
+      "SHA256": "15956F459DE818DF4775BFC3732181D4B6B983B9714EC882CF1C039F9BF062D5",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+      "SHA256": "48EAAE746B504D6B979C5B5EAB4608618CD7E6EAC0976114013417BB6BE38737",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.cs",
+      "SHA256": "96C47B6753DBB3BFE6DDFDF4D745698131519CCA0216970CA144AB62E31C5F10",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.Tables.cs",
+      "SHA256": "8874DD39CC4A199F4CCB4F1ADB6A376499206CD332076557A0FB2A457044BD2C",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Mrbr.Cryptography.csproj",
+      "SHA256": "7F457A493233BC3C15CCB45575CDAE83045C0F87997C5E5A4D1614FE85D701BF",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/ShamirSharedSecret.cs",
+      "SHA256": "21318599ECE6D4070A8B0CA79DEBAD828498872DE2790A9C175C3E3CB0F637EF",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Ristretto.cs",
+      "SHA256": "4DDF2652965DF6E15E58ADEEB14961EC1A44A5BDE9EFA1CB3BD04A2594D9C0AA",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/SmallQuorumInterpolation.cs",
+      "SHA256": "E083376846BB55F59A5C8D1A488B27AFAEF90AE5DD021715D90691713179E8D0",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Sodium.cs",
+      "SHA256": "6F4DC996D4848C57EBB6B0B0A0D3D33D474D0D78422E329D1163B79091761FBB",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Mrbr.Cryptography.Vss.csproj",
+      "SHA256": "91E89C50101A2595740145BE60BD91ED9EBC47F4E99CBAA71D1E034D01A2B6C1",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/PedersenVss.cs",
+      "SHA256": "99FFC90C76DB3DB516EDC39B9CB223EDF5294F0D22B94583325AE829A3F9FB38",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    }
+  ],
+  "SourceFingerprints": [
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.Authentication.Benchmarks/AuthenticationBenchmarks.cs",
+      "SHA256": "2DD767217C54D5A0FEB6F46D1E90F9F191A99679A2C60013D66B7930FD93009F",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.Authentication.Benchmarks/Mrbr.Cryptography.Vss.Authentication.Benchmarks.csproj",
+      "SHA256": "D6FC9B7D0B2B5781F2B964AE7C6BAFAEA6EDDE8F432CE6E7683E886DED1E3125",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.Authentication.Benchmarks/Program.cs",
+      "SHA256": "05BB1FB14DDB464D1A33989AFA62489253D0A1475BBB75D293028AD8EC858658",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "Directory.Build.props",
+      "SHA256": "79650925A72BB236C82439CBF5200FFB2E1EB7B3CD6EE347744E84DC66858A9C",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "global.json",
+      "SHA256": "19A39681EA81608656C557DC24D7112CB1B9B71D27D71197D261538B8A2DD675",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "Mrbr.Cryptography.Integration.slnx",
+      "SHA256": "9CA2914C71084A2D4C279A60FB8B415A48242989F0EC437EEB7B0AE8FEBDA95D",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "Mrbr.Cryptography.slnx",
+      "SHA256": "368D38E001C54D316C8654BB5128046F8FB9A0F2D6364409C1E149608EC9DCB8",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/AuthenticatedCommitmentPacket.cs",
+      "SHA256": "289236EF96E994ADE4D6435B885ABBCA7F91FE82373C3142EA5F3ADBF1B3774A",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/Internal/Ed25519Native.cs",
+      "SHA256": "6FD14E93923B9BA334C0DCBBF76C59B236E48953A6BCFBD144CFAF64A7A9BB07",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/Mrbr.Cryptography.Vss.Authentication.csproj",
+      "SHA256": "EB29B5301AD345C3799404A7EBD7643D9610F910F670FCC0DDC910020800E801",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Authentication.Tests/AllocationTests.cs",
+      "SHA256": "DA9FD5FC8E9D6D4E9119000B9EF2260428998EFE337278A5AA659AF9F25D7A9A",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Authentication.Tests/Ed25519Reference.cs",
+      "SHA256": "C7ED3448927B0C5D14344CF077EF472BC507CD9BD15DB569A7E21D39386E8EF8",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Authentication.Tests/Mrbr.Cryptography.Vss.Authentication.Tests.csproj",
+      "SHA256": "037AF2F3DBD66FD15715E886E1821E10B5C1400C0607B66A905999BD1DF8D879",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Authentication.Tests/PacketTests.cs",
+      "SHA256": "87FD57CC6A7AAB811FF29725A1C7821EA07AE0C463A71E5D2FFBAF477F0E3D67",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Authentication.Tests/PrimitiveTests.cs",
+      "SHA256": "680BA0C2C841FE3D6DB50FCF79331A53243C0E8F4E27E068B6CBEE96856EEAFB",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Authentication.Tests/ValidationTests.cs",
+      "SHA256": "47E25D18A5DA567CDDDBF8C18B5715908939301FD8336F500E2BC8F57BF6AAA8",
+      "UnchangedThroughRuns": true
+    }
+  ],
+  "HostEnvironment": {
+    "BenchmarkDotNetCaption": "BenchmarkDotNet",
+    "BenchmarkDotNetVersion": "0.16.0-preview.2",
+    "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+    "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+    "PhysicalProcessorCount": 1,
+    "PhysicalCoreCount": 6,
+    "LogicalCoreCount": 12,
+    "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+    "Architecture": "X64",
+    "HasAttachedDebugger": false,
+    "HasRyuJit": true,
+    "Configuration": "RELEASE",
+    "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+    "ChronometerFrequency": {
+      "Hertz": 10000000
+    },
+    "HardwareTimerKind": "Unknown"
+  },
+  "PrimaryRun": {
+    "Cases": 48,
+    "AllZeroManagedBytes": true,
+    "AllZeroGc": true,
+    "DurationSeconds": 253.61,
+    "MinIterationWarnings": "1 KiB plain/authenticated reconstruction: minimum 98.778/99.199 ms; longer confirmation run recorded separately."
+  },
+  "ConfirmationRun": {
+    "Cases": 4,
+    "LaunchCount": 2,
+    "WarmupCount": 15,
+    "IterationCount": 15,
+    "IterationTimeMs": 300,
+    "UnrollFactor": 1,
+    "AllZeroManagedBytes": true,
+    "AllZeroGc": true,
+    "Warnings": 0,
+    "DurationSeconds": 118.84,
+    "Command": "dotnet run --project benchmarks/Mrbr.Cryptography.Vss.Authentication.Benchmarks -c Release --no-build -- --filter '*Reconstruct*32B_k9*' '*Reconstruct*1024B*' --launchCount 2 --warmupCount 15 --iterationCount 15 --iterationTime 300 --unrollFactor 1 --artifacts benchmarks/results/2026-11-04-vss-authenticated/confirmation",
+    "Interpretation": "Both intervals overlap; no reconstruction speedup or zero-overhead claim. Isolated signature authentication is measured separately."
+  },
+  "FinalizedAtUtc": "2026-11-04T02:55:19.323004+00:00",
+  "ReportAndDocumentationFingerprints": [
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/README.md",
+      "SHA256": "89EB8364628C1C479CD1F40CA7484A507470A7071B5A7B3D76AE61B989B5A741"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/operations.csv",
+      "SHA256": "2A3257FFBD7041990E2069CA39B6EF64A835ED5EC247B9E0B83F6804D2A3DE0F"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/comparison.csv",
+      "SHA256": "5F6F2D75CD370111A47416E008B30EBB30A5CE58670242501EB22B0844E95FFA"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/confirmation-comparison.csv",
+      "SHA256": "C853E65E091D4BCFB9F89AD23E4D3CCC69254299AABF9BE4BBCB816B18785D53"
+    },
+    {
+      "Path": "docs/authenticated-commitment-packets.md",
+      "SHA256": "02C62A712FAEDCFCE55DB488BF45B5DCF782CF68B60EE9CB0AC8D0B9E5352A17"
+    },
+    {
+      "Path": "README.md",
+      "SHA256": "82709D971C58C93729D6A3CEDFE4107326D3728FCDE5D4B5728D59CA62F4F761"
+    },
+    {
+      "Path": "benchmarks/README.md",
+      "SHA256": "18F910492313832E5B57C50A8021B0375E72FE6F2DD1167135CFE5E422586611"
+    },
+    {
+      "Path": "docs/pedersen-vss.md",
+      "SHA256": "4B2A1503DB59ECF01D083123C7CBE680BE221688AEBDFED3D63A566C4DDE9960"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/artifacts/results/Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report-full.json",
+      "SHA256": "132C3429DC8120F7DC228D93B9771149F6D891B81E52579881C532E59AD4DB85"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/artifacts/results/Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report-github.md",
+      "SHA256": "1FD5AEBA4683C90EC46C7FB3D105C9758735EDF0BD56845081F4C12F2DAA277F"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/artifacts/results/Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report.csv",
+      "SHA256": "23EC8653B0E5D07321BF547A228B91A18144D1A18B04E88AC7F0CBDDA2908FE6"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/artifacts/results/Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report.html",
+      "SHA256": "4F288A76A73EF650998BF16EBBDDD0771C401AB2849EF93E329DF824749AEF14"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/artifacts/Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-20261104-024624.log",
+      "SHA256": "70789321B0F4D57D7B2D8D5A05B531E6592B810BE065F1DA2E52E676C4A0EDD5"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/confirmation/results/Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report-full.json",
+      "SHA256": "82247B9086EE3CDEF4C7C3206E9DAD817C2C9D1FAB2A32248E80039AB262F0E6"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/confirmation/results/Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report-github.md",
+      "SHA256": "0830226F8F149B5DB4E93163F67008A1CCAC04C82EBE501D641B5FF37B3FD262"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/confirmation/results/Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report.csv",
+      "SHA256": "C9437CE86E350F08E081F72FB7C65D4CD8FDE0D2F084DD951C7D80B991F9599A"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/confirmation/results/Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-report.html",
+      "SHA256": "D416DE1F1D5F9C6DBDEEDF4D0A51E622F491DCB4F1C78B8B6491F108E55CAFB3"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-vss-authenticated/confirmation/Mrbr.Cryptography.Vss.Authentication.Benchmarks.AuthenticationBenchmarks-20261104-025136.log",
+      "SHA256": "CB1F766529D9BCACF7DEF13C36B50A0C6967405F4B5FC19C9EEA1EE5CB7674B1"
+    }
+  ]
+}

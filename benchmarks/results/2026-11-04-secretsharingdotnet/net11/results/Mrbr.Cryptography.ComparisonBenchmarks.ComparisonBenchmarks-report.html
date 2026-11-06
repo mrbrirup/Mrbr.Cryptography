@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 43.33 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-BKQOOB : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  Arguments=/p:ComparisonTargetFramework=net11.0  IterationCount=12  
+IterationTime=150ms  LaunchCount=1  UnrollFactor=1  
+WarmupCount=15  
+</code></pre>
+
+<table>
+<thead><tr><th>Method             </th><th>Scenario</th><th>Mean       </th><th>Error      </th><th>StdDev     </th><th>Op/s    </th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>MrbrCreate</td><td>128B_3of5</td><td>1,120.56 ns</td><td>16.709 ns</td><td>12.081 ns</td><td>892,410.649</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>MrbrReconstruct</td><td>128B_3of5</td><td>73.13 ns</td><td>0.528 ns</td><td>0.382 ns</td><td>13,673,859.990</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>UpstreamBigCreate</td><td>128B_3of5</td><td>24,835.40 ns</td><td>482.791 ns</td><td>349.089 ns</td><td>40,265.109</td><td>4.7471</td><td>1.8006</td><td>29820 B</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>128B_3of5</td><td>2,340,068.38 ns</td><td>25,766.814 ns</td><td>15,333.418 ns</td><td>427.338</td><td>-</td><td>-</td><td>21320 B</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>128B_3of5</td><td>72,571.80 ns</td><td>1,860.300 ns</td><td>1,345.119 ns</td><td>13,779.456</td><td>10.2489</td><td>4.8804</td><td>65336 B</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>128B_3of5</td><td>743,409,279.17 ns</td><td>43,455,523.553 ns</td><td>33,927,214.415 ns</td><td>1.345</td><td>3000.0000</td><td>-</td><td>19694400 B</td>
+</tr><tr><td>MrbrCreate</td><td>16B_3of5</td><td>489.22 ns</td><td>4.212 ns</td><td>3.046 ns</td><td>2,044,085.861</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>MrbrReconstruct</td><td>16B_3of5</td><td>62.46 ns</td><td>3.412 ns</td><td>2.664 ns</td><td>16,009,649.419</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>UpstreamBigCreate</td><td>16B_3of5</td><td>19,307.57 ns</td><td>800.432 ns</td><td>578.765 ns</td><td>51,793.148</td><td>3.5434</td><td>3.4169</td><td>22958 B</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>16B_3of5</td><td>756,150.28 ns</td><td>46,739.465 ns</td><td>36,491.100 ns</td><td>1,322.488</td><td>-</td><td>-</td><td>21192 B</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>16B_3of5</td><td>48,997.96 ns</td><td>1,335.417 ns</td><td>883.296 ns</td><td>20,409.012</td><td>8.5358</td><td>8.2075</td><td>54912 B</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>16B_3of5</td><td>196,300,441.67 ns</td><td>11,172,007.103 ns</td><td>8,722,368.285 ns</td><td>5.094</td><td>1250.0000</td><td>-</td><td>8076064 B</td>
+</tr><tr><td>MrbrCreate</td><td>24B_3of5</td><td>1,362.34 ns</td><td>13.877 ns</td><td>10.835 ns</td><td>734,032.295</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>MrbrReconstruct</td><td>24B_3of5</td><td>294.55 ns</td><td>4.632 ns</td><td>3.350 ns</td><td>3,395,056.317</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>UpstreamBigCreate</td><td>24B_3of5</td><td>18,719.94 ns</td><td>317.033 ns</td><td>247.519 ns</td><td>53,418.972</td><td>3.5653</td><td>3.4423</td><td>22966 B</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>24B_3of5</td><td>755,954.94 ns</td><td>74,788.640 ns</td><td>58,390.051 ns</td><td>1,322.830</td><td>-</td><td>-</td><td>21192 B</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>24B_3of5</td><td>49,753.47 ns</td><td>1,176.998 ns</td><td>918.922 ns</td><td>20,099.101</td><td>8.5667</td><td>8.2372</td><td>54936 B</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>24B_3of5</td><td>186,432,552.08 ns</td><td>16,321,991.321 ns</td><td>12,743,137.212 ns</td><td>5.364</td><td>1250.0000</td><td>-</td><td>8076064 B</td>
+</tr><tr><td>MrbrCreate</td><td>32B_2of3</td><td>247.55 ns</td><td>3.004 ns</td><td>2.345 ns</td><td>4,039,617.928</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>MrbrReconstruct</td><td>32B_2of3</td><td>46.98 ns</td><td>2.355 ns</td><td>1.703 ns</td><td>21,284,189.182</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>UpstreamBigCreate</td><td>32B_2of3</td><td>11,593.35 ns</td><td>482.809 ns</td><td>349.103 ns</td><td>86,256.309</td><td>1.8422</td><td>1.7654</td><td>11591 B</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>32B_2of3</td><td>466,567.66 ns</td><td>44,917.700 ns</td><td>35,068.785 ns</td><td>2,143.312</td><td>-</td><td>-</td><td>11560 B</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>32B_2of3</td><td>34,505.05 ns</td><td>382.196 ns</td><td>298.393 ns</td><td>28,981.266</td><td>5.6617</td><td>5.4258</td><td>35912 B</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>32B_2of3</td><td>129,354,447.50 ns</td><td>845,040.766 ns</td><td>558,942.145 ns</td><td>7.731</td><td>750.0000</td><td>-</td><td>5921264 B</td>
+</tr><tr><td>MrbrCreate</td><td>32B_3of5</td><td>599.05 ns</td><td>8.727 ns</td><td>6.310 ns</td><td>1,669,311.191</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>MrbrReconstruct</td><td>32B_3of5</td><td>60.12 ns</td><td>0.421 ns</td><td>0.250 ns</td><td>16,633,534.353</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>UpstreamBigCreate</td><td>32B_3of5</td><td>19,562.02 ns</td><td>626.626 ns</td><td>489.228 ns</td><td>51,119.475</td><td>3.5662</td><td>3.4342</td><td>22974 B</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>32B_3of5</td><td>756,660.33 ns</td><td>50,905.695 ns</td><td>39,743.818 ns</td><td>1,321.597</td><td>-</td><td>-</td><td>21192 B</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>32B_3of5</td><td>49,998.89 ns</td><td>1,182.782 ns</td><td>855.229 ns</td><td>20,000.444</td><td>8.4967</td><td>8.1699</td><td>54960 B</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>32B_3of5</td><td>185,019,415.91 ns</td><td>697,102.700 ns</td><td>504,050.926 ns</td><td>5.405</td><td>1250.0000</td><td>-</td><td>8076064 B</td>
+</tr><tr><td>MrbrCreate</td><td>32B_5of7</td><td>825.48 ns</td><td>50.506 ns</td><td>39.431 ns</td><td>1,211,414.413</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>MrbrReconstruct</td><td>32B_5of7</td><td>104.02 ns</td><td>6.628 ns</td><td>5.175 ns</td><td>9,613,833.267</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>UpstreamBigCreate</td><td>32B_5of7</td><td>32,733.14 ns</td><td>442.211 ns</td><td>292.496 ns</td><td>30,550.077</td><td>7.2816</td><td>0.2207</td><td>45997 B</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>32B_5of7</td><td>1,324,419.91 ns</td><td>9,300.644 ns</td><td>6,151.800 ns</td><td>755.048</td><td>-</td><td>-</td><td>40568 B</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>32B_5of7</td><td>87,672.62 ns</td><td>2,236.816 ns</td><td>1,746.359 ns</td><td>11,406.069</td><td>16.2297</td><td>15.6055</td><td>103144 B</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>32B_5of7</td><td>307,017,013.89 ns</td><td>3,673,300.357 ns</td><td>2,185,922.123 ns</td><td>3.257</td><td>1750.0000</td><td>-</td><td>12259720 B</td>
+</tr><tr><td>MrbrCreate</td><td>32B_9of9</td><td>1,104.65 ns</td><td>61.828 ns</td><td>40.896 ns</td><td>905,260.308</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>MrbrReconstruct</td><td>32B_9of9</td><td>190.92 ns</td><td>15.473 ns</td><td>12.080 ns</td><td>5,237,827.698</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>UpstreamBigCreate</td><td>32B_9of9</td><td>66,650.13 ns</td><td>4,253.072 ns</td><td>3,320.519 ns</td><td>15,003.722</td><td>15.0691</td><td>7.1159</td><td>96334 B</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>32B_9of9</td><td>2,505,236.71 ns</td><td>18,808.425 ns</td><td>13,599.723 ns</td><td>399.164</td><td>-</td><td>-</td><td>82792 B</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>32B_9of9</td><td>269,723.15 ns</td><td>6,736.052 ns</td><td>4,455.481 ns</td><td>3,707.505</td><td>55.3435</td><td>26.7176</td><td>351472 B</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>32B_9of9</td><td>487,429,729.17 ns</td><td>33,448,674.929 ns</td><td>26,114,525.230 ns</td><td>2.052</td><td>3000.0000</td><td>-</td><td>20312888 B</td>
+</tr><tr><td>MrbrCreate</td><td>8B_3of5</td><td>1,007.64 ns</td><td>32.077 ns</td><td>23.193 ns</td><td>992,415.051</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>MrbrReconstruct</td><td>8B_3of5</td><td>261.79 ns</td><td>15.547 ns</td><td>12.138 ns</td><td>3,819,915.707</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>UpstreamBigCreate</td><td>8B_3of5</td><td>15,619.14 ns</td><td>958.177 ns</td><td>692.825 ns</td><td>64,024.027</td><td>2.9334</td><td>2.8323</td><td>18664 B</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>8B_3of5</td><td>369,421.00 ns</td><td>18,802.476 ns</td><td>14,679.736 ns</td><td>2,706.939</td><td>2.3419</td><td>-</td><td>20808 B</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>8B_3of5</td><td>43,698.94 ns</td><td>1,234.881 ns</td><td>964.114 ns</td><td>22,883.852</td><td>7.5868</td><td>7.2950</td><td>48504 B</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>8B_3of5</td><td>23,081,591.43 ns</td><td>312,315.964 ns</td><td>206,577.673 ns</td><td>43.325</td><td>142.8571</td><td>-</td><td>1452896 B</td>
+</tr></tbody></table>
+</body>
+</html>

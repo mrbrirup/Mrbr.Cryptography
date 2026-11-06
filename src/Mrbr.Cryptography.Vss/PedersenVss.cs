@@ -1,0 +1,366 @@
+using System.Buffers.Binary;
+using System.Security.Cryptography;
+using Mrbr.Cryptography.Vss.Internal;
+
+namespace Mrbr.Cryptography.Vss;
+
+/// <summary>Creates, verifies and reconstructs Pedersen verifiable shares of arbitrary bytes.</summary>
+/// <remarks>
+/// A separate protocol over the Ristretto255 scalar field, not the GF(256) share
+/// format. Callers supply all buffers and distribute one authenticated, common
+/// commitment packet. Verification proves consistency with that packet, not its
+/// origin or the intended meaning of the secret. No I/O is performed. Successful
+/// warmed calls allocate no managed memory; native loading/initialization and
+/// exception paths are outside that contract. Requires the packaged libsodium.
+/// </remarks>
+public static class PedersenVss
+{
+    /// <summary>Maximum shares supported by the one-byte coordinate format.</summary>
+    public const int MaximumShareCount = 255;
+    /// <summary>Data bytes encoded injectively into each 32-byte scalar.</summary>
+    public const int DataBytesPerBlock = 31;
+    /// <summary>Share header bytes: SHA-256 of the commitment packet and one coordinate.</summary>
+    public const int ShareHeaderLength = 33;
+    /// <summary>Commitment header bytes, including a random 32-byte share-set identifier.</summary>
+    public const int CommitmentHeaderLength = 44;
+
+    /// <summary>Returns one share's required length, including its header.</summary>
+    public static int GetShareLength(int secretLength) => checked(ShareHeaderLength + BlockCount(secretLength) * 64);
+    /// <summary>Returns the packed length of all shares, with count between 2 and 255.</summary>
+    public static int GetSharesLength(int secretLength, int shareCount)
+    {
+        ValidateCount(shareCount);
+        return checked(GetShareLength(secretLength) * shareCount);
+    }
+    /// <summary>Returns the public commitment packet length for a threshold between 2 and 255.</summary>
+    public static int GetCommitmentsLength(int secretLength, int threshold)
+    {
+        ValidateCount(threshold);
+        return checked(CommitmentHeaderLength + BlockCount(secretLength) * threshold * 32);
+    }
+
+    /// <summary>Reads framed public parameters without authenticating the packet or verifying its points.</summary>
+    /// <remarks>Use only for sizing. Share verification/reconstruction still validates the entire packet.</remarks>
+    public static bool TryReadParameters(ReadOnlySpan<byte> commitments, out int secretLength, out int threshold, out int shareCount)
+    {
+        bool valid = ReadHeader(commitments, out var parameters);
+        secretLength = valid ? parameters.Length : 0;
+        threshold = valid ? parameters.Threshold : 0;
+        shareCount = valid ? parameters.Count : 0;
+        return valid;
+    }
+
+    /// <summary>Creates randomized packed shares and their common public commitment packet.</summary>
+    /// <param name="secret">Any bytes, including empty data.</param>
+    /// <param name="threshold">Required share count, between 2 and shareCount.</param>
+    /// <param name="shareCount">Number of shares, between 2 and 255.</param>
+    /// <param name="sharesDestination">At least GetSharesLength bytes.</param>
+    /// <param name="commitmentsDestination">At least GetCommitmentsLength bytes.</param>
+    /// <returns>The packed share bytes written. The commitment prefix length is GetCommitmentsLength.</returns>
+    /// <remarks>
+    /// Inputs and both full destination spans must be disjoint. Suffixes are
+    /// untouched. Parameter errors precede writes. Other exceptions wipe both
+    /// used output prefixes. Coefficients and secret scratch are wiped in finally.
+    /// Keep/distribute the complete commitment prefix through an authenticated
+    /// channel; a digest inside a share does not authenticate the dealer.
+    /// </remarks>
+    public static int CreateShares(ReadOnlySpan<byte> secret, int threshold, int shareCount,
+        Span<byte> sharesDestination, Span<byte> commitmentsDestination) =>
+        CreateShares(secret, threshold, shareCount, sharesDestination, commitmentsDestination, default(SystemRandomSource));
+
+    internal static int CreateShares<T>(ReadOnlySpan<byte> secret, int threshold, int shareCount,
+        Span<byte> sharesDestination, Span<byte> commitmentsDestination, T random) where T : IRandomSource
+    {
+        int sharesLength = GetSharesLength(secret.Length, shareCount);
+        int commitmentsLength = GetCommitmentsLength(secret.Length, threshold);
+        ArgumentOutOfRangeException.ThrowIfGreaterThan(threshold, shareCount);
+        if (sharesDestination.Length < sharesLength) throw new ArgumentException("Share destination is too small.", nameof(sharesDestination));
+        if (commitmentsDestination.Length < commitmentsLength) throw new ArgumentException("Commitment destination is too small.", nameof(commitmentsDestination));
+        if (secret.Overlaps(sharesDestination) || secret.Overlaps(commitmentsDestination) || sharesDestination.Overlaps(commitmentsDestination))
+            throw new ArgumentException("Secret and destination spans must be disjoint.");
+
+        Span<byte> shares = sharesDestination[..sharesLength], commitments = commitmentsDestination[..commitmentsLength];
+        Span<byte> coefficients = stackalloc byte[threshold * 64]; // At most 16,320 bytes, independent of payload size.
+        Span<byte> a = coefficients[..(threshold * 32)], b = coefficients[(threshold * 32)..];
+        Span<byte> h = stackalloc byte[32];
+        Span<byte> digest = stackalloc byte[32];
+        int shareLength = GetShareLength(secret.Length);
+        try
+        {
+            Ristretto.DeriveH(h);
+            "MVSS"u8.CopyTo(commitments);
+            commitments[4] = 1; // Wire version.
+            commitments[5] = 1; // Pedersen/Ristretto255 suite.
+            commitments[6] = (byte)threshold;
+            commitments[7] = (byte)shareCount;
+            BinaryPrimitives.WriteUInt32LittleEndian(commitments[8..], (uint)secret.Length);
+            random.Fill(commitments.Slice(12, 32));
+            for (int share = 0; share < shareCount; share++) shares[share * shareLength + 32] = (byte)(share + 1);
+
+            for (int block = 0; block < BlockCount(secret.Length); block++)
+            {
+                int offset = block * DataBytesPerBlock;
+                int take = Math.Min(DataBytesPerBlock, secret.Length - offset);
+                a[..32].Clear();
+                secret.Slice(offset, take).CopyTo(a);
+                for (int coefficient = 1; coefficient < threshold; coefficient++)
+                    Ristretto.RandomScalar(a.Slice(coefficient * 32, 32), random);
+                for (int coefficient = 0; coefficient < threshold; coefficient++)
+                    Ristretto.RandomScalar(b.Slice(coefficient * 32, 32), random);
+
+                for (int coefficient = 0; coefficient < threshold; coefficient++)
+                    Ristretto.Commit(a.Slice(coefficient * 32, 32), b.Slice(coefficient * 32, 32), h,
+                        commitments.Slice(CommitmentHeaderLength + (block * threshold + coefficient) * 32, 32));
+
+                for (int share = 0; share < shareCount; share++)
+                {
+                    int target = share * shareLength + ShareHeaderLength + block * 64;
+                    Ristretto.Evaluate(a, (byte)(share + 1), shares.Slice(target, 32));
+                    Ristretto.Evaluate(b, (byte)(share + 1), shares.Slice(target + 32, 32));
+                }
+            }
+
+            Sodium.Hash256(digest, commitments);
+            for (int share = 0; share < shareCount; share++) digest.CopyTo(shares.Slice(share * shareLength, 32));
+            return sharesLength;
+        }
+        catch
+        {
+            CryptographicOperations.ZeroMemory(shares);
+            CryptographicOperations.ZeroMemory(commitments);
+            throw;
+        }
+        finally
+        {
+            CryptographicOperations.ZeroMemory(coefficients);
+            CryptographicOperations.ZeroMemory(digest);
+        }
+    }
+
+    /// <summary>Checks one complete share against the caller's authenticated common commitment packet.</summary>
+    /// <returns>False for malformed framing, noncanonical scalars/points, a wrong set, or an invalid share.</returns>
+    /// <remarks>Does not authenticate or establish agreement on the supplied commitment packet.</remarks>
+    public static bool VerifyShare(ReadOnlySpan<byte> share, ReadOnlySpan<byte> commitments)
+    {
+        if (!ValidateCommitments(commitments, out var parameters)) return false;
+        Span<byte> digest = stackalloc byte[32], h = stackalloc byte[32];
+        Sodium.Hash256(digest, commitments);
+        Ristretto.DeriveH(h);
+        return VerifyCore(share, commitments, parameters, digest, h);
+    }
+
+    /// <summary>Verifies every supplied share and reconstructs the original bytes.</summary>
+    /// <returns>The original length.</returns>
+    /// <exception cref="CryptographicException">The packet/shares fail verification or byte decoding.</exception>
+    /// <remarks>Uses all supplied shares; no invalid share is silently dropped.</remarks>
+    public static int Reconstruct(ReadOnlySpan<byte> shares, ReadOnlySpan<byte> commitments, Span<byte> destination)
+    {
+        if (!TryReconstruct(shares, commitments, destination, out int written))
+            throw new CryptographicException("VSS framing, share verification, quorum, or byte decoding failed.");
+        return written;
+    }
+
+    /// <summary>Verifies every share and reconstructs without throwing on untrusted-data failures.</summary>
+    /// <returns>True on successful verification and decoding; otherwise false with bytesWritten zero.</returns>
+    /// <remarks>
+    /// False results leave destination unchanged, including failures of recovered
+    /// byte padding. Caller errors (small destination/overlap) throw before writes.
+    /// At least the committed threshold of distinct coordinates is required. Uses
+    /// all supplied shares. Input spans may overlap each other, but neither may
+    /// overlap the full destination span. Suffixes are untouched. An unexpected
+    /// backend exception during output clears the output prefix before propagating.
+    /// </remarks>
+    public static bool TryReconstruct(ReadOnlySpan<byte> shares, ReadOnlySpan<byte> commitments, Span<byte> destination, out int bytesWritten)
+    {
+        bytesWritten = 0;
+        if (!ValidateCommitments(commitments, out var parameters)) return false;
+        if (destination.Length < parameters.Length) throw new ArgumentException("Destination is too small.", nameof(destination));
+        if (shares.Overlaps(destination) || commitments.Overlaps(destination)) throw new ArgumentException("Destination must not overlap inputs.", nameof(destination));
+        if (shares.Length % parameters.ShareLength != 0) return false;
+        int count = shares.Length / parameters.ShareLength;
+        if (count < parameters.Threshold || count > parameters.Count) return false;
+
+        Span<byte> seen = stackalloc byte[256], coordinates = stackalloc byte[count];
+        Span<byte> digest = stackalloc byte[32], h = stackalloc byte[32];
+        seen.Clear();
+        Sodium.Hash256(digest, commitments);
+        Ristretto.DeriveH(h);
+        bool small = count <= SmallQuorumInterpolation.MaximumCount && parameters.Blocks <= 2;
+        for (int share = 0; share < count; share++)
+        {
+            ReadOnlySpan<byte> item = shares.Slice(share * parameters.ShareLength, parameters.ShareLength);
+            byte coordinate = item[32];
+            if (coordinate == 0 || coordinate > parameters.Count || seen[coordinate] != 0) return false;
+            seen[coordinate] = 1;
+            coordinates[share] = coordinate;
+            if (small ? !ValidateShare(item, parameters, digest) : !VerifyCore(item, commitments, parameters, digest, h)) return false;
+        }
+
+        if (small) return ReconstructSmall(shares, commitments, parameters, coordinates, h, destination, out bytesWritten);
+
+        Span<byte> weights = stackalloc byte[count * 32]; // At most 8,160 bytes.
+        Span<byte> value = stackalloc byte[32];
+        try
+        {
+            Ristretto.Weights(coordinates, weights);
+            // Check decoding before any output writes. Repeating cheap scalar
+            // interpolation avoids an unbounded plaintext scratch buffer.
+            for (int block = 0; block < parameters.Blocks; block++)
+            {
+                RecoverBlock(shares, parameters.ShareLength, block, weights, value);
+                int take = Math.Min(DataBytesPerBlock, parameters.Length - block * DataBytesPerBlock);
+                if (value[take..].IndexOfAnyExcept((byte)0) >= 0) return false;
+            }
+            try
+            {
+                for (int block = 0; block < parameters.Blocks; block++)
+                {
+                    RecoverBlock(shares, parameters.ShareLength, block, weights, value);
+                    int offset = block * DataBytesPerBlock;
+                    int take = Math.Min(DataBytesPerBlock, parameters.Length - offset);
+                    value[..take].CopyTo(destination[offset..]);
+                }
+            }
+            catch
+            {
+                CryptographicOperations.ZeroMemory(destination[..parameters.Length]);
+                throw;
+            }
+            bytesWritten = parameters.Length;
+            return true;
+        }
+        finally
+        {
+            CryptographicOperations.ZeroMemory(weights);
+            CryptographicOperations.ZeroMemory(value);
+        }
+    }
+
+    private static bool VerifyCore(ReadOnlySpan<byte> share, ReadOnlySpan<byte> commitments, Parameters parameters, ReadOnlySpan<byte> digest, ReadOnlySpan<byte> h)
+    {
+        if (!ValidateShare(share, parameters, digest)) return false;
+        Span<byte> scratch = stackalloc byte[96];
+        Span<byte> left = scratch[..32], right = scratch.Slice(32, 32), product = scratch.Slice(64, 32);
+        try
+        {
+            for (int block = 0; block < parameters.Blocks; block++)
+            {
+                ReadOnlySpan<byte> y = share.Slice(ShareHeaderLength + block * 64, 32), z = share.Slice(ShareHeaderLength + block * 64 + 32, 32);
+                Ristretto.Commit(y, z, h, left);
+                ReadOnlySpan<byte> coefficients = commitments.Slice(CommitmentHeaderLength + block * parameters.Threshold * 32, parameters.Threshold * 32);
+                coefficients[^32..].CopyTo(right);
+                for (int coefficient = parameters.Threshold - 2; coefficient >= 0; coefficient--)
+                {
+                    Ristretto.MultiplyByCoordinate(share[32], right, product);
+                    Sodium.PointAdd(right, product, coefficients.Slice(coefficient * 32, 32));
+                }
+                if (!CryptographicOperations.FixedTimeEquals(left, right)) return false;
+            }
+            return true;
+        }
+        finally { CryptographicOperations.ZeroMemory(scratch); }
+    }
+
+    private static bool ValidateShare(ReadOnlySpan<byte> share, Parameters parameters, ReadOnlySpan<byte> digest)
+    {
+        if (share.Length != parameters.ShareLength || share[32] == 0 || share[32] > parameters.Count
+            || !CryptographicOperations.FixedTimeEquals(share[..32], digest)) return false;
+        for (int block = 0; block < parameters.Blocks; block++)
+        {
+            int offset = ShareHeaderLength + block * 64;
+            if (!Ristretto.IsCanonicalScalar(share.Slice(offset, 32)) || !Ristretto.IsCanonicalScalar(share.Slice(offset + 32, 32))) return false;
+        }
+        return true;
+    }
+
+    private static bool ReconstructSmall(ReadOnlySpan<byte> shares, ReadOnlySpan<byte> commitments, Parameters parameters,
+        ReadOnlySpan<byte> coordinates, ReadOnlySpan<byte> h, Span<byte> destination, out int bytesWritten)
+    {
+        bytesWritten = 0;
+        if (parameters.Blocks == 0) return true; // All framing/digest/coordinate checks already passed.
+        int count = coordinates.Length;
+        Span<byte> basis = stackalloc byte[count * count * 32]; // Public; at most 2,592 bytes.
+        SmallQuorumInterpolation.BuildBasis(coordinates, basis);
+        Span<byte> coefficients = stackalloc byte[count * 64]; // Private; at most 576 bytes.
+        Span<byte> a = coefficients[..(count * 32)], b = coefficients[(count * 32)..];
+        Span<byte> plaintext = stackalloc byte[parameters.Length]; // At most 62 bytes.
+        bool valid = true;
+        try
+        {
+            for (int block = 0; block < parameters.Blocks; block++)
+            {
+                SmallQuorumInterpolation.InterpolatePair(shares, parameters.ShareLength, block, basis, count, a, b);
+                valid &= SmallQuorumInterpolation.VerifyCoefficients(a, b,
+                    commitments.Slice(CommitmentHeaderLength + block * parameters.Threshold * 32, parameters.Threshold * 32), h);
+                int offset = block * DataBytesPerBlock;
+                int take = Math.Min(DataBytesPerBlock, parameters.Length - offset);
+                int padding = 0;
+                for (int i = take; i < 32; i++) padding |= a[i];
+                valid &= padding == 0;
+                a[..take].CopyTo(plaintext[offset..]);
+            }
+            if (!valid) return false;
+            plaintext.CopyTo(destination);
+            bytesWritten = parameters.Length;
+            return true;
+        }
+        finally
+        {
+            CryptographicOperations.ZeroMemory(coefficients);
+            CryptographicOperations.ZeroMemory(plaintext);
+        }
+    }
+
+    private static void RecoverBlock(ReadOnlySpan<byte> shares, int shareLength, int block, ReadOnlySpan<byte> weights, Span<byte> value)
+    {
+        Span<byte> scratch = stackalloc byte[64];
+        try
+        {
+            value.Clear();
+            for (int i = 0; i < weights.Length / 32; i++)
+            {
+                Sodium.ScalarMultiply(scratch[..32], weights.Slice(i * 32, 32), shares.Slice(i * shareLength + ShareHeaderLength + block * 64, 32));
+                Sodium.ScalarAdd(scratch[32..], value, scratch[..32]);
+                scratch[32..].CopyTo(value);
+            }
+        }
+        finally { CryptographicOperations.ZeroMemory(scratch); }
+    }
+
+    private static bool ValidateCommitments(ReadOnlySpan<byte> commitments, out Parameters parameters)
+    {
+        if (!ReadHeader(commitments, out parameters)) return false;
+        for (int offset = CommitmentHeaderLength; offset < commitments.Length; offset += 32)
+            if (!Sodium.PointIsValid(commitments.Slice(offset, 32))) return false;
+        return true;
+    }
+
+    private readonly record struct Parameters(int Length, int Threshold, int Count, int Blocks, int ShareLength);
+
+    private static bool ReadHeader(ReadOnlySpan<byte> commitments, out Parameters parameters)
+    {
+        parameters = default;
+        if (commitments.Length < CommitmentHeaderLength || !commitments[..4].SequenceEqual("MVSS"u8)
+            || commitments[4] != 1 || commitments[5] != 1) return false;
+        int threshold = commitments[6], count = commitments[7];
+        uint length = BinaryPrimitives.ReadUInt32LittleEndian(commitments[8..]);
+        if (threshold < 2 || count < threshold || length > int.MaxValue) return false;
+        long blocks = ((long)length + 30) / DataBytesPerBlock;
+        long shareLength = ShareHeaderLength + blocks * 64;
+        if (shareLength > int.MaxValue || CommitmentHeaderLength + blocks * threshold * 32 != commitments.Length) return false;
+        parameters = new((int)length, threshold, count, (int)blocks, (int)shareLength);
+        return true;
+    }
+
+    private static int BlockCount(int length)
+    {
+        ArgumentOutOfRangeException.ThrowIfNegative(length);
+        return (int)(((long)length + 30) / DataBytesPerBlock);
+    }
+
+    private static void ValidateCount(int count)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThan(count, 2);
+        ArgumentOutOfRangeException.ThrowIfGreaterThan(count, MaximumShareCount);
+    }
+}

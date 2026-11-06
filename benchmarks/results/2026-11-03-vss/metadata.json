@@ -1,0 +1,183 @@
+{
+  "CapturedAtUtc": "2026-11-03T23:13:10.314396+00:00",
+  "TimeZone": "Europe/London",
+  "TargetFramework": "net11.0",
+  "Sdk": "11.0.100-rc.3.26522.148",
+  "Scheme": "Pedersen VSS, Ristretto255, 31-byte data chunks",
+  "NativePackage": "libsodium 1.0.22",
+  "NativeWindowsX64DllSHA256": "64A1F143868309069F0A0A3C8141C0853C4F17243DDF734E92B11C5411739771",
+  "NativePackageSHA512": "/dhmQ5+bHFAUyK8Jg0aC6mdmYHu+ou1PCIL+YCKaHOSaJXyU5bG3KH/quFwznU+SsPYo2MkRLuMAaGDJOpHYMQ==",
+  "PowerPlan": "Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)",
+  "Job": {
+    "UnrollFactor": 1,
+    "IterationTimeMs": 150,
+    "LaunchCount": 1,
+    "IterationCount": 15,
+    "WarmupCount": 20
+  },
+  "Command": "dotnet run --project benchmarks/Mrbr.Cryptography.Vss.Benchmarks -c Release --no-build -- --filter '*' --launchCount 1 --warmupCount 20 --iterationCount 15 --iterationTime 150 --unrollFactor 1 --artifacts benchmarks/results/2026-11-03-vss/artifacts",
+  "Verification": {
+    "Debug": "352 passed (228 core + 71 VSS + 53 integration)",
+    "Rfc9496VectorsTested": true,
+    "IndependentBigIntegerScalarOracle": true,
+    "BuildWarnings": 0,
+    "Release": "352 passed (228 core + 71 VSS + 53 integration)",
+    "BuildErrors": 0,
+    "NativeRuntimeVersionTested": "1.0.22"
+  },
+  "NonVerifyingCoreComparedWithWeightsIncrement": [
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+      "SHA256": "77EC35CF7CA7047256CEDDC536E35CCEBA21A86CEB28A170C4C323A80747AE8B",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256Simd.cs",
+      "SHA256": "15956F459DE818DF4775BFC3732181D4B6B983B9714EC882CF1C039F9BF062D5",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+      "SHA256": "48EAAE746B504D6B979C5B5EAB4608618CD7E6EAC0976114013417BB6BE38737",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.cs",
+      "SHA256": "96C47B6753DBB3BFE6DDFDF4D745698131519CCA0216970CA144AB62E31C5F10",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.Tables.cs",
+      "SHA256": "8874DD39CC4A199F4CCB4F1ADB6A376499206CD332076557A0FB2A457044BD2C",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Mrbr.Cryptography.csproj",
+      "SHA256": "7F457A493233BC3C15CCB45575CDAE83045C0F87997C5E5A4D1614FE85D701BF",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/ShamirSharedSecret.cs",
+      "SHA256": "21318599ECE6D4070A8B0CA79DEBAD828498872DE2790A9C175C3E3CB0F637EF",
+      "Unchanged": true
+    }
+  ],
+  "SourceFingerprints": [
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.Benchmarks/Mrbr.Cryptography.Vss.Benchmarks.csproj",
+      "SHA256": "DDF2A9D7A1752981069349CA71082636F728150E9E5ED763515BADDC54CA9FBD"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.Benchmarks/Program.cs",
+      "SHA256": "05BB1FB14DDB464D1A33989AFA62489253D0A1475BBB75D293028AD8EC858658"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.Benchmarks/VssBenchmarks.cs",
+      "SHA256": "DFD49D4928AE5378C42F44C370AF29ED2104CE716BE07C89F2B881A3B49054EB"
+    },
+    {
+      "Path": "Directory.Build.props",
+      "SHA256": "79650925A72BB236C82439CBF5200FFB2E1EB7B3CD6EE347744E84DC66858A9C"
+    },
+    {
+      "Path": "global.json",
+      "SHA256": "19A39681EA81608656C557DC24D7112CB1B9B71D27D71197D261538B8A2DD675"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Ristretto.cs",
+      "SHA256": "C698BAEB21A1125CDEEB6D9E51FF5D312C0634E75C67F9747EA7A81E645970C1"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Sodium.cs",
+      "SHA256": "6F4DC996D4848C57EBB6B0B0A0D3D33D474D0D78422E329D1163B79091761FBB"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Mrbr.Cryptography.Vss.csproj",
+      "SHA256": "91E89C50101A2595740145BE60BD91ED9EBC47F4E99CBAA71D1E034D01A2B6C1"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/PedersenVss.cs",
+      "SHA256": "E193DB682A89F41BA0C1704F8E8A956C8D0D5AA368E52FC39D7D0521C8498629"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+      "SHA256": "77EC35CF7CA7047256CEDDC536E35CCEBA21A86CEB28A170C4C323A80747AE8B"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256Simd.cs",
+      "SHA256": "15956F459DE818DF4775BFC3732181D4B6B983B9714EC882CF1C039F9BF062D5"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+      "SHA256": "48EAAE746B504D6B979C5B5EAB4608618CD7E6EAC0976114013417BB6BE38737"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.cs",
+      "SHA256": "96C47B6753DBB3BFE6DDFDF4D745698131519CCA0216970CA144AB62E31C5F10"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.Tables.cs",
+      "SHA256": "8874DD39CC4A199F4CCB4F1ADB6A376499206CD332076557A0FB2A457044BD2C"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Mrbr.Cryptography.csproj",
+      "SHA256": "7F457A493233BC3C15CCB45575CDAE83045C0F87997C5E5A4D1614FE85D701BF"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/ShamirSharedSecret.cs",
+      "SHA256": "21318599ECE6D4070A8B0CA79DEBAD828498872DE2790A9C175C3E3CB0F637EF"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Tests/AllocationTests.cs",
+      "SHA256": "38CF8ACB767814D6AA114A00FE591E6032C33C2443BDBA4A8E1D0A8869765BE1"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Tests/Mrbr.Cryptography.Vss.Tests.csproj",
+      "SHA256": "D03B7B87F115E4DA5407E4D42C447CCDC341B0A314B8D3B58DB26DFC135CEF94"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Tests/PedersenVssTests.cs",
+      "SHA256": "8CB044D121675679BE087377574BD98ED1DA0FB48F54520B4756A6E508147D66"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.Tests/PrimitiveTests.cs",
+      "SHA256": "62E0D4EBE1BE8F84F90D7FFC5B6123923ED4E69C804FD645D4CAF123E9BE6A74"
+    }
+  ],
+  "CompletedAtUtc": "2026-11-03T23:23:31.9396099+00:00",
+  "Host": {
+    "BenchmarkDotNetCaption": "BenchmarkDotNet",
+    "BenchmarkDotNetVersion": "0.16.0-preview.2",
+    "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+    "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+    "PhysicalProcessorCount": 1,
+    "PhysicalCoreCount": 6,
+    "LogicalCoreCount": 12,
+    "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+    "Architecture": "X64",
+    "HasAttachedDebugger": false,
+    "HasRyuJit": true,
+    "Configuration": "RELEASE",
+    "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+    "ChronometerFrequency": {
+      "Hertz": 10000000
+    },
+    "HardwareTimerKind": "Unknown"
+  },
+  "CompletedCases": 40,
+  "MaximumManagedBytesPerOperation": 0,
+  "MeasuredGcCollections": 0,
+  "SourceUnchangedDuringMeasurement": true,
+  "SourceFilesWrittenSinceBenchmarkStart": 0,
+  "TotalBenchmarkSeconds": 313.1,
+  "BenchmarkExitCode": 0,
+  "MultimodalDistributionWarnings": [
+    "VssBenchmarks.VssVerifyOne: IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20      -> It seems that the distribution is bimodal (mValue = 3.71)",
+    "VssBenchmarks.ShamirReconstruct: IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20 -> It seems that the distribution can have several modes (mValue = 3)",
+    "VssBenchmarks.ShamirCreate: IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20      -> It seems that the distribution can have several modes (mValue = 2.89)"
+  ],
+  "ReportFingerprint": {
+    "Path": "E:\\Dev\\source\\Mrbr.Cryptography\\benchmarks\\results\\2026-11-03-vss\\artifacts\\results\\Mrbr.Cryptography.Vss.Benchmarks.VssBenchmarks-report-full.json",
+    "SHA256": "2A5BCA5692E79C4C072CA168EF72C1D604FAFA4EB0AE09BC8D66E8FF3665B831"
+  }
+}

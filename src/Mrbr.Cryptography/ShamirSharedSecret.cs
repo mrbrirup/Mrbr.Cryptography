@@ -1,0 +1,274 @@
+using System.Security.Cryptography;
+using Mrbr.Cryptography.Internal;
+
+namespace Mrbr.Cryptography;
+
+/// <summary>Creates and reconstructs threshold shares of arbitrary byte sequences.</summary>
+/// <remarks>
+/// Each packed share is [nonzero coordinate | payload], with one payload byte per
+/// secret byte. Coordinates, lengths, and thresholds are public metadata.
+/// Successful calls allocate no managed memory after runtime/RNG initialization.
+/// This primitive provides no authentication: corrupted or mixed shares, or an
+/// incorrect supplied threshold, can produce incorrect output without detection.
+/// </remarks>
+public static class ShamirSharedSecret
+{
+    /// <summary>The largest number of distinct nonzero coordinates in GF(256).</summary>
+    public const int MaximumShareCount = 255;
+
+    private const int RandomBufferLength = 4096;
+
+    /// <summary>Returns the size of one share, including its coordinate byte.</summary>
+    /// <exception cref="ArgumentOutOfRangeException">The secret length is negative.</exception>
+    /// <exception cref="OverflowException">The share length exceeds <see cref="int.MaxValue"/>.</exception>
+    public static int GetShareLength(int secretLength)
+    {
+        ArgumentOutOfRangeException.ThrowIfNegative(secretLength);
+        return checked(secretLength + 1);
+    }
+
+    /// <summary>Returns the required packed destination length for all shares.</summary>
+    /// <exception cref="ArgumentOutOfRangeException">The length is negative or the share count is outside 2..255.</exception>
+    /// <exception cref="OverflowException">The required length exceeds <see cref="int.MaxValue"/>.</exception>
+    public static int GetSharesLength(int secretLength, int shareCount)
+    {
+        ValidateShareCount(shareCount);
+        return checked(GetShareLength(secretLength) * shareCount);
+    }
+
+    /// <summary>Writes cryptographically randomized shares into a caller-owned buffer.</summary>
+    /// <param name="secret">Any byte sequence, including an empty sequence.</param>
+    /// <param name="threshold">The required share count, between 2 and <paramref name="shareCount"/>.</param>
+    /// <param name="shareCount">The number of shares to create, between 2 and 255.</param>
+    /// <param name="destination">At least <see cref="GetSharesLength"/> bytes; must not overlap <paramref name="secret"/>.</param>
+    /// <returns>The bytes written. Any destination suffix is left untouched.</returns>
+    /// <remarks>
+    /// Share i has coordinate i+1 and starts at i * GetShareLength(secret.Length).
+    /// Each byte receives independent, uniform random coefficients, including zero.
+    /// Scratch memory is bounded and wiped before returning. On RNG failure, the
+    /// output prefix is wiped and the exception is propagated. Parameter errors
+    /// leave the destination unchanged. No file, network, or console I/O is performed.
+    /// </remarks>
+    /// <exception cref="ArgumentOutOfRangeException">The threshold or share count is invalid.</exception>
+    /// <exception cref="ArgumentException">The destination is too small or overlaps the secret.</exception>
+    /// <exception cref="OverflowException">The required output length exceeds <see cref="int.MaxValue"/>.</exception>
+    /// <exception cref="CryptographicException">The platform RNG fails.</exception>
+    public static int CreateShares(ReadOnlySpan<byte> secret, int threshold, int shareCount, Span<byte> destination)
+        => CreateShares(secret, threshold, shareCount, destination, default(CryptographicRandomSource));
+
+    /// <summary>Interpolates the secret at zero from a packed collection of shares.</summary>
+    /// <param name="shares">Complete, equally sized shares concatenated in any order.</param>
+    /// <param name="shareLength">The individual share length, including its coordinate byte.</param>
+    /// <param name="threshold">The original creation threshold, supplied by the caller.</param>
+    /// <param name="destination">At least shareLength-1 bytes; must not overlap <paramref name="shares"/>.</param>
+    /// <returns>The bytes written. Any destination suffix is left untouched.</returns>
+    /// <remarks>
+    /// All supplied shares participate in interpolation. The count must be between
+    /// threshold and 255, and all coordinates must be distinct and nonzero.
+    /// Threshold and share length are not encoded or authenticated by this format.
+    /// An incorrect threshold or structurally valid damaged/mixed shares cannot
+    /// reliably be detected. All input validation precedes destination writes.
+    /// </remarks>
+    /// <exception cref="ArgumentOutOfRangeException">The threshold is outside 2..255 or shareLength is below 1.</exception>
+    /// <exception cref="ArgumentException">Share framing, count, coordinates, destination size, or overlap is invalid.</exception>
+    public static int Reconstruct(ReadOnlySpan<byte> shares, int shareLength, int threshold, Span<byte> destination)
+        => Reconstruct(shares, shareLength, threshold, destination, Gf256Implementation.Auto);
+
+    internal static int Reconstruct(ReadOnlySpan<byte> shares, int shareLength, int threshold, Span<byte> destination,
+        Gf256Implementation implementation)
+    {
+        int vectorWidth = Gf256Simd.GetVectorWidth(implementation);
+        ValidateThreshold(threshold);
+        ArgumentOutOfRangeException.ThrowIfLessThan(shareLength, 1);
+
+        if (shares.Length % shareLength != 0)
+        {
+            throw new ArgumentException("The buffer must contain complete, equally sized shares.", nameof(shares));
+        }
+
+        int shareCount = shares.Length / shareLength;
+        if (shareCount < threshold || shareCount > MaximumShareCount)
+        {
+            throw new ArgumentException("The share count must be at least the threshold and at most 255.", nameof(shares));
+        }
+
+        int secretLength = shareLength - 1;
+        if (destination.Length < secretLength)
+        {
+            throw new ArgumentException("The destination is too small for the secret.", nameof(destination));
+        }
+
+        if (shares.Overlaps(destination))
+        {
+            throw new ArgumentException("The shares and destination must not overlap.", nameof(destination));
+        }
+
+        // All stack allocations are bounded by the validated 255-share maximum.
+        Span<byte> coordinates = stackalloc byte[shareCount];
+        Span<byte> seen = stackalloc byte[256];
+        seen.Clear();
+
+        for (int share = 0; share < shareCount; share++)
+        {
+            byte coordinate = shares[share * shareLength];
+            if (coordinate == 0 || seen[coordinate] != 0)
+            {
+                throw new ArgumentException("Share coordinates must be distinct and nonzero.", nameof(shares));
+            }
+
+            seen[coordinate] = 1;
+            coordinates[share] = coordinate;
+        }
+
+        if (secretLength == 0)
+        {
+            return 0;
+        }
+
+        // Coordinates have been validated and are public. Compute weights once,
+        // using coordinate-only log tables; reuse them for every secret byte.
+        Span<byte> weights = stackalloc byte[shareCount];
+        LagrangeWeights.Calculate(coordinates, weights);
+
+        Span<byte> output = destination[..secretLength];
+        output.Clear();
+        for (int share = 0; share < shareCount; share++)
+        {
+            ReadOnlySpan<byte> payload = shares.Slice((share * shareLength) + 1, secretLength);
+            Gf256Simd.MultiplyAdd(payload, weights[share], output, vectorWidth);
+        }
+
+        return secretLength;
+    }
+
+    // Internal entropy injection allows reproducible vectors and failure tests
+    // without offering an unsafe public deterministic/random-source overload.
+    internal static int CreateShares<TRandomSource>(ReadOnlySpan<byte> secret, int threshold, int shareCount,
+        Span<byte> destination, TRandomSource randomSource, Gf256Implementation implementation = Gf256Implementation.Auto)
+        where TRandomSource : IRandomSource
+    {
+        int vectorWidth = Gf256Simd.GetVectorWidth(implementation);
+        int outputLength = GetSharesLength(secret.Length, shareCount);
+        ValidateThreshold(threshold);
+        if (threshold > shareCount)
+        {
+            throw new ArgumentOutOfRangeException(nameof(threshold), "The threshold must not exceed the share count.");
+        }
+
+        if (destination.Length < outputLength)
+        {
+            throw new ArgumentException("The destination is too small for all shares.", nameof(destination));
+        }
+
+        if (secret.Overlaps(destination))
+        {
+            throw new ArgumentException("The secret and destination must not overlap.", nameof(destination));
+        }
+
+        int shareLength = GetShareLength(secret.Length);
+        Span<byte> output = destination[..outputLength];
+        for (int share = 0; share < shareCount; share++)
+        {
+            output[share * shareLength] = (byte)(share + 1);
+        }
+
+        if (secret.IsEmpty)
+        {
+            return outputLength;
+        }
+
+        Span<byte> randomBuffer = stackalloc byte[RandomBufferLength];
+        int coefficientCount = threshold - 1;
+        int maximumBlockLength = RandomBufferLength / coefficientCount;
+        // Keep the original entropy-to-polynomial mapping. A separate bounded
+        // buffer transposes coefficients so adjacent SIMD lanes represent bytes.
+        Span<byte> transposedBuffer = stackalloc byte[vectorWidth != 0 && secret.Length >= 16 && coefficientCount > 1
+            ? RandomBufferLength : 0];
+        try
+        {
+            for (int offset = 0; offset < secret.Length;)
+            {
+                int blockLength = Math.Min(maximumBlockLength, secret.Length - offset);
+                Span<byte> coefficients = randomBuffer[..(blockLength * coefficientCount)];
+                randomSource.Fill(coefficients);
+
+                bool vectorize = vectorWidth != 0 && blockLength >= 16;
+                ReadOnlySpan<byte> planes = coefficients;
+                if (vectorize && coefficientCount > 1)
+                {
+                    Span<byte> transposed = transposedBuffer[..coefficients.Length];
+                    for (int coefficient = 0; coefficient < coefficientCount; coefficient++)
+                    {
+                        for (int position = 0; position < blockLength; position++)
+                        {
+                            transposed[(coefficient * blockLength) + position] = coefficients[(position * coefficientCount) + coefficient];
+                        }
+                    }
+
+                    planes = transposed;
+                }
+
+                for (int share = 0; share < shareCount; share++)
+                {
+                    byte coordinate = (byte)(share + 1);
+                    Span<byte> payload = output.Slice((share * shareLength) + 1 + offset, blockLength);
+                    if (vectorize)
+                    {
+                        Gf256Simd.EvaluatePolynomial(secret.Slice(offset, blockLength), planes,
+                            coefficientCount, coordinate, payload, vectorWidth);
+                        continue;
+                    }
+
+                    for (int position = 0; position < blockLength; position++)
+                    {
+                        ReadOnlySpan<byte> polynomial = coefficients.Slice(position * coefficientCount, coefficientCount);
+                        payload[position] = EvaluatePolynomial(secret[offset + position], polynomial, coordinate);
+                    }
+                }
+
+                offset += blockLength;
+            }
+        }
+        catch
+        {
+            CryptographicOperations.ZeroMemory(output);
+            throw;
+        }
+        finally
+        {
+            CryptographicOperations.ZeroMemory(randomBuffer);
+            CryptographicOperations.ZeroMemory(transposedBuffer);
+        }
+
+        return outputLength;
+    }
+
+    // Coefficients are a_1 through a_(k-1) in ascending order; constant is a_0.
+    internal static byte EvaluatePolynomial(byte constant, ReadOnlySpan<byte> coefficients, byte coordinate)
+    {
+        if (coefficients.IsEmpty)
+        {
+            return constant;
+        }
+
+        byte value = coefficients[^1];
+        for (int coefficient = coefficients.Length - 2; coefficient >= 0; coefficient--)
+        {
+            value = Gf256.Add(Gf256.Multiply(value, coordinate), coefficients[coefficient]);
+        }
+
+        return Gf256.Add(Gf256.Multiply(value, coordinate), constant);
+    }
+
+    private static void ValidateShareCount(int shareCount)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThan(shareCount, 2);
+        ArgumentOutOfRangeException.ThrowIfGreaterThan(shareCount, MaximumShareCount);
+    }
+
+    private static void ValidateThreshold(int threshold)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThan(threshold, 2);
+        ArgumentOutOfRangeException.ThrowIfGreaterThan(threshold, MaximumShareCount);
+    }
+}

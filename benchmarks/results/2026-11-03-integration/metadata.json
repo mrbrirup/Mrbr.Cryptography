@@ -1,0 +1,464 @@
+{
+  "CapturedAtUtc": "2026-11-03T22:01:02.6238898+00:00",
+  "TargetFramework": "net11.0",
+  "Sdk": "11.0.100-rc.3.26522.148",
+  "Command": "./eng/Invoke-Integration.ps1 -Action Benchmark -Artifacts benchmarks/results/2026-11-03-integration/artifacts",
+  "Job": {
+    "IterationTimeMs": 150,
+    "WarmupCount": 20,
+    "UnrollFactor": 1,
+    "IterationCount": 15,
+    "LaunchCount": 1
+  },
+  "MsBuildProperties": [
+    "UseLocalKeyManager=true",
+    "ShouldUnsetParentConfigurationAndPlatform=false",
+    "MrbrServiceSourceRoot=C:/dev/source"
+  ],
+  "Verification": {
+    "Release": "197 passed (144 core + 53 integration)",
+    "Debug": "197 passed (144 core + 53 integration)",
+    "BuildWarnings": 0,
+    "BuildErrors": 0
+  },
+  "CoreComparedWithSavedSimd": [
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256Simd.cs",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Mrbr.Cryptography.csproj",
+      "Unchanged": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/ShamirSharedSecret.cs",
+      "Unchanged": true
+    }
+  ],
+  "KeyManagerCommit": "fffde24a93b32f4030cb180ea7b4eaff39c76cd8",
+  "EncryptionManagerCommit": "3e6f18747df9110aa2e1e1c6470a2dc595aeeda3",
+  "KeyManagerWorkingTree": [
+    " M Mrbr.Service.KeyManager/Configuration/KeyServiceConfiguration.cs",
+    " M Mrbr.Service.KeyManager/Configuration/KeyValidationCodec.cs",
+    " M Mrbr.Service.KeyManager/Matrices/MatrixKeyWalker.cs",
+    " M README.md",
+    " M RELEASE_NOTES.md",
+    " M global.json",
+    "?? Mrbr.Service.KeyManager.SimdBenchmarks/",
+    "?? Mrbr.Service.KeyManager.Tests/HashValidationTests.cs",
+    "?? Mrbr.Service.KeyManager.Tests/KeyServiceConfigurationTests.cs",
+    "?? Mrbr.Service.KeyManager.Tests/MatrixSimdCompatibilityTests.cs"
+  ],
+  "EncryptionManagerWorkingTree": [
+    " M Mrbr.Service.EncryptionManager.slnx",
+    " M Mrbr.Service.EncryptionManager/Services/CryptographicArtifactSerializer.cs",
+    " M Mrbr.Service.EncryptionManager/Services/CryptographicService.cs",
+    " M README.md",
+    " M RELEASE_NOTES.md",
+    " M global.json",
+    "?? Directory.Build.targets",
+    "?? Mrbr.Service.EncryptionManager.Benchmarks/",
+    "?? Mrbr.Service.EncryptionManager.Tests/PerformanceCompatibilityTests.cs",
+    "?? Mrbr.Service.EncryptionManager/Services/AesGcmKeyDecryptor.cs",
+    "?? docs/performance-investigation.md"
+  ],
+  "SourceFingerprints": [
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Benchmarks/Mrbr.Cryptography.Benchmarks.csproj",
+      "SHA256": "ED9F77D0F9014C44E5F2F482D6D1836F0A409FEB34BF009FF6E59BD33223553E"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Benchmarks/Program.cs",
+      "SHA256": "95387FDE115051945F27721288B68FA5E891B695F379773A06534702303031D8"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Benchmarks/ShamirSharedSecretBenchmarks.cs",
+      "SHA256": "7DFF1F96B826ED8E9B972271DA8BA7EEF7CD6DA4124C4460C2B17AFBF65C58AD"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Benchmarks/SharingScenario.cs",
+      "SHA256": "275E7FEB9A1C7288E3433396325737AF3F4CF31C8D113DA320A81AA3AD65F996"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Benchmarks/ThroughputConfig.cs",
+      "SHA256": "9298E9E88463C61A43F7BA91A9584E4624760AB7763ACE82E6FE3C431CBDCF32"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.IntegrationBenchmarks/DecryptionBenchmarks.cs",
+      "SHA256": "E6F004DF9CFFA6E384B92C063707F03603FD2188A25089510203E5D10945D94C"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.IntegrationBenchmarks/IntegrationConfig.cs",
+      "SHA256": "2517CC513A50AF2F0A02725283A7E9519C665768B12A15B367BFA9E9677F79A4"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.IntegrationBenchmarks/Mrbr.Cryptography.IntegrationBenchmarks.csproj",
+      "SHA256": "112DAA45D784349C01C1D522241A4A4146A7735FA70C7E136BA633996F05E312"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.IntegrationBenchmarks/Program.cs",
+      "SHA256": "05BB1FB14DDB464D1A33989AFA62489253D0A1475BBB75D293028AD8EC858658"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.IntegrationBenchmarks/SharingBenchmarks.cs",
+      "SHA256": "68ED0216F7D4D22E32675A0250C5F4C0DADD0124C60FC9276EB02F40EDF5FDAE"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Directory.Build.targets",
+      "SHA256": "652FA0269A8B3E544F0278E6868B81AAAD1E2BD44011447300D1B3951BAE1EED"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Enums/Algorithms/AsymmetricAlgorithms.cs",
+      "SHA256": "97E539F36BD43EF849096514A793595B0DD899E1E71D8DBF8790DF30BABF155B"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Enums/Algorithms/HashingAlgorithms.cs",
+      "SHA256": "94DECB31E4BE06655BA4B3287600F7CA3AFF6956641DF8F086F04399296F2F5F"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Enums/Algorithms/HmacAlgorithms.cs",
+      "SHA256": "539329B10C95C1B4543D3CD883B43F0855B70DE8C08C3282F201D17F69EE5A99"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Enums/Algorithms/MlDsaAlgorithms.cs",
+      "SHA256": "42322F6F339249E5C3322CD1BF9A215F5A16CA0F6814A9DCC9BAA07A419844BA"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Enums/Algorithms/MlKemAlgorithms.cs",
+      "SHA256": "65FABF0CF3D72274D31EF05962680CEBC236A627C657DA0AFD2A879A85113EBA"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Enums/Algorithms/SymmetricEncryptionAlgorithms.cs",
+      "SHA256": "37900FD7DE79A689A8C7F70F44922634339B4B342CCB48609B2A9685A16AA367"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Extensions/ServiceCollectionExtensions.cs",
+      "SHA256": "029994B09DFC3828526999E9FC7307116CA33FC278FB6EB886DB4C3234187DFB"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager.csproj",
+      "SHA256": "6DA0E4AC30E8F581EDB1E1D26E6140BCA72779724F64DBAA0DF812B6472E3272"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/PostQuantum/PostQuantumProvider.cs",
+      "SHA256": "9F4F40D6E12D0AF5455CEAAE026B7EAD71B0D2DC6544875497A6247EF81BCA8A"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Properties/AssemblyInfo.cs",
+      "SHA256": "F93068281485EED4187EEA6F82CFDE93AC6DE37DC9D947BF3B4F488BFF3D5028"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/AesGcmKeyDecryptor.cs",
+      "SHA256": "432D23F00DBA2B7A2784DB4154C54A01F6E292E1D68FBA9CF8E1F71E89A3200C"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/CryptographicArtifactFormat.cs",
+      "SHA256": "7F38A181B030A8B28DE68E65DA08CE9856CF218A9BB796A02697C32E522DB278"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/CryptographicArtifactSerializer.cs",
+      "SHA256": "F84EE936BA74E9F5A38B757FAA0B13E74B7568327628262D9264563AC22855AE"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/CryptographicFailure.cs",
+      "SHA256": "CC0B8C8B9CAFDD7EEB327810C35EEE113C3902AB5BCC6D84685EF991C9AD4C6A"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/CryptographicResult.cs",
+      "SHA256": "A20C6E0CE7CA1F004AD49BCB3811E235751D7CCCDD9CF991F3AE8C292FA7138D"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/CryptographicService.cs",
+      "SHA256": "EAD645E233A4C1B73911BD374A1964B671AC2BEBEACFE06C69D73F98F3E1B622"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/CryptographicService.PostQuantum.cs",
+      "SHA256": "F37F6C8F2DAFEC00B6F9DEF2F9F71EA4336B40C4969061F6C90F425CA5074A7D"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/EncryptionOptions.cs",
+      "SHA256": "397C6232A15637B4CB8369D9F7E866ABF22C439E9FE1D1B57EAD53E4C6E9F064"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/EncryptionResult.cs",
+      "SHA256": "461F7FE20C8E2A64A5CFBE7161FDA59FE08759D4974A869AD0C08BDD6388ABB3"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/HashOptions.cs",
+      "SHA256": "42F79B0AB568E09F82D15512173E5B4AA2030BBDA4BC722491E90C1B3D8E051B"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/HashResult.cs",
+      "SHA256": "8144B00D693F0FAD1C24C149349A0899FD063B4B4CE574A5F85FB424E2E11CD3"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/HmacOptions.cs",
+      "SHA256": "7398DA5C00C2B8F31930429B90D020107829E111104B210F4D0D34CD8794830E"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/HmacResult.cs",
+      "SHA256": "2A4B003ECB7055F925FF6D9466C172DB5CB0A36ECB37FC78482BFF07681330B7"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/ICryptographicService.cs",
+      "SHA256": "041D1E069EFF8C42E5D3102FB6F58161875FBEB44B78B1E12097A4180222E853"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/ICryptographicServiceOptions.cs",
+      "SHA256": "6697494B875D9FEEDD63211A9D974C445FDEA7B5E8DE043BCDAD5E6AD7C74418"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/KeyedCryptographicArtifact.cs",
+      "SHA256": "2F2A4E0979A3EEF01DBA70A456969D4AEFD39C262AA3971E7D52A43B04AC0B31"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/PostQuantumAlgorithmInfo.cs",
+      "SHA256": "9CBD33B98072AC942128648E7BC923A0F1BF1847FE95F25B328A756A94AEEDC0"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/PostQuantumEncryptionOptions.cs",
+      "SHA256": "26EC642FA5BC3B60759F3CE95237E41C345B5CDC834FA907861D94EF3A368630"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/PostQuantumSignatureOptions.cs",
+      "SHA256": "5BEC6A3A8EE738B4667141F29DEC9DC1BD0C56D2CB90504E25A85DE89B599126"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/SignatureResult.cs",
+      "SHA256": "FAF25C563EF9369A36E9297D11B0D7388A147A67D869CFBC46A4C2DF37C53D45"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/build/Mrbr.SourceGenerators.Common/EnumStringParserGenerator.cs",
+      "SHA256": "5720F5E9B40EC8F798FD97DC2B326C4B2C18128073994CB3D82C77DDD8421FC1"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/build/Mrbr.SourceGenerators.Common/Mrbr.SourceGenerators.Common.csproj",
+      "SHA256": "60716C75301022F860A88E2E4F43071BB322EB0A42EDE63C2CF6235184144841"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyBlockSettings.cs",
+      "SHA256": "54488FDC420A7D5104765AA29554257F76B83AC006CFD43A3ECDBDABD4AD0D9E"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyConfigurationAudit.cs",
+      "SHA256": "ECA39F14230CBF67B56B86F20B0152F3520D5FF9EA0DB19F5C6599E67E7FBCF7"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyMatrixSettings.cs",
+      "SHA256": "DD4E45642189AAB1B5ED1F94D4A8DAD88A9A36D846A552BA0F3B53C529C2FDAD"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyServiceConfig.cs",
+      "SHA256": "339E18D4E1B4C6483ABD993ED3F1C731B84E80AD8B2016A7CAA00F36F0EE68F6"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyServiceConfiguration.cs",
+      "SHA256": "38B4A819B9C63CF84C6834C8278A86606F153970082C9526641682A8EC022D20"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyServiceEntry.cs",
+      "SHA256": "57A7C91B901369C2DA7265CED67CBB0EFBEA04DA782887C1C7C9A1A98E9CF5FD"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyServiceOptions.cs",
+      "SHA256": "73040DFC297680668B0981F4B4F80A89C971DF5B192398EC7DBA41629B8C973E"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeySourceState.cs",
+      "SHA256": "B7C90007E218D33F84F524092646B22648DB26426DDC2D71C59465EFDAF2E54F"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyType.cs",
+      "SHA256": "14D3EAE23962E44012BE385A049BBCDF9976997497685F0A0F061BD904B69CFE"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyValidationCodec.cs",
+      "SHA256": "5838E0687603B30ABA7B301F9B7239EB06FAC5BF76FC98EB2D50D0D3137081A7"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyValidationOptions.cs",
+      "SHA256": "3B74882202C313E11C521A3C26A07DA4C3662A6AB1338F2CB74C46F470D75656"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/PermittedKeyTypes.cs",
+      "SHA256": "A306DA47A4882AB1114C15A22345BAC8A9B6CF11B57CDEDFB5CB70CC24663412"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/KeyHandles/KeyHandleCodec.cs",
+      "SHA256": "35CEA2C3C3314A0857F7D95D5977F4DD3810DB086C6B7F1DA0610A796C1834FE"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Matrices/MatrixBuilder.cs",
+      "SHA256": "076853EFF8000C83DEA8C20ECB645360FD505DA2E2F9480B5D2B3BD667A10FC6"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Matrices/MatrixKeyGenerator.cs",
+      "SHA256": "15D3247EF9CF676EEAC08FA9281C89AB24AC95FAC8595365875C7A5E4BD078C4"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Matrices/MatrixKeyWalker.cs",
+      "SHA256": "6331689B2EFC9DBAC694FC34EA80ABEC9A66666210F1A9D2159E5D9467A3F9AE"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager.csproj",
+      "SHA256": "1D7EBE2E1D4BE78DB504090F0C4A2ED49BDFA556F34C0AE568B5949FC9D1D9DD"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Services/IKeyService.cs",
+      "SHA256": "FEAC689B9C5299CCED0FFD1FA240E3863B8309F9ECC889B6E27D86EFEAA9EC83"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Services/KeyService.cs",
+      "SHA256": "CAECFD33A001F2DC44415762EFE09A29EF691CEE3E652E8F402ECC58B962FE12"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Utilities/KeyGenerator.cs",
+      "SHA256": "94EA1F80AE3E26607BC58F26EB745CBA518743C1FA313D8F22D0D766F4870480"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.System.Exceptions/Extensions/ExceptionExtensions.cs",
+      "SHA256": "72E707D37E82D421077452AF652E6DBE6A12AEB3030DAB2CFD93A900EA15F46F"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.System.Exceptions/Mrbr.System.Exceptions.csproj",
+      "SHA256": "0975B2220F95020A634A0881ABC154D09ABB8C76486C6AE02145497E7618FE52"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.System.Text.Json.Serialisation/Converters/ByteArrayAsNumberArrayConverter.cs",
+      "SHA256": "363964BF8B3D57E7F1D4F7E4340CDEB93E414805CE7EAADA547F389A23A2BB89"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.System.Text.Json.Serialisation/Converters/ByteArrayAsNumberArrayConverterAttribute.cs",
+      "SHA256": "A01F0BFB582DB420791655864A7B8F65288A2D6AA5AE6EBFB882E05E59D273E5"
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.System.Text.Json.Serialisation/Mrbr.System.Text.Json.Serialisation.csproj",
+      "SHA256": "03F84C42799D8DD8FAB7CD36CBDC7288B460B042F9A98A7E87C4EFE27E45A443"
+    },
+    {
+      "Path": "Directory.Build.props",
+      "SHA256": "79650925A72BB236C82439CBF5200FFB2E1EB7B3CD6EE347744E84DC66858A9C"
+    },
+    {
+      "Path": "eng/IntegrationKeyEnvironment.cs",
+      "SHA256": "975FD6B91598A4703115BED46419216B5C141BA3609E9D019BF324611FC903F5"
+    },
+    {
+      "Path": "global.json",
+      "SHA256": "19A39681EA81608656C557DC24D7112CB1B9B71D27D71197D261538B8A2DD675"
+    },
+    {
+      "Path": "ServiceProjects.props",
+      "SHA256": "3CF732C2FA52BE946FA3A28FFA650AC8E0D2474D0D22CC812A89195FA756A275"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.KeyManager/Mrbr.Cryptography.KeyManager.csproj",
+      "SHA256": "8F323FD8664045694006E04465CBED6E6C74A41734700DCDCBB5F0E29616A0D2"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.KeyManager/ShamirKeySharing.cs",
+      "SHA256": "73AA2EAE96D49260C8639F33E7FE24996D00E6D851D7C84387A913CBC5DDDAFE"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+      "SHA256": "77EC35CF7CA7047256CEDDC536E35CCEBA21A86CEB28A170C4C323A80747AE8B"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256Simd.cs",
+      "SHA256": "15956F459DE818DF4775BFC3732181D4B6B983B9714EC882CF1C039F9BF062D5"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+      "SHA256": "48EAAE746B504D6B979C5B5EAB4608618CD7E6EAC0976114013417BB6BE38737"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Mrbr.Cryptography.csproj",
+      "SHA256": "777799CF0DB389218719038DD1C554803BE330085435C9FEF1C5194FF66C8694"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/ShamirSharedSecret.cs",
+      "SHA256": "6E77CC1A2BA7D5D23213E5FE40DB1BC6FA6B61B96375FD5209CE1B0A5EF91CDC"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.IntegrationTests/IntegrationAllocationTests.cs",
+      "SHA256": "78BDC819018F3D21B3AA0D79F798361723AB207B2CEA143BE91645726D94695C"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.IntegrationTests/Mrbr.Cryptography.IntegrationTests.csproj",
+      "SHA256": "10D85A0EED03E886A3BB5AF0A7DCC250A83A99F54DF8D52D2E53A564AE52D019"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.IntegrationTests/RawKeyDecryptionTests.cs",
+      "SHA256": "41ACB293269693845B7D241ED795C416A9B98E313DFDA45AA55244285B6C2C2D"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.IntegrationTests/ShamirKeySharingTests.cs",
+      "SHA256": "7FACB50173BBFBA7A51A01B4E9805C38C6F55DD1C905BFDA824C131B006BE6FB"
+    }
+  ],
+  "CompletedAtUtc": "2026-11-03T22:05:50.0865961+00:00",
+  "Host": {
+    "BenchmarkDotNetCaption": "BenchmarkDotNet",
+    "BenchmarkDotNetVersion": "0.16.0-preview.2",
+    "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+    "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+    "PhysicalProcessorCount": 1,
+    "PhysicalCoreCount": 6,
+    "LogicalCoreCount": 12,
+    "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+    "Architecture": "X64",
+    "HasAttachedDebugger": false,
+    "HasRyuJit": true,
+    "Configuration": "RELEASE",
+    "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+    "ChronometerFrequency": {
+      "Hertz": 10000000
+    },
+    "HardwareTimerKind": "Unknown"
+  },
+  "CompletedCases": 49,
+  "ZeroManagedAllocationCases": 37,
+  "SourceUnchangedDuringMeasurement": true,
+  "SourceFilesWrittenSinceBenchmarkStart": 0,
+  "MultimodalDistributionWarnings": [
+    "DecryptionBenchmarks.ExistingHandleDecrypt: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20   -> It seems that the distribution is bimodal (mValue = 3.43)",
+    "DecryptionBenchmarks.RecoverHandleAndDecrypt: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20 -> It seems that the distribution can have several modes (mValue = 3)",
+    "DecryptionBenchmarks.ReusedRawKeyDecrypt: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20     -> It seems that the distribution can have several modes (mValue = 3.11)",
+    "DecryptionBenchmarks.ExistingHandleDecrypt: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20   -> It seems that the distribution is bimodal (mValue = 3.75)",
+    "DecryptionBenchmarks.ReusedRawKeyDecrypt: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20     -> It seems that the distribution is bimodal (mValue = 3.33)",
+    "DecryptionBenchmarks.RecoverHandleAndDecrypt: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20 -> It seems that the distribution is bimodal (mValue = 4)",
+    "HandleSharingBenchmarks.CoreRecover: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20 -> It seems that the distribution can have several modes (mValue = 2.89)",
+    "KeySharingBenchmarks.ReplayAndCreate: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20        -> It seems that the distribution can have several modes (mValue = 3.11)",
+    "KeySharingBenchmarks.CoreCreate: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20             -> It seems that the distribution is bimodal (mValue = 3.33)",
+    "KeySharingBenchmarks.ReplayAndCreate: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20        -> It seems that the distribution can have several modes (mValue = 3.14)",
+    "KeySharingBenchmarks.CoreCreate: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20             -> It seems that the distribution can have several modes (mValue = 2.86)",
+    "KeySharingBenchmarks.CoreCreate: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20             -> It seems that the distribution can have several modes (mValue = 3)",
+    "KeySharingBenchmarks.RecoverHandleAndReplay: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=15, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=20 -> It seems that the distribution is bimodal (mValue = 3.25)"
+  ],
+  "ReportFingerprints": [
+    {
+      "Path": "E:\\Dev\\source\\Mrbr.Cryptography\\benchmarks\\results\\2026-11-03-integration\\artifacts\\results\\Mrbr.Cryptography.IntegrationBenchmarks.DecryptionBenchmarks-report-full.json",
+      "SHA256": "0DD5FA98C7277819EEAF714E7451E9C063BB2239BCF9A80D49D217A8FD74EFA3"
+    },
+    {
+      "Path": "E:\\Dev\\source\\Mrbr.Cryptography\\benchmarks\\results\\2026-11-03-integration\\artifacts\\results\\Mrbr.Cryptography.IntegrationBenchmarks.HandleSharingBenchmarks-report-full.json",
+      "SHA256": "F18CE90C191E00058E1266B573E77D9545820773AC8CCDBE5F59017C8BC9E6C5"
+    },
+    {
+      "Path": "E:\\Dev\\source\\Mrbr.Cryptography\\benchmarks\\results\\2026-11-03-integration\\artifacts\\results\\Mrbr.Cryptography.IntegrationBenchmarks.KeySharingBenchmarks-report-full.json",
+      "SHA256": "465FC038462F4E16EDB66B24207006C1197D9FC4E2B2D9C4343B0EAD406A2289"
+    }
+  ],
+  "PowerPlan": "Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)",
+  "TotalBenchmarkSeconds": 388.62,
+  "TimeZone": "Europe/London",
+  "AllocationScope": "Managed allocations on this host; native AES context resources are not counted."
+}

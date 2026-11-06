@@ -1,0 +1,30 @@
+{
+  "CheckedAtUtc": "2026-11-04T04:44:42.179677+00:00",
+  "OriginalUpstreamFilesChecked": 150,
+  "ChangedUpstreamFiles": [
+    "src/packages.lock.json",
+    "src/SecretSharingDotNet.csproj",
+    "tests/packages.lock.json",
+    "tests/SecretSharingDotNetTest.csproj"
+  ],
+  "UpstreamCSharpFilesChanged": 0,
+  "UnexpectedNonBuildFilesAddedToUpstream": [],
+  "LockFrameworkEntriesAdded": {
+    "src/packages.lock.json": [
+      "net11.0"
+    ],
+    "tests/packages.lock.json": [
+      "net11.0",
+      "net11.0/win-x86"
+    ]
+  },
+  "ExistingLockEntriesUnchanged": true,
+  "OurProductionFilesCheckedUnchanged": 19,
+  "UpstreamTestsFromXml": {
+    "total": 1964,
+    "passed": 1963,
+    "failed": 0,
+    "skipped": 1,
+    "errors": 0
+  }
+}

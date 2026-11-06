@@ -1,0 +1,526 @@
+{
+  "CapturedAtUtc": "2026-11-04T03:10:34.8507059+00:00",
+  "TimeZone": "Europe/London",
+  "TargetFramework": "net11.0",
+  "Sdk": "11.0.100-rc.3.26522.148",
+  "NativePackage": "libsodium 1.0.22",
+  "NativeWindowsX64DllSHA256": "64A1F143868309069F0A0A3C8141C0853C4F17243DDF734E92B11C5411739771",
+  "PowerPlan": "Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)",
+  "Job": {
+    "LaunchCount": 1,
+    "WarmupCount": 15,
+    "IterationCount": 12,
+    "IterationTimeMs": 150,
+    "UnrollFactor": 1
+  },
+  "Command": "./eng/Invoke-AuthenticatedRecovery.ps1 -Action Benchmark -Artifacts benchmarks/results/2026-11-04-authenticated-recovery/artifacts",
+  "MsBuildProperties": [
+    "UseLocalKeyManager=true",
+    "ShouldUnsetParentConfigurationAndPlatform=false",
+    "MrbrServiceSourceRoot=C:/dev/source"
+  ],
+  "Verification": {
+    "Release": "522 passed (228 core + 129 VSS + 50 authentication + 53 existing integration + 62 authenticated recovery)",
+    "BuildWarnings": 0,
+    "BuildErrors": 0,
+    "Debug": "522 passed (228 core + 129 VSS + 50 authentication + 53 existing integration + 62 authenticated recovery)",
+    "DocumentationExampleCompiledAndExecuted": true,
+    "StandaloneTests": "407 core/VSS/authentication; manager projects remain optional"
+  },
+  "ProtectedLibraries": [
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+      "SHA256": "77EC35CF7CA7047256CEDDC536E35CCEBA21A86CEB28A170C4C323A80747AE8B",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256Simd.cs",
+      "SHA256": "15956F459DE818DF4775BFC3732181D4B6B983B9714EC882CF1C039F9BF062D5",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+      "SHA256": "48EAAE746B504D6B979C5B5EAB4608618CD7E6EAC0976114013417BB6BE38737",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.cs",
+      "SHA256": "96C47B6753DBB3BFE6DDFDF4D745698131519CCA0216970CA144AB62E31C5F10",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.Tables.cs",
+      "SHA256": "8874DD39CC4A199F4CCB4F1ADB6A376499206CD332076557A0FB2A457044BD2C",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Mrbr.Cryptography.csproj",
+      "SHA256": "7F457A493233BC3C15CCB45575CDAE83045C0F87997C5E5A4D1614FE85D701BF",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/ShamirSharedSecret.cs",
+      "SHA256": "21318599ECE6D4070A8B0CA79DEBAD828498872DE2790A9C175C3E3CB0F637EF",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Ristretto.cs",
+      "SHA256": "4DDF2652965DF6E15E58ADEEB14961EC1A44A5BDE9EFA1CB3BD04A2594D9C0AA",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/SmallQuorumInterpolation.cs",
+      "SHA256": "E083376846BB55F59A5C8D1A488B27AFAEF90AE5DD021715D90691713179E8D0",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Sodium.cs",
+      "SHA256": "6F4DC996D4848C57EBB6B0B0A0D3D33D474D0D78422E329D1163B79091761FBB",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Mrbr.Cryptography.Vss.csproj",
+      "SHA256": "91E89C50101A2595740145BE60BD91ED9EBC47F4E99CBAA71D1E034D01A2B6C1",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/PedersenVss.cs",
+      "SHA256": "99FFC90C76DB3DB516EDC39B9CB223EDF5294F0D22B94583325AE829A3F9FB38",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/AuthenticatedCommitmentPacket.cs",
+      "SHA256": "289236EF96E994ADE4D6435B885ABBCA7F91FE82373C3142EA5F3ADBF1B3774A",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/Internal/Ed25519Native.cs",
+      "SHA256": "6FD14E93923B9BA334C0DCBBF76C59B236E48953A6BCFBD144CFAF64A7A9BB07",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/Mrbr.Cryptography.Vss.Authentication.csproj",
+      "SHA256": "EB29B5301AD345C3799404A7EBD7643D9610F910F670FCC0DDC910020800E801",
+      "Unchanged": true,
+      "UnchangedThroughRuns": true
+    }
+  ],
+  "SourceFingerprints": [
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.IntegrationBenchmarks/IntegrationConfig.cs",
+      "SHA256": "2517CC513A50AF2F0A02725283A7E9519C665768B12A15B367BFA9E9677F79A4",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.KeyManager.Benchmarks/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.csproj",
+      "SHA256": "AB00AA893802A595E0E8B54FF6A79520913ADE70633B37BB1F26F4CBA1416482",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.KeyManager.Benchmarks/Program.cs",
+      "SHA256": "05BB1FB14DDB464D1A33989AFA62489253D0A1475BBB75D293028AD8EC858658",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.KeyManager.Benchmarks/RecoveryBenchmarks.cs",
+      "SHA256": "3CA89A5D125990D2D9593DA95BF54F72511DB67A122926FD5D57081E3F7F4FF9",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "Directory.Build.props",
+      "SHA256": "79650925A72BB236C82439CBF5200FFB2E1EB7B3CD6EE347744E84DC66858A9C",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "eng/IntegrationKeyEnvironment.cs",
+      "SHA256": "975FD6B91598A4703115BED46419216B5C141BA3609E9D019BF324611FC903F5",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "eng/Invoke-AuthenticatedRecovery.ps1",
+      "SHA256": "3CD01EA887E028425994DB260A575762F114FFFA1EFB0F3FD11C50C6A8523A9B",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "global.json",
+      "SHA256": "19A39681EA81608656C557DC24D7112CB1B9B71D27D71197D261538B8A2DD675",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "Mrbr.Cryptography.Integration.slnx",
+      "SHA256": "2DCFC5C9F28139FA253A6F4C96D71093AB50D8D75C909FBE06D612FC7DC8B4B0",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "ServiceProjects.props",
+      "SHA256": "3CF732C2FA52BE946FA3A28FFA650AC8E0D2474D0D22CC812A89195FA756A275",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.KeyManager/AuthenticatedKeySharing.cs",
+      "SHA256": "2D924DC2EDF03BB35934E6BC0751EA5E0EBB527944290C23D1C5A1472242A2E0",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.KeyManager/Mrbr.Cryptography.Vss.KeyManager.csproj",
+      "SHA256": "52E4A95B4B066E87CEE813D44A578E2C4226EEDFB33D2ED71B328A6B969B75FD",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.KeyManager.Tests/AllocationTests.cs",
+      "SHA256": "58B0CAB3BF663C1C43F5E9279FCE977D169C1D0524E5FF6D62D4463FC41D77A5",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.KeyManager.Tests/Mrbr.Cryptography.Vss.KeyManager.Tests.csproj",
+      "SHA256": "F5A5C860F3D822B743963AF3D196885EBF286CBE311365191CC484E9E03B574A",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.KeyManager.Tests/RecoveryFixture.cs",
+      "SHA256": "2167C45E99FBA897189318B658966016D1613B8581359F1B9EFDAB3452B633FD",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.KeyManager.Tests/RecoveryTests.cs",
+      "SHA256": "195B0BC0FAC768332AED2759CA2875B8AB30C0041B62F346818DC82A500CE0C9",
+      "UnchangedDuringPrimaryRun": true
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.KeyManager.Tests/ValidationTests.cs",
+      "SHA256": "39FD6CDF29457494E8EECC9725AAE945BD5FBF65AEC561266076AA4F4CFD0794",
+      "UnchangedDuringPrimaryRun": true
+    }
+  ],
+  "ExternalSourceFingerprints": [
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager.csproj",
+      "SHA256": "6DA0E4AC30E8F581EDB1E1D26E6140BCA72779724F64DBAA0DF812B6472E3272",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/AesGcmKeyDecryptor.cs",
+      "SHA256": "432D23F00DBA2B7A2784DB4154C54A01F6E292E1D68FBA9CF8E1F71E89A3200C",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/CryptographicService.cs",
+      "SHA256": "EAD645E233A4C1B73911BD374A1964B671AC2BEBEACFE06C69D73F98F3E1B622",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Services/CryptographicService.PostQuantum.cs",
+      "SHA256": "F37F6C8F2DAFEC00B6F9DEF2F9F71EA4336B40C4969061F6C90F425CA5074A7D",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyServiceConfig.cs",
+      "SHA256": "339E18D4E1B4C6483ABD993ED3F1C731B84E80AD8B2016A7CAA00F36F0EE68F6",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyServiceConfiguration.cs",
+      "SHA256": "38B4A819B9C63CF84C6834C8278A86606F153970082C9526641682A8EC022D20",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyServiceEntry.cs",
+      "SHA256": "57A7C91B901369C2DA7265CED67CBB0EFBEA04DA782887C1C7C9A1A98E9CF5FD",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Configuration/KeyServiceOptions.cs",
+      "SHA256": "73040DFC297680668B0981F4B4F80A89C971DF5B192398EC7DBA41629B8C973E",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager.csproj",
+      "SHA256": "1D7EBE2E1D4BE78DB504090F0C4A2ED49BDFA556F34C0AE568B5949FC9D1D9DD",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Services/IKeyService.cs",
+      "SHA256": "FEAC689B9C5299CCED0FFD1FA240E3863B8309F9ECC889B6E27D86EFEAA9EC83",
+      "UnchangedThroughRuns": true
+    },
+    {
+      "Path": "C:/dev/source/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Services/KeyService.cs",
+      "SHA256": "CAECFD33A001F2DC44415762EFE09A29EF691CEE3E652E8F402ECC58B962FE12",
+      "UnchangedThroughRuns": true
+    }
+  ],
+  "HostEnvironment": {
+    "BenchmarkDotNetCaption": "BenchmarkDotNet",
+    "BenchmarkDotNetVersion": "0.16.0-preview.2",
+    "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+    "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+    "PhysicalProcessorCount": 1,
+    "PhysicalCoreCount": 6,
+    "LogicalCoreCount": 12,
+    "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+    "Architecture": "X64",
+    "HasAttachedDebugger": false,
+    "HasRyuJit": true,
+    "Configuration": "RELEASE",
+    "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+    "ChronometerFrequency": {
+      "Hertz": 10000000
+    },
+    "HardwareTimerKind": "Unknown"
+  },
+  "PrimaryRun": {
+    "Cases": 48,
+    "HotZeroAllocationCases": 32,
+    "ContextInitializationCases": 16,
+    "Warnings": 0,
+    "DurationSeconds": 322.93,
+    "InitializationOnlySuperseded": true
+  },
+  "PrimaryHarnessSnapshot": {
+    "Path": "benchmarks/results/2026-11-04-authenticated-recovery/RecoveryBenchmarks.primary.cs.txt",
+    "SHA256": "3CA89A5D125990D2D9593DA95BF54F72511DB67A122926FD5D57081E3F7F4FF9",
+    "Reason": "Initialization benchmark originally discarded the local context. Follow-up returns disposed context to consumer to retain its object allocation. Production code and other methods unchanged."
+  },
+  "FinalSourceFingerprints": [
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.IntegrationBenchmarks/IntegrationConfig.cs",
+      "SHA256": "2517CC513A50AF2F0A02725283A7E9519C665768B12A15B367BFA9E9677F79A4"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.KeyManager.Benchmarks/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.csproj",
+      "SHA256": "AB00AA893802A595E0E8B54FF6A79520913ADE70633B37BB1F26F4CBA1416482"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.KeyManager.Benchmarks/Program.cs",
+      "SHA256": "05BB1FB14DDB464D1A33989AFA62489253D0A1475BBB75D293028AD8EC858658"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Vss.KeyManager.Benchmarks/RecoveryBenchmarks.cs",
+      "SHA256": "CC4E7D69C5BC11B74669EE9C464F99863EBBF8AB029FDA5E2322C387DF51A926"
+    },
+    {
+      "Path": "Directory.Build.props",
+      "SHA256": "79650925A72BB236C82439CBF5200FFB2E1EB7B3CD6EE347744E84DC66858A9C"
+    },
+    {
+      "Path": "eng/IntegrationKeyEnvironment.cs",
+      "SHA256": "975FD6B91598A4703115BED46419216B5C141BA3609E9D019BF324611FC903F5"
+    },
+    {
+      "Path": "eng/Invoke-AuthenticatedRecovery.ps1",
+      "SHA256": "3CD01EA887E028425994DB260A575762F114FFFA1EFB0F3FD11C50C6A8523A9B"
+    },
+    {
+      "Path": "global.json",
+      "SHA256": "19A39681EA81608656C557DC24D7112CB1B9B71D27D71197D261538B8A2DD675"
+    },
+    {
+      "Path": "Mrbr.Cryptography.Integration.slnx",
+      "SHA256": "2DCFC5C9F28139FA253A6F4C96D71093AB50D8D75C909FBE06D612FC7DC8B4B0"
+    },
+    {
+      "Path": "ServiceProjects.props",
+      "SHA256": "3CF732C2FA52BE946FA3A28FFA650AC8E0D2474D0D22CC812A89195FA756A275"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.KeyManager/AuthenticatedKeySharing.cs",
+      "SHA256": "2D924DC2EDF03BB35934E6BC0751EA5E0EBB527944290C23D1C5A1472242A2E0"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.KeyManager/Mrbr.Cryptography.Vss.KeyManager.csproj",
+      "SHA256": "52E4A95B4B066E87CEE813D44A578E2C4226EEDFB33D2ED71B328A6B969B75FD"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.KeyManager.Tests/AllocationTests.cs",
+      "SHA256": "58B0CAB3BF663C1C43F5E9279FCE977D169C1D0524E5FF6D62D4463FC41D77A5"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.KeyManager.Tests/Mrbr.Cryptography.Vss.KeyManager.Tests.csproj",
+      "SHA256": "F5A5C860F3D822B743963AF3D196885EBF286CBE311365191CC484E9E03B574A"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.KeyManager.Tests/RecoveryFixture.cs",
+      "SHA256": "2167C45E99FBA897189318B658966016D1613B8581359F1B9EFDAB3452B633FD"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.KeyManager.Tests/RecoveryTests.cs",
+      "SHA256": "195B0BC0FAC768332AED2759CA2875B8AB30C0041B62F346818DC82A500CE0C9"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Vss.KeyManager.Tests/ValidationTests.cs",
+      "SHA256": "39FD6CDF29457494E8EECC9725AAE945BD5FBF65AEC561266076AA4F4CFD0794"
+    }
+  ],
+  "InitializationCorrection": {
+    "Cases": 8,
+    "DurationSeconds": 90.8,
+    "Warnings": 0,
+    "ManagedBytesPerOperation": 112,
+    "Job": {
+      "LaunchCount": 1,
+      "WarmupCount": 15,
+      "IterationCount": 12,
+      "IterationTimeMs": 150,
+      "UnrollFactor": 1
+    },
+    "BenchmarkFilter": "*InitializeRecoveredKeyContext*",
+    "Method": "Return the disposed context to the benchmark consumer; prevents elimination of the otherwise discarded object. Includes initialization and disposal.",
+    "Reports": "initialization/results",
+    "VerifiedReleaseAndDebugBuilds": true
+  },
+  "EffectiveResults": {
+    "Cases": 48,
+    "ZeroManagedAllocationCases": 32,
+    "AllocatingCases": 16,
+    "FreshRecoveryImportDecryptReportedManagedBytes": "113..117 B/op",
+    "InitializationManagedBytesPerOperation": 112,
+    "NativeAllocationsMeasured": false
+  },
+  "FreshWorkflowGcDiagnostics": [
+    {
+      "Scenario": "Block_AES128_3of5",
+      "Operations": 241,
+      "RawAllocatedBytes": 27216,
+      "FixedAdditionalBytes": 224
+    },
+    {
+      "Scenario": "Block_AES192_3of5",
+      "Operations": 242,
+      "RawAllocatedBytes": 27328,
+      "FixedAdditionalBytes": 224
+    },
+    {
+      "Scenario": "Block_AES256_2of3",
+      "Operations": 197,
+      "RawAllocatedBytes": 22288,
+      "FixedAdditionalBytes": 224
+    },
+    {
+      "Scenario": "Block_AES256_3of5",
+      "Operations": 135,
+      "RawAllocatedBytes": 15344,
+      "FixedAdditionalBytes": 224
+    },
+    {
+      "Scenario": "Block_AES256_9of9",
+      "Operations": 48,
+      "RawAllocatedBytes": 5600,
+      "FixedAdditionalBytes": 224
+    },
+    {
+      "Scenario": "Matrix_AES128_3of5",
+      "Operations": 238,
+      "RawAllocatedBytes": 26880,
+      "FixedAdditionalBytes": 224
+    },
+    {
+      "Scenario": "Matrix_AES192_3of5",
+      "Operations": 247,
+      "RawAllocatedBytes": 27888,
+      "FixedAdditionalBytes": 224
+    },
+    {
+      "Scenario": "Matrix_AES256_3of5",
+      "Operations": 141,
+      "RawAllocatedBytes": 16016,
+      "FixedAdditionalBytes": 224
+    }
+  ],
+  "FinalizedAtUtc": "2026-11-04T03:23:10.750991+00:00",
+  "ReportAndDocumentationFingerprints": [
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/README.md",
+      "SHA256": "A61E395BD6A791F634FB80A0CFF8DED3A6214B0763B07F1600DEB8EB8BD7DAC8"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/operations.csv",
+      "SHA256": "5F14AD8CE280DE08ED341B0E57598A26E73584583E322A602532D1788C30775D"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/primary-operations.csv",
+      "SHA256": "038184DD0AD9A27A1D8FD55241B967396F6DFA23F3C9759B3498379A67A55FF2"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/initialization-operations.csv",
+      "SHA256": "8F26969D4E27434FD6945A2B04E1E8424A12AE9EC95F14C6B4B2689F82B83887"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/comparison.csv",
+      "SHA256": "8AEC0C812D1E33C5C1BFC2A0BDE89F033F8845532E8ED34D2023358C5C2CA119"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/RecoveryBenchmarks.primary.cs.txt",
+      "SHA256": "3CA89A5D125990D2D9593DA95BF54F72511DB67A122926FD5D57081E3F7F4FF9"
+    },
+    {
+      "Path": "docs/authenticated-key-recovery.md",
+      "SHA256": "87180C1867257FFE3E22B6DA34ABAFAF71FA46EB6B5387F08A26432DBE9CB46A"
+    },
+    {
+      "Path": "README.md",
+      "SHA256": "197CC5690943BB720856B9217F845CD0C6647A465CCC371B3336AD45C8188EC4"
+    },
+    {
+      "Path": "benchmarks/README.md",
+      "SHA256": "F5BE9995BBBD22795E317379A050951EF05919BE380C7F8A7BDAB06A2225D5EE"
+    },
+    {
+      "Path": "docs/key-manager-integration.md",
+      "SHA256": "AB39C2FF58BB555DE84CA41F66D968C48B431890441351582DC1285E633DDF8F"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/artifacts/results/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report-full.json",
+      "SHA256": "039E12731DDD72079963C0A942FF3BDE82EDF7C230AB680FD8F19B26B7F5763C"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/artifacts/results/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report-github.md",
+      "SHA256": "1CD93C33A40F2D9193C5E61D27E0620D01DEAF2370DE4AAF532DD2E9106586F3"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/artifacts/results/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report.csv",
+      "SHA256": "2B3F993973D402E6DE3AFD0B16EFCE17145522D92751E66015C0B981A13BB351"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/artifacts/results/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report.html",
+      "SHA256": "8293B486675EAA7B78C0C0AF1C857E2CD3F689DEE4C282E6CF34A6A6216623C8"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/artifacts/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-20261104-031046.log",
+      "SHA256": "8B6EE02F374E1D847895F554A6E3F59911902EA985A348C898792368346A1AA0"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/initialization/results/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report-full.json",
+      "SHA256": "2E6ACB08747C56F712534D0DC3B3C9B2DB47AB42037B5FDC31F416158584B186"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/initialization/results/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report-github.md",
+      "SHA256": "676A56A8D29A2347056866AC5051572E68FAD0DE3557EA23BEA71EA009272883"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/initialization/results/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report.csv",
+      "SHA256": "27B8EE2299E0CD111170691E15241E314477FF7EC55F3C0857C05C7F3DC82B54"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/initialization/results/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report.html",
+      "SHA256": "AAF72B34080EFAD098628DBEB2C6999BC8FD53991C732299125AA0FF4E7BC491"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-authenticated-recovery/initialization/Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-20261104-031835.log",
+      "SHA256": "B6C6489BA8D6AFD1FD4A4AE47D62BFE0B0783687EF512BFE8CF773829164E3A3"
+    }
+  ]
+}

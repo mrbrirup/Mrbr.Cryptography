@@ -1,0 +1,111 @@
+{
+  "CapturedAtUtc": "2026-11-03T20:05:59.0979543+00:00",
+  "TimeZone": "Europe/London",
+  "Implementation": "Scalar; production source unchanged from the preceding implementation increment",
+  "Host": {
+    "BenchmarkDotNetCaption": "BenchmarkDotNet",
+    "BenchmarkDotNetVersion": "0.16.0-preview.2",
+    "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+    "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+    "PhysicalProcessorCount": 1,
+    "PhysicalCoreCount": 6,
+    "LogicalCoreCount": 12,
+    "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+    "Architecture": "X64",
+    "HasAttachedDebugger": false,
+    "HasRyuJit": true,
+    "Configuration": "RELEASE",
+    "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+    "ChronometerFrequency": {
+      "Hertz": 10000000
+    },
+    "HardwareTimerKind": "Unknown"
+  },
+  "TargetFramework": "net11.0",
+  "PowerPlan": "Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)",
+  "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+  "Job": {
+    "LaunchCount": 1,
+    "WarmupCount": 30,
+    "IterationCount": 15,
+    "IterationTimeMs": 250,
+    "UnrollFactor": 1,
+    "ManagedMemoryDiagnoser": true,
+    "CheckForOverflowUnderflow": true
+  },
+  "Command": [
+    "dotnet",
+    "run",
+    "--project",
+    "benchmarks/Mrbr.Cryptography.Benchmarks",
+    "--configuration",
+    "Release",
+    "--no-build",
+    "--",
+    "--filter",
+    "*",
+    "--launchCount",
+    "1",
+    "--warmupCount",
+    "30",
+    "--iterationCount",
+    "15",
+    "--iterationTime",
+    "250",
+    "--unrollFactor",
+    "1",
+    "--artifacts",
+    "BenchmarkDotNet.Artifacts/scalar"
+  ],
+  "CompletedCases": 27,
+  "ThroughputColumnsCrossCheckedAgainstJson": true,
+  "ProductionSourceAndBuildSettingsUnchanged": true,
+  "MaximumManagedAllocatedBytesPerOperation": 0,
+  "MeasuredGcCollections": 0,
+  "SourceFingerprints": [
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Benchmarks/Mrbr.Cryptography.Benchmarks.csproj",
+      "SHA256": "ED9F77D0F9014C44E5F2F482D6D1836F0A409FEB34BF009FF6E59BD33223553E"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Benchmarks/Program.cs",
+      "SHA256": "95387FDE115051945F27721288B68FA5E891B695F379773A06534702303031D8"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Benchmarks/ShamirSharedSecretBenchmarks.cs",
+      "SHA256": "7DFF1F96B826ED8E9B972271DA8BA7EEF7CD6DA4124C4460C2B17AFBF65C58AD"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Benchmarks/SharingScenario.cs",
+      "SHA256": "275E7FEB9A1C7288E3433396325737AF3F4CF31C8D113DA320A81AA3AD65F996"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.Benchmarks/ThroughputConfig.cs",
+      "SHA256": "9298E9E88463C61A43F7BA91A9584E4624760AB7763ACE82E6FE3C431CBDCF32"
+    },
+    {
+      "Path": "Directory.Build.props",
+      "SHA256": "79650925A72BB236C82439CBF5200FFB2E1EB7B3CD6EE347744E84DC66858A9C"
+    },
+    {
+      "Path": "global.json",
+      "SHA256": "19A39681EA81608656C557DC24D7112CB1B9B71D27D71197D261538B8A2DD675"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+      "SHA256": "77EC35CF7CA7047256CEDDC536E35CCEBA21A86CEB28A170C4C323A80747AE8B"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+      "SHA256": "48EAAE746B504D6B979C5B5EAB4608618CD7E6EAC0976114013417BB6BE38737"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/ShamirSharedSecret.cs",
+      "SHA256": "70162083F44CFF854A6EA319893C24D9B224C68EEBD15C921E131F1680717673"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Mrbr.Cryptography.csproj",
+      "SHA256": "777799CF0DB389218719038DD1C554803BE330085435C9FEF1C5194FF66C8694"
+    }
+  ]
+}

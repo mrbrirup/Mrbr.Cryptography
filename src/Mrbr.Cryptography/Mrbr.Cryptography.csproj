@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Mrbr.Cryptography.Tests" />
+    <InternalsVisibleTo Include="Mrbr.Cryptography.WeightBenchmarks" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,3 @@
+Scenario,Operation,PlainMeanUs,PlainErrorUs,AuthenticatedMeanUs,AuthenticatedErrorUs,AdditionalMeanUs,AdditionalMeanPercent,ConfidenceIntervalsOverlap,PlainOperationsPerSecond,AuthenticatedOperationsPerSecond,PlainManagedBytesPerOperation,AuthenticatedManagedBytesPerOperation
+1024B_k3_m3_Dense,Reconstruct,25968.0925,652.9389346082507,25752.913257575754,561.1554112985255,-215.17924242424593,-0.8286293743918427,True,38.50879690142816,38.83055831385714,0,0
+32B_k9_m9_Dense,Reconstruct,3052.8220388349514,89.2946079189749,3032.146185606061,12.447679449078864,-20.675853228890336,-0.6772701770975442,True,327.56576940253944,329.7994023992354,0,0

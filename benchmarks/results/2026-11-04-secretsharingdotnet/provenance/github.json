@@ -1,0 +1,23 @@
+{
+  "CapturedAtUtc": "2026-11-04T03:58:31.736889+00:00",
+  "Repositories": [
+    {
+      "Repository": "shinji-san/SecretSharingDotNet",
+      "DefaultBranch": "main",
+      "Commit": "bb0405a2bc954dc5a1c9fa77611e9969902cee1e",
+      "CommitDate": "2026-09-26T16:49:51Z",
+      "Stars": 50,
+      "Forks": 14,
+      "ReadmeUrl": "https://github.com/shinji-san/SecretSharingDotNet/blob/bb0405a2bc954dc5a1c9fa77611e9969902cee1e/README.md"
+    },
+    {
+      "Repository": "stevehansen/ShamirSecretSharing",
+      "DefaultBranch": "development",
+      "Commit": "8ab77f00b87310d3a282d367dc57457ea9bc1fbd",
+      "CommitDate": "2026-11-02T08:44:09Z",
+      "Stars": 4,
+      "Forks": 2,
+      "ReadmeUrl": "https://github.com/stevehansen/ShamirSecretSharing/blob/8ab77f00b87310d3a282d367dc57457ea9bc1fbd/README.md"
+    }
+  ]
+}

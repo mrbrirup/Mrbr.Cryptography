@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.Benchmarks.ShamirSharedSecretBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 43.87 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-WPTJCO : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  IterationCount=15  IterationTime=250ms  
+LaunchCount=1  UnrollFactor=1  WarmupCount=30  
+</code></pre>
+
+<table>
+<thead><tr><th>Method        </th><th>Scenario</th><th>Mean    </th><th>Error  </th><th>StdDev </th><th>Op/s </th><th>Secret MiB/s</th><th>Share MiB/s</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>CreateShares</td><td>1024B_3of5</td><td>96.019 μs</td><td>1.3553 μs</td><td>1.0581 μs</td><td>10,414.571</td><td>10.17</td><td>50.9</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>1024B_3of5</td><td>26.956 μs</td><td>0.7140 μs</td><td>0.5962 μs</td><td>37,097.677</td><td>36.23</td><td>108.8</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>1024B_3of5</td><td>44.878 μs</td><td>0.3835 μs</td><td>0.2994 μs</td><td>22,282.694</td><td>21.76</td><td>108.9</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>1048576B_3of5</td><td>105,769.082 μs</td><td>5,758.3188 μs</td><td>5,386.3349 μs</td><td>9.455</td><td>9.455</td><td>47.27</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>1048576B_3of5</td><td>27,167.728 μs</td><td>264.2606 μs</td><td>234.2602 μs</td><td>36.808</td><td>36.81</td><td>110.4</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>1048576B_3of5</td><td>46,373.616 μs</td><td>1,871.8532 μs</td><td>1,750.9326 μs</td><td>21.564</td><td>21.56</td><td>107.8</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>32B_255of255</td><td>18,831.659 μs</td><td>733.4809 μs</td><td>650.2117 μs</td><td>53.102</td><td>0.001621</td><td>0.4262</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>32B_255of255</td><td>1,157.212 μs</td><td>8.6500 μs</td><td>7.6680 μs</td><td>864.146</td><td>0.02637</td><td>6.935</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>32B_255of255</td><td>1,158.039 μs</td><td>39.4451 μs</td><td>34.9671 μs</td><td>863.529</td><td>0.02635</td><td>6.93</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>32B_3of255</td><td>151.227 μs</td><td>1.2770 μs</td><td>0.9970 μs</td><td>6,612.562</td><td>0.2018</td><td>53.07</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>32B_3of255</td><td>1.271 μs</td><td>0.0076 μs</td><td>0.0064 μs</td><td>786,953.762</td><td>24.02</td><td>74.3</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>32B_3of255</td><td>1,190.042 μs</td><td>43.6333 μs</td><td>40.8146 μs</td><td>840.307</td><td>0.02564</td><td>6.744</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>32B_3of5</td><td>3.556 μs</td><td>0.2168 μs</td><td>0.2028 μs</td><td>281,218.281</td><td>8.582</td><td>44.25</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>32B_3of5</td><td>1.282 μs</td><td>0.0137 μs</td><td>0.0128 μs</td><td>779,956.410</td><td>23.8</td><td>73.64</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>32B_3of5</td><td>2.332 μs</td><td>0.0176 μs</td><td>0.0156 μs</td><td>428,756.459</td><td>13.08</td><td>67.47</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>65536B_10of20</td><td>104,952.079 μs</td><td>4,058.2610 μs</td><td>3,597.5426 μs</td><td>9.528</td><td>0.5955</td><td>11.91</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>65536B_10of20</td><td>5,630.405 μs</td><td>67.7675 μs</td><td>60.0741 μs</td><td>177.607</td><td>11.1</td><td>111</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>65536B_10of20</td><td>11,183.872 μs</td><td>93.3972 μs</td><td>77.9909 μs</td><td>89.414</td><td>5.588</td><td>111.8</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>65536B_2of3</td><td>1,948.950 μs</td><td>24.9846 μs</td><td>20.8633 μs</td><td>513.097</td><td>32.07</td><td>96.21</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>65536B_2of3</td><td>1,099.422 μs</td><td>9.5378 μs</td><td>7.9645 μs</td><td>909.568</td><td>56.85</td><td>113.7</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>65536B_2of3</td><td>1,654.466 μs</td><td>58.7424 μs</td><td>45.8622 μs</td><td>604.425</td><td>37.78</td><td>113.3</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>65536B_3of5</td><td>6,163.417 μs</td><td>93.3300 μs</td><td>77.9348 μs</td><td>162.248</td><td>10.14</td><td>50.7</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>65536B_3of5</td><td>1,706.923 μs</td><td>40.0242 μs</td><td>35.4804 μs</td><td>585.850</td><td>36.62</td><td>109.8</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>65536B_3of5</td><td>3,039.324 μs</td><td>178.4061 μs</td><td>166.8812 μs</td><td>329.021</td><td>20.56</td><td>102.8</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>65536B_5of10</td><td>23,553.118 μs</td><td>653.9904 μs</td><td>579.7454 μs</td><td>42.457</td><td>2.654</td><td>26.54</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>65536B_5of10</td><td>2,809.405 μs</td><td>23.0146 μs</td><td>21.5279 μs</td><td>355.947</td><td>22.25</td><td>111.2</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>65536B_5of10</td><td>5,606.169 μs</td><td>42.3802 μs</td><td>35.3894 μs</td><td>178.375</td><td>11.15</td><td>111.5</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>

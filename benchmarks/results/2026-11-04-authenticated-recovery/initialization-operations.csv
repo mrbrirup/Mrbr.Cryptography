@@ -1,0 +1,9 @@
+Scenario,Method,MeanUs,ErrorUs,OperationsPerSecond,ManagedBytesPerOperation,Gen0,Gen1,Gen2,Run
+Block_AES128_3of5,InitializeRecoveredKeyContext,0.5661889726456781,0.007075002880087337,1766194.7659051307,112,4,0,0,corrected-initialization
+Block_AES192_3of5,InitializeRecoveredKeyContext,0.5596542387700207,0.02544408471709579,1786817.521828743,112,4,0,0,corrected-initialization
+Block_AES256_2of3,InitializeRecoveredKeyContext,0.57243620330287,0.027616040402792984,1746919.5592978776,112,4,0,0,corrected-initialization
+Block_AES256_3of5,InitializeRecoveredKeyContext,0.5548298840311267,0.009053613392697809,1802354.2508822375,112,4,0,0,corrected-initialization
+Block_AES256_9of9,InitializeRecoveredKeyContext,0.5648178426843237,0.012840012952352556,1770482.3120449816,112,4,0,0,corrected-initialization
+Matrix_AES128_3of5,InitializeRecoveredKeyContext,0.5612009404955689,0.01163144759164928,1781892.951064817,112,4,0,0,corrected-initialization
+Matrix_AES192_3of5,InitializeRecoveredKeyContext,0.566994949682913,0.013148901513036097,1763684.1396193057,112,4,0,0,corrected-initialization
+Matrix_AES256_3of5,InitializeRecoveredKeyContext,0.5587909049978094,0.00759016224870865,1789578.1607324486,112,4,0,0,corrected-initialization

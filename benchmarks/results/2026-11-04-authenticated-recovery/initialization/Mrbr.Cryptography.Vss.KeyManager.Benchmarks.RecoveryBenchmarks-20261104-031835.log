@@ -1,0 +1,862 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 8 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore gen.csproj /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1\a /p:UseLocalKeyManager=true /p:ShouldUnsetParentConfigurationAndPlatform=false /p:BenchmarkDotNetGatherReferences=true --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1
+// command took 3.68 sec and exited with 0
+// start dotnet build gen.csproj -f net11.0 -c Release /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1\a /p:UseLocalKeyManager=true /p:ShouldUnsetParentConfigurationAndPlatform=false /p:BenchmarkDotNetGatherReferences=true --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1
+// command took 28.59 sec and exited with 0
+// start dotnet build gen.csproj -f net11.0 -c Release /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1\a /p:UseLocalKeyManager=true /p:ShouldUnsetParentConfigurationAndPlatform=false --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1
+// command took 6.4 sec and exited with 0
+// ***** Done, took 00:00:38 (38.97 sec)   *****
+// Found 8 benchmarks:
+//   RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES128_3of5]
+//   RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES192_3of5]
+//   RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES256_2of3]
+//   RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES256_3of5]
+//   RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES256_9of9]
+//   RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Matrix_AES128_3of5]
+//   RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Matrix_AES192_3of5]
+//   RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Matrix_AES256_3of5]
+
+// **************************
+// Benchmark: RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES128_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.Vss.KeyManager.Benchmarks-gen.dll --ipcPort 56443 --benchmarkName "Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks.InitializeRecoveredKeyContext(Scenario: Block_AES128_3of5)" --job "Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 0 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 112900.00 ns, 112.9000 us/op
+WorkloadJitting  2: 30 op, 60200.00 ns, 2.0067 us/op
+WorkloadJitting  3: 30 op, 175100.00 ns, 5.8367 us/op
+WorkloadJitting  4: 1 op, 17000.00 ns, 17.0000 us/op
+
+WorkloadPilot    1: 4 op, 15300.00 ns, 3.8250 us/op
+WorkloadPilot    2: 39216 op, 22502900.00 ns, 573.8194 ns/op
+WorkloadPilot    3: 261406 op, 152259200.00 ns, 582.4625 ns/op
+WorkloadPilot    4: 257527 op, 144783100.00 ns, 562.2055 ns/op
+WorkloadPilot    5: 266806 op, 152982900.00 ns, 573.3863 ns/op
+WorkloadPilot    6: 261604 op, 154607600.00 ns, 590.9986 ns/op
+
+WorkloadWarmup   1: 261604 op, 154896200.00 ns, 592.1018 ns/op
+WorkloadWarmup   2: 261604 op, 153101700.00 ns, 585.2422 ns/op
+WorkloadWarmup   3: 261604 op, 147368800.00 ns, 563.3278 ns/op
+WorkloadWarmup   4: 261604 op, 146548300.00 ns, 560.1914 ns/op
+WorkloadWarmup   5: 261604 op, 148501900.00 ns, 567.6591 ns/op
+WorkloadWarmup   6: 261604 op, 147195900.00 ns, 562.6669 ns/op
+WorkloadWarmup   7: 261604 op, 150784500.00 ns, 576.3845 ns/op
+WorkloadWarmup   8: 261604 op, 146917200.00 ns, 561.6015 ns/op
+WorkloadWarmup   9: 261604 op, 157245500.00 ns, 601.0822 ns/op
+WorkloadWarmup  10: 261604 op, 150794300.00 ns, 576.4220 ns/op
+WorkloadWarmup  11: 261604 op, 147381300.00 ns, 563.3756 ns/op
+WorkloadWarmup  12: 261604 op, 145950000.00 ns, 557.9043 ns/op
+WorkloadWarmup  13: 261604 op, 153626300.00 ns, 587.2475 ns/op
+WorkloadWarmup  14: 261604 op, 148142700.00 ns, 566.2861 ns/op
+WorkloadWarmup  15: 261604 op, 146948700.00 ns, 561.7219 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 261604 op, 147586800.00 ns, 564.1611 ns/op
+WorkloadActual   2: 261604 op, 148664000.00 ns, 568.2788 ns/op
+WorkloadActual   3: 261604 op, 148352600.00 ns, 567.0884 ns/op
+WorkloadActual   4: 261604 op, 146492300.00 ns, 559.9773 ns/op
+WorkloadActual   5: 261604 op, 148454400.00 ns, 567.4776 ns/op
+WorkloadActual   6: 261604 op, 145354800.00 ns, 555.6291 ns/op
+WorkloadActual   7: 261604 op, 149691200.00 ns, 572.2053 ns/op
+WorkloadActual   8: 261604 op, 148497300.00 ns, 567.6415 ns/op
+WorkloadActual   9: 261604 op, 149965200.00 ns, 573.2527 ns/op
+WorkloadActual  10: 261604 op, 147463000.00 ns, 563.6879 ns/op
+WorkloadActual  11: 261604 op, 148768700.00 ns, 568.6790 ns/op
+WorkloadActual  12: 261604 op, 151342000.00 ns, 578.5156 ns/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 261604 op, 144827300.00 ns, 553.6127 ns/op
+WorkloadResult   1: 261604 op, 147586800.00 ns, 564.1611 ns/op
+WorkloadResult   2: 261604 op, 148664000.00 ns, 568.2788 ns/op
+WorkloadResult   3: 261604 op, 148352600.00 ns, 567.0884 ns/op
+WorkloadResult   4: 261604 op, 146492300.00 ns, 559.9773 ns/op
+WorkloadResult   5: 261604 op, 148454400.00 ns, 567.4776 ns/op
+WorkloadResult   6: 261604 op, 145354800.00 ns, 555.6291 ns/op
+WorkloadResult   7: 261604 op, 149691200.00 ns, 572.2053 ns/op
+WorkloadResult   8: 261604 op, 148497300.00 ns, 567.6415 ns/op
+WorkloadResult   9: 261604 op, 149965200.00 ns, 573.2527 ns/op
+WorkloadResult  10: 261604 op, 147463000.00 ns, 563.6879 ns/op
+WorkloadResult  11: 261604 op, 148768700.00 ns, 568.6790 ns/op
+// GC:  4 0 0 29300768 261604
+
+// AfterAll
+// Benchmark Process 23880 has exited with code 0.
+
+Mean = 566.189 ns, StdErr = 1.542 ns (0.27%), N = 11, StdDev = 5.116 ns
+Min = 555.629 ns, Q1 = 563.924 ns, Median = 567.478 ns, Q3 = 568.479 ns, Max = 573.253 ns
+IQR = 4.554 ns, LowerFence = 557.093 ns, UpperFence = 575.310 ns
+ConfidenceInterval = [559.114 ns; 573.264 ns] (CI 99.9%), Margin = 7.075 ns (1.25% of Mean)
+Skewness = -0.57, Kurtosis = 2.37, MValue = 2
+
+// ** Remained 7 (87.5%) benchmark(s) to run. Estimated finish 2026-11-04 3:20 (0h 0m from now) **
+// **************************
+// Benchmark: RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES192_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.Vss.KeyManager.Benchmarks-gen.dll --ipcPort 56445 --benchmarkName "Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks.InitializeRecoveredKeyContext(Scenario: Block_AES192_3of5)" --job "Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 1 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 117600.00 ns, 117.6000 us/op
+WorkloadJitting  2: 30 op, 73200.00 ns, 2.4400 us/op
+WorkloadJitting  3: 30 op, 52600.00 ns, 1.7533 us/op
+WorkloadJitting  4: 1 op, 15000.00 ns, 15.0000 us/op
+
+WorkloadPilot    1: 4 op, 14400.00 ns, 3.6000 us/op
+WorkloadPilot    2: 41667 op, 24098800.00 ns, 578.3666 ns/op
+WorkloadPilot    3: 259351 op, 148357200.00 ns, 572.0325 ns/op
+WorkloadPilot    4: 262223 op, 143687700.00 ns, 547.9599 ns/op
+WorkloadPilot    5: 273743 op, 149718600.00 ns, 546.9312 ns/op
+WorkloadPilot    6: 274258 op, 149427000.00 ns, 544.8410 ns/op
+WorkloadPilot    7: 275310 op, 151644600.00 ns, 550.8140 ns/op
+WorkloadPilot    8: 272324 op, 148616200.00 ns, 545.7330 ns/op
+WorkloadPilot    9: 274860 op, 150614200.00 ns, 547.9670 ns/op
+WorkloadPilot   10: 273739 op, 150392200.00 ns, 549.4000 ns/op
+
+WorkloadWarmup   1: 273739 op, 152536400.00 ns, 557.2330 ns/op
+WorkloadWarmup   2: 273739 op, 152991700.00 ns, 558.8962 ns/op
+WorkloadWarmup   3: 273739 op, 148858900.00 ns, 543.7987 ns/op
+WorkloadWarmup   4: 273739 op, 148769400.00 ns, 543.4717 ns/op
+WorkloadWarmup   5: 273739 op, 149288400.00 ns, 545.3677 ns/op
+WorkloadWarmup   6: 273739 op, 150737600.00 ns, 550.6618 ns/op
+WorkloadWarmup   7: 273739 op, 147717500.00 ns, 539.6290 ns/op
+WorkloadWarmup   8: 273739 op, 149603200.00 ns, 546.5177 ns/op
+WorkloadWarmup   9: 273739 op, 151314600.00 ns, 552.7696 ns/op
+WorkloadWarmup  10: 273739 op, 152817000.00 ns, 558.2580 ns/op
+WorkloadWarmup  11: 273739 op, 151047300.00 ns, 551.7931 ns/op
+WorkloadWarmup  12: 273739 op, 151395900.00 ns, 553.0666 ns/op
+WorkloadWarmup  13: 273739 op, 151442500.00 ns, 553.2368 ns/op
+WorkloadWarmup  14: 273739 op, 150375400.00 ns, 549.3386 ns/op
+WorkloadWarmup  15: 273739 op, 153431100.00 ns, 560.5014 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 273739 op, 153683400.00 ns, 561.4231 ns/op
+WorkloadActual   2: 273739 op, 152654500.00 ns, 557.6644 ns/op
+WorkloadActual   3: 273739 op, 149331100.00 ns, 545.5237 ns/op
+WorkloadActual   4: 273739 op, 148585000.00 ns, 542.7981 ns/op
+WorkloadActual   5: 273739 op, 150611500.00 ns, 550.2011 ns/op
+WorkloadActual   6: 273739 op, 148930700.00 ns, 544.0609 ns/op
+WorkloadActual   7: 273739 op, 148806000.00 ns, 543.6054 ns/op
+WorkloadActual   8: 273739 op, 148212600.00 ns, 541.4376 ns/op
+WorkloadActual   9: 273739 op, 158547300.00 ns, 579.1915 ns/op
+WorkloadActual  10: 273739 op, 163052900.00 ns, 595.6510 ns/op
+WorkloadActual  11: 273739 op, 162878900.00 ns, 595.0153 ns/op
+WorkloadActual  12: 273739 op, 153096400.00 ns, 559.2787 ns/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 273739 op, 150693900.00 ns, 550.5021 ns/op
+WorkloadResult   1: 273739 op, 153683400.00 ns, 561.4231 ns/op
+WorkloadResult   2: 273739 op, 152654500.00 ns, 557.6644 ns/op
+WorkloadResult   3: 273739 op, 149331100.00 ns, 545.5237 ns/op
+WorkloadResult   4: 273739 op, 148585000.00 ns, 542.7981 ns/op
+WorkloadResult   5: 273739 op, 150611500.00 ns, 550.2011 ns/op
+WorkloadResult   6: 273739 op, 148930700.00 ns, 544.0609 ns/op
+WorkloadResult   7: 273739 op, 148806000.00 ns, 543.6054 ns/op
+WorkloadResult   8: 273739 op, 148212600.00 ns, 541.4376 ns/op
+WorkloadResult   9: 273739 op, 158547300.00 ns, 579.1915 ns/op
+WorkloadResult  10: 273739 op, 163052900.00 ns, 595.6510 ns/op
+WorkloadResult  11: 273739 op, 162878900.00 ns, 595.0153 ns/op
+WorkloadResult  12: 273739 op, 153096400.00 ns, 559.2787 ns/op
+// GC:  4 0 0 30659888 273739
+
+// AfterAll
+// Benchmark Process 18908 has exited with code 0.
+
+Mean = 559.654 ns, StdErr = 5.735 ns (1.02%), N = 12, StdDev = 19.865 ns
+Min = 541.438 ns, Q1 = 543.947 ns, Median = 553.933 ns, Q3 = 565.865 ns, Max = 595.651 ns
+IQR = 21.918 ns, LowerFence = 511.070 ns, UpperFence = 598.742 ns
+ConfidenceInterval = [534.210 ns; 585.098 ns] (CI 99.9%), Margin = 25.444 ns (4.55% of Mean)
+Skewness = 0.81, Kurtosis = 2.01, MValue = 2.67
+
+// ** Remained 6 (75.0%) benchmark(s) to run. Estimated finish 2026-11-04 3:20 (0h 0m from now) **
+// **************************
+// Benchmark: RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES256_2of3]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.Vss.KeyManager.Benchmarks-gen.dll --ipcPort 56447 --benchmarkName "Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks.InitializeRecoveredKeyContext(Scenario: Block_AES256_2of3)" --job "Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 2 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 112600.00 ns, 112.6000 us/op
+WorkloadJitting  2: 30 op, 58800.00 ns, 1.9600 us/op
+WorkloadJitting  3: 30 op, 99300.00 ns, 3.3100 us/op
+WorkloadJitting  4: 1 op, 14100.00 ns, 14.1000 us/op
+
+WorkloadPilot    1: 4 op, 13100.00 ns, 3.2750 us/op
+WorkloadPilot    2: 45802 op, 27055800.00 ns, 590.7122 ns/op
+WorkloadPilot    3: 253931 op, 145040000.00 ns, 571.1788 ns/op
+WorkloadPilot    4: 262615 op, 149185200.00 ns, 568.0757 ns/op
+WorkloadPilot    5: 264049 op, 149445900.00 ns, 565.9779 ns/op
+WorkloadPilot    6: 265028 op, 149882300.00 ns, 565.5338 ns/op
+WorkloadPilot    7: 265236 op, 154673200.00 ns, 583.1531 ns/op
+WorkloadPilot    8: 257222 op, 165788700.00 ns, 644.5355 ns/op
+WorkloadPilot    9: 232726 op, 136738900.00 ns, 587.5532 ns/op
+WorkloadPilot   10: 255296 op, 147357200.00 ns, 577.2014 ns/op
+WorkloadPilot   11: 259875 op, 151974500.00 ns, 584.7985 ns/op
+
+WorkloadWarmup   1: 259875 op, 166061800.00 ns, 639.0064 ns/op
+WorkloadWarmup   2: 259875 op, 159122400.00 ns, 612.3036 ns/op
+WorkloadWarmup   3: 259875 op, 150901200.00 ns, 580.6684 ns/op
+WorkloadWarmup   4: 259875 op, 152573000.00 ns, 587.1015 ns/op
+WorkloadWarmup   5: 259875 op, 151083800.00 ns, 581.3710 ns/op
+WorkloadWarmup   6: 259875 op, 144388000.00 ns, 555.6056 ns/op
+WorkloadWarmup   7: 259875 op, 145412900.00 ns, 559.5494 ns/op
+WorkloadWarmup   8: 259875 op, 145997500.00 ns, 561.7989 ns/op
+WorkloadWarmup   9: 259875 op, 147906700.00 ns, 569.1456 ns/op
+WorkloadWarmup  10: 259875 op, 158117500.00 ns, 608.4367 ns/op
+WorkloadWarmup  11: 259875 op, 143831000.00 ns, 553.4622 ns/op
+WorkloadWarmup  12: 259875 op, 144714000.00 ns, 556.8600 ns/op
+WorkloadWarmup  13: 259875 op, 145607200.00 ns, 560.2971 ns/op
+WorkloadWarmup  14: 259875 op, 144284600.00 ns, 555.2077 ns/op
+WorkloadWarmup  15: 259875 op, 144256900.00 ns, 555.1011 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 259875 op, 149628700.00 ns, 575.7718 ns/op
+WorkloadActual   2: 259875 op, 145458400.00 ns, 559.7245 ns/op
+WorkloadActual   3: 259875 op, 148880800.00 ns, 572.8939 ns/op
+WorkloadActual   4: 259875 op, 146081400.00 ns, 562.1218 ns/op
+WorkloadActual   5: 259875 op, 154332300.00 ns, 593.8713 ns/op
+WorkloadActual   6: 259875 op, 159007400.00 ns, 611.8611 ns/op
+WorkloadActual   7: 259875 op, 158818500.00 ns, 611.1342 ns/op
+WorkloadActual   8: 259875 op, 144482600.00 ns, 555.9696 ns/op
+WorkloadActual   9: 259875 op, 145776800.00 ns, 560.9497 ns/op
+WorkloadActual  10: 259875 op, 143880000.00 ns, 553.6508 ns/op
+WorkloadActual  11: 259875 op, 144084600.00 ns, 554.4381 ns/op
+WorkloadActual  12: 259875 op, 144710800.00 ns, 556.8477 ns/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 259875 op, 144338700.00 ns, 555.4159 ns/op
+WorkloadResult   1: 259875 op, 149628700.00 ns, 575.7718 ns/op
+WorkloadResult   2: 259875 op, 145458400.00 ns, 559.7245 ns/op
+WorkloadResult   3: 259875 op, 148880800.00 ns, 572.8939 ns/op
+WorkloadResult   4: 259875 op, 146081400.00 ns, 562.1218 ns/op
+WorkloadResult   5: 259875 op, 154332300.00 ns, 593.8713 ns/op
+WorkloadResult   6: 259875 op, 159007400.00 ns, 611.8611 ns/op
+WorkloadResult   7: 259875 op, 158818500.00 ns, 611.1342 ns/op
+WorkloadResult   8: 259875 op, 144482600.00 ns, 555.9696 ns/op
+WorkloadResult   9: 259875 op, 145776800.00 ns, 560.9497 ns/op
+WorkloadResult  10: 259875 op, 143880000.00 ns, 553.6508 ns/op
+WorkloadResult  11: 259875 op, 144084600.00 ns, 554.4381 ns/op
+WorkloadResult  12: 259875 op, 144710800.00 ns, 556.8477 ns/op
+// GC:  4 0 0 29107120 259875
+
+// AfterAll
+// Benchmark Process 23484 has exited with code 0.
+
+Mean = 572.436 ns, StdErr = 6.224 ns (1.09%), N = 12, StdDev = 21.561 ns
+Min = 553.651 ns, Q1 = 556.628 ns, Median = 561.536 ns, Q3 = 580.297 ns, Max = 611.861 ns
+IQR = 23.668 ns, LowerFence = 521.125 ns, UpperFence = 615.799 ns
+ConfidenceInterval = [544.820 ns; 600.052 ns] (CI 99.9%), Margin = 27.616 ns (4.82% of Mean)
+Skewness = 0.86, Kurtosis = 2.04, MValue = 2.67
+
+// ** Remained 5 (62.5%) benchmark(s) to run. Estimated finish 2026-11-04 3:20 (0h 0m from now) **
+// **************************
+// Benchmark: RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES256_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.Vss.KeyManager.Benchmarks-gen.dll --ipcPort 56450 --benchmarkName "Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks.InitializeRecoveredKeyContext(Scenario: Block_AES256_3of5)" --job "Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 3 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 109400.00 ns, 109.4000 us/op
+WorkloadJitting  2: 30 op, 70400.00 ns, 2.3467 us/op
+WorkloadJitting  3: 30 op, 51800.00 ns, 1.7267 us/op
+WorkloadJitting  4: 1 op, 17500.00 ns, 17.5000 us/op
+
+WorkloadPilot    1: 4 op, 14400.00 ns, 3.6000 us/op
+WorkloadPilot    2: 41667 op, 23251200.00 ns, 558.0243 ns/op
+WorkloadPilot    3: 268805 op, 151228700.00 ns, 562.5963 ns/op
+WorkloadPilot    4: 266621 op, 149932200.00 ns, 562.3421 ns/op
+WorkloadPilot    5: 266742 op, 148961900.00 ns, 558.4494 ns/op
+WorkloadPilot    6: 268601 op, 149641000.00 ns, 557.1126 ns/op
+WorkloadPilot    7: 269245 op, 153932400.00 ns, 571.7187 ns/op
+WorkloadPilot    8: 262367 op, 145210300.00 ns, 553.4625 ns/op
+WorkloadPilot    9: 271021 op, 155262700.00 ns, 572.8807 ns/op
+
+WorkloadWarmup   1: 271021 op, 157225200.00 ns, 580.1218 ns/op
+WorkloadWarmup   2: 271021 op, 157299300.00 ns, 580.3952 ns/op
+WorkloadWarmup   3: 271021 op, 156080500.00 ns, 575.8982 ns/op
+WorkloadWarmup   4: 271021 op, 150330400.00 ns, 554.6817 ns/op
+WorkloadWarmup   5: 271021 op, 150721300.00 ns, 556.1241 ns/op
+WorkloadWarmup   6: 271021 op, 152252900.00 ns, 561.7753 ns/op
+WorkloadWarmup   7: 271021 op, 151524500.00 ns, 559.0877 ns/op
+WorkloadWarmup   8: 271021 op, 162039300.00 ns, 597.8847 ns/op
+WorkloadWarmup   9: 271021 op, 150542900.00 ns, 555.4658 ns/op
+WorkloadWarmup  10: 271021 op, 155594600.00 ns, 574.1053 ns/op
+WorkloadWarmup  11: 271021 op, 157334400.00 ns, 580.5248 ns/op
+WorkloadWarmup  12: 271021 op, 157530900.00 ns, 581.2498 ns/op
+WorkloadWarmup  13: 271021 op, 157377100.00 ns, 580.6823 ns/op
+WorkloadWarmup  14: 271021 op, 157463600.00 ns, 581.0015 ns/op
+WorkloadWarmup  15: 271021 op, 162878400.00 ns, 600.9807 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 271021 op, 148028200.00 ns, 546.1872 ns/op
+WorkloadActual   2: 271021 op, 150043800.00 ns, 553.6243 ns/op
+WorkloadActual   3: 271021 op, 151600600.00 ns, 559.3685 ns/op
+WorkloadActual   4: 271021 op, 150995300.00 ns, 557.1351 ns/op
+WorkloadActual   5: 271021 op, 151700300.00 ns, 559.7363 ns/op
+WorkloadActual   6: 271021 op, 157030800.00 ns, 579.4045 ns/op
+WorkloadActual   7: 271021 op, 148639500.00 ns, 548.4427 ns/op
+WorkloadActual   8: 271021 op, 160491700.00 ns, 592.1744 ns/op
+WorkloadActual   9: 271021 op, 150123500.00 ns, 553.9183 ns/op
+WorkloadActual  10: 271021 op, 148318300.00 ns, 547.2576 ns/op
+WorkloadActual  11: 271021 op, 152833400.00 ns, 563.9172 ns/op
+WorkloadActual  12: 271021 op, 151422600.00 ns, 558.7117 ns/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 271021 op, 151645900.00 ns, 559.5356 ns/op
+WorkloadResult   1: 271021 op, 148028200.00 ns, 546.1872 ns/op
+WorkloadResult   2: 271021 op, 150043800.00 ns, 553.6243 ns/op
+WorkloadResult   3: 271021 op, 151600600.00 ns, 559.3685 ns/op
+WorkloadResult   4: 271021 op, 150995300.00 ns, 557.1351 ns/op
+WorkloadResult   5: 271021 op, 151700300.00 ns, 559.7363 ns/op
+WorkloadResult   6: 271021 op, 148639500.00 ns, 548.4427 ns/op
+WorkloadResult   7: 271021 op, 150123500.00 ns, 553.9183 ns/op
+WorkloadResult   8: 271021 op, 148318300.00 ns, 547.2576 ns/op
+WorkloadResult   9: 271021 op, 152833400.00 ns, 563.9172 ns/op
+WorkloadResult  10: 271021 op, 151422600.00 ns, 558.7117 ns/op
+// GC:  4 0 0 30355472 271021
+
+// AfterAll
+// Benchmark Process 17624 has exited with code 0.
+
+Mean = 554.830 ns, StdErr = 1.894 ns (0.34%), N = 10, StdDev = 5.988 ns
+Min = 546.187 ns, Q1 = 549.738 ns, Median = 555.527 ns, Q3 = 559.204 ns, Max = 563.917 ns
+IQR = 9.466 ns, LowerFence = 535.539 ns, UpperFence = 573.403 ns
+ConfidenceInterval = [545.776 ns; 563.883 ns] (CI 99.9%), Margin = 9.054 ns (1.63% of Mean)
+Skewness = -0.14, Kurtosis = 1.45, MValue = 2
+
+// ** Remained 4 (50.0%) benchmark(s) to run. Estimated finish 2026-11-04 3:20 (0h 0m from now) **
+// **************************
+// Benchmark: RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES256_9of9]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.Vss.KeyManager.Benchmarks-gen.dll --ipcPort 56452 --benchmarkName "Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks.InitializeRecoveredKeyContext(Scenario: Block_AES256_9of9)" --job "Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 4 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 147200.00 ns, 147.2000 us/op
+WorkloadJitting  2: 30 op, 60700.00 ns, 2.0233 us/op
+WorkloadJitting  3: 30 op, 50800.00 ns, 1.6933 us/op
+WorkloadJitting  4: 1 op, 36900.00 ns, 36.9000 us/op
+
+WorkloadPilot    1: 4 op, 15100.00 ns, 3.7750 us/op
+WorkloadPilot    2: 39735 op, 21678700.00 ns, 545.5820 ns/op
+WorkloadPilot    3: 274936 op, 165901900.00 ns, 603.4201 ns/op
+WorkloadPilot    4: 248583 op, 138917600.00 ns, 558.8379 ns/op
+WorkloadPilot    5: 268414 op, 150496100.00 ns, 560.6865 ns/op
+WorkloadPilot    6: 267529 op, 148661000.00 ns, 555.6818 ns/op
+WorkloadPilot    7: 269939 op, 151609100.00 ns, 561.6421 ns/op
+
+WorkloadWarmup   1: 269939 op, 150778100.00 ns, 558.5636 ns/op
+WorkloadWarmup   2: 269939 op, 150113300.00 ns, 556.1008 ns/op
+WorkloadWarmup   3: 269939 op, 151475000.00 ns, 561.1453 ns/op
+WorkloadWarmup   4: 269939 op, 151328900.00 ns, 560.6041 ns/op
+WorkloadWarmup   5: 269939 op, 153108900.00 ns, 567.1981 ns/op
+WorkloadWarmup   6: 269939 op, 162217300.00 ns, 600.9406 ns/op
+WorkloadWarmup   7: 269939 op, 150208600.00 ns, 556.4539 ns/op
+WorkloadWarmup   8: 269939 op, 149861900.00 ns, 555.1695 ns/op
+WorkloadWarmup   9: 269939 op, 151141100.00 ns, 559.9083 ns/op
+WorkloadWarmup  10: 269939 op, 154945700.00 ns, 574.0026 ns/op
+WorkloadWarmup  11: 269939 op, 148170100.00 ns, 548.9022 ns/op
+WorkloadWarmup  12: 269939 op, 154206600.00 ns, 571.2646 ns/op
+WorkloadWarmup  13: 269939 op, 157073400.00 ns, 581.8848 ns/op
+WorkloadWarmup  14: 269939 op, 155290300.00 ns, 575.2792 ns/op
+WorkloadWarmup  15: 269939 op, 152678100.00 ns, 565.6022 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 269939 op, 154377200.00 ns, 571.8966 ns/op
+WorkloadActual   2: 269939 op, 157601200.00 ns, 583.8401 ns/op
+WorkloadActual   3: 269939 op, 150621600.00 ns, 557.9838 ns/op
+WorkloadActual   4: 269939 op, 164819100.00 ns, 610.5791 ns/op
+WorkloadActual   5: 269939 op, 154069300.00 ns, 570.7560 ns/op
+WorkloadActual   6: 269939 op, 151601700.00 ns, 561.6147 ns/op
+WorkloadActual   7: 269939 op, 149399000.00 ns, 553.4547 ns/op
+WorkloadActual   8: 269939 op, 151261600.00 ns, 560.3547 ns/op
+WorkloadActual   9: 269939 op, 150812600.00 ns, 558.6914 ns/op
+WorkloadActual  10: 269939 op, 154663400.00 ns, 572.9569 ns/op
+WorkloadActual  11: 269939 op, 152974500.00 ns, 566.7003 ns/op
+WorkloadActual  12: 269939 op, 149747900.00 ns, 554.7472 ns/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 269939 op, 150151900.00 ns, 556.2438 ns/op
+WorkloadResult   1: 269939 op, 154377200.00 ns, 571.8966 ns/op
+WorkloadResult   2: 269939 op, 157601200.00 ns, 583.8401 ns/op
+WorkloadResult   3: 269939 op, 150621600.00 ns, 557.9838 ns/op
+WorkloadResult   4: 269939 op, 154069300.00 ns, 570.7560 ns/op
+WorkloadResult   5: 269939 op, 151601700.00 ns, 561.6147 ns/op
+WorkloadResult   6: 269939 op, 149399000.00 ns, 553.4547 ns/op
+WorkloadResult   7: 269939 op, 151261600.00 ns, 560.3547 ns/op
+WorkloadResult   8: 269939 op, 150812600.00 ns, 558.6914 ns/op
+WorkloadResult   9: 269939 op, 154663400.00 ns, 572.9569 ns/op
+WorkloadResult  10: 269939 op, 152974500.00 ns, 566.7003 ns/op
+WorkloadResult  11: 269939 op, 149747900.00 ns, 554.7472 ns/op
+// GC:  4 0 0 30234288 269939
+
+// AfterAll
+// Benchmark Process 24228 has exited with code 0.
+
+Mean = 564.818 ns, StdErr = 2.799 ns (0.50%), N = 11, StdDev = 9.284 ns
+Min = 553.455 ns, Q1 = 558.338 ns, Median = 561.615 ns, Q3 = 571.326 ns, Max = 583.840 ns
+IQR = 12.989 ns, LowerFence = 538.855 ns, UpperFence = 590.809 ns
+ConfidenceInterval = [551.978 ns; 577.658 ns] (CI 99.9%), Margin = 12.840 ns (2.27% of Mean)
+Skewness = 0.55, Kurtosis = 2.08, MValue = 2
+
+// ** Remained 3 (37.5%) benchmark(s) to run. Estimated finish 2026-11-04 3:20 (0h 0m from now) **
+// **************************
+// Benchmark: RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Matrix_AES128_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.Vss.KeyManager.Benchmarks-gen.dll --ipcPort 56455 --benchmarkName "Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks.InitializeRecoveredKeyContext(Scenario: Matrix_AES128_3of5)" --job "Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 5 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 108100.00 ns, 108.1000 us/op
+WorkloadJitting  2: 30 op, 73600.00 ns, 2.4533 us/op
+WorkloadJitting  3: 30 op, 49200.00 ns, 1.6400 us/op
+WorkloadJitting  4: 1 op, 19900.00 ns, 19.9000 us/op
+
+WorkloadPilot    1: 4 op, 14700.00 ns, 3.6750 us/op
+WorkloadPilot    2: 40816 op, 23583600.00 ns, 577.8028 ns/op
+WorkloadPilot    3: 259604 op, 145089500.00 ns, 558.8878 ns/op
+WorkloadPilot    4: 268390 op, 148345000.00 ns, 552.7218 ns/op
+WorkloadPilot    5: 271384 op, 151678900.00 ns, 558.9088 ns/op
+WorkloadPilot    6: 268380 op, 148416900.00 ns, 553.0103 ns/op
+WorkloadPilot    7: 271243 op, 153306900.00 ns, 565.2013 ns/op
+WorkloadPilot    8: 265392 op, 151171000.00 ns, 569.6140 ns/op
+
+WorkloadWarmup   1: 265392 op, 153103400.00 ns, 576.8953 ns/op
+WorkloadWarmup   2: 265392 op, 144260800.00 ns, 543.5763 ns/op
+WorkloadWarmup   3: 265392 op, 146255300.00 ns, 551.0916 ns/op
+WorkloadWarmup   4: 265392 op, 149629600.00 ns, 563.8060 ns/op
+WorkloadWarmup   5: 265392 op, 147950200.00 ns, 557.4780 ns/op
+WorkloadWarmup   6: 265392 op, 149125300.00 ns, 561.9058 ns/op
+WorkloadWarmup   7: 265392 op, 148047300.00 ns, 557.8439 ns/op
+WorkloadWarmup   8: 265392 op, 151280700.00 ns, 570.0274 ns/op
+WorkloadWarmup   9: 265392 op, 151728600.00 ns, 571.7150 ns/op
+WorkloadWarmup  10: 265392 op, 153087600.00 ns, 576.8358 ns/op
+WorkloadWarmup  11: 265392 op, 159268600.00 ns, 600.1259 ns/op
+WorkloadWarmup  12: 265392 op, 148400900.00 ns, 559.1762 ns/op
+WorkloadWarmup  13: 265392 op, 146471900.00 ns, 551.9077 ns/op
+WorkloadWarmup  14: 265392 op, 146074300.00 ns, 550.4096 ns/op
+WorkloadWarmup  15: 265392 op, 146285400.00 ns, 551.2050 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 265392 op, 147752600.00 ns, 556.7334 ns/op
+WorkloadActual   2: 265392 op, 150196800.00 ns, 565.9432 ns/op
+WorkloadActual   3: 265392 op, 158061100.00 ns, 595.5760 ns/op
+WorkloadActual   4: 265392 op, 150742200.00 ns, 567.9983 ns/op
+WorkloadActual   5: 265392 op, 146000300.00 ns, 550.1307 ns/op
+WorkloadActual   6: 265392 op, 147752500.00 ns, 556.7331 ns/op
+WorkloadActual   7: 265392 op, 147591500.00 ns, 556.1264 ns/op
+WorkloadActual   8: 265392 op, 146697000.00 ns, 552.7559 ns/op
+WorkloadActual   9: 265392 op, 149652600.00 ns, 563.8927 ns/op
+WorkloadActual  10: 265392 op, 152123800.00 ns, 573.2042 ns/op
+WorkloadActual  11: 265392 op, 150873100.00 ns, 568.4915 ns/op
+WorkloadActual  12: 265392 op, 157660600.00 ns, 594.0669 ns/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 265392 op, 146335300.00 ns, 551.3930 ns/op
+WorkloadResult   1: 265392 op, 147752600.00 ns, 556.7334 ns/op
+WorkloadResult   2: 265392 op, 150196800.00 ns, 565.9432 ns/op
+WorkloadResult   3: 265392 op, 150742200.00 ns, 567.9983 ns/op
+WorkloadResult   4: 265392 op, 146000300.00 ns, 550.1307 ns/op
+WorkloadResult   5: 265392 op, 147752500.00 ns, 556.7331 ns/op
+WorkloadResult   6: 265392 op, 147591500.00 ns, 556.1264 ns/op
+WorkloadResult   7: 265392 op, 146697000.00 ns, 552.7559 ns/op
+WorkloadResult   8: 265392 op, 149652600.00 ns, 563.8927 ns/op
+WorkloadResult   9: 265392 op, 152123800.00 ns, 573.2042 ns/op
+WorkloadResult  10: 265392 op, 150873100.00 ns, 568.4915 ns/op
+// GC:  4 0 0 29725024 265392
+
+// AfterAll
+// Benchmark Process 1348 has exited with code 0.
+
+Mean = 561.201 ns, StdErr = 2.433 ns (0.43%), N = 10, StdDev = 7.693 ns
+Min = 550.131 ns, Q1 = 556.278 ns, Median = 560.313 ns, Q3 = 567.485 ns, Max = 573.204 ns
+IQR = 11.206 ns, LowerFence = 539.468 ns, UpperFence = 584.294 ns
+ConfidenceInterval = [549.569 ns; 572.832 ns] (CI 99.9%), Margin = 11.631 ns (2.07% of Mean)
+Skewness = 0.06, Kurtosis = 1.37, MValue = 2
+
+// ** Remained 2 (25.0%) benchmark(s) to run. Estimated finish 2026-11-04 3:20 (0h 0m from now) **
+// **************************
+// Benchmark: RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Matrix_AES192_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.Vss.KeyManager.Benchmarks-gen.dll --ipcPort 56457 --benchmarkName "Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks.InitializeRecoveredKeyContext(Scenario: Matrix_AES192_3of5)" --job "Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 6 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 112200.00 ns, 112.2000 us/op
+WorkloadJitting  2: 30 op, 56500.00 ns, 1.8833 us/op
+WorkloadJitting  3: 30 op, 55800.00 ns, 1.8600 us/op
+WorkloadJitting  4: 1 op, 14200.00 ns, 14.2000 us/op
+
+WorkloadPilot    1: 4 op, 14300.00 ns, 3.5750 us/op
+WorkloadPilot    2: 41958 op, 24138900.00 ns, 575.3110 ns/op
+WorkloadPilot    3: 260729 op, 144476200.00 ns, 554.1240 ns/op
+WorkloadPilot    4: 270698 op, 152105100.00 ns, 561.8996 ns/op
+WorkloadPilot    5: 266952 op, 149392300.00 ns, 559.6223 ns/op
+WorkloadPilot    6: 268038 op, 150950000.00 ns, 563.1664 ns/op
+WorkloadPilot    7: 266351 op, 149239300.00 ns, 560.3106 ns/op
+WorkloadPilot    8: 267709 op, 149448800.00 ns, 558.2509 ns/op
+WorkloadPilot    9: 268696 op, 150679500.00 ns, 560.7806 ns/op
+
+WorkloadWarmup   1: 268696 op, 150285700.00 ns, 559.3150 ns/op
+WorkloadWarmup   2: 268696 op, 146674000.00 ns, 545.8734 ns/op
+WorkloadWarmup   3: 268696 op, 149453300.00 ns, 556.2171 ns/op
+WorkloadWarmup   4: 268696 op, 151336500.00 ns, 563.2257 ns/op
+WorkloadWarmup   5: 268696 op, 157758400.00 ns, 587.1260 ns/op
+WorkloadWarmup   6: 268696 op, 146826600.00 ns, 546.4413 ns/op
+WorkloadWarmup   7: 268696 op, 150701400.00 ns, 560.8621 ns/op
+WorkloadWarmup   8: 268696 op, 149961100.00 ns, 558.1069 ns/op
+WorkloadWarmup   9: 268696 op, 151920500.00 ns, 565.3992 ns/op
+WorkloadWarmup  10: 268696 op, 150579400.00 ns, 560.4080 ns/op
+WorkloadWarmup  11: 268696 op, 153429300.00 ns, 571.0145 ns/op
+WorkloadWarmup  12: 268696 op, 147114700.00 ns, 547.5135 ns/op
+WorkloadWarmup  13: 268696 op, 149116400.00 ns, 554.9632 ns/op
+WorkloadWarmup  14: 268696 op, 158822800.00 ns, 591.0873 ns/op
+WorkloadWarmup  15: 268696 op, 162132400.00 ns, 603.4046 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 268696 op, 152820400.00 ns, 568.7483 ns/op
+WorkloadActual   2: 268696 op, 147762000.00 ns, 549.9226 ns/op
+WorkloadActual   3: 268696 op, 150236300.00 ns, 559.1311 ns/op
+WorkloadActual   4: 268696 op, 150921300.00 ns, 561.6805 ns/op
+WorkloadActual   5: 268696 op, 151717500.00 ns, 564.6437 ns/op
+WorkloadActual   6: 268696 op, 154566600.00 ns, 575.2471 ns/op
+WorkloadActual   7: 268696 op, 155184800.00 ns, 577.5479 ns/op
+WorkloadActual   8: 268696 op, 154710000.00 ns, 575.7808 ns/op
+WorkloadActual   9: 268696 op, 156189700.00 ns, 581.2878 ns/op
+WorkloadActual  10: 268696 op, 154601300.00 ns, 575.3763 ns/op
+WorkloadActual  11: 268696 op, 148405100.00 ns, 552.3160 ns/op
+WorkloadActual  12: 268696 op, 151076300.00 ns, 562.2573 ns/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 268696 op, 151694900.00 ns, 564.5596 ns/op
+WorkloadResult   1: 268696 op, 152820400.00 ns, 568.7483 ns/op
+WorkloadResult   2: 268696 op, 147762000.00 ns, 549.9226 ns/op
+WorkloadResult   3: 268696 op, 150236300.00 ns, 559.1311 ns/op
+WorkloadResult   4: 268696 op, 150921300.00 ns, 561.6805 ns/op
+WorkloadResult   5: 268696 op, 151717500.00 ns, 564.6437 ns/op
+WorkloadResult   6: 268696 op, 154566600.00 ns, 575.2471 ns/op
+WorkloadResult   7: 268696 op, 155184800.00 ns, 577.5479 ns/op
+WorkloadResult   8: 268696 op, 154710000.00 ns, 575.7808 ns/op
+WorkloadResult   9: 268696 op, 156189700.00 ns, 581.2878 ns/op
+WorkloadResult  10: 268696 op, 154601300.00 ns, 575.3763 ns/op
+WorkloadResult  11: 268696 op, 148405100.00 ns, 552.3160 ns/op
+WorkloadResult  12: 268696 op, 151076300.00 ns, 562.2573 ns/op
+// GC:  4 0 0 30095072 268696
+
+// AfterAll
+// Benchmark Process 25528 has exited with code 0.
+
+Mean = 566.995 ns, StdErr = 2.963 ns (0.52%), N = 12, StdDev = 10.266 ns
+Min = 549.923 ns, Q1 = 561.043 ns, Median = 566.696 ns, Q3 = 575.477 ns, Max = 581.288 ns
+IQR = 14.434 ns, LowerFence = 539.392 ns, UpperFence = 597.129 ns
+ConfidenceInterval = [553.846 ns; 580.144 ns] (CI 99.9%), Margin = 13.149 ns (2.32% of Mean)
+Skewness = -0.23, Kurtosis = 1.55, MValue = 2
+
+// ** Remained 1 (12.5%) benchmark(s) to run. Estimated finish 2026-11-04 3:20 (0h 0m from now) **
+// **************************
+// Benchmark: RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Matrix_AES256_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.Vss.KeyManager.Benchmarks-gen.dll --ipcPort 56459 --benchmarkName "Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks.InitializeRecoveredKeyContext(Scenario: Matrix_AES256_3of5)" --job "Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 7 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.Vss.KeyManager.Benchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+WorkloadJitting  1: 1 op, 115500.00 ns, 115.5000 us/op
+WorkloadJitting  2: 30 op, 59900.00 ns, 1.9967 us/op
+WorkloadJitting  3: 30 op, 52900.00 ns, 1.7633 us/op
+WorkloadJitting  4: 1 op, 15400.00 ns, 15.4000 us/op
+
+WorkloadPilot    1: 4 op, 15500.00 ns, 3.8750 us/op
+WorkloadPilot    2: 38710 op, 21705000.00 ns, 560.7078 ns/op
+WorkloadPilot    3: 267519 op, 156388900.00 ns, 584.5899 ns/op
+WorkloadPilot    4: 256590 op, 148890500.00 ns, 580.2662 ns/op
+WorkloadPilot    5: 258502 op, 145059900.00 ns, 561.1558 ns/op
+WorkloadPilot    6: 267305 op, 149836900.00 ns, 560.5466 ns/op
+WorkloadPilot    7: 267596 op, 155173100.00 ns, 579.8782 ns/op
+WorkloadPilot    8: 258675 op, 143196200.00 ns, 553.5757 ns/op
+WorkloadPilot    9: 270966 op, 154243600.00 ns, 569.2360 ns/op
+
+WorkloadWarmup   1: 270966 op, 154185600.00 ns, 569.0219 ns/op
+WorkloadWarmup   2: 270966 op, 153839800.00 ns, 567.7458 ns/op
+WorkloadWarmup   3: 270966 op, 154323600.00 ns, 569.5312 ns/op
+WorkloadWarmup   4: 270966 op, 151240700.00 ns, 558.1538 ns/op
+WorkloadWarmup   5: 270966 op, 150736900.00 ns, 556.2945 ns/op
+WorkloadWarmup   6: 270966 op, 154182400.00 ns, 569.0101 ns/op
+WorkloadWarmup   7: 270966 op, 155779900.00 ns, 574.9057 ns/op
+WorkloadWarmup   8: 270966 op, 157695400.00 ns, 581.9749 ns/op
+WorkloadWarmup   9: 270966 op, 157149700.00 ns, 579.9610 ns/op
+WorkloadWarmup  10: 270966 op, 157709500.00 ns, 582.0269 ns/op
+WorkloadWarmup  11: 270966 op, 159881000.00 ns, 590.0408 ns/op
+WorkloadWarmup  12: 270966 op, 148600800.00 ns, 548.4112 ns/op
+WorkloadWarmup  13: 270966 op, 160857000.00 ns, 593.6427 ns/op
+WorkloadWarmup  14: 270966 op, 149796800.00 ns, 552.8251 ns/op
+WorkloadWarmup  15: 270966 op, 149540100.00 ns, 551.8777 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 270966 op, 150754700.00 ns, 556.3602 ns/op
+WorkloadActual   2: 270966 op, 151944700.00 ns, 560.7519 ns/op
+WorkloadActual   3: 270966 op, 151426600.00 ns, 558.8399 ns/op
+WorkloadActual   4: 270966 op, 153156800.00 ns, 565.2252 ns/op
+WorkloadActual   5: 270966 op, 154493300.00 ns, 570.1575 ns/op
+WorkloadActual   6: 270966 op, 152089600.00 ns, 561.2867 ns/op
+WorkloadActual   7: 270966 op, 149332500.00 ns, 551.1116 ns/op
+WorkloadActual   8: 270966 op, 149777100.00 ns, 552.7524 ns/op
+WorkloadActual   9: 270966 op, 150808200.00 ns, 556.5576 ns/op
+WorkloadActual  10: 270966 op, 150393400.00 ns, 555.0268 ns/op
+WorkloadActual  11: 270966 op, 151369800.00 ns, 558.6302 ns/op
+WorkloadActual  12: 270966 op, 155503900.00 ns, 573.8871 ns/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 270966 op, 150315200.00 ns, 554.7382 ns/op
+WorkloadResult   1: 270966 op, 150754700.00 ns, 556.3602 ns/op
+WorkloadResult   2: 270966 op, 151944700.00 ns, 560.7519 ns/op
+WorkloadResult   3: 270966 op, 151426600.00 ns, 558.8399 ns/op
+WorkloadResult   4: 270966 op, 153156800.00 ns, 565.2252 ns/op
+WorkloadResult   5: 270966 op, 154493300.00 ns, 570.1575 ns/op
+WorkloadResult   6: 270966 op, 152089600.00 ns, 561.2867 ns/op
+WorkloadResult   7: 270966 op, 149332500.00 ns, 551.1116 ns/op
+WorkloadResult   8: 270966 op, 149777100.00 ns, 552.7524 ns/op
+WorkloadResult   9: 270966 op, 150808200.00 ns, 556.5576 ns/op
+WorkloadResult  10: 270966 op, 150393400.00 ns, 555.0268 ns/op
+WorkloadResult  11: 270966 op, 151369800.00 ns, 558.6302 ns/op
+// GC:  4 0 0 30349312 270966
+
+// AfterAll
+// Benchmark Process 24076 has exited with code 0.
+
+Mean = 558.791 ns, StdErr = 1.655 ns (0.30%), N = 11, StdDev = 5.488 ns
+Min = 551.112 ns, Q1 = 555.694 ns, Median = 558.630 ns, Q3 = 561.019 ns, Max = 570.158 ns
+IQR = 5.326 ns, LowerFence = 547.705 ns, UpperFence = 569.008 ns
+ConfidenceInterval = [551.201 ns; 566.381 ns] (CI 99.9%), Margin = 7.590 ns (1.36% of Mean)
+Skewness = 0.55, Kurtosis = 2.36, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2026-11-04 3:20 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  benchmarks\results\2026-11-04-authenticated-recovery\initialization\results\Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report.csv
+  benchmarks\results\2026-11-04-authenticated-recovery\initialization\results\Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report-github.md
+  benchmarks\results\2026-11-04-authenticated-recovery\initialization\results\Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report.html
+  benchmarks\results\2026-11-04-authenticated-recovery\initialization\results\Mrbr.Cryptography.Vss.KeyManager.Benchmarks.RecoveryBenchmarks-report-full.json
+
+// * Detailed results *
+RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES128_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 566.189 ns, StdErr = 1.542 ns (0.27%), N = 11, StdDev = 5.116 ns
+Min = 555.629 ns, Q1 = 563.924 ns, Median = 567.478 ns, Q3 = 568.479 ns, Max = 573.253 ns
+IQR = 4.554 ns, LowerFence = 557.093 ns, UpperFence = 575.310 ns
+ConfidenceInterval = [559.114 ns; 573.264 ns] (CI 99.9%), Margin = 7.075 ns (1.25% of Mean)
+Skewness = -0.57, Kurtosis = 2.37, MValue = 2
+-------------------- Histogram --------------------
+[552.610 ns ; 576.272 ns) | @@@@@@@@@@@
+---------------------------------------------------
+
+RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES192_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 559.654 ns, StdErr = 5.735 ns (1.02%), N = 12, StdDev = 19.865 ns
+Min = 541.438 ns, Q1 = 543.947 ns, Median = 553.933 ns, Q3 = 565.865 ns, Max = 595.651 ns
+IQR = 21.918 ns, LowerFence = 511.070 ns, UpperFence = 598.742 ns
+ConfidenceInterval = [534.210 ns; 585.098 ns] (CI 99.9%), Margin = 25.444 ns (4.55% of Mean)
+Skewness = 0.81, Kurtosis = 2.01, MValue = 2.67
+-------------------- Histogram --------------------
+[540.042 ns ; 562.819 ns) | @@@@@@@@@
+[562.819 ns ; 576.033 ns) | 
+[576.033 ns ; 598.810 ns) | @@@
+---------------------------------------------------
+
+RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES256_2of3]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 572.436 ns, StdErr = 6.224 ns (1.09%), N = 12, StdDev = 21.561 ns
+Min = 553.651 ns, Q1 = 556.628 ns, Median = 561.536 ns, Q3 = 580.297 ns, Max = 611.861 ns
+IQR = 23.668 ns, LowerFence = 521.125 ns, UpperFence = 615.799 ns
+ConfidenceInterval = [544.820 ns; 600.052 ns] (CI 99.9%), Margin = 27.616 ns (4.82% of Mean)
+Skewness = 0.86, Kurtosis = 2.04, MValue = 2.67
+-------------------- Histogram --------------------
+[552.351 ns ; 577.072 ns) | @@@@@@@@@
+[577.072 ns ; 590.506 ns) | 
+[590.506 ns ; 615.227 ns) | @@@
+---------------------------------------------------
+
+RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES256_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 554.830 ns, StdErr = 1.894 ns (0.34%), N = 10, StdDev = 5.988 ns
+Min = 546.187 ns, Q1 = 549.738 ns, Median = 555.527 ns, Q3 = 559.204 ns, Max = 563.917 ns
+IQR = 9.466 ns, LowerFence = 535.539 ns, UpperFence = 573.403 ns
+ConfidenceInterval = [545.776 ns; 563.883 ns] (CI 99.9%), Margin = 9.054 ns (1.63% of Mean)
+Skewness = -0.14, Kurtosis = 1.45, MValue = 2
+-------------------- Histogram --------------------
+[542.539 ns ; 567.565 ns) | @@@@@@@@@@
+---------------------------------------------------
+
+RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Block_AES256_9of9]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 564.818 ns, StdErr = 2.799 ns (0.50%), N = 11, StdDev = 9.284 ns
+Min = 553.455 ns, Q1 = 558.338 ns, Median = 561.615 ns, Q3 = 571.326 ns, Max = 583.840 ns
+IQR = 12.989 ns, LowerFence = 538.855 ns, UpperFence = 590.809 ns
+ConfidenceInterval = [551.978 ns; 577.658 ns] (CI 99.9%), Margin = 12.840 ns (2.27% of Mean)
+Skewness = 0.55, Kurtosis = 2.08, MValue = 2
+-------------------- Histogram --------------------
+[551.959 ns ; 575.527 ns) | @@@@@@@@@@
+[575.527 ns ; 589.319 ns) | @
+---------------------------------------------------
+
+RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Matrix_AES128_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 561.201 ns, StdErr = 2.433 ns (0.43%), N = 10, StdDev = 7.693 ns
+Min = 550.131 ns, Q1 = 556.278 ns, Median = 560.313 ns, Q3 = 567.485 ns, Max = 573.204 ns
+IQR = 11.206 ns, LowerFence = 539.468 ns, UpperFence = 584.294 ns
+ConfidenceInterval = [549.569 ns; 572.832 ns] (CI 99.9%), Margin = 11.631 ns (2.07% of Mean)
+Skewness = 0.06, Kurtosis = 1.37, MValue = 2
+-------------------- Histogram --------------------
+[547.898 ns ; 574.234 ns) | @@@@@@@@@@
+---------------------------------------------------
+
+RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Matrix_AES192_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 566.995 ns, StdErr = 2.963 ns (0.52%), N = 12, StdDev = 10.266 ns
+Min = 549.923 ns, Q1 = 561.043 ns, Median = 566.696 ns, Q3 = 575.477 ns, Max = 581.288 ns
+IQR = 14.434 ns, LowerFence = 539.392 ns, UpperFence = 597.129 ns
+ConfidenceInterval = [553.846 ns; 580.144 ns] (CI 99.9%), Margin = 13.149 ns (2.32% of Mean)
+Skewness = -0.23, Kurtosis = 1.55, MValue = 2
+-------------------- Histogram --------------------
+[544.037 ns ; 558.054 ns) | @@
+[558.054 ns ; 569.825 ns) | @@@@@
+[569.825 ns ; 584.153 ns) | @@@@@
+---------------------------------------------------
+
+RecoveryBenchmarks.InitializeRecoveredKeyContext: Job-BSNVEC(Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=Matrix_AES256_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 558.791 ns, StdErr = 1.655 ns (0.30%), N = 11, StdDev = 5.488 ns
+Min = 551.112 ns, Q1 = 555.694 ns, Median = 558.630 ns, Q3 = 561.019 ns, Max = 570.158 ns
+IQR = 5.326 ns, LowerFence = 547.705 ns, UpperFence = 569.008 ns
+ConfidenceInterval = [551.201 ns; 566.381 ns] (CI 99.9%), Margin = 7.590 ns (1.36% of Mean)
+Skewness = 0.55, Kurtosis = 2.36, MValue = 2
+-------------------- Histogram --------------------
+[547.873 ns ; 573.397 ns) | @@@@@@@@@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 43.94 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-BSNVEC : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+
+PowerPlanMode=  Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false  IterationCount=12  
+IterationTime=150ms  LaunchCount=1  UnrollFactor=1  
+WarmupCount=15  
+
+| Method                        | Scenario           | Mean     | Error    | StdDev   | Op/s        | Gen0   | Allocated |
+|------------------------------ |------------------- |---------:|---------:|---------:|------------:|-------:|----------:|
+| InitializeRecoveredKeyContext | Block_AES128_3of5  | 566.2 ns |  7.08 ns |  5.12 ns | 1,766,194.8 | 0.0153 |     112 B |
+| InitializeRecoveredKeyContext | Block_AES192_3of5  | 559.7 ns | 25.44 ns | 19.87 ns | 1,786,817.5 | 0.0146 |     112 B |
+| InitializeRecoveredKeyContext | Block_AES256_2of3  | 572.4 ns | 27.62 ns | 21.56 ns | 1,746,919.6 | 0.0154 |     112 B |
+| InitializeRecoveredKeyContext | Block_AES256_3of5  | 554.8 ns |  9.05 ns |  5.99 ns | 1,802,354.3 | 0.0148 |     112 B |
+| InitializeRecoveredKeyContext | Block_AES256_9of9  | 564.8 ns | 12.84 ns |  9.28 ns | 1,770,482.3 | 0.0148 |     112 B |
+| InitializeRecoveredKeyContext | Matrix_AES128_3of5 | 561.2 ns | 11.63 ns |  7.69 ns | 1,781,893.0 | 0.0151 |     112 B |
+| InitializeRecoveredKeyContext | Matrix_AES192_3of5 | 567.0 ns | 13.15 ns | 10.27 ns | 1,763,684.1 | 0.0149 |     112 B |
+| InitializeRecoveredKeyContext | Matrix_AES256_3of5 | 558.8 ns |  7.59 ns |  5.49 ns | 1,789,578.2 | 0.0148 |     112 B |
+
+// * Hints *
+Outliers
+  RecoveryBenchmarks.InitializeRecoveredKeyContext: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15 -> 1 outlier  was  removed, 2 outliers were detected (555.63 ns, 578.52 ns)
+  RecoveryBenchmarks.InitializeRecoveredKeyContext: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15 -> 2 outliers were removed (579.40 ns, 592.17 ns)
+  RecoveryBenchmarks.InitializeRecoveredKeyContext: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15 -> 1 outlier  was  removed (610.58 ns)
+  RecoveryBenchmarks.InitializeRecoveredKeyContext: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15 -> 2 outliers were removed (594.07 ns, 595.58 ns)
+  RecoveryBenchmarks.InitializeRecoveredKeyContext: Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15 -> 1 outlier  was  removed (573.89 ns)
+
+// * Legends *
+  Scenario  : Value of the 'Scenario' parameter
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Op/s      : Operation per second
+  Gen0      : GC Generation 0 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ns      : 1 Nanosecond (0.000000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:00:51 (51.44 sec), executed benchmarks: 8
+
+Global total time: 00:01:30 (90.8 sec), executed benchmarks: 8
+// * Artifacts cleanup *
+Artifacts cleanup is finished

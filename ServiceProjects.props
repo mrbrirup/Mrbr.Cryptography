@@ -1,0 +1,8 @@
+<Project>
+  <!-- Override with -p:MrbrServiceSourceRoot=... when the sibling repositories move. -->
+  <PropertyGroup>
+    <MrbrServiceSourceRoot Condition="'$(MrbrServiceSourceRoot)' == ''">C:/dev/source</MrbrServiceSourceRoot>
+    <KeyManagerProject>$(MrbrServiceSourceRoot)/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager/Mrbr.Service.KeyManager.csproj</KeyManagerProject>
+    <EncryptionManagerProject>$(MrbrServiceSourceRoot)/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager/Mrbr.Service.EncryptionManager.csproj</EncryptionManagerProject>
+  </PropertyGroup>
+</Project>

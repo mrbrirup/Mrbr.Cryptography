@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/Mrbr.Cryptography.Benchmarks/Mrbr.Cryptography.Benchmarks.csproj" />
+    <Project Path="benchmarks/Mrbr.Cryptography.Vss.Authentication.Benchmarks/Mrbr.Cryptography.Vss.Authentication.Benchmarks.csproj" />
+    <Project Path="benchmarks/Mrbr.Cryptography.Vss.Benchmarks/Mrbr.Cryptography.Vss.Benchmarks.csproj" />
+    <Project Path="benchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks/Mrbr.Cryptography.Vss.OptimizationBenchmarks.csproj" />
+    <Project Path="benchmarks/Mrbr.Cryptography.WeightBenchmarks/Mrbr.Cryptography.WeightBenchmarks.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Mrbr.Cryptography.Vss.Authentication/Mrbr.Cryptography.Vss.Authentication.csproj" />
+    <Project Path="src/Mrbr.Cryptography.Vss/Mrbr.Cryptography.Vss.csproj" />
+    <Project Path="src/Mrbr.Cryptography/Mrbr.Cryptography.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Mrbr.Cryptography.TestConsoleApp/Mrbr.Cryptography.TestConsoleApp.csproj" Id="5badce00-8e30-41a2-a329-7a701598143a" />
+    <Project Path="tests/Mrbr.Cryptography.Tests/Mrbr.Cryptography.Tests.csproj" />
+    <Project Path="tests/Mrbr.Cryptography.Vss.Authentication.Tests/Mrbr.Cryptography.Vss.Authentication.Tests.csproj" />
+    <Project Path="tests/Mrbr.Cryptography.Vss.Tests/Mrbr.Cryptography.Vss.Tests.csproj" />
+  </Folder>
+</Solution>

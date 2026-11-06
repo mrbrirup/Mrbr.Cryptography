@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.IntegrationBenchmarks.KeySharingBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 41.63 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-DZDKHJ : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false  IterationCount=15  
+IterationTime=150ms  LaunchCount=1  UnrollFactor=1  
+WarmupCount=20  
+</code></pre>
+
+<table>
+<thead><tr><th>Method          </th><th>Categories</th><th>Source</th><th>KeyLength</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Op/s </th><th>Ratio</th><th>RatioSD</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>CoreCreate</td><td>Create</td><td>0</td><td>16</td><td>575.9 ns</td><td>33.19 ns</td><td>27.72 ns</td><td>1,736,517.9</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>ReplayAndCreate</td><td>Create</td><td>0</td><td>16</td><td>575.0 ns</td><td>39.73 ns</td><td>37.16 ns</td><td>1,738,991.9</td><td>1.00</td><td>0.08</td><td>-</td><td>NA</td>
+</tr><tr><td>CoreCreate</td><td>Create</td><td>0</td><td>24</td><td>1,501.8 ns</td><td>99.39 ns</td><td>92.97 ns</td><td>665,866.3</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>ReplayAndCreate</td><td>Create</td><td>0</td><td>24</td><td>1,572.0 ns</td><td>101.74 ns</td><td>95.17 ns</td><td>636,122.7</td><td>1.05</td><td>0.09</td><td>-</td><td>NA</td>
+</tr><tr><td>CoreCreate</td><td>Create</td><td>0</td><td>32</td><td>694.9 ns</td><td>47.15 ns</td><td>44.11 ns</td><td>1,439,028.4</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>ReplayAndCreate</td><td>Create</td><td>0</td><td>32</td><td>776.8 ns</td><td>65.22 ns</td><td>61.01 ns</td><td>1,287,284.0</td><td>1.12</td><td>0.11</td><td>-</td><td>NA</td>
+</tr><tr><td>CoreCreate</td><td>Create</td><td>1</td><td>16</td><td>562.8 ns</td><td>50.12 ns</td><td>46.88 ns</td><td>1,776,944.3</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>ReplayAndCreate</td><td>Create</td><td>1</td><td>16</td><td>602.3 ns</td><td>26.52 ns</td><td>23.51 ns</td><td>1,660,402.8</td><td>1.08</td><td>0.09</td><td>-</td><td>NA</td>
+</tr><tr><td>CoreCreate</td><td>Create</td><td>1</td><td>24</td><td>1,472.7 ns</td><td>69.19 ns</td><td>64.72 ns</td><td>679,039.2</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>ReplayAndCreate</td><td>Create</td><td>1</td><td>24</td><td>1,604.2 ns</td><td>149.36 ns</td><td>139.72 ns</td><td>623,365.7</td><td>1.09</td><td>0.10</td><td>-</td><td>NA</td>
+</tr><tr><td>CoreCreate</td><td>Create</td><td>1</td><td>32</td><td>656.9 ns</td><td>30.94 ns</td><td>28.94 ns</td><td>1,522,208.4</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>ReplayAndCreate</td><td>Create</td><td>1</td><td>32</td><td>729.9 ns</td><td>26.73 ns</td><td>23.70 ns</td><td>1,370,079.0</td><td>1.11</td><td>0.06</td><td>-</td><td>NA</td>
+</tr><tr><td>CoreRecover</td><td>Recover</td><td>0</td><td>16</td><td>497.6 ns</td><td>7.42 ns</td><td>5.80 ns</td><td>2,009,579.9</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverKey</td><td>Recover</td><td>0</td><td>16</td><td>530.4 ns</td><td>36.10 ns</td><td>33.76 ns</td><td>1,885,341.0</td><td>1.07</td><td>0.07</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverHandleAndReplay</td><td>Recover</td><td>0</td><td>16</td><td>779.2 ns</td><td>57.79 ns</td><td>54.05 ns</td><td>1,283,445.2</td><td>1.57</td><td>0.11</td><td>-</td><td>NA</td>
+</tr><tr><td>CoreRecover</td><td>Recover</td><td>0</td><td>24</td><td>817.6 ns</td><td>65.97 ns</td><td>61.71 ns</td><td>1,223,144.5</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverKey</td><td>Recover</td><td>0</td><td>24</td><td>756.0 ns</td><td>23.15 ns</td><td>19.33 ns</td><td>1,322,820.9</td><td>0.93</td><td>0.07</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverHandleAndReplay</td><td>Recover</td><td>0</td><td>24</td><td>766.8 ns</td><td>47.96 ns</td><td>44.86 ns</td><td>1,304,126.0</td><td>0.94</td><td>0.09</td><td>-</td><td>NA</td>
+</tr><tr><td>CoreRecover</td><td>Recover</td><td>0</td><td>32</td><td>524.2 ns</td><td>28.60 ns</td><td>26.75 ns</td><td>1,907,724.5</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverKey</td><td>Recover</td><td>0</td><td>32</td><td>525.9 ns</td><td>25.90 ns</td><td>24.23 ns</td><td>1,901,364.0</td><td>1.01</td><td>0.07</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverHandleAndReplay</td><td>Recover</td><td>0</td><td>32</td><td>771.4 ns</td><td>33.51 ns</td><td>26.16 ns</td><td>1,296,314.6</td><td>1.48</td><td>0.09</td><td>-</td><td>NA</td>
+</tr><tr><td>CoreRecover</td><td>Recover</td><td>1</td><td>16</td><td>498.2 ns</td><td>6.20 ns</td><td>5.18 ns</td><td>2,007,153.0</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverKey</td><td>Recover</td><td>1</td><td>16</td><td>524.7 ns</td><td>31.71 ns</td><td>29.66 ns</td><td>1,905,672.8</td><td>1.05</td><td>0.06</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverHandleAndReplay</td><td>Recover</td><td>1</td><td>16</td><td>772.9 ns</td><td>12.61 ns</td><td>11.18 ns</td><td>1,293,785.7</td><td>1.55</td><td>0.03</td><td>-</td><td>NA</td>
+</tr><tr><td>CoreRecover</td><td>Recover</td><td>1</td><td>24</td><td>769.3 ns</td><td>43.60 ns</td><td>40.78 ns</td><td>1,299,898.0</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverKey</td><td>Recover</td><td>1</td><td>24</td><td>846.9 ns</td><td>56.05 ns</td><td>52.43 ns</td><td>1,180,766.7</td><td>1.10</td><td>0.09</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverHandleAndReplay</td><td>Recover</td><td>1</td><td>24</td><td>835.0 ns</td><td>73.96 ns</td><td>69.19 ns</td><td>1,197,594.2</td><td>1.09</td><td>0.10</td><td>-</td><td>NA</td>
+</tr><tr><td>CoreRecover</td><td>Recover</td><td>1</td><td>32</td><td>522.5 ns</td><td>43.25 ns</td><td>40.46 ns</td><td>1,913,834.7</td><td>1.00</td><td>0.00</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverKey</td><td>Recover</td><td>1</td><td>32</td><td>501.3 ns</td><td>7.78 ns</td><td>6.50 ns</td><td>1,994,936.2</td><td>0.96</td><td>0.07</td><td>-</td><td>NA</td>
+</tr><tr><td>RecoverHandleAndReplay</td><td>Recover</td><td>1</td><td>32</td><td>822.3 ns</td><td>38.17 ns</td><td>33.83 ns</td><td>1,216,060.1</td><td>1.58</td><td>0.13</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

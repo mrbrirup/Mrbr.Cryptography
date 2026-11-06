@@ -1,0 +1,123 @@
+{
+  "CaseCounts": {
+    "net11": 48,
+    "net10-target": 12,
+    "netstandard-target": 12,
+    "runtime": 16
+  },
+  "MrbrZeroAllocationCases": 16,
+  "LoadedSubjects": {
+    "net11": [
+      [
+        ".NETCoreApp,Version=v11.0",
+        "E16B98D17C7332375B6ACD64CC532F7DD90634A55D461AFA0B915AEE114A909D",
+        ".NET 11.0.0-rc.3.26522.148"
+      ]
+    ],
+    "net10-target": [
+      [
+        ".NETCoreApp,Version=v10.0",
+        "102797E5D1FBC33C4917B6DBFADD3AD5D636EA27D03E28F2997D434A757F8ABC",
+        ".NET 11.0.0-rc.3.26522.148"
+      ]
+    ],
+    "netstandard-target": [
+      [
+        ".NETStandard,Version=v2.0",
+        "A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F",
+        ".NET 11.0.0-rc.3.26522.148"
+      ]
+    ],
+    "runtime": [
+      [
+        ".NETCoreApp,Version=v10.0",
+        "102797E5D1FBC33C4917B6DBFADD3AD5D636EA27D03E28F2997D434A757F8ABC",
+        ".NET 10.0.14"
+      ],
+      [
+        ".NETCoreApp,Version=v10.0",
+        "102797E5D1FBC33C4917B6DBFADD3AD5D636EA27D03E28F2997D434A757F8ABC",
+        ".NET 11.0.0-rc.3.26522.148"
+      ]
+    ]
+  },
+  "FrozenRuntimeSubjectSHA256": "102797E5D1FBC33C4917B6DBFADD3AD5D636EA27D03E28F2997D434A757F8ABC",
+  "HostEnvironments": {
+    "net11": {
+      "BenchmarkDotNetCaption": "BenchmarkDotNet",
+      "BenchmarkDotNetVersion": "0.16.0-preview.2",
+      "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+      "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+      "PhysicalProcessorCount": 1,
+      "PhysicalCoreCount": 6,
+      "LogicalCoreCount": 12,
+      "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+      "Architecture": "X64",
+      "HasAttachedDebugger": false,
+      "HasRyuJit": true,
+      "Configuration": "RELEASE",
+      "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+      "ChronometerFrequency": {
+        "Hertz": 10000000
+      },
+      "HardwareTimerKind": "Unknown"
+    },
+    "net10-target": {
+      "BenchmarkDotNetCaption": "BenchmarkDotNet",
+      "BenchmarkDotNetVersion": "0.16.0-preview.2",
+      "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+      "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+      "PhysicalProcessorCount": 1,
+      "PhysicalCoreCount": 6,
+      "LogicalCoreCount": 12,
+      "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+      "Architecture": "X64",
+      "HasAttachedDebugger": false,
+      "HasRyuJit": true,
+      "Configuration": "RELEASE",
+      "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+      "ChronometerFrequency": {
+        "Hertz": 10000000
+      },
+      "HardwareTimerKind": "Unknown"
+    },
+    "netstandard-target": {
+      "BenchmarkDotNetCaption": "BenchmarkDotNet",
+      "BenchmarkDotNetVersion": "0.16.0-preview.2",
+      "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+      "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+      "PhysicalProcessorCount": 1,
+      "PhysicalCoreCount": 6,
+      "LogicalCoreCount": 12,
+      "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+      "Architecture": "X64",
+      "HasAttachedDebugger": false,
+      "HasRyuJit": true,
+      "Configuration": "RELEASE",
+      "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+      "ChronometerFrequency": {
+        "Hertz": 10000000
+      },
+      "HardwareTimerKind": "Unknown"
+    },
+    "runtime": {
+      "BenchmarkDotNetCaption": "BenchmarkDotNet",
+      "BenchmarkDotNetVersion": "0.16.0-preview.2",
+      "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+      "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+      "PhysicalProcessorCount": 1,
+      "PhysicalCoreCount": 6,
+      "LogicalCoreCount": 12,
+      "RuntimeVersion": ".NET 10.0.14 (10.0.14, 10.0.1426.52326)",
+      "Architecture": "X64",
+      "HasAttachedDebugger": false,
+      "HasRyuJit": true,
+      "Configuration": "RELEASE",
+      "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+      "ChronometerFrequency": {
+        "Hertz": 10000000
+      },
+      "HardwareTimerKind": "Unknown"
+    }
+  }
+}

@@ -1,0 +1,1225 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 12 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore gen.csproj /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\a /p:ComparisonTargetFramework=netstandard2.0 /p:ComparisonUseFrozenAssembly=true /p:BenchmarkDotNetGatherReferences=true --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1
+// command took 1.47 sec and exited with 0
+// start dotnet build gen.csproj -f net11.0 -c Release /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\a /p:ComparisonTargetFramework=netstandard2.0 /p:ComparisonUseFrozenAssembly=true /p:BenchmarkDotNetGatherReferences=true --no-restore --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1
+// command took 12.22 sec and exited with 0
+// start dotnet build gen.csproj -f net11.0 -c Release /p:ArtifactsPath=E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\a /p:ComparisonTargetFramework=netstandard2.0 /p:ComparisonUseFrozenAssembly=true --nodeReuse:false /p:UseSharedCompilation=false /p:Deterministic=true /p:Optimize=true in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1
+// command took 4.59 sec and exited with 0
+// ***** Done, took 00:00:18 (18.64 sec)   *****
+// Found 12 benchmarks:
+//   ComparisonBenchmarks.UpstreamBigCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamBigReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamBigCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamBigReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamBigCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+//   ComparisonBenchmarks.UpstreamSecureCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+//   ComparisonBenchmarks.UpstreamBigReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+//   ComparisonBenchmarks.UpstreamSecureReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57074 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigCreate(Scenario: 128B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 0 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=1279; secure=1279; payload=128; k=3; n=5
+WorkloadJitting  1: 1 op, 368100.00 ns, 368.1000 us/op
+WorkloadJitting  2: 30 op, 1514300.00 ns, 50.4767 us/op
+WorkloadJitting  3: 30 op, 980200.00 ns, 32.6733 us/op
+WorkloadJitting  4: 1 op, 355700.00 ns, 355.7000 us/op
+
+WorkloadPilot    1: 4 op, 94300.00 ns, 23.5750 us/op
+WorkloadPilot    2: 6363 op, 166116400.00 ns, 26.1066 us/op
+WorkloadPilot    3: 5746 op, 152682800.00 ns, 26.5720 us/op
+WorkloadPilot    4: 5645 op, 149534600.00 ns, 26.4897 us/op
+WorkloadPilot    5: 5663 op, 149728800.00 ns, 26.4398 us/op
+WorkloadPilot    6: 5673 op, 144023400.00 ns, 25.3875 us/op
+WorkloadPilot    7: 5908 op, 154985800.00 ns, 26.2332 us/op
+
+WorkloadWarmup   1: 5908 op, 156630000.00 ns, 26.5115 us/op
+WorkloadWarmup   2: 5908 op, 148351500.00 ns, 25.1103 us/op
+WorkloadWarmup   3: 5908 op, 149579000.00 ns, 25.3180 us/op
+WorkloadWarmup   4: 5908 op, 154164200.00 ns, 26.0941 us/op
+WorkloadWarmup   5: 5908 op, 154967200.00 ns, 26.2301 us/op
+WorkloadWarmup   6: 5908 op, 161531500.00 ns, 27.3411 us/op
+WorkloadWarmup   7: 5908 op, 157972800.00 ns, 26.7388 us/op
+WorkloadWarmup   8: 5908 op, 158372100.00 ns, 26.8064 us/op
+WorkloadWarmup   9: 5908 op, 162370800.00 ns, 27.4832 us/op
+WorkloadWarmup  10: 5908 op, 156225400.00 ns, 26.4430 us/op
+WorkloadWarmup  11: 5908 op, 156120100.00 ns, 26.4252 us/op
+WorkloadWarmup  12: 5908 op, 158184600.00 ns, 26.7746 us/op
+WorkloadWarmup  13: 5908 op, 155673700.00 ns, 26.3496 us/op
+WorkloadWarmup  14: 5908 op, 155666600.00 ns, 26.3484 us/op
+WorkloadWarmup  15: 5908 op, 156260000.00 ns, 26.4489 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 5908 op, 150839500.00 ns, 25.5314 us/op
+WorkloadActual   2: 5908 op, 151480400.00 ns, 25.6399 us/op
+WorkloadActual   3: 5908 op, 153717400.00 ns, 26.0185 us/op
+WorkloadActual   4: 5908 op, 150855300.00 ns, 25.5341 us/op
+WorkloadActual   5: 5908 op, 148154300.00 ns, 25.0769 us/op
+WorkloadActual   6: 5908 op, 147487600.00 ns, 24.9640 us/op
+WorkloadActual   7: 5908 op, 150466200.00 ns, 25.4682 us/op
+WorkloadActual   8: 5908 op, 150240000.00 ns, 25.4299 us/op
+WorkloadActual   9: 5908 op, 155670500.00 ns, 26.3491 us/op
+WorkloadActual  10: 5908 op, 157647800.00 ns, 26.6838 us/op
+WorkloadActual  11: 5908 op, 154690200.00 ns, 26.1832 us/op
+WorkloadActual  12: 5908 op, 154171200.00 ns, 26.0953 us/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 5908 op, 154882800.00 ns, 26.2158 us/op
+WorkloadResult   1: 5908 op, 150839500.00 ns, 25.5314 us/op
+WorkloadResult   2: 5908 op, 151480400.00 ns, 25.6399 us/op
+WorkloadResult   3: 5908 op, 153717400.00 ns, 26.0185 us/op
+WorkloadResult   4: 5908 op, 150855300.00 ns, 25.5341 us/op
+WorkloadResult   5: 5908 op, 148154300.00 ns, 25.0769 us/op
+WorkloadResult   6: 5908 op, 147487600.00 ns, 24.9640 us/op
+WorkloadResult   7: 5908 op, 150466200.00 ns, 25.4682 us/op
+WorkloadResult   8: 5908 op, 150240000.00 ns, 25.4299 us/op
+WorkloadResult   9: 5908 op, 155670500.00 ns, 26.3491 us/op
+WorkloadResult  10: 5908 op, 157647800.00 ns, 26.6838 us/op
+WorkloadResult  11: 5908 op, 154690200.00 ns, 26.1832 us/op
+WorkloadResult  12: 5908 op, 154171200.00 ns, 26.0953 us/op
+// GC:  28 9 0 179572232 5908
+
+// AfterAll
+// Benchmark Process 17804 has exited with code 0.
+
+Mean = 25.748 μs, StdErr = 0.150 μs (0.58%), N = 12, StdDev = 0.520 μs
+Min = 24.964 μs, Q1 = 25.459 μs, Median = 25.587 μs, Q3 = 26.117 μs, Max = 26.684 μs
+IQR = 0.659 μs, LowerFence = 24.471 μs, UpperFence = 27.105 μs
+ConfidenceInterval = [25.082 μs; 26.413 μs] (CI 99.9%), Margin = 0.665 μs (2.58% of Mean)
+Skewness = 0.19, Kurtosis = 1.78, MValue = 2
+
+// ** Remained 11 (91.7%) benchmark(s) to run. Estimated finish 2026-11-04 4:30 (0h 1m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57076 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureCreate(Scenario: 128B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 1 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=1279; secure=1279; payload=128; k=3; n=5
+WorkloadJitting  1: 1 op, 2517400.00 ns, 2.5174 ms/op
+WorkloadJitting  2: 30 op, 71346600.00 ns, 2.3782 ms/op
+WorkloadJitting  3: 30 op, 69168900.00 ns, 2.3056 ms/op
+WorkloadJitting  4: 1 op, 2548700.00 ns, 2.5487 ms/op
+
+WorkloadPilot    1: 4 op, 9515500.00 ns, 2.3789 ms/op
+WorkloadPilot    2: 63 op, 153398200.00 ns, 2.4349 ms/op
+
+WorkloadWarmup   1: 63 op, 145259100.00 ns, 2.3057 ms/op
+WorkloadWarmup   2: 63 op, 146947300.00 ns, 2.3325 ms/op
+WorkloadWarmup   3: 63 op, 148094600.00 ns, 2.3507 ms/op
+WorkloadWarmup   4: 63 op, 152381800.00 ns, 2.4188 ms/op
+WorkloadWarmup   5: 63 op, 149643800.00 ns, 2.3753 ms/op
+WorkloadWarmup   6: 63 op, 150056300.00 ns, 2.3818 ms/op
+WorkloadWarmup   7: 63 op, 147703400.00 ns, 2.3445 ms/op
+WorkloadWarmup   8: 63 op, 147324700.00 ns, 2.3385 ms/op
+WorkloadWarmup   9: 63 op, 146809500.00 ns, 2.3303 ms/op
+WorkloadWarmup  10: 63 op, 155934300.00 ns, 2.4751 ms/op
+WorkloadWarmup  11: 63 op, 145908000.00 ns, 2.3160 ms/op
+WorkloadWarmup  12: 63 op, 146437400.00 ns, 2.3244 ms/op
+WorkloadWarmup  13: 63 op, 146775300.00 ns, 2.3298 ms/op
+WorkloadWarmup  14: 63 op, 146784400.00 ns, 2.3299 ms/op
+WorkloadWarmup  15: 63 op, 146399300.00 ns, 2.3238 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 63 op, 147430400.00 ns, 2.3402 ms/op
+WorkloadActual   2: 63 op, 147858700.00 ns, 2.3470 ms/op
+WorkloadActual   3: 63 op, 149510900.00 ns, 2.3732 ms/op
+WorkloadActual   4: 63 op, 149798900.00 ns, 2.3778 ms/op
+WorkloadActual   5: 63 op, 147666500.00 ns, 2.3439 ms/op
+WorkloadActual   6: 63 op, 147544900.00 ns, 2.3420 ms/op
+WorkloadActual   7: 63 op, 166814900.00 ns, 2.6479 ms/op
+WorkloadActual   8: 63 op, 149377800.00 ns, 2.3711 ms/op
+WorkloadActual   9: 63 op, 147308500.00 ns, 2.3382 ms/op
+WorkloadActual  10: 63 op, 147085500.00 ns, 2.3347 ms/op
+WorkloadActual  11: 63 op, 150375800.00 ns, 2.3869 ms/op
+WorkloadActual  12: 63 op, 146944300.00 ns, 2.3324 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 63 op, 145817500.00 ns, 2.3146 ms/op
+WorkloadResult   1: 63 op, 147430400.00 ns, 2.3402 ms/op
+WorkloadResult   2: 63 op, 147858700.00 ns, 2.3470 ms/op
+WorkloadResult   3: 63 op, 149510900.00 ns, 2.3732 ms/op
+WorkloadResult   4: 63 op, 149798900.00 ns, 2.3778 ms/op
+WorkloadResult   5: 63 op, 147666500.00 ns, 2.3439 ms/op
+WorkloadResult   6: 63 op, 147544900.00 ns, 2.3420 ms/op
+WorkloadResult   7: 63 op, 149377800.00 ns, 2.3711 ms/op
+WorkloadResult   8: 63 op, 147308500.00 ns, 2.3382 ms/op
+WorkloadResult   9: 63 op, 147085500.00 ns, 2.3347 ms/op
+WorkloadResult  10: 63 op, 150375800.00 ns, 2.3869 ms/op
+WorkloadResult  11: 63 op, 146944300.00 ns, 2.3324 ms/op
+// GC:  0 0 0 1345176 63
+
+// AfterAll
+// Benchmark Process 20608 has exited with code 0.
+
+Mean = 2.353 ms, StdErr = 0.006 ms (0.25%), N = 11, StdDev = 0.020 ms
+Min = 2.332 ms, Q1 = 2.339 ms, Median = 2.344 ms, Q3 = 2.372 ms, Max = 2.387 ms
+IQR = 0.033 ms, LowerFence = 2.290 ms, UpperFence = 2.422 ms
+ConfidenceInterval = [2.326 ms; 2.381 ms] (CI 99.9%), Margin = 0.027 ms (1.16% of Mean)
+Skewness = 0.49, Kurtosis = 1.39, MValue = 2
+
+// ** Remained 10 (83.3%) benchmark(s) to run. Estimated finish 2026-11-04 4:30 (0h 1m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57079 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigReconstruct(Scenario: 128B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 2 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=1279; secure=1279; payload=128; k=3; n=5
+WorkloadJitting  1: 1 op, 371800.00 ns, 371.8000 us/op
+WorkloadJitting  2: 30 op, 3814300.00 ns, 127.1433 us/op
+WorkloadJitting  3: 30 op, 2669700.00 ns, 88.9900 us/op
+WorkloadJitting  4: 1 op, 87800.00 ns, 87.8000 us/op
+
+WorkloadPilot    1: 4 op, 233500.00 ns, 58.3750 us/op
+WorkloadPilot    2: 2570 op, 183264700.00 ns, 71.3092 us/op
+WorkloadPilot    3: 2104 op, 148725600.00 ns, 70.6871 us/op
+WorkloadPilot    4: 2122 op, 188290900.00 ns, 88.7328 us/op
+WorkloadPilot    5: 1690 op, 124102100.00 ns, 73.4332 us/op
+WorkloadPilot    6: 2043 op, 159306800.00 ns, 77.9769 us/op
+
+WorkloadWarmup   1: 2043 op, 147262900.00 ns, 72.0817 us/op
+WorkloadWarmup   2: 2043 op, 148888200.00 ns, 72.8772 us/op
+WorkloadWarmup   3: 2043 op, 154592800.00 ns, 75.6695 us/op
+WorkloadWarmup   4: 2043 op, 148219100.00 ns, 72.5497 us/op
+WorkloadWarmup   5: 2043 op, 145834300.00 ns, 71.3824 us/op
+WorkloadWarmup   6: 2043 op, 158149800.00 ns, 77.4106 us/op
+WorkloadWarmup   7: 2043 op, 158706300.00 ns, 77.6830 us/op
+WorkloadWarmup   8: 2043 op, 158950000.00 ns, 77.8023 us/op
+WorkloadWarmup   9: 2043 op, 150362700.00 ns, 73.5990 us/op
+WorkloadWarmup  10: 2043 op, 145511100.00 ns, 71.2242 us/op
+WorkloadWarmup  11: 2043 op, 149812500.00 ns, 73.3297 us/op
+WorkloadWarmup  12: 2043 op, 148227000.00 ns, 72.5536 us/op
+WorkloadWarmup  13: 2043 op, 149350700.00 ns, 73.1036 us/op
+WorkloadWarmup  14: 2043 op, 144913700.00 ns, 70.9318 us/op
+WorkloadWarmup  15: 2043 op, 146894100.00 ns, 71.9012 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 2043 op, 146900400.00 ns, 71.9043 us/op
+WorkloadActual   2: 2043 op, 145278400.00 ns, 71.1103 us/op
+WorkloadActual   3: 2043 op, 147417600.00 ns, 72.1574 us/op
+WorkloadActual   4: 2043 op, 153723500.00 ns, 75.2440 us/op
+WorkloadActual   5: 2043 op, 147723600.00 ns, 72.3072 us/op
+WorkloadActual   6: 2043 op, 147428900.00 ns, 72.1629 us/op
+WorkloadActual   7: 2043 op, 149381100.00 ns, 73.1185 us/op
+WorkloadActual   8: 2043 op, 151333700.00 ns, 74.0743 us/op
+WorkloadActual   9: 2043 op, 153647400.00 ns, 75.2068 us/op
+WorkloadActual  10: 2043 op, 152031400.00 ns, 74.4158 us/op
+WorkloadActual  11: 2043 op, 151055000.00 ns, 73.9378 us/op
+WorkloadActual  12: 2043 op, 149210400.00 ns, 73.0349 us/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 2043 op, 148223300.00 ns, 72.5518 us/op
+WorkloadResult   1: 2043 op, 146900400.00 ns, 71.9043 us/op
+WorkloadResult   2: 2043 op, 145278400.00 ns, 71.1103 us/op
+WorkloadResult   3: 2043 op, 147417600.00 ns, 72.1574 us/op
+WorkloadResult   4: 2043 op, 153723500.00 ns, 75.2440 us/op
+WorkloadResult   5: 2043 op, 147723600.00 ns, 72.3072 us/op
+WorkloadResult   6: 2043 op, 147428900.00 ns, 72.1629 us/op
+WorkloadResult   7: 2043 op, 149381100.00 ns, 73.1185 us/op
+WorkloadResult   8: 2043 op, 151333700.00 ns, 74.0743 us/op
+WorkloadResult   9: 2043 op, 153647400.00 ns, 75.2068 us/op
+WorkloadResult  10: 2043 op, 152031400.00 ns, 74.4158 us/op
+WorkloadResult  11: 2043 op, 151055000.00 ns, 73.9378 us/op
+WorkloadResult  12: 2043 op, 149210400.00 ns, 73.0349 us/op
+// GC:  21 10 0 133546824 2043
+
+// AfterAll
+// Benchmark Process 10432 has exited with code 0.
+
+Mean = 73.223 μs, StdErr = 0.389 μs (0.53%), N = 12, StdDev = 1.349 μs
+Min = 71.110 μs, Q1 = 72.162 μs, Median = 73.077 μs, Q3 = 74.160 μs, Max = 75.244 μs
+IQR = 1.998 μs, LowerFence = 69.164 μs, UpperFence = 77.157 μs
+ConfidenceInterval = [71.495 μs; 74.951 μs] (CI 99.9%), Margin = 1.728 μs (2.36% of Mean)
+Skewness = 0.13, Kurtosis = 1.54, MValue = 2
+
+// ** Remained 9 (75.0%) benchmark(s) to run. Estimated finish 2026-11-04 4:30 (0h 1m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57081 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureReconstruct(Scenario: 128B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 3 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=1279; secure=1279; payload=128; k=3; n=5
+WorkloadJitting  1: 1 op, 803088300.00 ns, 803.0883 ms/op
+WorkloadJitting  2: 1 op, 732381700.00 ns, 732.3817 ms/op
+
+WorkloadPilot    1: 4 op, 2929098800.00 ns, 732.2747 ms/op
+
+WorkloadWarmup   1: 4 op, 2977431300.00 ns, 744.3578 ms/op
+WorkloadWarmup   2: 4 op, 3052061300.00 ns, 763.0153 ms/op
+WorkloadWarmup   3: 4 op, 2913611300.00 ns, 728.4028 ms/op
+WorkloadWarmup   4: 4 op, 3133036500.00 ns, 783.2591 ms/op
+WorkloadWarmup   5: 4 op, 3149146100.00 ns, 787.2865 ms/op
+WorkloadWarmup   6: 4 op, 2908493100.00 ns, 727.1233 ms/op
+WorkloadWarmup   7: 4 op, 2949233300.00 ns, 737.3083 ms/op
+WorkloadWarmup   8: 4 op, 2947400200.00 ns, 736.8501 ms/op
+WorkloadWarmup   9: 4 op, 2946017800.00 ns, 736.5045 ms/op
+WorkloadWarmup  10: 4 op, 2947243800.00 ns, 736.8110 ms/op
+WorkloadWarmup  11: 4 op, 3170715300.00 ns, 792.6788 ms/op
+WorkloadWarmup  12: 4 op, 2943685100.00 ns, 735.9213 ms/op
+WorkloadWarmup  13: 4 op, 2967903400.00 ns, 741.9759 ms/op
+WorkloadWarmup  14: 4 op, 2946893800.00 ns, 736.7235 ms/op
+WorkloadWarmup  15: 4 op, 3164206000.00 ns, 791.0515 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 4 op, 2983510800.00 ns, 745.8777 ms/op
+WorkloadActual   2: 4 op, 3106966200.00 ns, 776.7416 ms/op
+WorkloadActual   3: 4 op, 2966806900.00 ns, 741.7017 ms/op
+WorkloadActual   4: 4 op, 2938969200.00 ns, 734.7423 ms/op
+WorkloadActual   5: 4 op, 2916220100.00 ns, 729.0550 ms/op
+WorkloadActual   6: 4 op, 2920931800.00 ns, 730.2330 ms/op
+WorkloadActual   7: 4 op, 2926383000.00 ns, 731.5958 ms/op
+WorkloadActual   8: 4 op, 2930093500.00 ns, 732.5234 ms/op
+WorkloadActual   9: 4 op, 2935594500.00 ns, 733.8986 ms/op
+WorkloadActual  10: 4 op, 2950789000.00 ns, 737.6973 ms/op
+WorkloadActual  11: 4 op, 2940048300.00 ns, 735.0121 ms/op
+WorkloadActual  12: 4 op, 2949997400.00 ns, 737.4994 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 4 op, 3144122600.00 ns, 786.0307 ms/op
+WorkloadResult   1: 4 op, 2983510800.00 ns, 745.8777 ms/op
+WorkloadResult   2: 4 op, 2966806900.00 ns, 741.7017 ms/op
+WorkloadResult   3: 4 op, 2938969200.00 ns, 734.7423 ms/op
+WorkloadResult   4: 4 op, 2916220100.00 ns, 729.0550 ms/op
+WorkloadResult   5: 4 op, 2920931800.00 ns, 730.2330 ms/op
+WorkloadResult   6: 4 op, 2926383000.00 ns, 731.5958 ms/op
+WorkloadResult   7: 4 op, 2930093500.00 ns, 732.5234 ms/op
+WorkloadResult   8: 4 op, 2935594500.00 ns, 733.8986 ms/op
+WorkloadResult   9: 4 op, 2950789000.00 ns, 737.6973 ms/op
+WorkloadResult  10: 4 op, 2940048300.00 ns, 735.0121 ms/op
+WorkloadResult  11: 4 op, 2949997400.00 ns, 737.4994 ms/op
+// GC:  12 0 0 78777728 4
+
+// AfterAll
+// Benchmark Process 24604 has exited with code 0.
+
+Mean = 735.440 ms, StdErr = 1.513 ms (0.21%), N = 11, StdDev = 5.017 ms
+Min = 729.055 ms, Q1 = 732.060 ms, Median = 734.742 ms, Q3 = 737.598 ms, Max = 745.878 ms
+IQR = 5.539 ms, LowerFence = 723.751 ms, UpperFence = 745.906 ms
+ConfidenceInterval = [728.501 ms; 742.378 ms] (CI 99.9%), Margin = 6.939 ms (0.94% of Mean)
+Skewness = 0.66, Kurtosis = 2.32, MValue = 2
+
+// ** Remained 8 (66.7%) benchmark(s) to run. Estimated finish 2026-11-04 4:34 (0h 3m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57086 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigCreate(Scenario: 32B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 4 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=521; secure=521; payload=32; k=3; n=5
+WorkloadJitting  1: 1 op, 438900.00 ns, 438.9000 us/op
+WorkloadJitting  2: 30 op, 1060700.00 ns, 35.3567 us/op
+WorkloadJitting  3: 30 op, 804200.00 ns, 26.8067 us/op
+WorkloadJitting  4: 1 op, 253800.00 ns, 253.8000 us/op
+
+WorkloadPilot    1: 4 op, 70300.00 ns, 17.5750 us/op
+WorkloadPilot    2: 8535 op, 160627400.00 ns, 18.8198 us/op
+WorkloadPilot    3: 7970 op, 152254800.00 ns, 19.1035 us/op
+WorkloadPilot    4: 7852 op, 155673600.00 ns, 19.8260 us/op
+
+WorkloadWarmup   1: 7852 op, 156634300.00 ns, 19.9483 us/op
+WorkloadWarmup   2: 7852 op, 151582200.00 ns, 19.3049 us/op
+WorkloadWarmup   3: 7852 op, 153335500.00 ns, 19.5282 us/op
+WorkloadWarmup   4: 7852 op, 153461900.00 ns, 19.5443 us/op
+WorkloadWarmup   5: 7852 op, 152419100.00 ns, 19.4115 us/op
+WorkloadWarmup   6: 7852 op, 150896600.00 ns, 19.2176 us/op
+WorkloadWarmup   7: 7852 op, 149983500.00 ns, 19.1013 us/op
+WorkloadWarmup   8: 7852 op, 153744700.00 ns, 19.5803 us/op
+WorkloadWarmup   9: 7852 op, 152430500.00 ns, 19.4130 us/op
+WorkloadWarmup  10: 7852 op, 154169700.00 ns, 19.6344 us/op
+WorkloadWarmup  11: 7852 op, 147247300.00 ns, 18.7528 us/op
+WorkloadWarmup  12: 7852 op, 151760900.00 ns, 19.3277 us/op
+WorkloadWarmup  13: 7852 op, 148090000.00 ns, 18.8602 us/op
+WorkloadWarmup  14: 7852 op, 152311500.00 ns, 19.3978 us/op
+WorkloadWarmup  15: 7852 op, 148899400.00 ns, 18.9632 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 7852 op, 152876700.00 ns, 19.4698 us/op
+WorkloadActual   2: 7852 op, 147410300.00 ns, 18.7736 us/op
+WorkloadActual   3: 7852 op, 152393700.00 ns, 19.4083 us/op
+WorkloadActual   4: 7852 op, 155951900.00 ns, 19.8614 us/op
+WorkloadActual   5: 7852 op, 157575300.00 ns, 20.0682 us/op
+WorkloadActual   6: 7852 op, 148466300.00 ns, 18.9081 us/op
+WorkloadActual   7: 7852 op, 149816400.00 ns, 19.0800 us/op
+WorkloadActual   8: 7852 op, 150792800.00 ns, 19.2044 us/op
+WorkloadActual   9: 7852 op, 145728500.00 ns, 18.5594 us/op
+WorkloadActual  10: 7852 op, 153317100.00 ns, 19.5259 us/op
+WorkloadActual  11: 7852 op, 160572200.00 ns, 20.4498 us/op
+WorkloadActual  12: 7852 op, 160715400.00 ns, 20.4681 us/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 7852 op, 153215600.00 ns, 19.5129 us/op
+WorkloadResult   1: 7852 op, 152876700.00 ns, 19.4698 us/op
+WorkloadResult   2: 7852 op, 147410300.00 ns, 18.7736 us/op
+WorkloadResult   3: 7852 op, 152393700.00 ns, 19.4083 us/op
+WorkloadResult   4: 7852 op, 155951900.00 ns, 19.8614 us/op
+WorkloadResult   5: 7852 op, 157575300.00 ns, 20.0682 us/op
+WorkloadResult   6: 7852 op, 148466300.00 ns, 18.9081 us/op
+WorkloadResult   7: 7852 op, 149816400.00 ns, 19.0800 us/op
+WorkloadResult   8: 7852 op, 150792800.00 ns, 19.2044 us/op
+WorkloadResult   9: 7852 op, 145728500.00 ns, 18.5594 us/op
+WorkloadResult  10: 7852 op, 153317100.00 ns, 19.5259 us/op
+WorkloadResult  11: 7852 op, 160572200.00 ns, 20.4498 us/op
+WorkloadResult  12: 7852 op, 160715400.00 ns, 20.4681 us/op
+// GC:  29 28 0 182659992 7852
+
+// AfterAll
+// Benchmark Process 8768 has exited with code 0.
+
+Mean = 19.481 μs, StdErr = 0.181 μs (0.93%), N = 12, StdDev = 0.627 μs
+Min = 18.559 μs, Q1 = 19.037 μs, Median = 19.439 μs, Q3 = 19.913 μs, Max = 20.468 μs
+IQR = 0.876 μs, LowerFence = 17.723 μs, UpperFence = 21.227 μs
+ConfidenceInterval = [18.678 μs; 20.285 μs] (CI 99.9%), Margin = 0.803 μs (4.12% of Mean)
+Skewness = 0.24, Kurtosis = 1.66, MValue = 2
+
+// ** Remained 7 (58.3%) benchmark(s) to run. Estimated finish 2026-11-04 4:33 (0h 2m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57088 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureCreate(Scenario: 32B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 5 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=521; secure=521; payload=32; k=3; n=5
+WorkloadJitting  1: 1 op, 1013500.00 ns, 1.0135 ms/op
+WorkloadJitting  2: 30 op, 22924300.00 ns, 764.1433 us/op
+WorkloadJitting  3: 30 op, 20951200.00 ns, 698.3733 us/op
+WorkloadJitting  4: 1 op, 841000.00 ns, 841.0000 us/op
+
+WorkloadPilot    1: 4 op, 2604300.00 ns, 651.0750 us/op
+WorkloadPilot    2: 230 op, 158725600.00 ns, 690.1113 us/op
+WorkloadPilot    3: 217 op, 151099300.00 ns, 696.3101 us/op
+WorkloadPilot    4: 215 op, 149396500.00 ns, 694.8674 us/op
+
+WorkloadWarmup   1: 215 op, 150028000.00 ns, 697.8047 us/op
+WorkloadWarmup   2: 215 op, 151202200.00 ns, 703.2660 us/op
+WorkloadWarmup   3: 215 op, 150085900.00 ns, 698.0740 us/op
+WorkloadWarmup   4: 215 op, 149437200.00 ns, 695.0567 us/op
+WorkloadWarmup   5: 215 op, 150254100.00 ns, 698.8563 us/op
+WorkloadWarmup   6: 215 op, 150077800.00 ns, 698.0363 us/op
+WorkloadWarmup   7: 215 op, 149542300.00 ns, 695.5456 us/op
+WorkloadWarmup   8: 215 op, 162577300.00 ns, 756.1735 us/op
+WorkloadWarmup   9: 215 op, 165792700.00 ns, 771.1288 us/op
+WorkloadWarmup  10: 215 op, 165796100.00 ns, 771.1447 us/op
+WorkloadWarmup  11: 215 op, 165918500.00 ns, 771.7140 us/op
+WorkloadWarmup  12: 215 op, 157514400.00 ns, 732.6251 us/op
+WorkloadWarmup  13: 215 op, 161581100.00 ns, 751.5400 us/op
+WorkloadWarmup  14: 215 op, 150148400.00 ns, 698.3647 us/op
+WorkloadWarmup  15: 215 op, 152468600.00 ns, 709.1563 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 215 op, 151123600.00 ns, 702.9005 us/op
+WorkloadActual   2: 215 op, 150735900.00 ns, 701.0972 us/op
+WorkloadActual   3: 215 op, 150902600.00 ns, 701.8726 us/op
+WorkloadActual   4: 215 op, 150856000.00 ns, 701.6558 us/op
+WorkloadActual   5: 215 op, 151407900.00 ns, 704.2228 us/op
+WorkloadActual   6: 215 op, 150751500.00 ns, 701.1698 us/op
+WorkloadActual   7: 215 op, 149061500.00 ns, 693.3093 us/op
+WorkloadActual   8: 215 op, 149826900.00 ns, 696.8693 us/op
+WorkloadActual   9: 215 op, 150017800.00 ns, 697.7572 us/op
+WorkloadActual  10: 215 op, 152423700.00 ns, 708.9474 us/op
+WorkloadActual  11: 215 op, 152787100.00 ns, 710.6377 us/op
+WorkloadActual  12: 215 op, 153862700.00 ns, 715.6405 us/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 215 op, 149548900.00 ns, 695.5763 us/op
+WorkloadResult   1: 215 op, 151123600.00 ns, 702.9005 us/op
+WorkloadResult   2: 215 op, 150735900.00 ns, 701.0972 us/op
+WorkloadResult   3: 215 op, 150902600.00 ns, 701.8726 us/op
+WorkloadResult   4: 215 op, 150856000.00 ns, 701.6558 us/op
+WorkloadResult   5: 215 op, 151407900.00 ns, 704.2228 us/op
+WorkloadResult   6: 215 op, 150751500.00 ns, 701.1698 us/op
+WorkloadResult   7: 215 op, 149061500.00 ns, 693.3093 us/op
+WorkloadResult   8: 215 op, 149826900.00 ns, 696.8693 us/op
+WorkloadResult   9: 215 op, 150017800.00 ns, 697.7572 us/op
+WorkloadResult  10: 215 op, 152423700.00 ns, 708.9474 us/op
+WorkloadResult  11: 215 op, 152787100.00 ns, 710.6377 us/op
+// GC:  0 0 0 4563160 215
+
+// AfterAll
+// Benchmark Process 21860 has exited with code 0.
+
+Mean = 701.858 μs, StdErr = 1.507 μs (0.21%), N = 11, StdDev = 4.999 μs
+Min = 693.309 μs, Q1 = 699.427 μs, Median = 701.656 μs, Q3 = 703.562 μs, Max = 710.638 μs
+IQR = 4.134 μs, LowerFence = 693.226 μs, UpperFence = 709.763 μs
+ConfidenceInterval = [694.945 μs; 708.772 μs] (CI 99.9%), Margin = 6.914 μs (0.99% of Mean)
+Skewness = 0.17, Kurtosis = 2.15, MValue = 2
+
+// ** Remained 6 (50.0%) benchmark(s) to run. Estimated finish 2026-11-04 4:32 (0h 2m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57094 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigReconstruct(Scenario: 32B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 6 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=521; secure=521; payload=32; k=3; n=5
+WorkloadJitting  1: 1 op, 337000.00 ns, 337.0000 us/op
+WorkloadJitting  2: 30 op, 2237000.00 ns, 74.5667 us/op
+WorkloadJitting  3: 30 op, 1655300.00 ns, 55.1767 us/op
+WorkloadJitting  4: 1 op, 78700.00 ns, 78.7000 us/op
+
+WorkloadPilot    1: 4 op, 172700.00 ns, 43.1750 us/op
+WorkloadPilot    2: 3474 op, 177565800.00 ns, 51.1128 us/op
+WorkloadPilot    3: 2935 op, 146484400.00 ns, 49.9095 us/op
+WorkloadPilot    4: 3005 op, 158394800.00 ns, 52.7104 us/op
+WorkloadPilot    5: 2846 op, 150257500.00 ns, 52.7960 us/op
+
+WorkloadWarmup   1: 2846 op, 153052400.00 ns, 53.7781 us/op
+WorkloadWarmup   2: 2846 op, 150055000.00 ns, 52.7249 us/op
+WorkloadWarmup   3: 2846 op, 149367700.00 ns, 52.4834 us/op
+WorkloadWarmup   4: 2846 op, 144625800.00 ns, 50.8172 us/op
+WorkloadWarmup   5: 2846 op, 144363100.00 ns, 50.7249 us/op
+WorkloadWarmup   6: 2846 op, 142430500.00 ns, 50.0459 us/op
+WorkloadWarmup   7: 2846 op, 146402600.00 ns, 51.4415 us/op
+WorkloadWarmup   8: 2846 op, 146220400.00 ns, 51.3775 us/op
+WorkloadWarmup   9: 2846 op, 148184700.00 ns, 52.0677 us/op
+WorkloadWarmup  10: 2846 op, 146583800.00 ns, 51.5052 us/op
+WorkloadWarmup  11: 2846 op, 140374400.00 ns, 49.3234 us/op
+WorkloadWarmup  12: 2846 op, 141280200.00 ns, 49.6417 us/op
+WorkloadWarmup  13: 2846 op, 141234800.00 ns, 49.6257 us/op
+WorkloadWarmup  14: 2846 op, 145736500.00 ns, 51.2075 us/op
+WorkloadWarmup  15: 2846 op, 150750400.00 ns, 52.9692 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 2846 op, 156123400.00 ns, 54.8571 us/op
+WorkloadActual   2: 2846 op, 155182500.00 ns, 54.5265 us/op
+WorkloadActual   3: 2846 op, 141678100.00 ns, 49.7815 us/op
+WorkloadActual   4: 2846 op, 141200900.00 ns, 49.6138 us/op
+WorkloadActual   5: 2846 op, 143737300.00 ns, 50.5050 us/op
+WorkloadActual   6: 2846 op, 144308900.00 ns, 50.7059 us/op
+WorkloadActual   7: 2846 op, 143198800.00 ns, 50.3158 us/op
+WorkloadActual   8: 2846 op, 143269800.00 ns, 50.3408 us/op
+WorkloadActual   9: 2846 op, 141651900.00 ns, 49.7723 us/op
+WorkloadActual  10: 2846 op, 143401700.00 ns, 50.3871 us/op
+WorkloadActual  11: 2846 op, 148432600.00 ns, 52.1548 us/op
+WorkloadActual  12: 2846 op, 146658700.00 ns, 51.5315 us/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 2846 op, 144146300.00 ns, 50.6487 us/op
+WorkloadResult   1: 2846 op, 141678100.00 ns, 49.7815 us/op
+WorkloadResult   2: 2846 op, 141200900.00 ns, 49.6138 us/op
+WorkloadResult   3: 2846 op, 143737300.00 ns, 50.5050 us/op
+WorkloadResult   4: 2846 op, 144308900.00 ns, 50.7059 us/op
+WorkloadResult   5: 2846 op, 143198800.00 ns, 50.3158 us/op
+WorkloadResult   6: 2846 op, 143269800.00 ns, 50.3408 us/op
+WorkloadResult   7: 2846 op, 141651900.00 ns, 49.7723 us/op
+WorkloadResult   8: 2846 op, 143401700.00 ns, 50.3871 us/op
+WorkloadResult   9: 2846 op, 148432600.00 ns, 52.1548 us/op
+WorkloadResult  10: 2846 op, 146658700.00 ns, 51.5315 us/op
+// GC:  24 23 0 156507232 2846
+
+// AfterAll
+// Benchmark Process 24880 has exited with code 0.
+
+Mean = 50.511 μs, StdErr = 0.253 μs (0.50%), N = 10, StdDev = 0.799 μs
+Min = 49.614 μs, Q1 = 49.915 μs, Median = 50.364 μs, Q3 = 50.656 μs, Max = 52.155 μs
+IQR = 0.741 μs, LowerFence = 48.804 μs, UpperFence = 51.767 μs
+ConfidenceInterval = [49.303 μs; 51.719 μs] (CI 99.9%), Margin = 1.208 μs (2.39% of Mean)
+Skewness = 0.78, Kurtosis = 2.36, MValue = 2
+
+// ** Remained 5 (41.7%) benchmark(s) to run. Estimated finish 2026-11-04 4:32 (0h 1m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57096 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureReconstruct(Scenario: 32B_3of5)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 7 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=521; secure=521; payload=32; k=3; n=5
+WorkloadJitting  1: 1 op, 178518800.00 ns, 178.5188 ms/op
+WorkloadJitting  2: 1 op, 177878000.00 ns, 177.8780 ms/op
+
+WorkloadPilot    1: 4 op, 740755900.00 ns, 185.1890 ms/op
+
+WorkloadWarmup   1: 4 op, 718830500.00 ns, 179.7076 ms/op
+WorkloadWarmup   2: 4 op, 721518100.00 ns, 180.3795 ms/op
+WorkloadWarmup   3: 4 op, 720358800.00 ns, 180.0897 ms/op
+WorkloadWarmup   4: 4 op, 717088800.00 ns, 179.2722 ms/op
+WorkloadWarmup   5: 4 op, 719385300.00 ns, 179.8463 ms/op
+WorkloadWarmup   6: 4 op, 718761000.00 ns, 179.6903 ms/op
+WorkloadWarmup   7: 4 op, 715819000.00 ns, 178.9548 ms/op
+WorkloadWarmup   8: 4 op, 718033000.00 ns, 179.5083 ms/op
+WorkloadWarmup   9: 4 op, 723401100.00 ns, 180.8503 ms/op
+WorkloadWarmup  10: 4 op, 764980400.00 ns, 191.2451 ms/op
+WorkloadWarmup  11: 4 op, 796659500.00 ns, 199.1649 ms/op
+WorkloadWarmup  12: 4 op, 799311900.00 ns, 199.8280 ms/op
+WorkloadWarmup  13: 4 op, 720013000.00 ns, 180.0033 ms/op
+WorkloadWarmup  14: 4 op, 727371100.00 ns, 181.8428 ms/op
+WorkloadWarmup  15: 4 op, 834559000.00 ns, 208.6398 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 4 op, 718282900.00 ns, 179.5707 ms/op
+WorkloadActual   2: 4 op, 717174600.00 ns, 179.2937 ms/op
+WorkloadActual   3: 4 op, 720198600.00 ns, 180.0497 ms/op
+WorkloadActual   4: 4 op, 724509900.00 ns, 181.1275 ms/op
+WorkloadActual   5: 4 op, 724044600.00 ns, 181.0112 ms/op
+WorkloadActual   6: 4 op, 719334400.00 ns, 179.8336 ms/op
+WorkloadActual   7: 4 op, 723271300.00 ns, 180.8178 ms/op
+WorkloadActual   8: 4 op, 827386900.00 ns, 206.8467 ms/op
+WorkloadActual   9: 4 op, 834562600.00 ns, 208.6407 ms/op
+WorkloadActual  10: 4 op, 720669700.00 ns, 180.1674 ms/op
+WorkloadActual  11: 4 op, 720852000.00 ns, 180.2130 ms/op
+WorkloadActual  12: 4 op, 715707900.00 ns, 178.9270 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 4 op, 717093900.00 ns, 179.2735 ms/op
+WorkloadResult   1: 4 op, 718282900.00 ns, 179.5707 ms/op
+WorkloadResult   2: 4 op, 717174600.00 ns, 179.2937 ms/op
+WorkloadResult   3: 4 op, 720198600.00 ns, 180.0497 ms/op
+WorkloadResult   4: 4 op, 724509900.00 ns, 181.1275 ms/op
+WorkloadResult   5: 4 op, 724044600.00 ns, 181.0112 ms/op
+WorkloadResult   6: 4 op, 719334400.00 ns, 179.8336 ms/op
+WorkloadResult   7: 4 op, 723271300.00 ns, 180.8178 ms/op
+WorkloadResult   8: 4 op, 720669700.00 ns, 180.1674 ms/op
+WorkloadResult   9: 4 op, 720852000.00 ns, 180.2130 ms/op
+WorkloadResult  10: 4 op, 715707900.00 ns, 178.9270 ms/op
+// GC:  5 0 0 32304384 4
+
+// AfterAll
+// Benchmark Process 21140 has exited with code 0.
+
+Mean = 180.101 ms, StdErr = 0.231 ms (0.13%), N = 10, StdDev = 0.730 ms
+Min = 178.927 ms, Q1 = 179.636 ms, Median = 180.109 ms, Q3 = 180.667 ms, Max = 181.127 ms
+IQR = 1.030 ms, LowerFence = 178.091 ms, UpperFence = 182.212 ms
+ConfidenceInterval = [178.997 ms; 181.205 ms] (CI 99.9%), Margin = 1.104 ms (0.61% of Mean)
+Skewness = -0.03, Kurtosis = 1.57, MValue = 2
+
+// ** Remained 4 (33.3%) benchmark(s) to run. Estimated finish 2026-11-04 4:32 (0h 1m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57103 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigCreate(Scenario: 32B_9of9)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 8 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=521; secure=521; payload=32; k=9; n=9
+WorkloadJitting  1: 1 op, 628600.00 ns, 628.6000 us/op
+WorkloadJitting  2: 30 op, 4498600.00 ns, 149.9533 us/op
+WorkloadJitting  3: 30 op, 2216900.00 ns, 73.8967 us/op
+WorkloadJitting  4: 1 op, 393700.00 ns, 393.7000 us/op
+
+WorkloadPilot    1: 4 op, 293600.00 ns, 73.4000 us/op
+WorkloadPilot    2: 2044 op, 153263900.00 ns, 74.9823 us/op
+WorkloadPilot    3: 2000 op, 152220700.00 ns, 76.1104 us/op
+WorkloadPilot    4: 1971 op, 175885800.00 ns, 89.2368 us/op
+
+WorkloadWarmup   1: 1971 op, 134273900.00 ns, 68.1248 us/op
+WorkloadWarmup   2: 1971 op, 128439100.00 ns, 65.1644 us/op
+WorkloadWarmup   3: 1971 op, 128367000.00 ns, 65.1279 us/op
+WorkloadWarmup   4: 1971 op, 127451600.00 ns, 64.6634 us/op
+WorkloadWarmup   5: 1971 op, 138898600.00 ns, 70.4711 us/op
+WorkloadWarmup   6: 1971 op, 126046200.00 ns, 63.9504 us/op
+WorkloadWarmup   7: 1971 op, 126112000.00 ns, 63.9838 us/op
+WorkloadWarmup   8: 1971 op, 130334200.00 ns, 66.1259 us/op
+WorkloadWarmup   9: 1971 op, 124852800.00 ns, 63.3449 us/op
+WorkloadWarmup  10: 1971 op, 123904300.00 ns, 62.8637 us/op
+WorkloadWarmup  11: 1971 op, 121647300.00 ns, 61.7186 us/op
+WorkloadWarmup  12: 1971 op, 129344800.00 ns, 65.6239 us/op
+WorkloadWarmup  13: 1971 op, 122966400.00 ns, 62.3878 us/op
+WorkloadWarmup  14: 1971 op, 129487700.00 ns, 65.6964 us/op
+WorkloadWarmup  15: 1971 op, 129258700.00 ns, 65.5803 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 1971 op, 131376100.00 ns, 66.6545 us/op
+WorkloadActual   2: 1971 op, 123827600.00 ns, 62.8248 us/op
+WorkloadActual   3: 1971 op, 125905500.00 ns, 63.8790 us/op
+WorkloadActual   4: 1971 op, 119393800.00 ns, 60.5752 us/op
+WorkloadActual   5: 1971 op, 128617900.00 ns, 65.2551 us/op
+WorkloadActual   6: 1971 op, 138163400.00 ns, 70.0981 us/op
+WorkloadActual   7: 1971 op, 128313200.00 ns, 65.1006 us/op
+WorkloadActual   8: 1971 op, 131482900.00 ns, 66.7087 us/op
+WorkloadActual   9: 1971 op, 131376400.00 ns, 66.6547 us/op
+WorkloadActual  10: 1971 op, 131059500.00 ns, 66.4939 us/op
+WorkloadActual  11: 1971 op, 130869100.00 ns, 66.3973 us/op
+WorkloadActual  12: 1971 op, 130055700.00 ns, 65.9846 us/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 1971 op, 121710100.00 ns, 61.7504 us/op
+WorkloadResult   1: 1971 op, 131376100.00 ns, 66.6545 us/op
+WorkloadResult   2: 1971 op, 123827600.00 ns, 62.8248 us/op
+WorkloadResult   3: 1971 op, 125905500.00 ns, 63.8790 us/op
+WorkloadResult   4: 1971 op, 119393800.00 ns, 60.5752 us/op
+WorkloadResult   5: 1971 op, 128617900.00 ns, 65.2551 us/op
+WorkloadResult   6: 1971 op, 128313200.00 ns, 65.1006 us/op
+WorkloadResult   7: 1971 op, 131482900.00 ns, 66.7087 us/op
+WorkloadResult   8: 1971 op, 131376400.00 ns, 66.6547 us/op
+WorkloadResult   9: 1971 op, 131059500.00 ns, 66.4939 us/op
+WorkloadResult  10: 1971 op, 130869100.00 ns, 66.3973 us/op
+WorkloadResult  11: 1971 op, 130055700.00 ns, 65.9846 us/op
+// GC:  30 1 0 191576624 1971
+
+// AfterAll
+// Benchmark Process 22036 has exited with code 0.
+
+Mean = 65.139 μs, StdErr = 0.595 μs (0.91%), N = 11, StdDev = 1.974 μs
+Min = 60.575 μs, Q1 = 64.490 μs, Median = 65.985 μs, Q3 = 66.574 μs, Max = 66.709 μs
+IQR = 2.084 μs, LowerFence = 61.363 μs, UpperFence = 69.701 μs
+ConfidenceInterval = [62.408 μs; 67.869 μs] (CI 99.9%), Margin = 2.730 μs (4.19% of Mean)
+Skewness = -1.1, Kurtosis = 2.92, MValue = 2
+
+// ** Remained 3 (25.0%) benchmark(s) to run. Estimated finish 2026-11-04 4:32 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57105 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureCreate(Scenario: 32B_9of9)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 9 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=521; secure=521; payload=32; k=9; n=9
+WorkloadJitting  1: 1 op, 2576100.00 ns, 2.5761 ms/op
+WorkloadJitting  2: 30 op, 72442100.00 ns, 2.4147 ms/op
+WorkloadJitting  3: 30 op, 80082000.00 ns, 2.6694 ms/op
+WorkloadJitting  4: 1 op, 2545400.00 ns, 2.5454 ms/op
+
+WorkloadPilot    1: 4 op, 9148800.00 ns, 2.2872 ms/op
+WorkloadPilot    2: 66 op, 155705000.00 ns, 2.3592 ms/op
+WorkloadPilot    3: 64 op, 151606400.00 ns, 2.3689 ms/op
+
+WorkloadWarmup   1: 64 op, 152029100.00 ns, 2.3755 ms/op
+WorkloadWarmup   2: 64 op, 152190600.00 ns, 2.3780 ms/op
+WorkloadWarmup   3: 64 op, 152806000.00 ns, 2.3876 ms/op
+WorkloadWarmup   4: 64 op, 152539100.00 ns, 2.3834 ms/op
+WorkloadWarmup   5: 64 op, 155357900.00 ns, 2.4275 ms/op
+WorkloadWarmup   6: 64 op, 153254700.00 ns, 2.3946 ms/op
+WorkloadWarmup   7: 64 op, 152861800.00 ns, 2.3885 ms/op
+WorkloadWarmup   8: 64 op, 152584500.00 ns, 2.3841 ms/op
+WorkloadWarmup   9: 64 op, 154284800.00 ns, 2.4107 ms/op
+WorkloadWarmup  10: 64 op, 153829700.00 ns, 2.4036 ms/op
+WorkloadWarmup  11: 64 op, 154536700.00 ns, 2.4146 ms/op
+WorkloadWarmup  12: 64 op, 154081600.00 ns, 2.4075 ms/op
+WorkloadWarmup  13: 64 op, 153402300.00 ns, 2.3969 ms/op
+WorkloadWarmup  14: 64 op, 153254400.00 ns, 2.3946 ms/op
+WorkloadWarmup  15: 64 op, 152103000.00 ns, 2.3766 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 64 op, 152658500.00 ns, 2.3853 ms/op
+WorkloadActual   2: 64 op, 167963800.00 ns, 2.6244 ms/op
+WorkloadActual   3: 64 op, 169585400.00 ns, 2.6498 ms/op
+WorkloadActual   4: 64 op, 169609100.00 ns, 2.6501 ms/op
+WorkloadActual   5: 64 op, 168963400.00 ns, 2.6401 ms/op
+WorkloadActual   6: 64 op, 169400900.00 ns, 2.6469 ms/op
+WorkloadActual   7: 64 op, 151704000.00 ns, 2.3704 ms/op
+WorkloadActual   8: 64 op, 153620600.00 ns, 2.4003 ms/op
+WorkloadActual   9: 64 op, 152090900.00 ns, 2.3764 ms/op
+WorkloadActual  10: 64 op, 152994300.00 ns, 2.3905 ms/op
+WorkloadActual  11: 64 op, 152002100.00 ns, 2.3750 ms/op
+WorkloadActual  12: 64 op, 164702100.00 ns, 2.5735 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 64 op, 148731900.00 ns, 2.3239 ms/op
+WorkloadResult   1: 64 op, 152658500.00 ns, 2.3853 ms/op
+WorkloadResult   2: 64 op, 167963800.00 ns, 2.6244 ms/op
+WorkloadResult   3: 64 op, 169585400.00 ns, 2.6498 ms/op
+WorkloadResult   4: 64 op, 169609100.00 ns, 2.6501 ms/op
+WorkloadResult   5: 64 op, 168963400.00 ns, 2.6401 ms/op
+WorkloadResult   6: 64 op, 169400900.00 ns, 2.6469 ms/op
+WorkloadResult   7: 64 op, 151704000.00 ns, 2.3704 ms/op
+WorkloadResult   8: 64 op, 153620600.00 ns, 2.4003 ms/op
+WorkloadResult   9: 64 op, 152090900.00 ns, 2.3764 ms/op
+WorkloadResult  10: 64 op, 152994300.00 ns, 2.3905 ms/op
+WorkloadResult  11: 64 op, 152002100.00 ns, 2.3750 ms/op
+WorkloadResult  12: 64 op, 164702100.00 ns, 2.5735 ms/op
+// GC:  0 0 0 5300736 64
+
+// AfterAll
+// Benchmark Process 6920 has exited with code 0.
+
+Mean = 2.507 ms, StdErr = 0.038 ms (1.51%), N = 12, StdDev = 0.131 ms
+Min = 2.370 ms, Q1 = 2.383 ms, Median = 2.487 ms, Q3 = 2.642 ms, Max = 2.650 ms
+IQR = 0.259 ms, LowerFence = 1.995 ms, UpperFence = 3.030 ms
+ConfidenceInterval = [2.339 ms; 2.675 ms] (CI 99.9%), Margin = 0.168 ms (6.70% of Mean)
+Skewness = 0.05, Kurtosis = 0.91, MValue = 4
+
+// ** Remained 2 (16.7%) benchmark(s) to run. Estimated finish 2026-11-04 4:31 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamBigReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57107 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigReconstruct(Scenario: 32B_9of9)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 10 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=521; secure=521; payload=32; k=9; n=9
+WorkloadJitting  1: 1 op, 844500.00 ns, 844.5000 us/op
+WorkloadJitting  2: 30 op, 14105400.00 ns, 470.1800 us/op
+WorkloadJitting  3: 30 op, 10176200.00 ns, 339.2067 us/op
+WorkloadJitting  4: 1 op, 268300.00 ns, 268.3000 us/op
+
+WorkloadPilot    1: 4 op, 907000.00 ns, 226.7500 us/op
+WorkloadPilot    2: 662 op, 213984000.00 ns, 323.2387 us/op
+WorkloadPilot    3: 464 op, 141184200.00 ns, 304.2763 us/op
+WorkloadPilot    4: 493 op, 130813300.00 ns, 265.3414 us/op
+WorkloadPilot    5: 565 op, 151941000.00 ns, 268.9221 us/op
+WorkloadPilot    6: 558 op, 152366700.00 ns, 273.0586 us/op
+
+WorkloadWarmup   1: 558 op, 157106200.00 ns, 281.5523 us/op
+WorkloadWarmup   2: 558 op, 155978800.00 ns, 279.5319 us/op
+WorkloadWarmup   3: 558 op, 151866500.00 ns, 272.1622 us/op
+WorkloadWarmup   4: 558 op, 150476300.00 ns, 269.6708 us/op
+WorkloadWarmup   5: 558 op, 161047600.00 ns, 288.6158 us/op
+WorkloadWarmup   6: 558 op, 169266600.00 ns, 303.3452 us/op
+WorkloadWarmup   7: 558 op, 154506200.00 ns, 276.8928 us/op
+WorkloadWarmup   8: 558 op, 147902200.00 ns, 265.0577 us/op
+WorkloadWarmup   9: 558 op, 149369400.00 ns, 267.6871 us/op
+WorkloadWarmup  10: 558 op, 158993800.00 ns, 284.9351 us/op
+WorkloadWarmup  11: 558 op, 148438700.00 ns, 266.0192 us/op
+WorkloadWarmup  12: 558 op, 151629300.00 ns, 271.7371 us/op
+WorkloadWarmup  13: 558 op, 155276400.00 ns, 278.2731 us/op
+WorkloadWarmup  14: 558 op, 159590000.00 ns, 286.0036 us/op
+WorkloadWarmup  15: 558 op, 156148000.00 ns, 279.8351 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 558 op, 155907200.00 ns, 279.4036 us/op
+WorkloadActual   2: 558 op, 154494600.00 ns, 276.8720 us/op
+WorkloadActual   3: 558 op, 157727600.00 ns, 282.6659 us/op
+WorkloadActual   4: 558 op, 157556100.00 ns, 282.3586 us/op
+WorkloadActual   5: 558 op, 153657300.00 ns, 275.3715 us/op
+WorkloadActual   6: 558 op, 151287800.00 ns, 271.1251 us/op
+WorkloadActual   7: 558 op, 149254700.00 ns, 267.4815 us/op
+WorkloadActual   8: 558 op, 148279800.00 ns, 265.7344 us/op
+WorkloadActual   9: 558 op, 159695900.00 ns, 286.1934 us/op
+WorkloadActual  10: 558 op, 151000300.00 ns, 270.6099 us/op
+WorkloadActual  11: 558 op, 149305800.00 ns, 267.5731 us/op
+WorkloadActual  12: 558 op, 148971500.00 ns, 266.9740 us/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 558 op, 149139000.00 ns, 267.2742 us/op
+WorkloadResult   1: 558 op, 155907200.00 ns, 279.4036 us/op
+WorkloadResult   2: 558 op, 154494600.00 ns, 276.8720 us/op
+WorkloadResult   3: 558 op, 157727600.00 ns, 282.6659 us/op
+WorkloadResult   4: 558 op, 157556100.00 ns, 282.3586 us/op
+WorkloadResult   5: 558 op, 153657300.00 ns, 275.3715 us/op
+WorkloadResult   6: 558 op, 151287800.00 ns, 271.1251 us/op
+WorkloadResult   7: 558 op, 149254700.00 ns, 267.4815 us/op
+WorkloadResult   8: 558 op, 148279800.00 ns, 265.7344 us/op
+WorkloadResult   9: 558 op, 159695900.00 ns, 286.1934 us/op
+WorkloadResult  10: 558 op, 151000300.00 ns, 270.6099 us/op
+WorkloadResult  11: 558 op, 149305800.00 ns, 267.5731 us/op
+WorkloadResult  12: 558 op, 148971500.00 ns, 266.9740 us/op
+// GC:  31 15 0 196371360 558
+
+// AfterAll
+// Benchmark Process 20180 has exited with code 0.
+
+Mean = 274.364 μs, StdErr = 2.046 μs (0.75%), N = 12, StdDev = 7.088 μs
+Min = 265.734 μs, Q1 = 267.550 μs, Median = 273.248 μs, Q3 = 280.142 μs, Max = 286.193 μs
+IQR = 12.592 μs, LowerFence = 248.662 μs, UpperFence = 299.031 μs
+ConfidenceInterval = [265.285 μs; 283.442 μs] (CI 99.9%), Margin = 9.079 μs (3.31% of Mean)
+Skewness = 0.26, Kurtosis = 1.4, MValue = 2
+
+// ** Remained 1 (8.3%) benchmark(s) to run. Estimated finish 2026-11-04 4:31 (0h 0m from now) **
+// **************************
+// Benchmark: ComparisonBenchmarks.UpstreamSecureReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet Mrbr.Cryptography.ComparisonBenchmarks-gen.dll --ipcPort 57111 --benchmarkName "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureReconstruct(Scenario: 32B_9of9)" --job "Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15" --diagnoserRunMode 3 --benchmarkId 11 in E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\.bdn\1\b
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.16.0-preview.2
+// Runtime=.NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256
+// Job: Job-WBADYN(IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15)
+
+SUBJECT target=.NETStandard,Version=v2.0; sha256=A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F; runtime=.NET 11.0.0-rc.3.26522.148
+FIELD big=521; secure=521; payload=32; k=9; n=9
+WorkloadJitting  1: 1 op, 471362000.00 ns, 471.3620 ms/op
+WorkloadJitting  2: 1 op, 425981800.00 ns, 425.9818 ms/op
+
+WorkloadPilot    1: 4 op, 1713529800.00 ns, 428.3825 ms/op
+
+WorkloadWarmup   1: 4 op, 1720888900.00 ns, 430.2222 ms/op
+WorkloadWarmup   2: 4 op, 1720538100.00 ns, 430.1345 ms/op
+WorkloadWarmup   3: 4 op, 1707313700.00 ns, 426.8284 ms/op
+WorkloadWarmup   4: 4 op, 1706361400.00 ns, 426.5904 ms/op
+WorkloadWarmup   5: 4 op, 1768596500.00 ns, 442.1491 ms/op
+WorkloadWarmup   6: 4 op, 1706478500.00 ns, 426.6196 ms/op
+WorkloadWarmup   7: 4 op, 1714329700.00 ns, 428.5824 ms/op
+WorkloadWarmup   8: 4 op, 1707984400.00 ns, 426.9961 ms/op
+WorkloadWarmup   9: 4 op, 1713716000.00 ns, 428.4290 ms/op
+WorkloadWarmup  10: 4 op, 1688652700.00 ns, 422.1632 ms/op
+WorkloadWarmup  11: 4 op, 1783290200.00 ns, 445.8226 ms/op
+WorkloadWarmup  12: 4 op, 1693314900.00 ns, 423.3287 ms/op
+WorkloadWarmup  13: 4 op, 1697205600.00 ns, 424.3014 ms/op
+WorkloadWarmup  14: 4 op, 1696185300.00 ns, 424.0463 ms/op
+WorkloadWarmup  15: 4 op, 1755421100.00 ns, 438.8553 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 4 op, 1884679500.00 ns, 471.1699 ms/op
+WorkloadActual   2: 4 op, 1878188500.00 ns, 469.5471 ms/op
+WorkloadActual   3: 4 op, 1884166000.00 ns, 471.0415 ms/op
+WorkloadActual   4: 4 op, 1829458200.00 ns, 457.3646 ms/op
+WorkloadActual   5: 4 op, 1697894900.00 ns, 424.4737 ms/op
+WorkloadActual   6: 4 op, 1707025900.00 ns, 426.7565 ms/op
+WorkloadActual   7: 4 op, 1701747200.00 ns, 425.4368 ms/op
+WorkloadActual   8: 4 op, 1693058700.00 ns, 423.2647 ms/op
+WorkloadActual   9: 4 op, 1695214700.00 ns, 423.8037 ms/op
+WorkloadActual  10: 4 op, 1698194300.00 ns, 424.5486 ms/op
+WorkloadActual  11: 4 op, 1728053800.00 ns, 432.0135 ms/op
+WorkloadActual  12: 4 op, 1699666300.00 ns, 424.9166 ms/op
+
+// AfterActualRun
+// BeforeExtraIteration
+// AfterExtraIteration
+WorkloadExtra    1: 4 op, 1718805700.00 ns, 429.7014 ms/op
+WorkloadResult   1: 4 op, 1884679500.00 ns, 471.1699 ms/op
+WorkloadResult   2: 4 op, 1878188500.00 ns, 469.5471 ms/op
+WorkloadResult   3: 4 op, 1884166000.00 ns, 471.0415 ms/op
+WorkloadResult   4: 4 op, 1829458200.00 ns, 457.3646 ms/op
+WorkloadResult   5: 4 op, 1697894900.00 ns, 424.4737 ms/op
+WorkloadResult   6: 4 op, 1707025900.00 ns, 426.7565 ms/op
+WorkloadResult   7: 4 op, 1701747200.00 ns, 425.4368 ms/op
+WorkloadResult   8: 4 op, 1693058700.00 ns, 423.2647 ms/op
+WorkloadResult   9: 4 op, 1695214700.00 ns, 423.8037 ms/op
+WorkloadResult  10: 4 op, 1698194300.00 ns, 424.5486 ms/op
+WorkloadResult  11: 4 op, 1728053800.00 ns, 432.0135 ms/op
+WorkloadResult  12: 4 op, 1699666300.00 ns, 424.9166 ms/op
+// GC:  12 0 0 81253376 4
+
+// AfterAll
+// Benchmark Process 11268 has exited with code 0.
+
+Mean = 439.528 ms, StdErr = 6.035 ms (1.37%), N = 12, StdDev = 20.907 ms
+Min = 423.265 ms, Q1 = 424.530 ms, Median = 426.097 ms, Q3 = 460.410 ms, Max = 471.170 ms
+IQR = 35.880 ms, LowerFence = 370.709 ms, UpperFence = 514.231 ms
+ConfidenceInterval = [412.750 ms; 466.306 ms] (CI 99.9%), Margin = 26.778 ms (6.09% of Mean)
+Skewness = 0.66, Kurtosis = 1.42, MValue = 3
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2026-11-04 4:32 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  benchmarks\results\2026-11-04-secretsharingdotnet\netstandard-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report.csv
+  benchmarks\results\2026-11-04-secretsharingdotnet\netstandard-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report-github.md
+  benchmarks\results\2026-11-04-secretsharingdotnet\netstandard-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report.html
+  benchmarks\results\2026-11-04-secretsharingdotnet\netstandard-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report-full.json
+
+// * Detailed results *
+ComparisonBenchmarks.UpstreamBigCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 25.748 μs, StdErr = 0.150 μs (0.58%), N = 12, StdDev = 0.520 μs
+Min = 24.964 μs, Q1 = 25.459 μs, Median = 25.587 μs, Q3 = 26.117 μs, Max = 26.684 μs
+IQR = 0.659 μs, LowerFence = 24.471 μs, UpperFence = 27.105 μs
+ConfidenceInterval = [25.082 μs; 26.413 μs] (CI 99.9%), Margin = 0.665 μs (2.58% of Mean)
+Skewness = 0.19, Kurtosis = 1.78, MValue = 2
+-------------------- Histogram --------------------
+[24.666 μs ; 25.656 μs) | @@@@@@@
+[25.656 μs ; 26.982 μs) | @@@@@
+---------------------------------------------------
+
+ComparisonBenchmarks.UpstreamSecureCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 2.353 ms, StdErr = 0.006 ms (0.25%), N = 11, StdDev = 0.020 ms
+Min = 2.332 ms, Q1 = 2.339 ms, Median = 2.344 ms, Q3 = 2.372 ms, Max = 2.387 ms
+IQR = 0.033 ms, LowerFence = 2.290 ms, UpperFence = 2.422 ms
+ConfidenceInterval = [2.326 ms; 2.381 ms] (CI 99.9%), Margin = 0.027 ms (1.16% of Mean)
+Skewness = 0.49, Kurtosis = 1.39, MValue = 2
+-------------------- Histogram --------------------
+[2.321 ms ; 2.399 ms) | @@@@@@@@@@@
+---------------------------------------------------
+
+ComparisonBenchmarks.UpstreamBigReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 73.223 μs, StdErr = 0.389 μs (0.53%), N = 12, StdDev = 1.349 μs
+Min = 71.110 μs, Q1 = 72.162 μs, Median = 73.077 μs, Q3 = 74.160 μs, Max = 75.244 μs
+IQR = 1.998 μs, LowerFence = 69.164 μs, UpperFence = 77.157 μs
+ConfidenceInterval = [71.495 μs; 74.951 μs] (CI 99.9%), Margin = 1.728 μs (2.36% of Mean)
+Skewness = 0.13, Kurtosis = 1.54, MValue = 2
+-------------------- Histogram --------------------
+[70.337 μs ; 73.285 μs) | @@@@@@@
+[73.285 μs ; 75.364 μs) | @@@@@
+---------------------------------------------------
+
+ComparisonBenchmarks.UpstreamSecureReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 735.440 ms, StdErr = 1.513 ms (0.21%), N = 11, StdDev = 5.017 ms
+Min = 729.055 ms, Q1 = 732.060 ms, Median = 734.742 ms, Q3 = 737.598 ms, Max = 745.878 ms
+IQR = 5.539 ms, LowerFence = 723.751 ms, UpperFence = 745.906 ms
+ConfidenceInterval = [728.501 ms; 742.378 ms] (CI 99.9%), Margin = 6.939 ms (0.94% of Mean)
+Skewness = 0.66, Kurtosis = 2.32, MValue = 2
+-------------------- Histogram --------------------
+[726.094 ms ; 748.839 ms) | @@@@@@@@@@@
+---------------------------------------------------
+
+ComparisonBenchmarks.UpstreamBigCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 19.481 μs, StdErr = 0.181 μs (0.93%), N = 12, StdDev = 0.627 μs
+Min = 18.559 μs, Q1 = 19.037 μs, Median = 19.439 μs, Q3 = 19.913 μs, Max = 20.468 μs
+IQR = 0.876 μs, LowerFence = 17.723 μs, UpperFence = 21.227 μs
+ConfidenceInterval = [18.678 μs; 20.285 μs] (CI 99.9%), Margin = 0.803 μs (4.12% of Mean)
+Skewness = 0.24, Kurtosis = 1.66, MValue = 2
+-------------------- Histogram --------------------
+[18.200 μs ; 18.857 μs) | @@
+[18.857 μs ; 19.576 μs) | @@@@@@
+[19.576 μs ; 20.524 μs) | @@@@
+---------------------------------------------------
+
+ComparisonBenchmarks.UpstreamSecureCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 701.858 μs, StdErr = 1.507 μs (0.21%), N = 11, StdDev = 4.999 μs
+Min = 693.309 μs, Q1 = 699.427 μs, Median = 701.656 μs, Q3 = 703.562 μs, Max = 710.638 μs
+IQR = 4.134 μs, LowerFence = 693.226 μs, UpperFence = 709.763 μs
+ConfidenceInterval = [694.945 μs; 708.772 μs] (CI 99.9%), Margin = 6.914 μs (0.99% of Mean)
+Skewness = 0.17, Kurtosis = 2.15, MValue = 2
+-------------------- Histogram --------------------
+[690.359 μs ; 713.588 μs) | @@@@@@@@@@@
+---------------------------------------------------
+
+ComparisonBenchmarks.UpstreamBigReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 50.511 μs, StdErr = 0.253 μs (0.50%), N = 10, StdDev = 0.799 μs
+Min = 49.614 μs, Q1 = 49.915 μs, Median = 50.364 μs, Q3 = 50.656 μs, Max = 52.155 μs
+IQR = 0.741 μs, LowerFence = 48.804 μs, UpperFence = 51.767 μs
+ConfidenceInterval = [49.303 μs; 51.719 μs] (CI 99.9%), Margin = 1.208 μs (2.39% of Mean)
+Skewness = 0.78, Kurtosis = 2.36, MValue = 2
+-------------------- Histogram --------------------
+[49.559 μs ; 52.362 μs) | @@@@@@@@@@
+---------------------------------------------------
+
+ComparisonBenchmarks.UpstreamSecureReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 180.101 ms, StdErr = 0.231 ms (0.13%), N = 10, StdDev = 0.730 ms
+Min = 178.927 ms, Q1 = 179.636 ms, Median = 180.109 ms, Q3 = 180.667 ms, Max = 181.127 ms
+IQR = 1.030 ms, LowerFence = 178.091 ms, UpperFence = 182.212 ms
+ConfidenceInterval = [178.997 ms; 181.205 ms] (CI 99.9%), Margin = 1.104 ms (0.61% of Mean)
+Skewness = -0.03, Kurtosis = 1.57, MValue = 2
+-------------------- Histogram --------------------
+[178.482 ms ; 181.572 ms) | @@@@@@@@@@
+---------------------------------------------------
+
+ComparisonBenchmarks.UpstreamBigCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 65.139 μs, StdErr = 0.595 μs (0.91%), N = 11, StdDev = 1.974 μs
+Min = 60.575 μs, Q1 = 64.490 μs, Median = 65.985 μs, Q3 = 66.574 μs, Max = 66.709 μs
+IQR = 2.084 μs, LowerFence = 61.363 μs, UpperFence = 69.701 μs
+ConfidenceInterval = [62.408 μs; 67.869 μs] (CI 99.9%), Margin = 2.730 μs (4.19% of Mean)
+Skewness = -1.1, Kurtosis = 2.92, MValue = 2
+-------------------- Histogram --------------------
+[59.410 μs ; 62.187 μs) | @
+[62.187 μs ; 64.739 μs) | @@
+[64.739 μs ; 67.070 μs) | @@@@@@@@
+---------------------------------------------------
+
+ComparisonBenchmarks.UpstreamSecureCreate: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 2.507 ms, StdErr = 0.038 ms (1.51%), N = 12, StdDev = 0.131 ms
+Min = 2.370 ms, Q1 = 2.383 ms, Median = 2.487 ms, Q3 = 2.642 ms, Max = 2.650 ms
+IQR = 0.259 ms, LowerFence = 1.995 ms, UpperFence = 3.030 ms
+ConfidenceInterval = [2.339 ms; 2.675 ms] (CI 99.9%), Margin = 0.168 ms (6.70% of Mean)
+Skewness = 0.05, Kurtosis = 0.91, MValue = 4
+-------------------- Histogram --------------------
+[2.295 ms ; 2.461 ms) | @@@@@@
+[2.461 ms ; 2.537 ms) | 
+[2.537 ms ; 2.687 ms) | @@@@@@
+---------------------------------------------------
+
+ComparisonBenchmarks.UpstreamBigReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 274.364 μs, StdErr = 2.046 μs (0.75%), N = 12, StdDev = 7.088 μs
+Min = 265.734 μs, Q1 = 267.550 μs, Median = 273.248 μs, Q3 = 280.142 μs, Max = 286.193 μs
+IQR = 12.592 μs, LowerFence = 248.662 μs, UpperFence = 299.031 μs
+ConfidenceInterval = [265.285 μs; 283.442 μs] (CI 99.9%), Margin = 9.079 μs (3.31% of Mean)
+Skewness = 0.26, Kurtosis = 1.4, MValue = 2
+-------------------- Histogram --------------------
+[264.366 μs ; 272.493 μs) | @@@@@@
+[272.493 μs ; 283.082 μs) | @@@@@
+[283.082 μs ; 290.257 μs) | @
+---------------------------------------------------
+
+ComparisonBenchmarks.UpstreamSecureReconstruct: Job-KBIGZM(Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+Runtime = .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3; GC = Concurrent Workstation
+Mean = 439.528 ms, StdErr = 6.035 ms (1.37%), N = 12, StdDev = 20.907 ms
+Min = 423.265 ms, Q1 = 424.530 ms, Median = 426.097 ms, Q3 = 460.410 ms, Max = 471.170 ms
+IQR = 35.880 ms, LowerFence = 370.709 ms, UpperFence = 514.231 ms
+ConfidenceInterval = [412.750 ms; 466.306 ms] (CI 99.9%), Margin = 26.778 ms (6.09% of Mean)
+Skewness = 0.66, Kurtosis = 1.42, MValue = 3
+-------------------- Histogram --------------------
+[415.654 ms ; 439.625 ms) | @@@@@@@@
+[439.625 ms ; 452.282 ms) | 
+[452.282 ms ; 476.253 ms) | @@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 44.49 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-KBIGZM : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+
+PowerPlanMode=  Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true  IterationCount=12  
+IterationTime=150ms  LaunchCount=1  UnrollFactor=1  
+WarmupCount=15  
+
+| Method                    | Scenario  | Mean          | Error         | StdDev        | Op/s       | Gen0      | Gen1    | Allocated   |
+|-------------------------- |---------- |--------------:|--------------:|--------------:|-----------:|----------:|--------:|------------:|
+| UpstreamBigCreate         | 128B_3of5 |      25.75 μs |      0.665 μs |      0.520 μs | 38,838.177 |    4.7393 |  1.5234 |    29.68 KB |
+| UpstreamSecureCreate      | 128B_3of5 |   2,353.39 μs |     27.231 μs |     19.690 μs |    424.918 |         - |       - |    20.85 KB |
+| UpstreamBigReconstruct    | 128B_3of5 |      73.22 μs |      1.728 μs |      1.349 μs | 13,656.939 |   10.2790 |  4.8948 |    63.84 KB |
+| UpstreamSecureReconstruct | 128B_3of5 | 735,439.65 μs |  6,938.513 μs |  5,017.000 μs |      1.360 | 3000.0000 |       - | 19232.84 KB |
+| UpstreamBigCreate         | 32B_3of5  |      19.48 μs |      0.803 μs |      0.627 μs | 51,330.981 |    3.6933 |  3.5660 |    22.72 KB |
+| UpstreamSecureCreate      | 32B_3of5  |     701.86 μs |      6.914 μs |      4.999 μs |  1,424.789 |         - |       - |    20.73 KB |
+| UpstreamBigReconstruct    | 32B_3of5  |      50.51 μs |      1.208 μs |      0.799 μs | 19,797.728 |    8.4329 |  8.0815 |     53.7 KB |
+| UpstreamSecureReconstruct | 32B_3of5  | 180,101.15 μs |  1,103.909 μs |    730.167 μs |      5.552 | 1250.0000 |       - |  7886.81 KB |
+| UpstreamBigCreate         | 32B_9of9  |      65.14 μs |      2.730 μs |      1.974 μs | 15,351.797 |   15.2207 |  0.5074 |    94.92 KB |
+| UpstreamSecureCreate      | 32B_9of9  |   2,506.89 μs |    168.001 μs |    131.164 μs |    398.900 |         - |       - |    80.88 KB |
+| UpstreamBigReconstruct    | 32B_9of9  |     274.36 μs |      9.079 μs |      7.088 μs |  3,644.798 |   55.5556 | 26.8817 |   343.67 KB |
+| UpstreamSecureReconstruct | 32B_9of9  | 439,528.08 μs | 26,778.279 μs | 20,906.719 μs |      2.275 | 3000.0000 |       - | 19837.25 KB |
+
+// * Hints *
+Outliers
+  ComparisonBenchmarks.UpstreamSecureCreate: Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15      -> 1 outlier  was  removed (2.65 ms)
+  ComparisonBenchmarks.UpstreamSecureReconstruct: Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15 -> 1 outlier  was  removed (776.74 ms)
+  ComparisonBenchmarks.UpstreamSecureCreate: Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15      -> 1 outlier  was  removed (715.64 μs)
+  ComparisonBenchmarks.UpstreamBigReconstruct: Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15    -> 2 outliers were removed (54.53 μs, 54.86 μs)
+  ComparisonBenchmarks.UpstreamSecureReconstruct: Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15 -> 2 outliers were removed (206.85 ms, 208.64 ms)
+  ComparisonBenchmarks.UpstreamBigCreate: Arguments=/p:ComparisonTargetFramework=netstandard2.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15         -> 1 outlier  was  removed, 2 outliers were detected (60.58 μs, 70.10 μs)
+
+// * Legends *
+  Scenario  : Value of the 'Scenario' parameter
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Op/s      : Operation per second
+  Gen0      : GC Generation 0 collects per 1000 operations
+  Gen1      : GC Generation 1 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 μs      : 1 Microsecond (0.000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:03:41 (221.64 sec), executed benchmarks: 12
+
+Global total time: 00:04:00 (240.51 sec), executed benchmarks: 12
+// * Artifacts cleanup *
+Artifacts cleanup is finished

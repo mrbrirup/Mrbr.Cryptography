@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 43.95 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-NMRZNR : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  Arguments=/p:ComparisonTargetFramework=net10.0  IterationCount=12  
+IterationTime=150ms  LaunchCount=1  UnrollFactor=1  
+WarmupCount=15  
+</code></pre>
+
+<table>
+<thead><tr><th>Method             </th><th>Scenario</th><th>Mean</th><th>Error</th><th>Op/s</th>
+</tr>
+</thead><tbody><tr><td>UpstreamBigCreate</td><td>128B_3of5</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>128B_3of5</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>128B_3of5</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>128B_3of5</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>UpstreamBigCreate</td><td>32B_3of5</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>32B_3of5</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>32B_3of5</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>32B_3of5</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>UpstreamBigCreate</td><td>32B_9of9</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>UpstreamSecureCreate</td><td>32B_9of9</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>UpstreamBigReconstruct</td><td>32B_9of9</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>UpstreamSecureReconstruct</td><td>32B_9of9</td><td>NA</td><td>NA</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

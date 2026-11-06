@@ -1,0 +1,493 @@
+{
+  "CapturedAtUtc": "2026-11-04T04:09:54.136795+00:00",
+  "TimeZone": "Europe/London",
+  "Sdk": "11.0.100-rc.3.26522.148",
+  "Job": {
+    "LaunchCount": 1,
+    "WarmupCount": 15,
+    "IterationCount": 12,
+    "IterationTimeMs": 150,
+    "UnrollFactor": 1
+  },
+  "ExpectedCases": {
+    "Net11HeadToHead": 48,
+    "Net10TargetOnRuntime11": 12,
+    "NetStandard20TargetOnRuntime11": 12,
+    "SameNet10BinaryRuntime10Vs11": 16
+  },
+  "Verification": {
+    "OurStandaloneTestsPassed": 407,
+    "UpstreamNet11TestsPassed": 1963,
+    "UpstreamNet11TestsSkipped": 1,
+    "ExcludedUpstreamCategories": [
+      "Timing",
+      "Stress"
+    ],
+    "SkippedTest": "Opt-in 2 GiB secure-clear test",
+    "PublicApiChecksPerTarget": 72,
+    "TargetsChecked": [
+      "netstandard2.0",
+      "net10.0",
+      "net11.0"
+    ],
+    "BackendsChecked": [
+      "BigInteger / ExtendedEuclideanAlgorithm",
+      "SecureBigInteger / FixedIterationSecretReconstructor"
+    ]
+  },
+  "ThirdPartyUpgradeChanges": [
+    {
+      "Path": "src/packages.lock.json",
+      "OriginalSHA256": "E30F24DD7D48D3028A11CC45D0D9C500EAB92B3CF1764D25A9B2A2B6762369AB",
+      "SHA256": "BB4EB688DCD2442BACD6BAC008DD9208B0246005CA65A9A04C437052ADD80D4B"
+    },
+    {
+      "Path": "src/SecretSharingDotNet.csproj",
+      "OriginalSHA256": "4F0FEF0D3CF47751AFB4CED6EA1B9D6D0E49DC2ED1A2905717494A17EF9C6EB9",
+      "SHA256": "B15D840C4DC0B22F34B88F0D21E241046E2D3A3F878602EDCDB6682138C7B411"
+    },
+    {
+      "Path": "tests/packages.lock.json",
+      "OriginalSHA256": "8209CE81DB69956953E043AC7AE18E2D651F35EAFBF362F6916D1D23781289CC",
+      "SHA256": "F68A2BB503074AD78484FE45443799E0DB69DB7CEABFFF2EA3FBFF0C8B9ECDB6"
+    },
+    {
+      "Path": "tests/SecretSharingDotNetTest.csproj",
+      "OriginalSHA256": "AE9DEE70A472B324B21882ABE4ADE9FD0EE64744D9D7D516D786B062D345BEC1",
+      "SHA256": "07C0C55F0C0F35169774AA67FCCA12F90A1EFEA3E59E5B8E80778E92F93F0029"
+    }
+  ],
+  "OurProductionFiles": [
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+      "SHA256": "77EC35CF7CA7047256CEDDC536E35CCEBA21A86CEB28A170C4C323A80747AE8B"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256Simd.cs",
+      "SHA256": "15956F459DE818DF4775BFC3732181D4B6B983B9714EC882CF1C039F9BF062D5"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+      "SHA256": "48EAAE746B504D6B979C5B5EAB4608618CD7E6EAC0976114013417BB6BE38737"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.cs",
+      "SHA256": "96C47B6753DBB3BFE6DDFDF4D745698131519CCA0216970CA144AB62E31C5F10"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.Tables.cs",
+      "SHA256": "8874DD39CC4A199F4CCB4F1ADB6A376499206CD332076557A0FB2A457044BD2C"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Mrbr.Cryptography.csproj",
+      "SHA256": "7F457A493233BC3C15CCB45575CDAE83045C0F87997C5E5A4D1614FE85D701BF"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/ShamirSharedSecret.cs",
+      "SHA256": "21318599ECE6D4070A8B0CA79DEBAD828498872DE2790A9C175C3E3CB0F637EF"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.KeyManager/Mrbr.Cryptography.KeyManager.csproj",
+      "SHA256": "8F323FD8664045694006E04465CBED6E6C74A41734700DCDCBB5F0E29616A0D2"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.KeyManager/ShamirKeySharing.cs",
+      "SHA256": "73AA2EAE96D49260C8639F33E7FE24996D00E6D851D7C84387A913CBC5DDDAFE"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Ristretto.cs",
+      "SHA256": "4DDF2652965DF6E15E58ADEEB14961EC1A44A5BDE9EFA1CB3BD04A2594D9C0AA"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/SmallQuorumInterpolation.cs",
+      "SHA256": "E083376846BB55F59A5C8D1A488B27AFAEF90AE5DD021715D90691713179E8D0"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Sodium.cs",
+      "SHA256": "6F4DC996D4848C57EBB6B0B0A0D3D33D474D0D78422E329D1163B79091761FBB"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Mrbr.Cryptography.Vss.csproj",
+      "SHA256": "91E89C50101A2595740145BE60BD91ED9EBC47F4E99CBAA71D1E034D01A2B6C1"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/PedersenVss.cs",
+      "SHA256": "99FFC90C76DB3DB516EDC39B9CB223EDF5294F0D22B94583325AE829A3F9FB38"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/AuthenticatedCommitmentPacket.cs",
+      "SHA256": "289236EF96E994ADE4D6435B885ABBCA7F91FE82373C3142EA5F3ADBF1B3774A"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/Internal/Ed25519Native.cs",
+      "SHA256": "6FD14E93923B9BA334C0DCBBF76C59B236E48953A6BCFBD144CFAF64A7A9BB07"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/Mrbr.Cryptography.Vss.Authentication.csproj",
+      "SHA256": "EB29B5301AD345C3799404A7EBD7643D9610F910F670FCC0DDC910020800E801"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.KeyManager/AuthenticatedKeySharing.cs",
+      "SHA256": "2D924DC2EDF03BB35934E6BC0751EA5E0EBB527944290C23D1C5A1472242A2E0"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.KeyManager/Mrbr.Cryptography.Vss.KeyManager.csproj",
+      "SHA256": "52E4A95B4B066E87CEE813D44A578E2C4226EEDFB33D2ED71B328A6B969B75FD"
+    }
+  ],
+  "SourceFingerprints": [
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/ComparisonBenchmarks.cs",
+      "SHA256": "779E701C99AB9FC808260633949C19679F7ED0B49BB202AA7D01DBF37726D8D6"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/Mrbr.Cryptography.ComparisonBenchmarks.csproj",
+      "SHA256": "9D263CC955FD2C3189B07A2EFD45111C80AE327CBB552221C463815848173273"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/Program.cs",
+      "SHA256": "74797B6C01C8A609926CAE223BBD8CE693EFA5DED73BF01F90505B757BE6CF7B"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/UpstreamSubject.cs",
+      "SHA256": "803E1263A02B2AF3005C0636B857811C873E82D54047D419D5FB8CE0D889880D"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.RuntimeComparison/Mrbr.Cryptography.RuntimeComparison.csproj",
+      "SHA256": "838BFB5A383E88CDB7FF7C294A937A09C850CAB9F530EB862AFDC35822414994"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.RuntimeComparison/Program.cs",
+      "SHA256": "05BB1FB14DDB464D1A33989AFA62489253D0A1475BBB75D293028AD8EC858658"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.RuntimeComparison/RuntimeBenchmarks.cs",
+      "SHA256": "70577D6B19FC18B72FE0D51E6FECC1B02337C18E0E766D4CD109088DDA2F1BAA"
+    },
+    {
+      "Path": "Directory.Build.props",
+      "SHA256": "79650925A72BB236C82439CBF5200FFB2E1EB7B3CD6EE347744E84DC66858A9C"
+    },
+    {
+      "Path": "eng/Invoke-ShamirComparison.ps1",
+      "SHA256": "D4EDEBDB432D69B7A93DE363CA19C07EC2058C8AB60639BB53F88D2D2776B3FF"
+    },
+    {
+      "Path": "global.json",
+      "SHA256": "19A39681EA81608656C557DC24D7112CB1B9B71D27D71197D261538B8A2DD675"
+    }
+  ],
+  "FinalSourceFingerprints": [
+    {
+      "Path": "Directory.Build.props",
+      "SHA256": "79650925A72BB236C82439CBF5200FFB2E1EB7B3CD6EE347744E84DC66858A9C"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/ComparisonBenchmarks.cs",
+      "SHA256": "936F4CA8175F290090CDE9732C543CC7458607D50DD1EEF59447C6D8621A36BB"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/Mrbr.Cryptography.ComparisonBenchmarks.csproj",
+      "SHA256": "05A6CB2CD0F9949FFBE8E46AA3326F8C23322E59C14382D019662BC73827E576"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/Program.cs",
+      "SHA256": "74797B6C01C8A609926CAE223BBD8CE693EFA5DED73BF01F90505B757BE6CF7B"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/UpstreamSubject.cs",
+      "SHA256": "803E1263A02B2AF3005C0636B857811C873E82D54047D419D5FB8CE0D889880D"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.RuntimeComparison/Mrbr.Cryptography.RuntimeComparison.csproj",
+      "SHA256": "838BFB5A383E88CDB7FF7C294A937A09C850CAB9F530EB862AFDC35822414994"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.RuntimeComparison/Program.cs",
+      "SHA256": "05BB1FB14DDB464D1A33989AFA62489253D0A1475BBB75D293028AD8EC858658"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.RuntimeComparison/RuntimeBenchmarks.cs",
+      "SHA256": "70577D6B19FC18B72FE0D51E6FECC1B02337C18E0E766D4CD109088DDA2F1BAA"
+    },
+    {
+      "Path": "eng/Invoke-ShamirComparison.ps1",
+      "SHA256": "DFF0409FD892A66639A07C1033F941D9EFB015DE9241BB2A8AF5A7BD78D8B769"
+    },
+    {
+      "Path": "eng/Summarize-ShamirComparison.py",
+      "SHA256": "F9138C41F6275532630DB21B9B6FF7E71583B9F4ACBB01A28867642894960B90"
+    },
+    {
+      "Path": "global.json",
+      "SHA256": "19A39681EA81608656C557DC24D7112CB1B9B71D27D71197D261538B8A2DD675"
+    }
+  ],
+  "HarnessAdjustmentsAfterPrimaryRun": {
+    "Reason": "Force frozen target assemblies for controls after BenchmarkDotNet project-reference selection chose net11; timed method bodies and production source were not changed. Three original harness files are retained for the primary run.",
+    "Files": [
+      {
+        "Path": "benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/ComparisonBenchmarks.cs",
+        "PrimarySnapshot": "benchmarks/results/2026-11-04-secretsharingdotnet/provenance/primary-harness/benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/ComparisonBenchmarks.cs.original",
+        "OriginalSHA256": "779E701C99AB9FC808260633949C19679F7ED0B49BB202AA7D01DBF37726D8D6",
+        "FinalSHA256": "936F4CA8175F290090CDE9732C543CC7458607D50DD1EEF59447C6D8621A36BB"
+      },
+      {
+        "Path": "benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/Mrbr.Cryptography.ComparisonBenchmarks.csproj",
+        "PrimarySnapshot": "benchmarks/results/2026-11-04-secretsharingdotnet/provenance/primary-harness/benchmarks/Mrbr.Cryptography.ComparisonBenchmarks/Mrbr.Cryptography.ComparisonBenchmarks.csproj.original",
+        "OriginalSHA256": "9D263CC955FD2C3189B07A2EFD45111C80AE327CBB552221C463815848173273",
+        "FinalSHA256": "05A6CB2CD0F9949FFBE8E46AA3326F8C23322E59C14382D019662BC73827E576"
+      },
+      {
+        "Path": "eng/Invoke-ShamirComparison.ps1",
+        "PrimarySnapshot": "benchmarks/results/2026-11-04-secretsharingdotnet/provenance/primary-harness/eng/Invoke-ShamirComparison.ps1.original",
+        "OriginalSHA256": "D4EDEBDB432D69B7A93DE363CA19C07EC2058C8AB60639BB53F88D2D2776B3FF",
+        "FinalSHA256": "DFF0409FD892A66639A07C1033F941D9EFB015DE9241BB2A8AF5A7BD78D8B769"
+      }
+    ]
+  },
+  "IntegrityVerification": {
+    "CheckedAtUtc": "2026-11-04T04:44:42.179677+00:00",
+    "OriginalUpstreamFilesChecked": 150,
+    "ChangedUpstreamFiles": [
+      "src/packages.lock.json",
+      "src/SecretSharingDotNet.csproj",
+      "tests/packages.lock.json",
+      "tests/SecretSharingDotNetTest.csproj"
+    ],
+    "UpstreamCSharpFilesChanged": 0,
+    "UnexpectedNonBuildFilesAddedToUpstream": [],
+    "LockFrameworkEntriesAdded": {
+      "src/packages.lock.json": [
+        "net11.0"
+      ],
+      "tests/packages.lock.json": [
+        "net11.0",
+        "net11.0/win-x86"
+      ]
+    },
+    "ExistingLockEntriesUnchanged": true,
+    "OurProductionFilesCheckedUnchanged": 19,
+    "UpstreamTestsFromXml": {
+      "total": 1964,
+      "passed": 1963,
+      "failed": 0,
+      "skipped": 1,
+      "errors": 0
+    }
+  },
+  "ResultsSummary": {
+    "CaseCounts": {
+      "net11": 48,
+      "net10-target": 12,
+      "netstandard-target": 12,
+      "runtime": 16
+    },
+    "MrbrZeroAllocationCases": 16,
+    "LoadedSubjects": {
+      "net11": [
+        [
+          ".NETCoreApp,Version=v11.0",
+          "E16B98D17C7332375B6ACD64CC532F7DD90634A55D461AFA0B915AEE114A909D",
+          ".NET 11.0.0-rc.3.26522.148"
+        ]
+      ],
+      "net10-target": [
+        [
+          ".NETCoreApp,Version=v10.0",
+          "102797E5D1FBC33C4917B6DBFADD3AD5D636EA27D03E28F2997D434A757F8ABC",
+          ".NET 11.0.0-rc.3.26522.148"
+        ]
+      ],
+      "netstandard-target": [
+        [
+          ".NETStandard,Version=v2.0",
+          "A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F",
+          ".NET 11.0.0-rc.3.26522.148"
+        ]
+      ],
+      "runtime": [
+        [
+          ".NETCoreApp,Version=v10.0",
+          "102797E5D1FBC33C4917B6DBFADD3AD5D636EA27D03E28F2997D434A757F8ABC",
+          ".NET 10.0.14"
+        ],
+        [
+          ".NETCoreApp,Version=v10.0",
+          "102797E5D1FBC33C4917B6DBFADD3AD5D636EA27D03E28F2997D434A757F8ABC",
+          ".NET 11.0.0-rc.3.26522.148"
+        ]
+      ]
+    },
+    "FrozenRuntimeSubjectSHA256": "102797E5D1FBC33C4917B6DBFADD3AD5D636EA27D03E28F2997D434A757F8ABC",
+    "HostEnvironments": {
+      "net11": {
+        "BenchmarkDotNetCaption": "BenchmarkDotNet",
+        "BenchmarkDotNetVersion": "0.16.0-preview.2",
+        "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+        "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+        "PhysicalProcessorCount": 1,
+        "PhysicalCoreCount": 6,
+        "LogicalCoreCount": 12,
+        "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+        "Architecture": "X64",
+        "HasAttachedDebugger": false,
+        "HasRyuJit": true,
+        "Configuration": "RELEASE",
+        "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+        "ChronometerFrequency": {
+          "Hertz": 10000000
+        },
+        "HardwareTimerKind": "Unknown"
+      },
+      "net10-target": {
+        "BenchmarkDotNetCaption": "BenchmarkDotNet",
+        "BenchmarkDotNetVersion": "0.16.0-preview.2",
+        "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+        "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+        "PhysicalProcessorCount": 1,
+        "PhysicalCoreCount": 6,
+        "LogicalCoreCount": 12,
+        "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+        "Architecture": "X64",
+        "HasAttachedDebugger": false,
+        "HasRyuJit": true,
+        "Configuration": "RELEASE",
+        "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+        "ChronometerFrequency": {
+          "Hertz": 10000000
+        },
+        "HardwareTimerKind": "Unknown"
+      },
+      "netstandard-target": {
+        "BenchmarkDotNetCaption": "BenchmarkDotNet",
+        "BenchmarkDotNetVersion": "0.16.0-preview.2",
+        "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+        "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+        "PhysicalProcessorCount": 1,
+        "PhysicalCoreCount": 6,
+        "LogicalCoreCount": 12,
+        "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+        "Architecture": "X64",
+        "HasAttachedDebugger": false,
+        "HasRyuJit": true,
+        "Configuration": "RELEASE",
+        "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+        "ChronometerFrequency": {
+          "Hertz": 10000000
+        },
+        "HardwareTimerKind": "Unknown"
+      },
+      "runtime": {
+        "BenchmarkDotNetCaption": "BenchmarkDotNet",
+        "BenchmarkDotNetVersion": "0.16.0-preview.2",
+        "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+        "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+        "PhysicalProcessorCount": 1,
+        "PhysicalCoreCount": 6,
+        "LogicalCoreCount": 12,
+        "RuntimeVersion": ".NET 10.0.14 (10.0.14, 10.0.1426.52326)",
+        "Architecture": "X64",
+        "HasAttachedDebugger": false,
+        "HasRyuJit": true,
+        "Configuration": "RELEASE",
+        "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+        "ChronometerFrequency": {
+          "Hertz": 10000000
+        },
+        "HardwareTimerKind": "Unknown"
+      }
+    }
+  },
+  "SuccessfulRunElapsedSeconds": {
+    "net11": 550.21,
+    "net10-target": 250.42,
+    "netstandard-target": 240.51,
+    "runtime": 334.33
+  },
+  "RejectedAttempts": [
+    "Wrong transitive target selected by generated BenchmarkDotNet project; fixture rejected all cases before timing.",
+    "Initial frozen-assembly build found the saved original csproj; original snapshots were renamed with .original suffix."
+  ],
+  "KnownBuildWarnings": "Two SourceLink warnings caused by the downloaded archive lacking a Git working directory. No warnings suppressed.",
+  "SuccessfulBenchmarkWarnings": 0,
+  "ResultArtifactFingerprints": [
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/library-comparison.csv",
+      "SHA256": "5A898057D8BB34D3E60AE2C5CB7DB64B6721AD66C2295EB82739E9ABDD3FF5CE"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/net10-target/results/Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report-full.json",
+      "SHA256": "63F8897E833F09C2A4CA6527E5252037D9C4EA0679073A1FF41C1A30C8074F16"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/net10-target-operations.csv",
+      "SHA256": "7D198612A78602F9E3F0E0931971BE896AB844539D8AD5C8166BDBFCFAC28298"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/net11/results/Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report-full.json",
+      "SHA256": "206F2B3E2A63350C17E793055866C350BA26E84C711AACB16605C72D6F518C21"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/net11-operations.csv",
+      "SHA256": "7D9592128A3346E56A04427E0E960C0DA914C4FFA58D5D521B7B0A493A71C8CD"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/netstandard-target/results/Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report-full.json",
+      "SHA256": "FA5287C36D0E843E2D73BE87CD242745CC6124018C304484D63BF8B9BBF6E9AE"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/netstandard-target-operations.csv",
+      "SHA256": "B3AEF7DA63DE94076CDEB491C86BE98680D7F06F43C2213737FB2096BAF8468D"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/provenance/runtime-control/LICENSE.md",
+      "SHA256": "084D95F61A90FD0E67063CBCF9AFE4E30029A696D94342C05F9DCFB95E3ADD99"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/provenance/runtime-control/SecretSharingDotNet.dll",
+      "SHA256": "102797E5D1FBC33C4917B6DBFADD3AD5D636EA27D03E28F2997D434A757F8ABC"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/provenance/target-net10.0/LICENSE.md",
+      "SHA256": "084D95F61A90FD0E67063CBCF9AFE4E30029A696D94342C05F9DCFB95E3ADD99"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/provenance/target-net10.0/SecretSharingDotNet.dll",
+      "SHA256": "102797E5D1FBC33C4917B6DBFADD3AD5D636EA27D03E28F2997D434A757F8ABC"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/provenance/target-netstandard2.0/LICENSE.md",
+      "SHA256": "084D95F61A90FD0E67063CBCF9AFE4E30029A696D94342C05F9DCFB95E3ADD99"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/provenance/target-netstandard2.0/SecretSharingDotNet.dll",
+      "SHA256": "A77D382B424036FA3D0FAFC8D51A3F70A5948CCFD0F1461EAECEF56859B48D7F"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/runtime/results/Mrbr.Cryptography.RuntimeComparison.RuntimeBenchmarks-report-full.json",
+      "SHA256": "D0D9F50A5EBEF30B5D2BB47F57707D0C682BE69D7D072FB12410551CC1F0B04C"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/runtime-comparison.csv",
+      "SHA256": "7398E8B6701DC6B59C0694B24CE750E9402641628C4370E4CCB9234E6D76901D"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/runtime-operations.csv",
+      "SHA256": "7BD998050DFA8BE76AF93348435F91E0BB6393DEC9BA7891E13788E0C4278D58"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/summary.json",
+      "SHA256": "DF1C24DE7284D98B931B6B6CB6E5B4A214CCD7FF283E5978BC9E067A8372CA20"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/target-comparison.csv",
+      "SHA256": "3A6E219445D88AA3A3E584B57EAB1F0BD572A7D778C4117EB8C1589DFE18994C"
+    },
+    {
+      "Path": "benchmarks/results/2026-11-04-secretsharingdotnet/upstream-tests-net11.xml",
+      "SHA256": "6CB47CB10591C2F8A0C414227C829E2D09F532C3FAAAD24D9FFC2957A75C7FD8"
+    }
+  ],
+  "FinalizedAtUtc": "2026-11-04T04:44:42.195780+00:00"
+}

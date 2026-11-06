@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="libsodium" Version="1.0.22" />
+    <ProjectReference Include="../Mrbr.Cryptography.Vss/Mrbr.Cryptography.Vss.csproj" />
+    <InternalsVisibleTo Include="Mrbr.Cryptography.Vss.Authentication.Tests" />
+  </ItemGroup>
+</Project>

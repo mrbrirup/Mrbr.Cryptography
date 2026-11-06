@@ -1,0 +1,480 @@
+{
+  "sha": "8ab77f00b87310d3a282d367dc57457ea9bc1fbd",
+  "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/trees/8ab77f00b87310d3a282d367dc57457ea9bc1fbd",
+  "tree": [
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ff0c423042b46cb1d617b81efb715defbe8054d",
+      "size": 2518,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/1ff0c423042b46cb1d617b81efb715defbe8054d"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f24336cfdd3625cf008350b71d93790cd8122a5b",
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/trees/f24336cfdd3625cf008350b71d93790cd8122a5b"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ebc3162a69caeec07a7e3080aca92e8c72f8706e",
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/trees/ebc3162a69caeec07a7e3080aca92e8c72f8706e"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63f22d88e7914804c53d96a6453a13800fb2e9ae",
+      "size": 558,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/63f22d88e7914804c53d96a6453a13800fb2e9ae"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd8f726da05def4aa90c7cd01c5fd337595c70be",
+      "size": 1931,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/bd8f726da05def4aa90c7cd01c5fd337595c70be"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "917201c8b14792ddd469cf0e8d94e341ba2e0757",
+      "size": 6350,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/917201c8b14792ddd469cf0e8d94e341ba2e0757"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "907a7d83cb63716c68eadb9a615f0cf8962cea6d",
+      "size": 2264,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/907a7d83cb63716c68eadb9a615f0cf8962cea6d"
+    },
+    {
+      "path": "CLAUDE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46aa1fd3dfaa630fea3dd9d71a46d05836ca9e35",
+      "size": 3988,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/46aa1fd3dfaa630fea3dd9d71a46d05836ca9e35"
+    },
+    {
+      "path": "Directory.Build.props",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "175c1dab429355409f10b8a170991413b632b309",
+      "size": 315,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/175c1dab429355409f10b8a170991413b632b309"
+    },
+    {
+      "path": "LICENSE.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e7ed31cd2e41038896f25a4de40d6db9c10f70d",
+      "size": 1069,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/0e7ed31cd2e41038896f25a4de40d6db9c10f70d"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbf1fea75008fed183e31431b96f9186c7c4295b",
+      "size": 7532,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/dbf1fea75008fed183e31431b96f9186c7c4295b"
+    },
+    {
+      "path": "STRIDE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7484ba912f7573acda6ef5080fb56c223ec973ce",
+      "size": 12602,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/7484ba912f7573acda6ef5080fb56c223ec973ce"
+    },
+    {
+      "path": "ShamirSecretSharing.Console",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4d3e2cbf38171b594d0bd96f6850cbf79267edb5",
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/trees/4d3e2cbf38171b594d0bd96f6850cbf79267edb5"
+    },
+    {
+      "path": "ShamirSecretSharing.Console/Program.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a487735a7a3f442fd0da074c297d495975709d0b",
+      "size": 2354,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/a487735a7a3f442fd0da074c297d495975709d0b"
+    },
+    {
+      "path": "ShamirSecretSharing.Console/ShamirSecretSharing.Console.csproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4b7b5e3365724e90434ffe673c6ebc74f28994b",
+      "size": 316,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/d4b7b5e3365724e90434ffe673c6ebc74f28994b"
+    },
+    {
+      "path": "ShamirSecretSharing.sln",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f20993ac731665aa06e4a970f763ba6a3658756",
+      "size": 2462,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/7f20993ac731665aa06e4a970f763ba6a3658756"
+    },
+    {
+      "path": "ShamirSecretSharing",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9306b8a5054be9287a74d446f2dcd20a052739e6",
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/trees/9306b8a5054be9287a74d446f2dcd20a052739e6"
+    },
+    {
+      "path": "ShamirSecretSharing/AuthenticatedSecret.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4d658236c73f91802f1c0e52d5c5a9fb3a749f8",
+      "size": 729,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/f4d658236c73f91802f1c0e52d5c5a9fb3a749f8"
+    },
+    {
+      "path": "ShamirSecretSharing/AuthenticatedSecretCombiner.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "684a976dca51093c12d4bcaf23663b4cbe55bd64",
+      "size": 6395,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/684a976dca51093c12d4bcaf23663b4cbe55bd64"
+    },
+    {
+      "path": "ShamirSecretSharing/AuthenticatedSecretSplitter.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5331120b595c20176c7352478dc8472207da547e",
+      "size": 5958,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/5331120b595c20176c7352478dc8472207da547e"
+    },
+    {
+      "path": "ShamirSecretSharing/AuthenticatedShare.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a5cbf3aba6201a5c64dccad6d9f1a013703f2cf",
+      "size": 6682,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/0a5cbf3aba6201a5c64dccad6d9f1a013703f2cf"
+    },
+    {
+      "path": "ShamirSecretSharing/CanonicalShareBytes.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5da4adc5d1279fa13d2d5567983f649b7ac19a1",
+      "size": 995,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/e5da4adc5d1279fa13d2d5567983f649b7ac19a1"
+    },
+    {
+      "path": "ShamirSecretSharing/CryptoRandomSource.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34bf7f29d8447768585d6422c36649f4f7334d60",
+      "size": 1110,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/34bf7f29d8447768585d6422c36649f4f7334d60"
+    },
+    {
+      "path": "ShamirSecretSharing/FiniteField.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fbdd23e677c2ba84be8912943b8e1f1fe2d0a892",
+      "size": 3959,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/fbdd23e677c2ba84be8912943b8e1f1fe2d0a892"
+    },
+    {
+      "path": "ShamirSecretSharing/Primality.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b3f06b03bd1b67d829493968724837ae34aa9ef",
+      "size": 1696,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/3b3f06b03bd1b67d829493968724837ae34aa9ef"
+    },
+    {
+      "path": "ShamirSecretSharing/Properties",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0a6cf9f7a98e10739c7673687009635eba426f78",
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/trees/0a6cf9f7a98e10739c7673687009635eba426f78"
+    },
+    {
+      "path": "ShamirSecretSharing/Properties/AssemblyInfo.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03e3d6b5d445207b7ed6158b1264e8a34ac8928b",
+      "size": 102,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/03e3d6b5d445207b7ed6158b1264e8a34ac8928b"
+    },
+    {
+      "path": "ShamirSecretSharing/RandomSource.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddc75701eda6d8626825b4ebbdd50dc2dc680a72",
+      "size": 2527,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/ddc75701eda6d8626825b4ebbdd50dc2dc680a72"
+    },
+    {
+      "path": "ShamirSecretSharing/SecretCombiner.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e008fb58f2e18712e18b507e028553f25bd003d",
+      "size": 3074,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/2e008fb58f2e18712e18b507e028553f25bd003d"
+    },
+    {
+      "path": "ShamirSecretSharing/SecretPolynomial.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "85eb5ff1ceb2616dc35c1eccd4831a3702683251",
+      "size": 4072,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/85eb5ff1ceb2616dc35c1eccd4831a3702683251"
+    },
+    {
+      "path": "ShamirSecretSharing/SecretSharingStringExtensions.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44a50389dffcf4fb27f1a6c343cd4747fe4dcdef",
+      "size": 2445,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/44a50389dffcf4fb27f1a6c343cd4747fe4dcdef"
+    },
+    {
+      "path": "ShamirSecretSharing/SecretSplitter.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "438a60b264e71da424b722aec959cc893143cb1f",
+      "size": 4865,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/438a60b264e71da424b722aec959cc893143cb1f"
+    },
+    {
+      "path": "ShamirSecretSharing/SequenceRandomSource.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc6b4afb253131baffa440e54af92e6ed1f99adb",
+      "size": 1420,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/dc6b4afb253131baffa440e54af92e6ed1f99adb"
+    },
+    {
+      "path": "ShamirSecretSharing/ShamirSecretSharing.csproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23e7dbba34006d07efc36b0baa013d37caf4d177",
+      "size": 1549,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/23e7dbba34006d07efc36b0baa013d37caf4d177"
+    },
+    {
+      "path": "ShamirSecretSharing/ShamirSecretSharingService.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89f32c1a5e34d3bdeaebded68cee1d2c7d24fc7b",
+      "size": 6259,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/89f32c1a5e34d3bdeaebded68cee1d2c7d24fc7b"
+    },
+    {
+      "path": "ShamirSecretSharing/Share.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6d11c2e3df9ba616a55b6c6234f25af0bc56230",
+      "size": 5246,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/c6d11c2e3df9ba616a55b6c6234f25af0bc56230"
+    },
+    {
+      "path": "ShamirSecretSharing/ShareAuthenticationException.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7177ff1caddcc8d814ff1ea5c540e75736b76942",
+      "size": 1316,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/7177ff1caddcc8d814ff1ea5c540e75736b76942"
+    },
+    {
+      "path": "ShamirSecretSharingTests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "89bb72d999da1952321026582c73dca3041408d5",
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/trees/89bb72d999da1952321026582c73dca3041408d5"
+    },
+    {
+      "path": "ShamirSecretSharingTests/AuthenticatedSecretSplitterDeterminismTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "866bc04ddc56803a631399a3171d5dcc07f90f93",
+      "size": 2375,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/866bc04ddc56803a631399a3171d5dcc07f90f93"
+    },
+    {
+      "path": "ShamirSecretSharingTests/AuthenticatedSecretTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7bea2c474cf67a60e9b085a32ceb5bc302992e9",
+      "size": 12925,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/d7bea2c474cf67a60e9b085a32ceb5bc302992e9"
+    },
+    {
+      "path": "ShamirSecretSharingTests/FiniteFieldConstructionTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24036bc9e037d9b9fe513e0605eb087f506e02be",
+      "size": 3378,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/24036bc9e037d9b9fe513e0605eb087f506e02be"
+    },
+    {
+      "path": "ShamirSecretSharingTests/FiniteFieldTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0ab34f4a57dfad37d424038c52198de991ed0c7",
+      "size": 1961,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/e0ab34f4a57dfad37d424038c52198de991ed0c7"
+    },
+    {
+      "path": "ShamirSecretSharingTests/MSTestSettings.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aaf278c844f0320cacc6e4930e913fa471282796",
+      "size": 63,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/aaf278c844f0320cacc6e4930e913fa471282796"
+    },
+    {
+      "path": "ShamirSecretSharingTests/PrimalityTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1f21a564ac8c120b44f5bd0b3f96fd6981a606c",
+      "size": 1364,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/e1f21a564ac8c120b44f5bd0b3f96fd6981a606c"
+    },
+    {
+      "path": "ShamirSecretSharingTests/RandomSourceTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1fe0a08218b6a5d1ce666e65ce2a47c17fea175",
+      "size": 4548,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/d1fe0a08218b6a5d1ce666e65ce2a47c17fea175"
+    },
+    {
+      "path": "ShamirSecretSharingTests/SecretCombinerTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90a1f9ee28fd90d4478bdc6dbeafea32522ccd97",
+      "size": 3636,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/90a1f9ee28fd90d4478bdc6dbeafea32522ccd97"
+    },
+    {
+      "path": "ShamirSecretSharingTests/SecretPolynomialTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5ba7d14dfbd6d27e2ac7361a586cf2814a36184",
+      "size": 7032,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/f5ba7d14dfbd6d27e2ac7361a586cf2814a36184"
+    },
+    {
+      "path": "ShamirSecretSharingTests/SecretSharingStringExtensionsTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "625fe9f987fdf0298b21f1c583a55a211bcb66bb",
+      "size": 2072,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/625fe9f987fdf0298b21f1c583a55a211bcb66bb"
+    },
+    {
+      "path": "ShamirSecretSharingTests/SecretSplitterDeterminismTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20ef97665b962383d3f5e9fd7b61d3935ce950f6",
+      "size": 3609,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/20ef97665b962383d3f5e9fd7b61d3935ce950f6"
+    },
+    {
+      "path": "ShamirSecretSharingTests/SecretSplitterTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f53ab40164e92d5f5140a1133e4d9842bb3a6ea",
+      "size": 1744,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/4f53ab40164e92d5f5140a1133e4d9842bb3a6ea"
+    },
+    {
+      "path": "ShamirSecretSharingTests/ShamirSecretSharingServiceTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6d3030d0b95175c0674c2295296185f72adea9f",
+      "size": 7756,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/a6d3030d0b95175c0674c2295296185f72adea9f"
+    },
+    {
+      "path": "ShamirSecretSharingTests/ShamirSecretSharingTests.csproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fbc8c752d9bfb6ac8e675b00da70f4e6db48e08",
+      "size": 311,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/9fbc8c752d9bfb6ac8e675b00da70f4e6db48e08"
+    },
+    {
+      "path": "ShamirSecretSharingTests/ShareSerializationTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f52b8cbf81a30119dba1ea904dcfb3dbbcb5ddc9",
+      "size": 2208,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/f52b8cbf81a30119dba1ea904dcfb3dbbcb5ddc9"
+    },
+    {
+      "path": "UBIQUITOUS_LANGUAGE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6f0bb067cfaeabd95303ea1f0f39ae942eb0b73",
+      "size": 12171,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/e6f0bb067cfaeabd95303ea1f0f39ae942eb0b73"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "333b7ae370c476d2248671eb1b481d620b445f23",
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/trees/333b7ae370c476d2248671eb1b481d620b445f23"
+    },
+    {
+      "path": "docs/security-paper.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a0824116335bae2e100d87826a680bb2c501178",
+      "size": 6680,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/7a0824116335bae2e100d87826a680bb2c501178"
+    },
+    {
+      "path": "icon-big-cropped.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf7659f7f96f484110c04de3fd16cc9881865d7b",
+      "size": 725840,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/bf7659f7f96f484110c04de3fd16cc9881865d7b"
+    },
+    {
+      "path": "icon-big.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c280e1da8e5e0c9f50bbcae68fc6436dbc1abaef",
+      "size": 1242043,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/c280e1da8e5e0c9f50bbcae68fc6436dbc1abaef"
+    },
+    {
+      "path": "icon.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9038ebac968f9855047eb163101e38a7581951f0",
+      "size": 65279,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/9038ebac968f9855047eb163101e38a7581951f0"
+    },
+    {
+      "path": "renovate.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67d6dce918b031cdfb8f1ef53a598b034c6d2839",
+      "size": 130,
+      "url": "https://api.github.com/repos/stevehansen/ShamirSecretSharing/git/blobs/67d6dce918b031cdfb8f1ef53a598b034c6d2839"
+    }
+  ],
+  "truncated": false
+}

@@ -1,0 +1,252 @@
+{
+  "Title": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks",
+  "HostEnvironmentInfo": {
+    "BenchmarkDotNetCaption": "BenchmarkDotNet",
+    "BenchmarkDotNetVersion": "0.16.0-preview.2",
+    "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+    "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+    "PhysicalProcessorCount": 1,
+    "PhysicalCoreCount": 6,
+    "LogicalCoreCount": 12,
+    "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+    "Architecture": "X64",
+    "HasAttachedDebugger": false,
+    "HasRyuJit": true,
+    "Configuration": "RELEASE",
+    "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+    "ChronometerFrequency": {
+      "Hertz": 10000000
+    },
+    "HardwareTimerKind": "Unknown"
+  },
+  "Benchmarks": [
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamBigCreate",
+      "MethodTitle": "UpstreamBigCreate",
+      "Parameters": "Scenario=128B_3of5",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigCreate(Scenario: 128B_3of5)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    },
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamSecureCreate",
+      "MethodTitle": "UpstreamSecureCreate",
+      "Parameters": "Scenario=128B_3of5",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureCreate(Scenario: 128B_3of5)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    },
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamBigReconstruct",
+      "MethodTitle": "UpstreamBigReconstruct",
+      "Parameters": "Scenario=128B_3of5",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigReconstruct(Scenario: 128B_3of5)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    },
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamSecureReconstruct",
+      "MethodTitle": "UpstreamSecureReconstruct",
+      "Parameters": "Scenario=128B_3of5",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureReconstruct(Scenario: 128B_3of5)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    },
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamBigCreate",
+      "MethodTitle": "UpstreamBigCreate",
+      "Parameters": "Scenario=32B_3of5",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigCreate(Scenario: 32B_3of5)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    },
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamSecureCreate",
+      "MethodTitle": "UpstreamSecureCreate",
+      "Parameters": "Scenario=32B_3of5",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureCreate(Scenario: 32B_3of5)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    },
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamBigReconstruct",
+      "MethodTitle": "UpstreamBigReconstruct",
+      "Parameters": "Scenario=32B_3of5",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigReconstruct(Scenario: 32B_3of5)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    },
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamSecureReconstruct",
+      "MethodTitle": "UpstreamSecureReconstruct",
+      "Parameters": "Scenario=32B_3of5",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureReconstruct(Scenario: 32B_3of5)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    },
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamBigCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamBigCreate",
+      "MethodTitle": "UpstreamBigCreate",
+      "Parameters": "Scenario=32B_9of9",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigCreate(Scenario: 32B_9of9)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    },
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamSecureCreate: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamSecureCreate",
+      "MethodTitle": "UpstreamSecureCreate",
+      "Parameters": "Scenario=32B_9of9",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureCreate(Scenario: 32B_9of9)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    },
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamBigReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamBigReconstruct",
+      "MethodTitle": "UpstreamBigReconstruct",
+      "Parameters": "Scenario=32B_9of9",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamBigReconstruct(Scenario: 32B_9of9)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    },
+    {
+      "DisplayInfo": "ComparisonBenchmarks.UpstreamSecureReconstruct: Job-NMRZNR(Arguments=/p:ComparisonTargetFramework=net10.0, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]",
+      "Namespace": "Mrbr.Cryptography.ComparisonBenchmarks",
+      "Type": "ComparisonBenchmarks",
+      "Method": "UpstreamSecureReconstruct",
+      "MethodTitle": "UpstreamSecureReconstruct",
+      "Parameters": "Scenario=32B_9of9",
+      "FullName": "Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks.UpstreamSecureReconstruct(Scenario: 32B_9of9)",
+      "HardwareIntrinsics": "AVX2+BMI1+BMI2+F16C+FMA+LZCNT+MOVBE,AVX,SSE3+SSSE3+SSE4.1+SSE4.2+POPCNT,X86Base+SSE+SSE2,AES+PCLMUL VectorSize=256",
+      "Statistics": null,
+      "Memory": {
+        "Gen0Collections": 0,
+        "Gen1Collections": 0,
+        "Gen2Collections": 0,
+        "TotalOperations": 0,
+        "BytesAllocatedPerOperation": null
+      },
+      "Measurements": []
+    }
+  ]
+}

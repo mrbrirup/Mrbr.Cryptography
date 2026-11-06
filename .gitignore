@@ -1,0 +1,28 @@
+# .NET build and test output
+**/bin/
+**/obj/
+**/TestResults/
+
+# IDE and operating-system state
+.vs/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+
+# Generated benchmarks; curated benchmarks/results reports remain included
+BenchmarkDotNet.Artifacts/
+**/.bdn/
+
+# Local checkout of external benchmark subjects
+/Comparison/
+
+# External source/document snapshots and frozen third-party assemblies.
+# Keep JSON provenance manifests and our own original benchmark harness sources.
+/benchmarks/results/2026-11-04-secretsharingdotnet/provenance/*
+!/benchmarks/results/2026-11-04-secretsharingdotnet/provenance/*.json
+!/benchmarks/results/2026-11-04-secretsharingdotnet/provenance/primary-harness/
+
+# Locally produced packages
+*.nupkg
+*.snupkg

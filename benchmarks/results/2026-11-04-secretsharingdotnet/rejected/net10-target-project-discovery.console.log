@@ -1,0 +1,106 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+C:\Program Files\dotnet\sdk\11.0.100-rc.3.26522.148\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(385,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src\SecretSharingDotNet.csproj::TargetFramework=net10.0]
+C:\Users\mrbr\AppData\Local\Temp\Mrbr.Cryptography-dotnet\.nuget\packages\microsoft.build.tasks.git\10.0.401\build\Microsoft.Build.Tasks.Git.targets(25,5): warning : Unable to locate repository with working directory that contains directory 'E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src'. [E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src\SecretSharingDotNet.csproj::TargetFramework=net10.0]
+C:\Users\mrbr\AppData\Local\Temp\Mrbr.Cryptography-dotnet\.nuget\packages\microsoft.sourcelink.common\10.0.401\build\Microsoft.SourceLink.Common.targets(56,5): warning : Source control information is not available - the generated source link is empty. [E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src\SecretSharingDotNet.csproj::TargetFramework=net10.0]
+  SecretSharingDotNet -> E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src\bin\Release\net10.0\SecretSharingDotNet.dll
+
+Build succeeded.
+
+C:\Users\mrbr\AppData\Local\Temp\Mrbr.Cryptography-dotnet\.nuget\packages\microsoft.build.tasks.git\10.0.401\build\Microsoft.Build.Tasks.Git.targets(25,5): warning : Unable to locate repository with working directory that contains directory 'E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src'. [E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src\SecretSharingDotNet.csproj::TargetFramework=net10.0]
+C:\Users\mrbr\AppData\Local\Temp\Mrbr.Cryptography-dotnet\.nuget\packages\microsoft.sourcelink.common\10.0.401\build\Microsoft.SourceLink.Common.targets(56,5): warning : Source control information is not available - the generated source link is empty. [E:\Dev\source\Mrbr.Cryptography\Comparison\SecretSharingDotNet-main\src\SecretSharingDotNet.csproj::TargetFramework=net10.0]
+    2 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.07
+  Determining projects to restore...
+  Restored E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\Mrbr.Cryptography.ComparisonBenchmarks.csproj (in 29 ms).
+  1 of 2 projects are up-to-date for restore.
+C:\Program Files\dotnet\sdk\11.0.100-rc.3.26522.148\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(385,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\Mrbr.Cryptography.ComparisonBenchmarks.csproj]
+  Mrbr.Cryptography -> E:\Dev\source\Mrbr.Cryptography\src\Mrbr.Cryptography\bin\Release\net11.0\Mrbr.Cryptography.dll
+  Mrbr.Cryptography.ComparisonBenchmarks -> E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\bin\Release\net11.0\Mrbr.Cryptography.ComparisonBenchmarks.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.17
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 12 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// ***** Done, took 00:00:00 (0.03 sec)   *****
+// Found 12 benchmarks:
+//   ComparisonBenchmarks.UpstreamBigCreate: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureCreate: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamBigReconstruct: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureReconstruct: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+//   ComparisonBenchmarks.UpstreamBigCreate: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureCreate: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamBigReconstruct: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamSecureReconstruct: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_3of5]
+//   ComparisonBenchmarks.UpstreamBigCreate: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+//   ComparisonBenchmarks.UpstreamSecureCreate: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+//   ComparisonBenchmarks.UpstreamBigReconstruct: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+//   ComparisonBenchmarks.UpstreamSecureReconstruct: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=32B_9of9]
+
+// Build Exception: System.NotSupportedException: Found more than one matching project file for Mrbr.Cryptography.ComparisonBenchmarks in E:\Dev\source\Mrbr.Cryptography and its subfolders: 'E:\Dev\source\Mrbr.Cryptography\benchmarks\results\2026-11-04-secretsharingdotnet\provenance\primary-harness\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\Mrbr.Cryptography.ComparisonBenchmarks.csproj','E:\Dev\source\Mrbr.Cryptography\benchmarks\Mrbr.Cryptography.ComparisonBenchmarks\Mrbr.Cryptography.ComparisonBenchmarks.csproj'. Benchmark project names needs to be unique.
+   at BenchmarkDotNet.Toolchains.CsProj.Helpers.FindProjectFile(DirectoryInfo rootDirectory, String projectName)
+   at BenchmarkDotNet.Toolchains.CsProj.CsProjBuilder.GetProjectFilePath(Type benchmarkTarget, ILogger logger)
+   at BenchmarkDotNet.Toolchains.CsProj.CsProjBuilder.GetBuildArtifactsDirectoryPath(BuildPartition buildPartition, String programName)
+   at BenchmarkDotNet.Toolchains.BuilderBase.GetArtifactsPaths(BuildPartition buildPartition, String rootArtifactsFolderPath)
+   at BenchmarkDotNet.Toolchains.BuilderBase.BuildAsync(BuildPartition buildPartition, ILogger logger, String rootArtifactsFolderPath, CancellationToken cancellationToken)
+
+// BenchmarkDotNet has failed to build the auto-generated boilerplate code.
+// Re-run benchmark with --keepFiles option to confirm auto-generated project files.
+// Please follow the troubleshooting guide: https://benchmarkdotnet.org/articles/guides/troubleshooting.html
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2026-11-04 4:23 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  benchmarks\results\2026-11-04-secretsharingdotnet\net10-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report.csv
+  benchmarks\results\2026-11-04-secretsharingdotnet\net10-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report-github.md
+  benchmarks\results\2026-11-04-secretsharingdotnet\net10-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report.html
+  benchmarks\results\2026-11-04-secretsharingdotnet\net10-target\results\Mrbr.Cryptography.ComparisonBenchmarks.ComparisonBenchmarks-report-full.json
+
+// * Detailed results *
+ComparisonBenchmarks.UpstreamBigCreate: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+Runtime = ; GC = 
+There are not any results runs
+
+// * Summary *
+
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 43.96 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host] : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+
+PowerPlanMode=  Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true  IterationCount=12  
+IterationTime=150ms  LaunchCount=1  UnrollFactor=1  
+WarmupCount=15  
+
+| Method            | Scenario  | Mean | Error | Op/s |
+|------------------ |---------- |-----:|------:|-----:|
+| UpstreamBigCreate | 128B_3of5 |   NA |    NA |   NA |
+
+Benchmarks with issues:
+  ComparisonBenchmarks.UpstreamBigCreate: Job-LJPAKF(Arguments=/p:ComparisonTargetFramework=net10.0,/p:ComparisonUseFrozenAssembly=true, IterationCount=12, IterationTime=150ms, LaunchCount=1, UnrollFactor=1, WarmupCount=15) [Scenario=128B_3of5]
+
+// * Legends *
+  Scenario : Value of the 'Scenario' parameter
+  Mean     : Arithmetic mean of all measurements
+  Error    : Half of 99.9% confidence interval
+  Op/s     : Operation per second
+  1 ns     : 1 Nanosecond (0.000000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:00:00 (0 sec), executed benchmarks: 0
+
+Global total time: 00:00:00 (0.34 sec), executed benchmarks: 0
+// * Artifacts cleanup *
+Artifacts cleanup is finished

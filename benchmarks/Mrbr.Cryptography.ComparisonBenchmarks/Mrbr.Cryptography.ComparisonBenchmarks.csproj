@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net11.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <ComparisonTargetFramework Condition="'$(ComparisonTargetFramework)' == ''">net11.0</ComparisonTargetFramework>
+    <ComparisonUseFrozenAssembly Condition="'$(ComparisonUseFrozenAssembly)' == ''">false</ComparisonUseFrozenAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.16.0-preview.2" />
+    <ProjectReference Include="../../src/Mrbr.Cryptography/Mrbr.Cryptography.csproj" />
+    <ProjectReference Include="../../Comparison/SecretSharingDotNet-main/src/SecretSharingDotNet.csproj"
+                      Condition="'$(ComparisonUseFrozenAssembly)' != 'true'"
+                      SetTargetFramework="TargetFramework=$(ComparisonTargetFramework)"
+                      AdditionalProperties="TargetFramework=$(ComparisonTargetFramework)"
+                      SkipGetTargetFrameworkProperties="true" />
+    <Reference Include="SecretSharingDotNet" Condition="'$(ComparisonUseFrozenAssembly)' == 'true'">
+      <HintPath>../results/2026-11-04-secretsharingdotnet/provenance/target-$(ComparisonTargetFramework)/SecretSharingDotNet.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.IntegrationBenchmarks.DecryptionBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 41.63 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-DZDKHJ : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  Arguments=/p:UseLocalKeyManager=true,/p:ShouldUnsetParentConfigurationAndPlatform=false  IterationCount=15  
+IterationTime=150ms  LaunchCount=1  UnrollFactor=1  
+WarmupCount=20  
+</code></pre>
+
+<table>
+<thead><tr><th>Method                  </th><th>KeyLength</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Op/s </th><th>Ratio</th><th>RatioSD</th><th>Gen0</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>ExistingHandleDecrypt</td><td>16</td><td>1,106.1 ns</td><td>49.38 ns</td><td>46.19 ns</td><td>904,061.6</td><td>1.00</td><td>0.00</td><td>-</td><td>40 B</td><td>1.00</td>
+</tr><tr><td>ReusedRawKeyDecrypt</td><td>16</td><td>603.5 ns</td><td>8.71 ns</td><td>7.28 ns</td><td>1,657,058.4</td><td>0.55</td><td>0.02</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>InitializeRawKeyAndDecrypt</td><td>16</td><td>1,260.5 ns</td><td>86.84 ns</td><td>76.98 ns</td><td>793,346.9</td><td>1.14</td><td>0.08</td><td>0.0162</td><td>112 B</td><td>2.80</td>
+</tr><tr><td>RecoverHandleAndDecrypt</td><td>16</td><td>1,969.4 ns</td><td>179.76 ns</td><td>168.15 ns</td><td>507,766.8</td><td>1.78</td><td>0.16</td><td>-</td><td>40 B</td><td>1.00</td>
+</tr><tr><td>RecoverKeyInitializeAndDecrypt</td><td>16</td><td>1,793.3 ns</td><td>23.82 ns</td><td>18.59 ns</td><td>557,623.6</td><td>1.62</td><td>0.07</td><td>0.0119</td><td>112 B</td><td>2.80</td>
+</tr><tr><td>ExistingHandleDecrypt</td><td>24</td><td>1,142.2 ns</td><td>94.45 ns</td><td>88.35 ns</td><td>875,500.8</td><td>1.00</td><td>0.00</td><td>-</td><td>40 B</td><td>1.00</td>
+</tr><tr><td>ReusedRawKeyDecrypt</td><td>24</td><td>679.6 ns</td><td>45.32 ns</td><td>42.39 ns</td><td>1,471,495.9</td><td>0.60</td><td>0.06</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>InitializeRawKeyAndDecrypt</td><td>24</td><td>1,450.2 ns</td><td>108.81 ns</td><td>101.78 ns</td><td>689,578.1</td><td>1.28</td><td>0.13</td><td>0.0171</td><td>112 B</td><td>2.80</td>
+</tr><tr><td>RecoverHandleAndDecrypt</td><td>24</td><td>2,022.3 ns</td><td>70.74 ns</td><td>59.07 ns</td><td>494,482.5</td><td>1.78</td><td>0.14</td><td>-</td><td>40 B</td><td>1.00</td>
+</tr><tr><td>RecoverKeyInitializeAndDecrypt</td><td>24</td><td>2,262.0 ns</td><td>117.98 ns</td><td>110.35 ns</td><td>442,093.1</td><td>1.99</td><td>0.17</td><td>0.0138</td><td>112 B</td><td>2.80</td>
+</tr><tr><td>ExistingHandleDecrypt</td><td>32</td><td>1,231.4 ns</td><td>108.60 ns</td><td>101.59 ns</td><td>812,084.3</td><td>1.00</td><td>0.00</td><td>-</td><td>40 B</td><td>1.00</td>
+</tr><tr><td>ReusedRawKeyDecrypt</td><td>32</td><td>701.0 ns</td><td>41.12 ns</td><td>38.46 ns</td><td>1,426,631.5</td><td>0.57</td><td>0.06</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>InitializeRawKeyAndDecrypt</td><td>32</td><td>1,375.2 ns</td><td>124.83 ns</td><td>116.77 ns</td><td>727,178.0</td><td>1.12</td><td>0.13</td><td>0.0171</td><td>112 B</td><td>2.80</td>
+</tr><tr><td>RecoverHandleAndDecrypt</td><td>32</td><td>2,031.4 ns</td><td>120.48 ns</td><td>112.70 ns</td><td>492,264.2</td><td>1.66</td><td>0.16</td><td>-</td><td>40 B</td><td>1.00</td>
+</tr><tr><td>RecoverKeyInitializeAndDecrypt</td><td>32</td><td>2,131.7 ns</td><td>200.33 ns</td><td>187.39 ns</td><td>469,118.0</td><td>1.74</td><td>0.20</td><td>0.0148</td><td>112 B</td><td>2.80</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -1,0 +1,197 @@
+{
+  "CapturedAtUtc": "2026-11-03T22:19:09.1004178+00:00",
+  "TimeZone": "Europe/London",
+  "TargetFramework": "net11.0",
+  "Sdk": "11.0.100-rc.3.26522.148",
+  "PowerPlan": "Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)",
+  "Job": {
+    "IterationCount": 12,
+    "WarmupCount": 15,
+    "LaunchCount": 1,
+    "UnrollFactor": 1,
+    "IterationTimeMs": 120
+  },
+  "Command": "dotnet run --project benchmarks/Mrbr.Cryptography.WeightBenchmarks -c Release --no-build -- --filter '*' --launchCount 1 --warmupCount 15 --iterationCount 12 --iterationTime 120 --unrollFactor 1 --artifacts benchmarks/results/2026-11-03-weights/artifacts",
+  "Baseline": {
+    "FrozenReconstructMatchesSnapshot": true,
+    "PayloadKernelsSharedAndUnchanged": true,
+    "SnapshotSHA256": "6E77CC1A2BA7D5D23213E5FE40DB1BC6FA6B61B96375FD5209CE1B0A5EF91CDC",
+    "SharedSourceFingerprints": [
+      {
+        "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+        "SHA256": "77EC35CF7CA7047256CEDDC536E35CCEBA21A86CEB28A170C4C323A80747AE8B",
+        "Unchanged": true
+      },
+      {
+        "Path": "src/Mrbr.Cryptography/Internal/Gf256Simd.cs",
+        "SHA256": "15956F459DE818DF4775BFC3732181D4B6B983B9714EC882CF1C039F9BF062D5",
+        "Unchanged": true
+      },
+      {
+        "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+        "SHA256": "48EAAE746B504D6B979C5B5EAB4608618CD7E6EAC0976114013417BB6BE38737",
+        "Unchanged": true
+      }
+    ]
+  },
+  "Verification": {
+    "AVX2Disabled": "227 passed, 1 hardware-only test skipped",
+    "TableGeneratorChecked": true,
+    "AllIntrinsicsDisabled": "226 passed, 2 hardware-only tests skipped",
+    "BuildWarnings": 0,
+    "ExhaustiveOrderedPairs": 64770,
+    "Debug": "281 passed (228 core + 53 integration)",
+    "BuildErrors": 0,
+    "Release": "281 passed (228 core + 53 integration)",
+    "VariedSmallCoordinateSets": 4096
+  },
+  "SourceFingerprints": [
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.WeightBenchmarks/Baselines/ShamirSharedSecret.Simd.cs.txt",
+      "SHA256": "6E77CC1A2BA7D5D23213E5FE40DB1BC6FA6B61B96375FD5209CE1B0A5EF91CDC"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.WeightBenchmarks/Baselines/SimdBaseline.cs",
+      "SHA256": "0457F1FE59F757C496C6B1F4D1258CB74A2E745581272FA64B08FEB3E077BAE8"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.WeightBenchmarks/Mrbr.Cryptography.WeightBenchmarks.csproj",
+      "SHA256": "EBA74506006F60172F2FBBBF914A852B5EF83820B1E12C766ABF930B44E7AFE4"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.WeightBenchmarks/Program.cs",
+      "SHA256": "05BB1FB14DDB464D1A33989AFA62489253D0A1475BBB75D293028AD8EC858658"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.WeightBenchmarks/ReconstructionBenchmarks.cs",
+      "SHA256": "A730A56B9EA1A7D56266744C29BF082E9BD2F38E975E58EE034F92AD26FC130D"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.WeightBenchmarks/WeightConfig.cs",
+      "SHA256": "6A4E891A780FBBC2240B6C88A598BA34D227D822DA7E29FD369B1E9E050FF31F"
+    },
+    {
+      "Path": "benchmarks/Mrbr.Cryptography.WeightBenchmarks/WeightsOnlyBenchmarks.cs",
+      "SHA256": "C4380EFB510842ADF3332E9DDE6763B47536BD68FDCE05E0E155452D42620801"
+    },
+    {
+      "Path": "Directory.Build.props",
+      "SHA256": "79650925A72BB236C82439CBF5200FFB2E1EB7B3CD6EE347744E84DC66858A9C"
+    },
+    {
+      "Path": "eng/generate-coordinate-tables.py",
+      "SHA256": "3B84316D08C1010009C3ACB1B76D836BFEE4FE8E599CB210F0D6F0657747049B"
+    },
+    {
+      "Path": "eng/WeightScenarios.cs",
+      "SHA256": "0FFF3B1DEE22B0A4203E816D042165E31CA860E35456080C001ED7EBBFF5764C"
+    },
+    {
+      "Path": "global.json",
+      "SHA256": "19A39681EA81608656C557DC24D7112CB1B9B71D27D71197D261538B8A2DD675"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+      "SHA256": "77EC35CF7CA7047256CEDDC536E35CCEBA21A86CEB28A170C4C323A80747AE8B"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256Simd.cs",
+      "SHA256": "15956F459DE818DF4775BFC3732181D4B6B983B9714EC882CF1C039F9BF062D5"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+      "SHA256": "48EAAE746B504D6B979C5B5EAB4608618CD7E6EAC0976114013417BB6BE38737"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.cs",
+      "SHA256": "96C47B6753DBB3BFE6DDFDF4D745698131519CCA0216970CA144AB62E31C5F10"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.Tables.cs",
+      "SHA256": "8874DD39CC4A199F4CCB4F1ADB6A376499206CD332076557A0FB2A457044BD2C"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Mrbr.Cryptography.csproj",
+      "SHA256": "7F457A493233BC3C15CCB45575CDAE83045C0F87997C5E5A4D1614FE85D701BF"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/ShamirSharedSecret.cs",
+      "SHA256": "21318599ECE6D4070A8B0CA79DEBAD828498872DE2790A9C175C3E3CB0F637EF"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Tests/Gf256AllocationTests.cs",
+      "SHA256": "70F9AEBE56E43CBCA2441A987CA91D406BE206BF9DC93F88B6F787D37F135E5F"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Tests/Gf256SimdTests.cs",
+      "SHA256": "84FEB34A66FFF0A4827CC04C585157BECB3CB512FC711C375C5FCFB1DCE8182A"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Tests/Gf256Tests.cs",
+      "SHA256": "8769D08B601B4B92C8FECA453DD1725F08FCD58DA2B2F8171F96AEAF4C7BA7C7"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Tests/LagrangeWeightsTests.cs",
+      "SHA256": "F69CC06C034A07E2BFBF97F578E5148D8DF283F9D9501CEF385DD6AF8DDE97F3"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Tests/Mrbr.Cryptography.Tests.csproj",
+      "SHA256": "4E4C58B7A887BB9B61A3200347DC7C9E604CC763F566B7973120EBF4B85A1764"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Tests/ShamirSharedSecretAllocationTests.cs",
+      "SHA256": "1DE4F684935C43943D27AAE4D07531F9045CBF6033397F5A81B6D2D77BF50762"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Tests/ShamirSharedSecretSimdTests.cs",
+      "SHA256": "6C296964C450E8C9082652F6867B67656E347E2A1C899453815738D62332BA5B"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Tests/ShamirSharedSecretTests.cs",
+      "SHA256": "03A3CD92DBFCDE1762C72A22B65FB099EC4B293D1D6C5E2447C93CC4EFA0F812"
+    },
+    {
+      "Path": "tests/Mrbr.Cryptography.Tests/ShamirSharedSecretValidationTests.cs",
+      "SHA256": "5D036C945394AD794EEEB89B63A4E4DA243C0E1504504D36E282267A57EA520C"
+    }
+  ],
+  "CompletedAtUtc": "2026-11-03T22:28:50.2759984+00:00",
+  "Host": {
+    "BenchmarkDotNetCaption": "BenchmarkDotNet",
+    "BenchmarkDotNetVersion": "0.16.0-preview.2",
+    "OsVersion": "Windows 10 (10.0.19045.6466/22H2/2022Update)",
+    "ProcessorName": "Intel Core i7-10750H CPU 2.60GHz",
+    "PhysicalProcessorCount": 1,
+    "PhysicalCoreCount": 6,
+    "LogicalCoreCount": 12,
+    "RuntimeVersion": ".NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348)",
+    "Architecture": "X64",
+    "HasAttachedDebugger": false,
+    "HasRyuJit": true,
+    "Configuration": "RELEASE",
+    "DotNetCliVersion": "11.0.100-rc.3.26522.148",
+    "ChronometerFrequency": {
+      "Hertz": 10000000
+    },
+    "HardwareTimerKind": "Unknown"
+  },
+  "CompletedCases": 96,
+  "MatchedPairs": 48,
+  "MaximumManagedBytesPerOperation": 0,
+  "MeasuredGcCollections": 0,
+  "SourceUnchangedDuringMeasurement": true,
+  "SourceFilesWrittenSinceBenchmarkStart": 0,
+  "TotalBenchmarkSeconds": 486.8,
+  "MultimodalDistributionWarnings": [],
+  "ReportFingerprints": [
+    {
+      "Path": "E:\\Dev\\source\\Mrbr.Cryptography\\benchmarks\\results\\2026-11-03-weights\\artifacts\\results\\Mrbr.Cryptography.WeightBenchmarks.ReconstructionBenchmarks-report-full.json",
+      "SHA256": "2645DFCD0704F601CAA6B38680EA2F18E8CDFD93698C1300A545308CC799F300"
+    },
+    {
+      "Path": "E:\\Dev\\source\\Mrbr.Cryptography\\benchmarks\\results\\2026-11-03-weights\\artifacts\\results\\Mrbr.Cryptography.WeightBenchmarks.WeightsOnlyBenchmarks-report-full.json",
+      "SHA256": "76DACF0C14D098280BD14FA7A03BFC1A39ECF60B233CC80D73AA44F7D5A34178"
+    }
+  ],
+  "BenchmarkProcessExitCode": 0
+}

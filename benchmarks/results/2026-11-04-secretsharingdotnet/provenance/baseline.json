@@ -1,0 +1,683 @@
+{
+  "CapturedAtUtc": "2026-11-04T03:58:23.594416+00:00",
+  "LocalSubjectFiles": [
+    {
+      "Path": ".config/dotnet-tools.json",
+      "SHA256": "50249A8F3A7134B08B4409C485DFE67AFB17910E5A2329BF65810C3338231244"
+    },
+    {
+      "Path": ".editorconfig",
+      "SHA256": "B05CC3589E0CC62D05A4D15ABB1B6EF2356779C41C542073E4FE5ACCEE6C468F"
+    },
+    {
+      "Path": ".gitattributes",
+      "SHA256": "A880C2AC913ADD5B3012E6E5D3732597194AB2C018760FF9E84A396D823F985A"
+    },
+    {
+      "Path": ".github/dependabot.yml",
+      "SHA256": "5AC2C6F30B34B49ED3E5AC16F40269F89EACEAF9A001AC3DBCB5C3F748FC7CE1"
+    },
+    {
+      "Path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "SHA256": "0332BC9BB590200ADCE5F9275CDB561244927FF757C30226AB43C9F457FFE624"
+    },
+    {
+      "Path": ".github/ISSUE_TEMPLATE/config.yml",
+      "SHA256": "BC20682989F454514E1AA23D5D1C08BABADFFFC27F4E580C1422DA4C2CDBF7E4"
+    },
+    {
+      "Path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "SHA256": "98D13BFC44AEA1AEB2BA0687BE26233D55C4ACDEF43B434987A8480A8B6D051F"
+    },
+    {
+      "Path": ".github/secrets/decrypt_publisher_snk.sh",
+      "SHA256": "75A249BF41A88FB6672EC2EB75D95AD50B8ED02C654FF91BB5C7605D39545E38"
+    },
+    {
+      "Path": ".github/secrets/SecretSharingDotNetPublisher.snk.gpg",
+      "SHA256": "9CE010EC1486AA4ECA11E8540F3E69DA7769C0D0923C2C8047C3A8CB526652CB"
+    },
+    {
+      "Path": ".github/workflows/claude-code-review.yml",
+      "SHA256": "C9E27140315ABB8F82BE223598CEDB4CA39DE33CBAF3117E0406046B832D5520"
+    },
+    {
+      "Path": ".github/workflows/claude.yml",
+      "SHA256": "3ADE10C8ED313C7F0F47D403438DBA2ACEE2729D6B8CB24602C30AFCEDD074F4"
+    },
+    {
+      "Path": ".github/workflows/codeql-analysis.yml",
+      "SHA256": "0E709D31D0BAAA1700C26701EE06ACE474F25C5EAA77C086274DE7EEE15D17D0"
+    },
+    {
+      "Path": ".github/workflows/dependabot-autoheal.yml",
+      "SHA256": "0F1B135B1FF71EA90321E360D60F0EDACCD0548B646443CEEEDC1EAD4D4802C0"
+    },
+    {
+      "Path": ".github/workflows/dotnetall.yml",
+      "SHA256": "4CC4B96D0D6DBC62E7E65A1A7442FA31792023541834870716BF8D898668A6A2"
+    },
+    {
+      "Path": ".github/workflows/large-buffer-wipe.yml",
+      "SHA256": "17D881C9CB002E12BAB4D14CFA7683318E9AC9182792B25D0ABA12D9DA00BC9F"
+    },
+    {
+      "Path": ".github/workflows/publishing.yml",
+      "SHA256": "F54D02C277FA79660446A27B9C15B6BD58A74C49C00877A55A96C24703B795BA"
+    },
+    {
+      "Path": ".gitignore",
+      "SHA256": "7D9818E8AF6BA9A74C3FB2E0875F325CEB7C2BD2A0742180155078C5BE1DF020"
+    },
+    {
+      "Path": "CHANGELOG.md",
+      "SHA256": "DC67FA30A304D87EA16193316CAF77AA6F01EEF72925883B1992CA92F373DB1F"
+    },
+    {
+      "Path": "CODE_OF_CONDUCT.md",
+      "SHA256": "B9FFA513E27329C1AB4529070985EDB2796332DC5976FF9AB21E9E629B281810"
+    },
+    {
+      "Path": "Directory.Build.props",
+      "SHA256": "FF75FEBEC89B94DB0D68853AC2E057799EAB994EB4E1743711CC4795C01A2078"
+    },
+    {
+      "Path": "Directory.Packages.props",
+      "SHA256": "39AD758CE1D534DD45523FBFB627908356A645A0D6DB9BEBBBB45CF9E3FBF197"
+    },
+    {
+      "Path": "docs/architecture/arc42.de.md",
+      "SHA256": "C3068B785504A4355C9CE9D38EECB9B1C0A236ADEE09BECBBB8C5050059E4787"
+    },
+    {
+      "Path": "docs/architecture/arc42.en.md",
+      "SHA256": "749E7E5C162568C5CEB54243FF256730F9A35EFB189C1A17E570E52261EEF8D8"
+    },
+    {
+      "Path": "global.json",
+      "SHA256": "9384D5F057ED52752AA3DC5407E75B2265495154FB3A6597AFE70B79F8776F93"
+    },
+    {
+      "Path": "LICENSE.md",
+      "SHA256": "084D95F61A90FD0E67063CBCF9AFE4E30029A696D94342C05F9DCFB95E3ADD99"
+    },
+    {
+      "Path": "README.md",
+      "SHA256": "1AD3E875AB41847F4AF98D8DB388F77180AA7F75456D9D31C208037B79F34D6C"
+    },
+    {
+      "Path": "samples/SecretSharingDotNet.Demo.Console/DemoApp.cs",
+      "SHA256": "51064F685ED4BADE7F870084BC324A8C4E687DBBE1AB9CB8960E7B8F3C64B699"
+    },
+    {
+      "Path": "samples/SecretSharingDotNet.Demo.Console/packages.lock.json",
+      "SHA256": "6CB072F56B0314002FD5A78F7E994F4BAA850D76398ABC1495FF57288BD08155"
+    },
+    {
+      "Path": "samples/SecretSharingDotNet.Demo.Console/Program.cs",
+      "SHA256": "A66C7EEC6A45BE0E25D51D650ACCA37786682CA78E3B4558362AF7D720EDA879"
+    },
+    {
+      "Path": "samples/SecretSharingDotNet.Demo.Console/SecretSharingDotNet.Demo.Console.csproj",
+      "SHA256": "169161F577C25697C805EE10DE4897FA6DF926CA0222728523380AB5A82C1FC7"
+    },
+    {
+      "Path": "SecretSharingDotNet.slnx",
+      "SHA256": "F888F42BBDD25A221E793021EB43D118E7C2D97294DA63DE19B4F9F90B430501"
+    },
+    {
+      "Path": "src/Cryptography/CryptoRandomSource.cs",
+      "SHA256": "797848EE1A9E854DB6C6384DD8DB39026E1824DE998F4D0B6B164BACED9ED104"
+    },
+    {
+      "Path": "src/Cryptography/IMakeSharesUseCase.cs",
+      "SHA256": "25DFEC8E9E9CC99E3472EC156AF9FEAD504D70BF49A5C5E5BA59DD84991FD32E"
+    },
+    {
+      "Path": "src/Cryptography/InvalidShareException.cs",
+      "SHA256": "98D30A918448ACF8F61C6EE551E1DEE056368578064744B96AE45602227CDAF5"
+    },
+    {
+      "Path": "src/Cryptography/IRandomSource.cs",
+      "SHA256": "FDA8F39C22EE16AFDE8C156FDA3535E76CEF2231F6F4EFD81FC7B6EA2D47D180"
+    },
+    {
+      "Path": "src/Cryptography/IReconstructionUseCase.cs",
+      "SHA256": "88BE4CCCDC062790245C605B2834CACB9F4587435F29BA38095BF5AB92612CA4"
+    },
+    {
+      "Path": "src/Cryptography/IReconstructionWithSecurityLevelUseCase.cs",
+      "SHA256": "82B4B7AA5ECFC942B9869EA63FEE3D288F797C5B2DE9C6A90CA3DE94A2574F6C"
+    },
+    {
+      "Path": "src/Cryptography/ReconstructionException.cs",
+      "SHA256": "0F8AC38B34E173444D975549AF5796A40E60270E0917CF56BD9E4CEFF1951CB9"
+    },
+    {
+      "Path": "src/Cryptography/Secret`1.cs",
+      "SHA256": "42E67DAD6C23250CA048DDA5088ACC0FE1DCAE8F2E07ADE4D4A07D960BB60B2B"
+    },
+    {
+      "Path": "src/Cryptography/SecretSharingException.cs",
+      "SHA256": "7FD6D3913014FB9E3F0030F5DFF4639573DB6657AFADCF9487CB2095E5157470"
+    },
+    {
+      "Path": "src/Cryptography/SecureInput/ConsolePasswordReader.cs",
+      "SHA256": "BC229B0AA7BD4CC0840C0B14103B70CAD4649762491B8C5F4B87CA8BE58342A5"
+    },
+    {
+      "Path": "src/Cryptography/SecureInput/SecureCharBufferExtensions.cs",
+      "SHA256": "F0CBB956A1D15AAFA28D192223708434662A40B761EE6FC9C986608139A9D00A"
+    },
+    {
+      "Path": "src/Cryptography/SecureInput/SecureNumericBufferExtensions.cs",
+      "SHA256": "883831061FF7E6FC827C01671DBDFA86E502CE1FB2A86B2B0ACE3D63A5723E82"
+    },
+    {
+      "Path": "src/Cryptography/SecureRandom.cs",
+      "SHA256": "5CB56E6AC9487F34D715275B4657DD6777C85A39CA73CD45196F6DFA07FA1C4B"
+    },
+    {
+      "Path": "src/Cryptography/ShamirsSecretSharing/FixedIterationSecretReconstructor`1.cs",
+      "SHA256": "E9FCB18BD6EE3AF6ED0D19E0A35AB77FEF7F98CD71F7F0C8C6FAF7EEBCAE7887"
+    },
+    {
+      "Path": "src/Cryptography/ShamirsSecretSharing/IInspectableSecurityLevelManager.cs",
+      "SHA256": "4C49DFB24BDF44FFA4ED67A0EEAD1FEE5C119C22F58866E994F3FABA29272B22"
+    },
+    {
+      "Path": "src/Cryptography/ShamirsSecretSharing/ISecurityLevelManager.cs",
+      "SHA256": "80E449A17E2E6724A294849B0D27C24F89028C1B6FFC08B16EEA22D0804ACDD8"
+    },
+    {
+      "Path": "src/Cryptography/ShamirsSecretSharing/PublicValueEqualityComparer`1.cs",
+      "SHA256": "3885DB7D18D30D754AA75C2F5ECEB249052CF9DDBB8C080353BA8129DF1AE2FC"
+    },
+    {
+      "Path": "src/Cryptography/ShamirsSecretSharing/SecretReconstructor`1.cs",
+      "SHA256": "02F02551665B3EADB91AFC9DBF74DE16A238D79065A38124AA2B10B58DBFF41E"
+    },
+    {
+      "Path": "src/Cryptography/ShamirsSecretSharing/SecretReconstructor`3.cs",
+      "SHA256": "BEDBBA1E978421E8E815CC95771379F59238BE3CFC4A7821F25A7FDC0CAF61B3"
+    },
+    {
+      "Path": "src/Cryptography/ShamirsSecretSharing/SecretSplitter`1.cs",
+      "SHA256": "BA13B8680F71CA6EDDF63F46DEE09CEB4ACB1956AAB959511E9DAF38882F8781"
+    },
+    {
+      "Path": "src/Cryptography/ShamirsSecretSharing/SecurityLevelManager.cs",
+      "SHA256": "55C3A3F6FC8B36E3A16DAF7DDC145140E59339960EA4C4B5F37FC40AB6195FAF"
+    },
+    {
+      "Path": "src/Cryptography/Share`1.cs",
+      "SHA256": "79E6F5AB72217AC9C2659B90E7B5D794D20094C240942DCA86C25A488C243088"
+    },
+    {
+      "Path": "src/Cryptography/ShareFormat.cs",
+      "SHA256": "307C2F8EAF553FDAE77FC37702B55EF2DC16E30E166747126591EA25BDC9F3B8"
+    },
+    {
+      "Path": "src/Cryptography/ShareFormatValidation.cs",
+      "SHA256": "76D904709506DB84F54C9DD3CC7040BF18ECF6F4E961FCF81C348E1B05D57C6A"
+    },
+    {
+      "Path": "src/Cryptography/Shares.cs",
+      "SHA256": "5A1A6C3A46134D37D1F1BFACBD0B928149DD3DB1435F00E52628C1655E8C3E84"
+    },
+    {
+      "Path": "src/Cryptography/SharesEnumerator.cs",
+      "SHA256": "8C437D9670577C55552F96DDB7AC7EAC60DF5EA345EDEBE85A9EABEF75D625CB"
+    },
+    {
+      "Path": "src/Extension/ArrayExtensions.cs",
+      "SHA256": "CB8909AA8EC009647423E4000DD58C38A74F842C7E960DC999EC5FB5745B8D0A"
+    },
+    {
+      "Path": "src/Extension/DisposableExtensions.cs",
+      "SHA256": "28E8F11FD76B28CE7C4BEE8F0502B2F0F521C3FF127BF947109D35472F202FA8"
+    },
+    {
+      "Path": "src/Extension/PinnedPoolArrayExtensions.cs",
+      "SHA256": "AD7412A17313A4BFDA27DAA4819EE33899F327A20561263561A09D53178E875E"
+    },
+    {
+      "Path": "src/Extension/StructuralComparableExtensions.cs",
+      "SHA256": "D11C50196EC35FF0ADA96730E0C6443C66ECB33DA2591B0AAED9C095A78D4950"
+    },
+    {
+      "Path": "src/Math/Calculator.cs",
+      "SHA256": "EB7AF040651C700919F8C4F40FAA48CC6B1DA52780A4E02C8B2EAC53B269E6DB"
+    },
+    {
+      "Path": "src/Math/Calculator`1.cs",
+      "SHA256": "30CAF532B3939EFEF1516D8BA2A0D339F08963B160152A2829341590F1522004"
+    },
+    {
+      "Path": "src/Math/ExtendedEuclideanAlgorithm.cs",
+      "SHA256": "5A18A5914E1DE5CDDEAE73CBAB3A49979A1D1E4050B936E069D90C7F716D9B7A"
+    },
+    {
+      "Path": "src/Math/ExtendedGcdResult.cs",
+      "SHA256": "46E249619903E02BFBD43246B4EF6BBDBD01F918BF9CB287E79ABE0762A7D257"
+    },
+    {
+      "Path": "src/Math/IExtendedGcdAlgorithm`1.cs",
+      "SHA256": "76E48040152D27BBD28CB1EAC5FD28870A64DDF18450F26F8AA3609A37A53DE1"
+    },
+    {
+      "Path": "src/Math/IExtendedGcdAlgorithm`2.cs",
+      "SHA256": "A9FC1EC4403164483B3080FF1D3F96FE87EC0C53ECB404F8F01B5646D1482DA0"
+    },
+    {
+      "Path": "src/Math/IExtendedGcdResult`1.cs",
+      "SHA256": "C5C7FC007AB0CA1D1908E92674C7F3EC2802D44F2612F6C3D8A04321E513EFA9"
+    },
+    {
+      "Path": "src/Math/IFixedIterationExtendedGcdAlgorithm`1.cs",
+      "SHA256": "974F7E34526AFACBE5EAC57CBB9C58BA8CD8C2744641844B12E7C6BA877FDEB5"
+    },
+    {
+      "Path": "src/Math/IMersennePrimeProvider.cs",
+      "SHA256": "A37222E1003017E7E656A628D2352A549E872B6E0ACDB970A26C016A6B20EEE0"
+    },
+    {
+      "Path": "src/Math/MersennePrimeProvider.cs",
+      "SHA256": "1EC937295E0F6658C7D47A556FD7A4430F3841952D3F936777A30485FBC37721"
+    },
+    {
+      "Path": "src/Math/MersenneSafeGcdAlgorithm.cs",
+      "SHA256": "DACD87B8D7336837655D2A61954C2C9E5EDE5E70343CC379BC602E7D27FE4A7A"
+    },
+    {
+      "Path": "src/Math/Numerics/BigIntCalculator.cs",
+      "SHA256": "8D12E829CE63EDCCE2333837332D56F08E7237762BA8443E9E1DD5BD189AA4B6"
+    },
+    {
+      "Path": "src/Math/Numerics/SecureBigIntCalculator.cs",
+      "SHA256": "39D82C405C12D32FB0CCEE60C1F4EC5578B15B31C5D59CF22FA6D64169B6C71F"
+    },
+    {
+      "Path": "src/Math/Numerics/SecureBigInteger.cs",
+      "SHA256": "35560471008B38CDD88C9EA5B13C0C51AEB69621BE9C6886A798C2DCC8BDD657"
+    },
+    {
+      "Path": "src/Math/Polynomial.cs",
+      "SHA256": "E02167B330F05CF2452128E0AE3B55B5D39542EDFF31CF525D3E7ABBEB7E9C81"
+    },
+    {
+      "Path": "src/packages.lock.json",
+      "SHA256": "E30F24DD7D48D3028A11CC45D0D9C500EAB92B3CF1764D25A9B2A2B6762369AB"
+    },
+    {
+      "Path": "src/Properties/AssemblyAttributes.cs",
+      "SHA256": "4A24F0714932C0AABB0E1EC309D537866675389F35DCCDFE2EAC35768420F5C2"
+    },
+    {
+      "Path": "src/Resources/ErrorMessages.de-DE.resx",
+      "SHA256": "59F816E3B62FE8BA2CE6EF65FEBF4631C1FA768237F60CB07E26F1116DEC8281"
+    },
+    {
+      "Path": "src/Resources/ErrorMessages.Designer.cs",
+      "SHA256": "E546275AC337C325032AE0EA1DC344C0DD8BB930CF226718D3517DC68DA2E966"
+    },
+    {
+      "Path": "src/Resources/ErrorMessages.resx",
+      "SHA256": "3BBD53EAF000EDAAA01DD2C43C961AF388754F700C3A51A05FFE927DF2BED008"
+    },
+    {
+      "Path": "src/SecretSharingDotNet.csproj",
+      "SHA256": "4F0FEF0D3CF47751AFB4CED6EA1B9D6D0E49DC2ED1A2905717494A17EF9C6EB9"
+    },
+    {
+      "Path": "src/SecretSharingDotNet.snk",
+      "SHA256": "AF4A041BA3AF6757BB3BB2267F20B2A0C833B14BECB397C192DBD80761EA5204"
+    },
+    {
+      "Path": "src/SecureMemory/CountedEqualityComparer`1.cs",
+      "SHA256": "A95EDF909FF36C94BE9A295C6E2E6EC2A84944853AFB91CF1AB30B9915510D2C"
+    },
+    {
+      "Path": "src/SecureMemory/ICountedEqualityComparer`1.cs",
+      "SHA256": "490AD2CC34663B0BCFB0547934F57D79B80DD2C7C591B4548DEC63E669600F54"
+    },
+    {
+      "Path": "src/SecureMemory/PinnedPoolArray`1.cs",
+      "SHA256": "B1F2673E369FE20B27937E0A25330CAB055895B261FEBBAC5130EB6A2C5E5DA2"
+    },
+    {
+      "Path": "src/SecureMemory/PinnedPoolArrayList.cs",
+      "SHA256": "6E912A3EEFCD0D87D641D76C8A367F05B10F2A6F550BE8C00675DF321166C6B9"
+    },
+    {
+      "Path": "tests/BigIntegerExtensions.cs",
+      "SHA256": "3513033C78EBA73A05056DDDC9D691E008A5282254F0DD7D6FCE1EA230F75A56"
+    },
+    {
+      "Path": "tests/Cryptography/BigInteger/SecretTest.cs",
+      "SHA256": "1B666CBE040063A6D0E5910DE33FB27C02AC18DEC5C04829F41B614FC716A704"
+    },
+    {
+      "Path": "tests/Cryptography/BigInteger/SharesTest.cs",
+      "SHA256": "48FE3F7D87338009C2E47296C9B0E0202547B7482DD2F7E85C4061D1A1D5B13F"
+    },
+    {
+      "Path": "tests/Cryptography/BigInteger/ShareTest.cs",
+      "SHA256": "23F351748027F18BC6B6EABBDE523FA6D88F52C4DB5598F60F4F4237EA7F0FCE"
+    },
+    {
+      "Path": "tests/Cryptography/CryptoRandomSourceTest.cs",
+      "SHA256": "85B18FB16A7AFD115A2B521FEDE11039E51BDAF9DD4BA87A1A73DAA38D32FB72"
+    },
+    {
+      "Path": "tests/Cryptography/DeterministicRandomSource.cs",
+      "SHA256": "D434CA65B404476BD5F6518E65E09BA740F57A74916B6E4B84FD6EB17AE60C9E"
+    },
+    {
+      "Path": "tests/Cryptography/SecureBigInteger/SecretTest.cs",
+      "SHA256": "3361869BB52E7E10271FB47599113CC60E24EADB614B2B9D188E72FCB8DBA59C"
+    },
+    {
+      "Path": "tests/Cryptography/SecureBigInteger/SharesTest.cs",
+      "SHA256": "3958423FF68AB54D0EC5C741ECB9456EF592FBEAEC8D97CD3D6A87B36B3577CD"
+    },
+    {
+      "Path": "tests/Cryptography/SecureBigInteger/ShareTest.cs",
+      "SHA256": "9CF82F04E9647A94A9DA076D47BE39BA2E93DE76954B9A60BE6C44404E891EEB"
+    },
+    {
+      "Path": "tests/Cryptography/SecureInput/ConsolePasswordReaderTest.cs",
+      "SHA256": "4FE59D321372C98BF819E1D5FA0D597257BAA6581992E4A13FA75A7EC6DBFEBD"
+    },
+    {
+      "Path": "tests/Cryptography/SecureInput/SecureCharBufferExtensionsTest.cs",
+      "SHA256": "DF73C85E1A2124C0333D3675CFA726870D690A2E138C772FFA913AD19BD2F50F"
+    },
+    {
+      "Path": "tests/Cryptography/SecureInput/SecureNumericBufferExtensionsTest.cs",
+      "SHA256": "FB11383D7CAB1BB9B88B2CBAF88CCC8DCAA478B029173AE2D7F28D938FC6ACA3"
+    },
+    {
+      "Path": "tests/Cryptography/SecureRandomTest.cs",
+      "SHA256": "16277921660E18E6A12C165771F98CBFE15DE0C67C58A6C010D351EA98A678C3"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/BigInteger/FixedIterationSecretReconstructorTest.cs",
+      "SHA256": "09C3A4AFD2EDF0112FC5B31A3922E7C9C5BEA020F57BDD5ADDEE530B46912E3D"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/BigInteger/PublicValueEqualityComparerTest.cs",
+      "SHA256": "D5E9C71E8C3C082C8D14BADDB67E2F515C88C1180A04919C1337744E77AF86CE"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/BigInteger/SecretReconstructorTest.cs",
+      "SHA256": "C0D8B136F3664CB6A2849322B9B43961B7D12DB8BB7A2BEA2228672814307EF0"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/BigInteger/SecretSplitterTest.cs",
+      "SHA256": "D82C355AA2EEEE7DBBEA363E8F3CCF1E79D56DCCD3183DD5B9B5E09B8C9F7F17"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/BigInteger/SecurityLevelManagerTest.cs",
+      "SHA256": "A2F3E9F9B83729D5B49CA189F79B9ACA294DB8137FF4B851F6B1F8F9157D396F"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/BigInteger/ShamirsSecretSharingConcurrencyTest.cs",
+      "SHA256": "26F71293EB3024752C3779A42DD97FC84F8D53D9671DC847F8EF7C3F9E1C9A3C"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/BigInteger/ShamirsSecretSharingPropertyTest.cs",
+      "SHA256": "92BBB463CEB26867E3AB19993981F47F321203A3BEBBF4C0527DE8624E86B5E7"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/BigInteger/ShamirsSecretSharingTest.cs",
+      "SHA256": "44E01AC315CF4E953B43A7BD17188B6B5A154D92193E37930BA2697CA90312C4"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/SecureBigInteger/FixedIterationSecretReconstructorTest.cs",
+      "SHA256": "BBCD82572442BE76EE5B77BAE752D7A9C151B058A0DC5D38EA1E028BA734BE1B"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/SecureBigInteger/PublicValueEqualityComparerTest.cs",
+      "SHA256": "43BD6F8C5A71A164E246AC5D71A54D9993B10C678368BA29BA89FAEE1DF55E0C"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/SecureBigInteger/SecretReconstructorTest.cs",
+      "SHA256": "D5586A63AFE825D1B7AC26A7F2D0401223B6D93A8DDDD631E7477FFA459B9D84"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/SecureBigInteger/SecretSplitterTest.cs",
+      "SHA256": "3F7817E3E13E175E28A9B162637357F37C5D5CE10A84F055F25C75FFB6E9E2FF"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/SecureBigInteger/SecurityLevelManagerTest.cs",
+      "SHA256": "F0C63206DFBFDB9299336409B4CA7F3A4AA2A73330FBB4B9C3BA11C96EEF2498"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/SecureBigInteger/ShamirsSecretSharingConcurrencyTest.cs",
+      "SHA256": "D1C2CA3F80C70CEE9DE6C98F0B3CBCE3A35B59F3280ED49F266C90243DDF8A9A"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/SecureBigInteger/ShamirsSecretSharingPropertyTest.cs",
+      "SHA256": "9B049A93C2FC2B9C45DC5B586BBC6621312167688F1634316F8A6D293C642B30"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/SecureBigInteger/ShamirsSecretSharingTest.cs",
+      "SHA256": "6FAC53DF49B6ADBE02BAE4DE9388AB41CF3479C88221AA3C1078C9D2CC5626E4"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/ShamirsSecretSharingGenerators.cs",
+      "SHA256": "0D4B2B07D922FD8EEE97EE83ABBFEC6B43CEA9007E95694844895E251E9AC6C9"
+    },
+    {
+      "Path": "tests/Cryptography/ShamirsSecretSharing/ShamirsSecretSharingGeneratorsTest.cs",
+      "SHA256": "42CF702D72229752E284709C90B0B47481771FDADCE4ECDF1BE87CBCACF8BB2F"
+    },
+    {
+      "Path": "tests/Extension/PinnedPoolArrayExtensionsTest.cs",
+      "SHA256": "C5F22277958F135388138E77D4E0DCC737C1666B90233D016612B7F4AEB5993B"
+    },
+    {
+      "Path": "tests/Math/BigInteger/ExtendedEuclideanAlgorithmTest.cs",
+      "SHA256": "907997538A9CBE7363B2DB17FB9CF18CA66E571AE7DC56E3D1881C62DAA08931"
+    },
+    {
+      "Path": "tests/Math/BigInteger/ExtendedGcdResultTest.cs",
+      "SHA256": "2444CA299288970ACE83823289D865E2853A214DA3776129BFED9BEDD9C65E53"
+    },
+    {
+      "Path": "tests/Math/BigInteger/MersenneSafeGcdAlgorithmTest.cs",
+      "SHA256": "F763CED7CB83D861DAE1624F95457C68ACB6AA45FEF2856965003FA8C56EAECA"
+    },
+    {
+      "Path": "tests/Math/BigInteger/PolynomialTest.cs",
+      "SHA256": "4A1D2056DF1B469A89319B3D6298CFEBC84EE3E0DFA813BB6341D41376F4B31D"
+    },
+    {
+      "Path": "tests/Math/MersennePrimeProviderTest.cs",
+      "SHA256": "D6AEC74176AAAA963CBC5CADC8D427EA5EF9D90412FF3A8BC567E3CC513240C9"
+    },
+    {
+      "Path": "tests/Math/Numerics/BigIntCalculatorTest.cs",
+      "SHA256": "AA4AD2C260CED41C42559C634744AD87130F74AC7E1ED3D69654615D2D7264AF"
+    },
+    {
+      "Path": "tests/Math/Numerics/SecureBigIntCalculatorTest.cs",
+      "SHA256": "DFD648F7F4AEF7BF8492F04767AEDF3C021A6D5DE1F8411C9E1D7CF598BACD27"
+    },
+    {
+      "Path": "tests/Math/Numerics/SecureBigIntegerLimbsTest.cs",
+      "SHA256": "49EC37DE759069C30B89343B21C5E876FFD5AD92A68C528C257213FBEA191166"
+    },
+    {
+      "Path": "tests/Math/Numerics/SecureBigIntegerTest.cs",
+      "SHA256": "D24E2AF7486712C98E7742F75301582E3E82071F63D081376FA9F21FB3BFF36D"
+    },
+    {
+      "Path": "tests/Math/SecureBigInteger/ExtendedEuclideanAlgorithmTest.cs",
+      "SHA256": "760EB9EF5890ABB703679A29B69C7F4080AA9F21E1FEDAA5729825AE4138EC8C"
+    },
+    {
+      "Path": "tests/Math/SecureBigInteger/ExtendedGcdResultTest.cs",
+      "SHA256": "413763DEE0923B9933FB11D0387C7A3B0A8E3799256EDC240D0F3526F79E86BB"
+    },
+    {
+      "Path": "tests/Math/SecureBigInteger/MersenneSafeGcdAlgorithmTest.cs",
+      "SHA256": "6DFCB4EE98B72E7630BBCD125AFA888E25210ED21597C084485445CF4D963DD2"
+    },
+    {
+      "Path": "tests/Math/SecureBigInteger/PolynomialTest.cs",
+      "SHA256": "A2FA21F039D85EDE922D1A299428E351CACD0CBC745F4E133A62A8F87BE062BA"
+    },
+    {
+      "Path": "tests/MersennePrimeProviderStub.cs",
+      "SHA256": "EC3F6333EC3360BFD7D5806C5F1AC4316B194563F0519C31A8D2A210C196189C"
+    },
+    {
+      "Path": "tests/packages.lock.json",
+      "SHA256": "8209CE81DB69956953E043AC7AE18E2D651F35EAFBF362F6916D1D23781289CC"
+    },
+    {
+      "Path": "tests/Properties/AssemblyAttributes.cs",
+      "SHA256": "C514D31A2D8B50F7AFD2BF66E60CDE2D7B1E196E8E9240AB63859C97CFAC3086"
+    },
+    {
+      "Path": "tests/SecretAssertions.cs",
+      "SHA256": "BB4AF572C79D85895E64C3AE134CAFDE80950963FED25DCB29B7599691D34DD7"
+    },
+    {
+      "Path": "tests/SecretAssertionsTest.cs",
+      "SHA256": "6AE5204BEE83186F436790DB900B675D8A761E63ABE34923CC1D897E944845F4"
+    },
+    {
+      "Path": "tests/SecretSharingDotNetTest.csproj",
+      "SHA256": "AE9DEE70A472B324B21882ABE4ADE9FD0EE64744D9D7D516D786B062D345BEC1"
+    },
+    {
+      "Path": "tests/SecureMemory/CountedEqualityComparerTest.cs",
+      "SHA256": "87547B50662BABBB6C1640011C655AD29FAD672B9E3B7A4F48877AFB289A7B22"
+    },
+    {
+      "Path": "tests/SecureMemory/PinnedPoolArrayTest.cs",
+      "SHA256": "D78988E2A05408DEA480B2FC3ACA3D3EDDADA93B3BD0AF3C0354BBD80F8E5B85"
+    },
+    {
+      "Path": "tests/StressTraits.cs",
+      "SHA256": "F3D69E9EE1BAEFE9451F2FA383FE616CEFE54E2D5D627D2B8AD4580C3412E262"
+    },
+    {
+      "Path": "tests/stryker-config.json",
+      "SHA256": "70A2C086983FF79EF3F97AFE66DB3ADCDC315386BF5CEA0E969CE8BC13181287"
+    },
+    {
+      "Path": "tests/TestData.cs",
+      "SHA256": "C2D896828EF142972B9A98D8E3E3A89805DFAE3A2AE4CA63C63B51D51A0C14E2"
+    },
+    {
+      "Path": "tests/Timing/DudectStyleClassifier.cs",
+      "SHA256": "689CD56CD0EBCB74855FE3B814C948FE54C0FA90A217B749CFD9AC2F879AE0B8"
+    },
+    {
+      "Path": "tests/Timing/PercentileCropper.cs",
+      "SHA256": "F621174F44D459C1D991E35A18BE5312512CE4FC2A83F767952A51FF0D5FA955"
+    },
+    {
+      "Path": "tests/Timing/Self/HarnessSelfTest.cs",
+      "SHA256": "54327187844300A00DA10244B60D69F4902118BC004EECED275EEB51A42C3678"
+    },
+    {
+      "Path": "tests/Timing/TimingHarness.cs",
+      "SHA256": "C6CBFF1C14CA737E7E1DCA2248D3830DE22BA0E213F9F0A8116BEDA8F926C3DB"
+    },
+    {
+      "Path": "tests/Timing/TimingTraits.cs",
+      "SHA256": "01C5C39367249BC06ED826C979CAFDACD204717E383A90865D1141002F60F681"
+    },
+    {
+      "Path": "tests/Timing/WelchTTest.cs",
+      "SHA256": "38254F96298FA0E797E95B3DB30194150200D12B8F6C1D1736A84ABA91A2F34E"
+    },
+    {
+      "Path": "tests/xunit.runner.json",
+      "SHA256": "CDAD8A2DA160035CA40F70B9B59693A661A8D926F464ECF252B25707F7F7235C"
+    }
+  ],
+  "OurProductionFiles": [
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256.cs",
+      "SHA256": "77EC35CF7CA7047256CEDDC536E35CCEBA21A86CEB28A170C4C323A80747AE8B"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/Gf256Simd.cs",
+      "SHA256": "15956F459DE818DF4775BFC3732181D4B6B983B9714EC882CF1C039F9BF062D5"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/IRandomSource.cs",
+      "SHA256": "48EAAE746B504D6B979C5B5EAB4608618CD7E6EAC0976114013417BB6BE38737"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.cs",
+      "SHA256": "96C47B6753DBB3BFE6DDFDF4D745698131519CCA0216970CA144AB62E31C5F10"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Internal/LagrangeWeights.Tables.cs",
+      "SHA256": "8874DD39CC4A199F4CCB4F1ADB6A376499206CD332076557A0FB2A457044BD2C"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/Mrbr.Cryptography.csproj",
+      "SHA256": "7F457A493233BC3C15CCB45575CDAE83045C0F87997C5E5A4D1614FE85D701BF"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography/ShamirSharedSecret.cs",
+      "SHA256": "21318599ECE6D4070A8B0CA79DEBAD828498872DE2790A9C175C3E3CB0F637EF"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.KeyManager/Mrbr.Cryptography.KeyManager.csproj",
+      "SHA256": "8F323FD8664045694006E04465CBED6E6C74A41734700DCDCBB5F0E29616A0D2"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.KeyManager/ShamirKeySharing.cs",
+      "SHA256": "73AA2EAE96D49260C8639F33E7FE24996D00E6D851D7C84387A913CBC5DDDAFE"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Ristretto.cs",
+      "SHA256": "4DDF2652965DF6E15E58ADEEB14961EC1A44A5BDE9EFA1CB3BD04A2594D9C0AA"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/SmallQuorumInterpolation.cs",
+      "SHA256": "E083376846BB55F59A5C8D1A488B27AFAEF90AE5DD021715D90691713179E8D0"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Internal/Sodium.cs",
+      "SHA256": "6F4DC996D4848C57EBB6B0B0A0D3D33D474D0D78422E329D1163B79091761FBB"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/Mrbr.Cryptography.Vss.csproj",
+      "SHA256": "91E89C50101A2595740145BE60BD91ED9EBC47F4E99CBAA71D1E034D01A2B6C1"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss/PedersenVss.cs",
+      "SHA256": "99FFC90C76DB3DB516EDC39B9CB223EDF5294F0D22B94583325AE829A3F9FB38"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/AuthenticatedCommitmentPacket.cs",
+      "SHA256": "289236EF96E994ADE4D6435B885ABBCA7F91FE82373C3142EA5F3ADBF1B3774A"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/Internal/Ed25519Native.cs",
+      "SHA256": "6FD14E93923B9BA334C0DCBBF76C59B236E48953A6BCFBD144CFAF64A7A9BB07"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.Authentication/Mrbr.Cryptography.Vss.Authentication.csproj",
+      "SHA256": "EB29B5301AD345C3799404A7EBD7643D9610F910F670FCC0DDC910020800E801"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.KeyManager/AuthenticatedKeySharing.cs",
+      "SHA256": "2D924DC2EDF03BB35934E6BC0751EA5E0EBB527944290C23D1C5A1472242A2E0"
+    },
+    {
+      "Path": "src/Mrbr.Cryptography.Vss.KeyManager/Mrbr.Cryptography.Vss.KeyManager.csproj",
+      "SHA256": "52E4A95B4B066E87CEE813D44A578E2C4226EEDFB33D2ED71B328A6B969B75FD"
+    }
+  ]
+}

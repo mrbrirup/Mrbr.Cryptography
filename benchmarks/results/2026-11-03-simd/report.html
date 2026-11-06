@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Mrbr.Cryptography.Benchmarks.ShamirSharedSecretBenchmarks</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.16.0-preview.2, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i7-10750H CPU 2.60GHz (Max: 2.59GHz), 1 CPU, 12 logical and 6 physical cores
+Memory: 63.83 GB Total, 43.27 GB Available
+.NET SDK 11.0.100-rc.3.26522.148
+  [Host]     : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+  Job-WPTJCO : .NET 11.0.0 (11.0.0-rc.3.26522.148, 11.0.26.52348), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>PowerPlanMode=  IterationCount=15  IterationTime=250ms  
+LaunchCount=1  UnrollFactor=1  WarmupCount=30  
+</code></pre>
+
+<table>
+<thead><tr><th>Method        </th><th>Scenario</th><th>Mean    </th><th>Error  </th><th>StdDev </th><th>Op/s </th><th>Secret MiB/s</th><th>Share MiB/s</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>CreateShares</td><td>1024B_3of5</td><td>5,111.6 ns</td><td>377.31 ns</td><td>352.93 ns</td><td>195,632.9</td><td>191</td><td>956.2</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>1024B_3of5</td><td>700.2 ns</td><td>50.82 ns</td><td>47.53 ns</td><td>1,428,181.7</td><td>1395</td><td>4188</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>1024B_3of5</td><td>1,271.7 ns</td><td>3.46 ns</td><td>3.07 ns</td><td>786,378.7</td><td>767.9</td><td>3843</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>1048576B_3of5</td><td>4,555,460.8 ns</td><td>193,300.35 ns</td><td>180,813.27 ns</td><td>219.5</td><td>219.5</td><td>1098</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>1048576B_3of5</td><td>283,854.7 ns</td><td>11,337.67 ns</td><td>9,467.47 ns</td><td>3,522.9</td><td>3523</td><td>1.057E+04</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>1048576B_3of5</td><td>511,495.1 ns</td><td>31,617.54 ns</td><td>26,402.07 ns</td><td>1,955.1</td><td>1955</td><td>9775</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>32B_255of255</td><td>252,137.0 ns</td><td>3,243.19 ns</td><td>2,532.07 ns</td><td>3,966.1</td><td>0.121</td><td>31.83</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>32B_255of255</td><td>1,107,687.6 ns</td><td>3,900.55 ns</td><td>3,045.29 ns</td><td>902.8</td><td>0.02755</td><td>7.245</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>32B_255of255</td><td>1,207,987.4 ns</td><td>95,836.25 ns</td><td>89,645.29 ns</td><td>827.8</td><td>0.02526</td><td>6.643</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>32B_3of255</td><td>4,552.5 ns</td><td>272.65 ns</td><td>255.03 ns</td><td>219,658.1</td><td>6.703</td><td>1763</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>32B_3of255</td><td>524.1 ns</td><td>24.64 ns</td><td>23.05 ns</td><td>1,908,071.8</td><td>58.23</td><td>180.1</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>32B_3of255</td><td>1,229,296.1 ns</td><td>75,967.38 ns</td><td>71,059.94 ns</td><td>813.5</td><td>0.02483</td><td>6.528</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>32B_3of5</td><td>653.8 ns</td><td>52.78 ns</td><td>49.37 ns</td><td>1,529,455.6</td><td>46.68</td><td>240.7</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>32B_3of5</td><td>476.5 ns</td><td>9.47 ns</td><td>7.40 ns</td><td>2,098,785.2</td><td>64.05</td><td>198.2</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>32B_3of5</td><td>1,062.5 ns</td><td>74.11 ns</td><td>69.32 ns</td><td>941,208.9</td><td>28.72</td><td>148.1</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>65536B_10of20</td><td>3,308,634.4 ns</td><td>21,936.47 ns</td><td>20,519.39 ns</td><td>302.2</td><td>18.89</td><td>377.8</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>65536B_10of20</td><td>49,909.7 ns</td><td>5,929.83 ns</td><td>5,546.77 ns</td><td>20,036.2</td><td>1252</td><td>1.252E+04</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>65536B_10of20</td><td>105,834.7 ns</td><td>10,049.70 ns</td><td>8,908.80 ns</td><td>9,448.7</td><td>590.5</td><td>1.181E+04</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>65536B_2of3</td><td>34,855.8 ns</td><td>2,626.72 ns</td><td>2,457.03 ns</td><td>28,689.6</td><td>1793</td><td>5379</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>65536B_2of3</td><td>6,930.3 ns</td><td>385.91 ns</td><td>360.98 ns</td><td>144,293.9</td><td>9018</td><td>1.804E+04</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>65536B_2of3</td><td>10,341.0 ns</td><td>886.40 ns</td><td>829.14 ns</td><td>96,702.8</td><td>6044</td><td>1.813E+04</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>65536B_3of5</td><td>298,395.5 ns</td><td>19,993.44 ns</td><td>18,701.88 ns</td><td>3,351.3</td><td>209.5</td><td>1047</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>65536B_3of5</td><td>13,545.7 ns</td><td>592.20 ns</td><td>553.94 ns</td><td>73,824.3</td><td>4614</td><td>1.384E+04</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>65536B_3of5</td><td>24,285.0 ns</td><td>2,815.37 ns</td><td>2,633.50 ns</td><td>41,177.7</td><td>2574</td><td>1.287E+04</td><td>-</td>
+</tr><tr><td>CreateShares</td><td>65536B_5of10</td><td>639,101.7 ns</td><td>43,304.45 ns</td><td>40,507.01 ns</td><td>1,564.7</td><td>97.79</td><td>978</td><td>-</td>
+</tr><tr><td>ReconstructThreshold</td><td>65536B_5of10</td><td>24,308.2 ns</td><td>481.99 ns</td><td>376.31 ns</td><td>41,138.3</td><td>2571</td><td>1.286E+04</td><td>-</td>
+</tr><tr><td>ReconstructAll</td><td>65536B_5of10</td><td>43,397.2 ns</td><td>886.57 ns</td><td>740.33 ns</td><td>23,042.9</td><td>1440</td><td>1.44E+04</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>
